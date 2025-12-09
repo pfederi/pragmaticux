@@ -1,5 +1,5 @@
 export default function CTA() {
-  const emailLink = 'mailto:patrick.federi@ergon.ch?subject=Pragmatic UX Design Inquiry&body=Hello Patrick,%0D%0A%0D%0AI would like to discuss how we can implement pragmatic UX principles in my project.%0D%0A%0D%0ABest regards'
+  const emailLink = 'mailto:patrick.federi@ergon.ch?subject=Pragmatic UX Design Inquiry&body=Hello Patrick,%0D%0A%0D%0AI would like to discuss how we can implement pragmatic UX Design principles in my project.%0D%0A%0D%0ABest regards'
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-primary/10 to-primary/5 border-t border-primary/20">
@@ -7,7 +7,7 @@ export default function CTA() {
         <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
           <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Implementing These Principles?</h3>
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
-            We'd love to help you apply these pragmatic UX principles to your project. Let's work together to create better user experiences.
+            We'd love to help you apply these pragmatic UX Design principles to your project. Let's work together to create better user experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <a

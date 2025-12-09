@@ -14,7 +14,7 @@ export default function Hero() {
               Pragmatic UX Design
           </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 md:mb-12 leading-relaxed">
-            Maximising impact without overcomplicating design. A practical approach to user experience that adapts to real-world conditions.
+            Maximising impact without overcomplicating the process. A practical approach to user experience design that adapts to real-world conditions.
           </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link

@@ -39,7 +39,7 @@
     },
     {
       "id": "ux_acceptance",
-      "label": "How high is the UX acceptance in your team?",
+      "label": "How high is the UX Design acceptance in your team?",
       "type": "single",
       "options": [
         { "value": "low", "label": "Rather low" },

@@ -15,22 +15,22 @@
       "id": "p01",
       "order": 1,
       "slug": "ux-fits-process",
-      "title": "UX Should Fit the Process, Not Disrupt It",
-      "summary": "UX is most effective when it is seamlessly integrated into existing workflows, rather than treated as a rigid, stand-alone phase. When UX is introduced as a separate, highly structured process, it often creates friction, not because UX itself is unimportant, but because it feels like an extra burden rather than a natural part of product development.\n\nRather than insisting on a pre-defined UX framework, Pragmatic UX Design adapts to the realities of each team and organisation. But UX should not just fit the process, it should enhance it. Pragmatic UX Design ensures that UX fits seamlessly into workflows, while identifying areas where processes themselves could be improved to support better user experiences.",
+      "title": "UX Design Should Fit the Process, Not Disrupt It",
+      "summary": "UX Design is most effective when it is seamlessly integrated into existing workflows, rather than treated as a rigid, stand-alone phase. When UX Design is introduced as a separate, highly structured process, it often creates friction, not because UX Design itself is unimportant, but because it feels like an extra burden rather than a natural part of product development.\n\nRather than insisting on a pre-defined UX Design framework, Pragmatic UX Design adapts to the realities of each team and organisation. But UX Design should not just fit the process, it should enhance it. Pragmatic UX Design ensures that UX Design fits seamlessly into workflows, while identifying areas where processes themselves could be improved to support better user experiences.",
       "narrative": [],
       "examples": [
         "Agile Development: Instead of requiring extensive research phases before development starts, integrate lightweight research into ongoing sprints (e.g., quick usability tests or user feedback loops).",
-        "Engineering-Driven Teams: If technical feasibility heavily influences product decisions, UX should provide practical, development-friendly solutions instead of designing in isolation.",
+        "Engineering-Driven Teams: If technical feasibility heavily influences product decisions, UX Design should provide practical, development-friendly solutions instead of designing in isolation.",
         "Fast-Paced Startups: If speed is critical, prioritise rapid prototyping and quick validation methods rather than long discovery phases."
       ],
       "why_matters": [
-        "Reduces resistance to UX: When UX aligns with existing processes, teams are more likely to adopt it.",
-        "Improves efficiency: UX shouldn't slow development down; it should enhance it.",
-        "Ensures real impact: When UX fits naturally into workflows, it is applied more consistently across the product."
+        "Reduces resistance to UX Design: When UX Design aligns with existing processes, teams are more likely to adopt it.",
+        "Improves efficiency: UX Design shouldn't slow development down; it should enhance it.",
+        "Ensures real impact: When UX Design fits naturally into workflows, it is applied more consistently across the product."
       ],
       "instead_of_asking": [
-        "How can UX contribute effectively without adding unnecessary complexity?",
-        "What UX methods work best within the team's existing workflow?"
+        "How can UX Design contribute effectively without adding unnecessary complexity?",
+        "What UX Design methods work best within the team's existing workflow?"
       ]
     },
     {
@@ -59,8 +59,8 @@
       "id": "p03",
       "order": 3,
       "slug": "empower-dont-overcomplicate",
-      "title": "UX Should Empower, Not Overcomplicate",
-      "summary": "Pragmatic UX Design removes overhead and empowers teams with clear, actionable insights instead of complex processes. UX is about simplifying, clarifying and improving products. But when UX is presented as a rigid, highly structured process, it can create resistance instead of engagement. Teams may start to see UX as a slow-moving layer of documentation rather than a valuable decision-making tool.\n\nPragmatic UX Design removes unnecessary overhead while ensuring that UX remains a strategic force in decision making. UX should not be reduced to a set of deliverables, it should actively empower teams with insights that drive better, faster decisions.\n\nUX isn't just about reacting to existing problems; it's about embedding user-centred thinking into the workflow at an early stage, preventing problems before they arise.",
+      "title": "UX Design Should Empower, Not Overcomplicate",
+      "summary": "Pragmatic UX Design removes overhead and empowers teams with clear, actionable insights instead of complex processes. UX Design is about simplifying, clarifying and improving products. But when UX Design is presented as a rigid, highly structured process, it can create resistance instead of engagement. Teams may start to see UX Design as a slow-moving layer of documentation rather than a valuable decision-making tool.\n\nPragmatic UX Design removes unnecessary overhead while ensuring that UX Design remains a strategic force in decision making. UX Design should not be reduced to a set of deliverables, it should actively empower teams with insights that drive better, faster decisions.\n\nUX Design isn't just about reacting to existing problems; it's about embedding user-centred thinking into the workflow at an early stage, preventing problems before they arise.",
       "narrative": [],
       "examples": [
         "Stakeholders Who Need Quick Decisions: Instead of presenting a 50-slide UX report, summarise findings in a concise, one-page actionable list.",
@@ -68,9 +68,9 @@
         "Cross-Functional Teams Needing Input: Instead of lengthy UX documentation, offer short, digestible insights that enable immediate action."
       ],
       "why_matters": [
-        "Increases adoption of UX insights: If UX is easy to digest, stakeholders actually use it.",
+        "Increases adoption of UX Design insights: If UX Design is easy to digest, stakeholders actually use it.",
         "Accelerates decision-making: Lightweight documentation means faster action.",
-        "Strengthens collaboration across teams: When UX is clear and actionable, it naturally integrates into workflows."
+        "Strengthens collaboration across teams: When UX Design is clear and actionable, it naturally integrates into workflows."
       ],
       "instead_of_asking": [
         "How can we deliver UX insights in the simplest, most actionable way?",
@@ -82,7 +82,7 @@
       "order": 4,
       "slug": "execution-over-theory",
       "title": "Theory Is Nice, but Execution Wins",
-      "summary": "Frameworks provide structure, but success comes from adapting them to real-world constraints and executing effectively. UX methodologies such as the Double Diamond, Design Thinking, or Human-Centred Design look great in presentations, but they often fall apart in the real-world of product development. Teams work under tight deadlines, shifting priorities, and business constraints, which means that a rigid, textbook approach to UX is rarely practical.\n\nPragmatic UX Design recognises that frameworks provide structure, but real success comes from knowing when to adapt and streamline them. UX is most valuable when it balances best practice with real-world constraints, applying the right methods at the right time. The goal is not to execute the \"perfect\" UX process, but to ensure that users get a better experience, without unnecessary complexity.\n\nUX methodologies are not rules to be rigidly followed, but flexible tools that should be tailored to the specific needs of a project.",
+      "summary": "Frameworks provide structure, but success comes from adapting them to real-world constraints and executing effectively. UX Design methodologies such as the Double Diamond, Design Thinking, or Human-Centred Design look great in presentations, but they often fall apart in the real-world of product development. Teams work under tight deadlines, shifting priorities, and business constraints, which means that a rigid, textbook approach to UX Design is rarely practical.\n\nPragmatic UX Design recognises that frameworks provide structure, but real success comes from knowing when to adapt and streamline them. UX Design is most valuable when it balances best practice with real-world constraints, applying the right methods at the right time. The goal is not to execute the \"perfect\" UX Design process, but to ensure that users get a better experience, without unnecessary complexity.\n\nUX Design methodologies are not rules to be rigidly followed, but flexible tools that should be tailored to the specific needs of a project.",
       "narrative": [],
       "examples": [
         "Product Teams Under Pressure: Instead of insisting on a full Design Thinking workshop, run a condensed session focused on immediate problem-solving.",
@@ -90,13 +90,13 @@
         "MVP Development: Instead of spending weeks perfecting personas, use quick assumptions and validate them with real users post-launch."
       ],
       "why_matters": [
-        "Prevents UX from being sidelined: When UX is practical, teams actually use it.",
+        "Prevents UX Design from being sidelined: When UX Design is practical, teams actually use it.",
         "Avoids wasted effort: The goal is to improve usability, not complete theoretical frameworks.",
-        "Fits real-world constraints: UX should adapt to time, budget, and business limitations."
+        "Fits real-world constraints: UX Design should adapt to time, budget, and business limitations."
       ],
       "instead_of_asking": [
-        "What's the most useful part of UX for this specific project?",
-        "How can we apply UX efficiently instead of perfectly?"
+        "What's the most useful part of UX Design for this specific project?",
+        "How can we apply UX Design efficiently instead of perfectly?"
       ]
     },
     {
@@ -104,7 +104,7 @@
       "order": 5,
       "slug": "right-sized-research",
       "title": "Research Should Be Right-Sized for the Context",
-      "summary": "Pragmatic UX Design matches research depth to context, ensuring insights are fast and useful without slowing progress. One of the biggest myths in UX is that good research requires big budgets and long timelines. While deep, comprehensive studies can provide valuable insights, they are not always necessary, especially when fast decisions need to be made quickly.\n\nPragmatic UX Design ensures that research is right-sized for the context, delivering meaningful insights in the most efficient way possible. Some situations require rapid testing, while others justify deeper exploration. The key is to match the research method to the decision at hand.\n\nWhile quick, lightweight research works well for iterative improvements, more complex or high-stakes products may require deeper investigation to ensure long-term success.\n\nInstead of delaying progress for the \"perfect\" research phase, teams can gather meaningful user insights quickly and iterate continuously.",
+      "summary": "Pragmatic UX Design matches research depth to context, ensuring insights are fast and useful without slowing progress. One of the biggest myths in UX Design is that good research requires big budgets and long timelines. While deep, comprehensive studies can provide valuable insights, they are not always necessary, especially when fast decisions need to be made quickly.\n\nPragmatic UX Design ensures that research is right-sized for the context, delivering meaningful insights in the most efficient way possible. Some situations require rapid testing, while others justify deeper exploration. The key is to match the research method to the decision at hand.\n\nWhile quick, lightweight research works well for iterative improvements, more complex or high-stakes products may require deeper investigation to ensure long-term success.\n\nInstead of delaying progress for the \"perfect\" research phase, teams can gather meaningful user insights quickly and iterate continuously.",
       "narrative": [],
       "examples": [
         "Small Teams Without Research Budgets: Instead of hiring external agencies, talk to 5 real users and observe their behavior.",
@@ -112,7 +112,7 @@
         "Agile Environments: Instead of pausing sprints for formal studies, integrate usability testing into ongoing iterations."
       ],
       "why_matters": [
-        "Makes UX insights accessible: No need for a large research budget to make informed decisions.",
+        "Makes UX Design insights accessible: No need for a large research budget to make informed decisions.",
         "Speeds up decision-making: Quick feedback loops ensure continuous learning.",
         "Prevents research paralysis: Teams focus on learning and applying insights, not just collecting data."
       ],
@@ -125,22 +125,22 @@
       "id": "p06",
       "order": 6,
       "slug": "scale-to-needs",
-      "title": "UX Should Be Scaled to Fit the Product's Needs",
-      "summary": "UX is always relevant, but the depth of involvement should scale with product complexity, risk, and goals. UX is not a one-size-fits-all approach. Some projects require deep UX involvement, while others benefit from leaner, faster iterations. Applying the same level of UX rigor to every project can lead to wasted resources, unnecessary complexity, and slower decision-making.\n\nPragmatic UX Design ensures that UX is always present, but at the right level of depth. Every product benefits from UX thinking, but the approach should be tailored to match its complexity, risks, and business goals.\n\nSkipping UX altogether is rarely the right approach, rather, it should be integrated in a way that maximises impact while respecting constraints.",
+      "title": "UX Design Should Be Scaled to Fit the Product's Needs",
+      "summary": "UX Design is always relevant, but the depth of involvement should scale with product complexity, risk, and goals. UX Design is not a one-size-fits-all approach. Some projects require deep UX Design involvement, while others benefit from leaner, faster iterations. Applying the same level of UX Design rigor to every project can lead to wasted resources, unnecessary complexity, and slower decision-making.\n\nPragmatic UX Design ensures that UX Design is always present, but at the right level of depth. Every product benefits from UX Design thinking, but the approach should be tailored to match its complexity, risks, and business goals.\n\nSkipping UX Design altogether is rarely the right approach, rather, it should be integrated in a way that maximises impact while respecting constraints.",
       "narrative": [],
       "examples": [
-        "Internal Tools for Employees: Instead of a full UX research phase, apply UX best practices and refine based on direct user feedback.",
-        "High-Risk Products (e.g., Healthcare Apps): Here, extensive UX work is critical because mistakes can have serious consequences.",
+        "Internal Tools for Employees: Instead of a full UX research phase, apply UX Design best practices and refine based on direct user feedback.",
+        "High-Risk Products (e.g., Healthcare Apps): Here, extensive UX Design work is critical because mistakes can have serious consequences.",
         "MVP Development: For early-stage products, focus on core usability before refining micro-details."
       ],
       "why_matters": [
-        "Saves time and resources: Not all projects need deep UX work.",
-        "Prevents unnecessary complexity: UX should match the importance and scale of the product.",
+        "Saves time and resources: Not all projects need deep UX Design work.",
+        "Prevents unnecessary complexity: UX Design should match the importance and scale of the product.",
         "Keeps teams focused: Effort goes where it's needed most, ensuring maximum impact with minimal overhead."
       ],
       "instead_of_asking": [
-        "What level of UX involvement makes sense for this project?",
-        "Where can UX create the most impact with minimal effort?"
+        "What level of UX Design involvement makes sense for this project?",
+        "Where can UX Design create the most impact with minimal effort?"
       ]
     },
     {
@@ -148,7 +148,7 @@
       "order": 7,
       "slug": "iterate-with-purpose",
       "title": "Iterate with Purpose",
-      "summary": "Iteration should always be focused, data-driven, and purposeful, not endless tweaking. Iteration is a fundamental part of UX, but iterating without direction leads to wasted effort. Refining details endlessly doesn't guarantee a better user experience, focused, purposeful changes does. \n\nPragmatic UX Design ensures that iteration is always purposeful, driven by data, user feedback, and measurable impact. Iteration is not about achieving perfection, but about making continuous, meaningful improvements that enhance usability and product performance.\n\nUnstructured iteration can waste resources, but well-planned iteration, based on real user behaviour, ensures continuous refinement without unnecessary complexity.",
+      "summary": "Iteration should always be focused, data-driven, and purposeful, not endless tweaking. Iteration is a fundamental part of UX Design, but iterating without direction leads to wasted effort. Refining details endlessly doesn't guarantee a better user experience, focused, purposeful changes does. \n\nPragmatic UX Design ensures that iteration is always purposeful, driven by data, user feedback, and measurable impact. Iteration is not about achieving perfection, but about making continuous, meaningful improvements that enhance usability and product performance.\n\nUnstructured iteration can waste resources, but well-planned iteration, based on real user behaviour, ensures continuous refinement without unnecessary complexity.",
       "narrative": [],
       "examples": [
         "Usability Testing Refinement: Instead of reworking an entire UI, focus on the 2–3 interactions where users struggle the most.",
@@ -170,9 +170,9 @@
       "order": 8,
       "slug": "reuse-design-systems",
       "title": "Work Smarter: Reuse Design Systems and Best Practices",
-      "summary": "UX design doesn't have to start from scratch every time. Many design challenges have already been solved through design systems, reusable UI components, and established best practices. These resources help streamline development, ensure consistency, and eliminate redundant work.\n\nInstead of designing everything from scratch, Pragmatic UX Design strategically leverages existing resources, not only to save time, but to improve usability, maintain consistency, and ensure accessibility. The key is to balance efficiency with thoughtful customisation, ensuring that existing solutions are adapted to meet specific user needs.\n\nFor teams managing multiple products, the use of design systems ensures scalability and a consistent experience across platforms.",
+      "summary": "UX Design doesn't have to start from scratch every time. Many design challenges have already been solved through design systems, reusable UI components, and established best practices. These resources help streamline development, ensure consistency, and eliminate redundant work.\n\nInstead of designing everything from scratch, Pragmatic UX Design strategically leverages existing resources, not only to save time, but to improve usability, maintain consistency, and ensure accessibility. The key is to balance efficiency with thoughtful customisation, ensuring that existing solutions are adapted to meet specific user needs.\n\nFor teams managing multiple products, the use of design systems ensures scalability and a consistent experience across platforms.",
       "narrative": [
-        "UX design doesn't have to start from scratch every time. Many design challenges have already been solved through design systems, reusable UI components, and established best practices. These resources help streamline development, ensure consistency, and eliminate redundant work.",
+        "UX Design doesn't have to start from scratch every time. Many design challenges have already been solved through design systems, reusable UI components, and established best practices. These resources help streamline development, ensure consistency, and eliminate redundant work.",
         "Instead of designing everything from scratch, Pragmatic UX Design strategically leverages existing resources, not only to save time, but to improve usability, maintain consistency, and ensure accessibility. The key is to balance efficiency with thoughtful customisation, ensuring that existing solutions are adapted to meet specific user needs.",
         "For teams managing multiple products, the use of design systems ensures scalability and a consistent experience across platforms."
       ],

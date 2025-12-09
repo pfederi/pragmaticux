@@ -231,9 +231,9 @@ export default function DecisionHelper() {
       "Performance Budgets": "Set and monitor performance targets throughout development.",
       "Tech-Feasibility Notes": "Document technical considerations alongside design decisions.",
       "One-Pager Decision Logs": "Maintain concise records of key design decisions.",
-      "Rapid UX Audits": "Quick evaluation of UX issues with actionable recommendations.",
-      "UX Bug Bash": "Organized sessions to identify and prioritize UX issues.",
-      "Top-3 UX Debt List": "Maintain a prioritized list of UX improvements to address.",
+      "Rapid UX Audits": "Quick evaluation of UX Design issues with actionable recommendations.",
+      "UX Bug Bash": "Organized sessions to identify and prioritize UX Design issues.",
+      "Top-3 UX Debt List": "Maintain a prioritized list of UX Design improvements to address.",
       "Canary Releases": "Gradually roll out changes to minimize risk.",
       "Shared Component Libraries": "Build and maintain reusable component libraries.",
       "Pattern Documentation": "Document design patterns for consistency and reuse.",
@@ -255,13 +255,13 @@ export default function DecisionHelper() {
       "Usability Labs": "Structured usability testing in controlled environments.",
       "Cross-Functional Workshops": "Bring together different disciplines to solve problems.",
       "Lightweight Deliverables": "Create minimal documentation that focuses on essentials.",
-      "Embedded UX Sessions": "Integrate UX activities directly into development sprints.",
+      "Embedded UX Sessions": "Integrate UX Design activities directly into development sprints.",
       "Sketch Reviews": "Quick design reviews using sketches and low-fidelity mockups.",
       "Continuous Testing": "Regular user testing throughout the development process.",
       "Design System Scaling": "Expand design systems to support growing product needs.",
       "Component Governance": "Establish processes for managing and evolving components."
     }
-    return methodDescriptions[method] || "A practical method to improve your UX process."
+    return methodDescriptions[method] || "A practical method to improve your UX Design process."
   }
 
   return (
@@ -425,7 +425,7 @@ export default function DecisionHelper() {
                 <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
                   <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Implementing These Principles?</h3>
                   <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
-                    We'd love to help you apply these pragmatic UX principles to your project. Let's work together to create better user experiences.
+                    We'd love to help you apply these pragmatic UX Design principles to your project. Let's work together to create better user experiences.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <a

@@ -10,7 +10,7 @@ export default function PrinciplesOverview() {
             Core Principles
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Eight fundamental concepts that guide pragmatic UX practice. Click any principle to explore it in detail.
+            Eight fundamental concepts that guide pragmatic UX Design practice. Click any principle to explore it in detail.
           </p>
         </div>
 
