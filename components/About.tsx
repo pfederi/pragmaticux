@@ -5,7 +5,7 @@ export default function About() {
     <section className="py-12 sm:py-16 md:py-32">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-left mb-8 sm:mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-[1.2]">About The Pragmatic UX Design Approach</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">About The Pragmatic UX Design Approach</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
             Pragmatic UX Design emerged from real-world challenges in product development, where traditional UX processes often clashed with business realities.
           </p>

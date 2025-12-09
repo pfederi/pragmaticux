@@ -34,7 +34,7 @@ export default async function PrincipleDetailPage({ params }: PageProps) {
                 {principle.order}
               </div>
               <div className="flex flex-col gap-3 sm:gap-4 flex-1">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-full sm:max-w-[55%] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-[1.2]">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-full sm:max-w-[55%] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">
                   {principle.title}
                 </h1>
                 {/* Subtitle below title, aligned with title text */}
@@ -59,7 +59,7 @@ export default async function PrincipleDetailPage({ params }: PageProps) {
             {/* Why It Matters */}
             {principle.why_matters && principle.why_matters.length > 0 && (
               <section className="mb-8 sm:mb-12 md:mb-16 pb-8 sm:pb-12 md:pb-16 pt-8 sm:pt-12 md:pt-16 border-t border-b border-border">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-[1.2] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Why It Matters</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-tight pb-1 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Why It Matters</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {principle.why_matters.map((item, index) => {
                 const colonIndex = item.indexOf(': ')
@@ -87,7 +87,7 @@ export default async function PrincipleDetailPage({ params }: PageProps) {
             {/* Examples */}
             {principle.examples && principle.examples.length > 0 && (
               <section className="mb-8 sm:mb-12 md:mb-16 pb-8 sm:pb-12 md:pb-16 border-b border-border">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-[1.2] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Practical Examples</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-tight pb-1 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Practical Examples</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {principle.examples.map((example, index) => {
                 const colonIndex = example.indexOf(':')
@@ -115,7 +115,7 @@ export default async function PrincipleDetailPage({ params }: PageProps) {
             {/* Key Questions */}
             {principle.instead_of_asking && principle.instead_of_asking.length > 0 && (
               <section className="mb-8 sm:mb-12 md:mb-16">
-                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-[1.2] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Key Questions to Ask</h2>
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 md:mb-8 text-left leading-tight pb-1 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Key Questions to Ask</h2>
             <div className="bg-card border rounded-xl p-4 sm:p-6 md:p-8 shadow-sm">
               <div className="space-y-3 sm:space-y-4">
                 {principle.instead_of_asking.map((question, index) => (
