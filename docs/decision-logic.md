@@ -801,7 +801,154 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 
 ## 6. Question Flow
 
-### 6.1 Question Sequence
+### 6.1 Decision Tree Visualization
+
+The following decision tree shows the complete flow from questions to results:
+
+```mermaid
+graph TD
+    Start[Start Decision Helper] --> Q1{Q1: Context?}
+    
+    Q1 -->|startup| Q1A[Startup Context]
+    Q1 -->|eng_driven| Q1B[Engineering-Driven]
+    Q1 -->|corporate| Q1C[Corporate Context]
+    
+    Q1A --> Q2A{Q2: Challenge?}
+    Q1B --> Q2B{Q2: Challenge?}
+    Q1C --> Q2C{Q2: Challenge?}
+    
+    Q2A -->|efficiency| Q2A1[Efficiency]
+    Q2A -->|fast_decisions| Q2A2[Fast Decisions]
+    Q2A -->|iteration_churn| Q2A3[Iteration Churn]
+    Q2A -->|ship_faster| Q2A4[Ship Faster]
+    
+    Q2B -->|efficiency| Q2B1[Efficiency]
+    Q2B -->|fast_decisions| Q2B2[Fast Decisions]
+    Q2B -->|iteration_churn| Q2B3[Iteration Churn]
+    Q2B -->|ship_faster| Q2B4[Ship Faster]
+    
+    Q2C -->|efficiency| Q2C1[Efficiency]
+    Q2C -->|fast_decisions| Q2C2[Fast Decisions]
+    Q2C -->|iteration_churn| Q2C3[Iteration Churn]
+    Q2C -->|ship_faster| Q2C4[Ship Faster]
+    
+    Q2A1 --> Q3A{Q3: Time/Budget?}
+    Q2A2 --> Q3A
+    Q2A3 --> Q3A
+    Q2A4 --> Q3A
+    
+    Q2B1 --> Q3B{Q3: Time/Budget?}
+    Q2B2 --> Q3B
+    Q2B3 --> Q3B
+    Q2B4 --> Q3B
+    
+    Q2C1 --> Q3C{Q3: Time/Budget?}
+    Q2C2 --> Q3C
+    Q2C3 --> Q3C
+    Q2C4 --> Q3C
+    
+    Q3A -->|tight| Q3A1[Tight Budget]
+    Q3A -->|adequate| Q3A2[Adequate Budget]
+    
+    Q3B -->|tight| Q3B1[Tight Budget]
+    Q3B -->|adequate| Q3B2[Adequate Budget]
+    
+    Q3C -->|tight| Q3C1[Tight Budget]
+    Q3C -->|adequate| Q3C2[Adequate Budget]
+    
+    Q3A1 --> Q4A{Q4: UX Acceptance?}
+    Q3A2 --> Q4A
+    Q3B1 --> Q4B{Q4: UX Acceptance?}
+    Q3B2 --> Q4B
+    Q3C1 --> Q4C{Q4: UX Acceptance?}
+    Q3C2 --> Q4C
+    
+    Q4A -->|low| Q4A1[Low Acceptance]
+    Q4A -->|high| Q4A2[High Acceptance]
+    
+    Q4B -->|low| Q4B1[Low Acceptance]
+    Q4B -->|high| Q4B2[High Acceptance]
+    
+    Q4C -->|low| Q4C1[Low Acceptance]
+    Q4C -->|high| Q4C2[High Acceptance]
+    
+    Q4A1 --> RulesA[Evaluate Matching Rules<br/>Context+Challenge + Time/Budget + UX Acceptance]
+    Q4A2 --> RulesA
+    Q4B1 --> RulesB[Evaluate Matching Rules<br/>Context+Challenge + Time/Budget + UX Acceptance]
+    Q4B2 --> RulesB
+    Q4C1 --> RulesC[Evaluate Matching Rules<br/>Context+Challenge + Time/Budget + UX Acceptance]
+    Q4C2 --> RulesC
+    
+    RulesA --> Combine[Combine All Matching Rules]
+    RulesB --> Combine
+    RulesC --> Combine
+    
+    Combine --> Dedup[Remove Duplicates]
+    Dedup --> Limit[Limit to 3 Principles<br/>Limit to 6 Methods]
+    Limit --> Results[Display Results]
+    
+    style Start fill:#e1f5ff
+    style Q1 fill:#81d4fa
+    style Q2A fill:#81d4fa
+    style Q2B fill:#81d4fa
+    style Q2C fill:#81d4fa
+    style Q3A fill:#81d4fa
+    style Q3B fill:#81d4fa
+    style Q3C fill:#81d4fa
+    style Q4A fill:#81d4fa
+    style Q4B fill:#81d4fa
+    style Q4C fill:#81d4fa
+    style RulesA fill:#4fc3f7
+    style RulesB fill:#4fc3f7
+    style RulesC fill:#4fc3f7
+    style Combine fill:#4fc3f7
+    style Dedup fill:#ff9800
+    style Limit fill:#ff9800
+    style Results fill:#ff9800
+```
+
+### 6.2 Simplified Decision Tree
+
+A simplified view showing the rule matching logic:
+
+```mermaid
+graph TD
+    Start[User Answers All Questions] --> Match[Rule Matching Engine]
+    
+    Match --> R1{Rule 1-12<br/>Context + Challenge}
+    Match --> R13{Rule 13<br/>Time/Budget: tight}
+    Match --> R14{Rule 14<br/>Time/Budget: adequate}
+    Match --> R15{Rule 15<br/>UX Acceptance: low}
+    Match --> R16{Rule 16<br/>UX Acceptance: high}
+    
+    R1 -->|Matches| Collect1[Collect Principles & Methods]
+    R13 -->|Matches| Collect1
+    R14 -->|Matches| Collect1
+    R15 -->|Matches| Collect1
+    R16 -->|Matches| Collect1
+    
+    Collect1 --> Combine[Combine All Results]
+    Combine --> Dedup[Remove Duplicates]
+    Dedup --> Limit3[Limit to 3 Principles]
+    Limit3 --> Limit6[Limit to 6 Methods]
+    Limit6 --> Display[Display Results]
+    
+    style Start fill:#e1f5ff
+    style Match fill:#81d4fa
+    style R1 fill:#4fc3f7
+    style R13 fill:#4fc3f7
+    style R14 fill:#4fc3f7
+    style R15 fill:#4fc3f7
+    style R16 fill:#4fc3f7
+    style Collect1 fill:#4fc3f7
+    style Combine fill:#ff9800
+    style Dedup fill:#ff9800
+    style Limit3 fill:#ff9800
+    style Limit6 fill:#ff9800
+    style Display fill:#ff9800
+```
+
+### 6.3 Question Sequence
 
 ```mermaid
 graph LR
@@ -817,7 +964,7 @@ graph LR
     style Results fill:#ff9800
 ```
 
-### 6.2 Question Details
+### 6.4 Question Details
 
 | Question ID | Label | Options |
 |-------------|-------|---------|
