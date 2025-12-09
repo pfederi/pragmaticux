@@ -185,7 +185,7 @@ graph TB
         Home[page.tsx<br/>Home Page]
         About[about/page.tsx<br/>About Page]
         Helper[decision-helper/page.tsx<br/>Decision Helper Page]
-        Principle[principles/[id]/page.tsx<br/>Dynamic Principle Page]
+        Principle["principles/id/page.tsx<br/>Dynamic Principle Page"]
     end
     
     Layout --> Home
