@@ -90,7 +90,7 @@ graph TB
     Website -->|Displays| Principles[8 Core Principles]
     Website -->|Provides| Helper[Decision Helper Tool]
     Website -->|Generates| Email[Email with Results]
-    Email -->|Sends to| Contact[patrick.federi@ergon.ch]
+    Email -->|Sends to| Contact["Contact Email<br/>patrick.federi@ergon.ch"]
     
     style User fill:#e1f5ff
     style Website fill:#b3e5fc
