@@ -390,16 +390,16 @@ export default function DecisionHelper() {
               )}
 
               {results && results.methods.length > 0 && (
-                <div className="mb-8">
-                  <h3 className="text-2xl font-semibold mb-6 text-left">Suggested Methods</h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className="mb-6 sm:mb-8">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">Suggested Methods</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {results.methods.map((method, index) => (
                       <div
                         key={index}
-                        className="bg-card border rounded-lg p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+                        className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
                       >
-                        <h4 className="font-semibold mb-2 text-base">{method}</h4>
-                        <p className="text-sm text-muted-foreground leading-relaxed">
+                        <h4 className="font-semibold mb-2 text-sm sm:text-base">{method}</h4>
+                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                           {getMethodDescription(method)}
                         </p>
                       </div>
@@ -408,12 +408,12 @@ export default function DecisionHelper() {
                 </div>
               )}
 
-              <div className="flex justify-center mt-8 pt-8 border-t">
+              <div className="flex justify-center mt-6 sm:mt-8 pt-6 sm:pt-8 border-t">
                 <button
                   onClick={handleRestart}
-                  className="px-8 py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg"
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                   </svg>
                   Start Over
@@ -421,25 +421,25 @@ export default function DecisionHelper() {
               </div>
 
               {/* CTA Section */}
-              <div className="mt-8 pt-8">
-                <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-8 text-center">
-                  <h3 className="text-2xl font-semibold mb-3">Need Help Implementing These Principles?</h3>
-                  <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+              <div className="mt-6 sm:mt-8 pt-6 sm:pt-8">
+                <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Implementing These Principles?</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
                     We'd love to help you apply these pragmatic UX principles to your project. Let's work together to create better user experiences.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <a
                       href={getEmailLink()}
-                      className="px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center"
+                      className="px-5 py-2.5 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm sm:text-base"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>
                       Get in Touch
                     </a>
                     <a
                       href="/about"
-                      className="px-6 py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105"
+                      className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
                     >
                       Learn More About Us
                     </a>

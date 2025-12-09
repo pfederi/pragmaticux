@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t py-6 mt-auto">
+    <footer className="border-t py-4 sm:py-6 mt-auto">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex items-center justify-between">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
             &copy; 2025 Pragmatic UX Design. All rights reserved.
           </p>
           <a
@@ -15,7 +15,7 @@ export default function Footer() {
             <img
               src="/assets/images/ergon_logo.svg"
               alt="Ergon Informatik AG"
-              className="h-6 w-auto grayscale hover:grayscale-0 transition-all"
+              className="h-5 sm:h-6 w-auto grayscale hover:grayscale-0 transition-all"
               width="120"
               height="40"
             />
