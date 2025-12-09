@@ -1,6 +1,6 @@
 # Pragmatic UX Design
 
-A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles for your situation.
+A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles for your specific situation.
 
 ## 🚀 Getting Started
 
@@ -37,6 +37,13 @@ npm run build
 npm start
 ```
 
+### Linting
+
+```bash
+# Run ESLint
+npm run lint
+```
+
 ## 📁 Project Structure
 
 ```
@@ -45,83 +52,121 @@ pragmaticux/
 │   ├── about/             # About page
 │   ├── decision-helper/  # Decision Helper page
 │   ├── principles/        # Individual principle pages
-│   ├── layout.tsx         # Root layout
+│   │   └── [id]/         # Dynamic route for principle details
+│   ├── layout.tsx         # Root layout with Navigation & Footer
 │   ├── page.tsx          # Home page
-│   └── globals.css        # Global styles
+│   └── globals.css        # Global styles and Tailwind imports
 ├── components/            # React components
-│   ├── About.tsx
-│   ├── CTA.tsx
-│   ├── DecisionHelper.tsx
-│   ├── Footer.tsx
-│   ├── Hero.tsx
-│   ├── Layout.tsx
-│   ├── Navigation.tsx
-│   ├── PrinciplesOverview.tsx
-│   └── Workflow.tsx
+│   ├── About.tsx          # About page content
+│   ├── CTA.tsx            # Call-to-action component
+│   ├── DecisionHelper.tsx # Interactive decision helper
+│   ├── Footer.tsx         # Site footer
+│   ├── Hero.tsx           # Hero section
+│   ├── Layout.tsx         # Main layout wrapper
+│   ├── Navigation.tsx     # Header navigation with mobile menu
+│   ├── PrinciplesOverview.tsx # Principles grid overview
+│   └── Workflow.tsx       # Workflow section
 ├── data/                  # Data files
 │   ├── principles.json    # Core principles data
 │   ├── decision_tree.json # Decision tree for helper
-│   ├── principles.ts      # TypeScript types
-│   └── decisionTree.ts    # TypeScript types
+│   ├── principles.ts      # Principles TypeScript exports
+│   └── decisionTree.ts    # Decision tree TypeScript exports
 ├── lib/                   # Utility functions
-│   └── utils.ts           # Helper functions
+│   └── utils.ts           # Helper functions (cn, etc.)
 ├── public/                # Static assets
 │   └── assets/
 │       └── images/
 │           └── ergon_logo.svg
-└── types/                 # TypeScript type definitions
+├── types/                 # TypeScript type definitions
+│   ├── decisionTree.ts    # Decision tree types
+│   └── index.ts          # Shared types (Principle, etc.)
+├── .cursor/              # Cursor IDE rules
+├── next.config.js        # Next.js configuration
+├── tailwind.config.js    # Tailwind CSS configuration
+├── postcss.config.js     # PostCSS configuration
+└── tsconfig.json         # TypeScript configuration
 ```
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15 (React 19)
-- **Styling**: Tailwind CSS
-- **Language**: TypeScript
+- **Framework**: Next.js 15.5.7 (React 19.2.1)
+- **Styling**: Tailwind CSS 3.4.0
+- **Language**: TypeScript 5.9.3
 - **Icons**: Lucide React
-- **Deployment**: Ready for Vercel, Netlify, or any Node.js hosting
+- **Utilities**: clsx, tailwind-merge, class-variance-authority
+- **Deployment**: Optimized for Vercel (also works with Netlify, AWS Amplify, Railway)
 
 ## 📝 Features
 
 ### Core Principles
-Eight fundamental UX principles with detailed explanations and practical examples:
-1. UX Should Fit the Process
-2. Efficiency Over Delight
-3. Empower, Not Overcomplicate
-4. Theory Is Nice, but Execution Wins
-5. Research Should Be Right-Sized
-6. Scale to Product Needs
-7. Iterate with Purpose
-8. Reuse Design Systems
+Eight fundamental UX principles with detailed explanations, practical examples, and key questions:
+
+1. **UX Should Fit the Process** - Adapt UX methods to your team's workflow
+2. **Efficiency Over Delight** - Focus on what truly matters for users and business
+3. **Empower, Not Overcomplicate** - Simplify rather than add complexity
+4. **Theory Is Nice, but Execution Wins** - Practical implementation beats perfect theory
+5. **Research Should Be Right-Sized** - Match research depth to project needs
+6. **Scale to Product Needs** - Adjust UX approach based on product maturity
+7. **Iterate with Purpose** - Make informed iterations based on real insights
+8. **Reuse Design Systems** - Leverage existing patterns and components
+
+Each principle page includes:
+- Detailed explanation
+- Why it matters (key benefits)
+- Practical examples
+- Key questions to ask
 
 ### Decision Helper
 An interactive tool that guides users through a series of questions to identify the most relevant principles for their specific situation. Features include:
-- Progressive question flow
-- Answer editing without restarting
-- State persistence using localStorage
-- Personalized recommendations
-- Suggested methods for implementation
+
+- **Progressive Question Flow**: Step-by-step guidance through relevant questions
+- **Answer Editing**: Edit any answer without restarting the entire process
+- **State Persistence**: Progress saved in localStorage across sessions
+- **Personalized Recommendations**: Get tailored principle suggestions based on your answers
+- **Suggested Methods**: Receive specific UX methods to implement
+- **Email Integration**: Pre-filled email template with results for easy sharing
 
 ### Responsive Design
-Fully optimized for mobile, tablet, and desktop devices with:
-- Mobile-first navigation with hamburger menu
-- Responsive typography and spacing
-- Touch-friendly interactive elements
-- Optimized layouts for all screen sizes
+Fully optimized for mobile, tablet, and desktop devices:
+
+- **Mobile-First Navigation**: Hamburger menu with collapsible submenu for principles
+- **Responsive Typography**: Scales appropriately across all screen sizes
+- **Touch-Friendly Elements**: Optimized button sizes and spacing for mobile
+- **Adaptive Layouts**: Grid systems that stack on mobile, expand on larger screens
+- **Optimized Spacing**: Consistent padding and margins across breakpoints
+
+### Performance Optimizations
+
+- Static page generation where possible
+- Optimized images and assets
+- Efficient code splitting
+- Fast page loads and smooth transitions
 
 ## 🎨 Design Principles
 
 The website itself follows pragmatic UX principles:
+
 - **Clear Information Architecture**: Easy navigation and content discovery
-- **Progressive Disclosure**: Information revealed as needed
-- **Accessible Design**: Semantic HTML and ARIA attributes
+- **Progressive Disclosure**: Information revealed as needed (mobile menu, decision helper)
+- **Accessible Design**: Semantic HTML, ARIA attributes, keyboard navigation
 - **Performance**: Optimized loading and rendering
 - **User-Centered**: Focus on user needs and goals
+- **Consistent Design Language**: Unified color scheme, typography, and spacing
 
 ## 📦 Deployment
 
-This Next.js application can be deployed to any platform that supports Node.js:
+This Next.js application is optimized for deployment on Vercel and other modern hosting platforms.
 
 ### Vercel (Recommended)
+
+The easiest way to deploy is using Vercel:
+
+1. Push your code to GitHub
+2. Import your repository in Vercel
+3. Vercel will automatically detect Next.js and configure the build
+
+Or use the Vercel CLI:
+
 ```bash
 # Install Vercel CLI
 npm i -g vercel
@@ -131,17 +176,48 @@ vercel
 ```
 
 ### Other Platforms
-The application can be deployed to:
-- Netlify
-- AWS Amplify
-- Railway
-- Any Node.js hosting service
 
-Simply run `npm run build` and deploy the `.next` folder along with `package.json`.
+The application can be deployed to any platform that supports Node.js:
+
+- **Netlify**: Connect your Git repository, Netlify will auto-detect Next.js
+- **AWS Amplify**: Connect repository, configure build settings
+- **Railway**: Connect repository, Railway auto-detects Next.js
+- **Any Node.js hosting**: Run `npm run build` and deploy the `.next` folder
+
+### Build Configuration
+
+The project uses Next.js 15 with:
+- App Router (app directory)
+- Server Components by default
+- Static generation where possible
+- Dynamic routes for principle pages
+
+## 🔧 Development Notes
+
+### Next.js 15 Compatibility
+
+This project uses Next.js 15 features:
+- `params` in dynamic routes are now Promises (must be awaited)
+- Server Components by default
+- Improved TypeScript support
+
+### TypeScript
+
+All components and utilities are fully typed. The project includes:
+- Type definitions for principles and decision tree
+- Strict type checking enabled
+- Type-safe data imports
+
+### Styling
+
+- Tailwind CSS for utility-first styling
+- Custom color scheme using CSS variables
+- Responsive breakpoints: `sm:`, `md:`, `lg:`, `xl:`
+- Dark mode support (class-based)
 
 ## 🤝 Contributing
 
-This is a personal project by Patrick Federi. For questions or suggestions, please reach out via the contact form on the website.
+This is a personal project by Patrick Federi. For questions or suggestions, please reach out via the contact form on the website or through the email link in the Decision Helper results.
 
 ## 📄 License
 
@@ -154,4 +230,4 @@ Head of UX at Ergon Informatik AG
 
 ---
 
-Built with ❤️ using Next.js and Tailwind CSS
+Built with ❤️ using Next.js 15, React 19, and Tailwind CSS
