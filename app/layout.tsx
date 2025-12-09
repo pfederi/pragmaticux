@@ -6,7 +6,7 @@ import Layout from '@/components/Layout'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Pragmatic UX Design - Maximising impact without overcomplicating design',
+  title: 'Pragmatic UX Design - Maximising impact without overcomplicating the process',
   description: 'A practical approach to user experience that adapts to real-world conditions.',
   icons: {
     icon: '/favicon.svg',
