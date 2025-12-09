@@ -11,7 +11,7 @@ export interface DecisionTreeQuestion {
 }
 
 export interface DecisionTreeRule {
-  if: Record<string, string>
+  if: Partial<Record<string, string>>
   then: {
     principles?: string[]
     methods?: string[]

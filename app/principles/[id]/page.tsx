@@ -4,13 +4,14 @@ import { ChevronLeft, ChevronRight, ArrowLeft, CheckCircle, Lightbulb } from 'lu
 import { getPrincipleByOrder, principles } from '@/data/principles'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function PrincipleDetailPage({ params }: PageProps) {
-  const order = parseInt(params.id)
+export default async function PrincipleDetailPage({ params }: PageProps) {
+  const { id } = await params
+  const order = parseInt(id)
   const principle = getPrincipleByOrder(order)
 
   if (!principle) {
