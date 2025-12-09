@@ -24,10 +24,11 @@ export default function Navigation() {
     { id: 8, title: 'Reuse Design Systems' },
   ]
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking outside (desktop only)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      // Only handle desktop dropdown, not mobile menu
+      if (window.innerWidth >= 768 && dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsPrinciplesOpen(false)
       }
     }
@@ -125,7 +126,12 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={() => {
+              setIsMobileMenuOpen(!isMobileMenuOpen)
+              if (isMobileMenuOpen) {
+                setIsPrinciplesOpen(false)
+              }
+            }}
             className="md:hidden p-2 hover:bg-muted rounded-md transition-colors"
             aria-label="Toggle menu"
           >
@@ -143,7 +149,10 @@ export default function Navigation() {
             <div className="flex flex-col gap-4">
               <Link
                 href="/"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setIsPrinciplesOpen(false)
+                }}
                 className={cn(
                   "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
                   pathname === "/" && "text-primary"
@@ -154,7 +163,10 @@ export default function Navigation() {
 
               <div className="px-4">
                 <button
-                  onClick={togglePrinciples}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    togglePrinciples()
+                  }}
                   className={cn(
                     "flex items-center justify-between w-full px-0 py-2 text-sm font-medium hover:text-primary transition-colors",
                     pathname.startsWith("/principles") && "text-primary"
@@ -169,13 +181,15 @@ export default function Navigation() {
                   />
                 </button>
                 {isPrinciplesOpen && (
-                  <div className="mt-2 ml-4 space-y-2">
+                  <div className="mt-2 ml-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
                     {principles.map((p) => (
                       <button
                         key={p.id}
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.preventDefault()
                           handlePrincipleClick(p.id)
                           setIsMobileMenuOpen(false)
+                          setIsPrinciplesOpen(false)
                         }}
                         className={cn(
                           "w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors flex items-center gap-3 rounded-md",
@@ -194,7 +208,10 @@ export default function Navigation() {
 
               <Link
                 href="/decision-helper"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setIsPrinciplesOpen(false)
+                }}
                 className={cn(
                   "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
                   pathname === "/decision-helper" && "text-primary"
@@ -204,7 +221,10 @@ export default function Navigation() {
               </Link>
               <Link
                 href="/about"
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setIsPrinciplesOpen(false)
+                }}
                 className={cn(
                   "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
                   pathname === "/about" && "text-primary"
