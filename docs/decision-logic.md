@@ -139,7 +139,101 @@ This rule matches if:
 
 ## 4. Result Calculation
 
-### 4.1 Combining Multiple Rules
+### 4.1 Complete Rule Reference
+
+The decision tree contains **15 rules** total. Each rule has a unique condition and contributes principles and methods when matched.
+
+| Rule # | Condition (IF) | Principles | Methods | Used in Examples |
+|--------|----------------|-----------|---------|------------------|
+| **1** | `context: "startup"` AND `challenge: "efficiency"` | p02, p01 | Task Flow Redesign, Checkout Simplification, Performance Audits | Example 1 |
+| **2** | `context: "startup"` AND `challenge: "fast_decisions"` | p03, p05, p04 | One-Page Findings, Rapid Usability Audit, Guerrilla Testing, Sketching Sessions | Example 2 |
+| **3** | `context: "startup"` AND `challenge: "iteration_churn"` | p07, p02 | Impact Mapping, Top-3 Friction Fix, Focused A/B Testing | Example 8 |
+| **4** | `context: "startup"` AND `challenge: "ship_faster"` | p08, p01 | Design System Adoption, Component Reuse, Design Tokens | Example 5 |
+| **5** | `context: "eng_driven"` AND `challenge: "efficiency"` | p01, p02 | Co-Design with Devs, Constraint-First Wireframes, Performance Budgets | Example 4 |
+| **6** | `context: "eng_driven"` AND `challenge: "fast_decisions"` | p03, p04 | Tech-Feasibility Notes, One-Pager Decision Logs, Rapid UX Audits | - |
+| **7** | `context: "eng_driven"` AND `challenge: "iteration_churn"` | p07 | UX Bug Bash, Top-3 UX Debt List, Canary Releases | Example 7 |
+| **8** | `context: "eng_driven"` AND `challenge: "ship_faster"` | p08, p01 | Shared Component Libraries, Design Tokens, Pattern Documentation | Example 10 |
+| **9** | `context: "corporate"` AND `challenge: "efficiency"` | p02, p06 | Workflow Simplification, Field Studies, Task Analysis | Example 9 |
+| **10** | `context: "corporate"` AND `challenge: "fast_decisions"` | p03, p05 | Executive Summaries, Rapid Testing, Stakeholder Workshops | Example 6 |
+| **11** | `context: "corporate"` AND `challenge: "iteration_churn"` | p07, p06 | Goal-Oriented Roadmaps, Top-3 Metrics Dashboards, Prioritization Workshops | Example 3 |
+| **12** | `context: "corporate"` AND `challenge: "ship_faster"` | p08, p06 | Enterprise Design System, Cross-Team Libraries, Reusable Templates | - |
+| **13** | `time_budget: "tight"` | p05, p04 | Guerrilla Testing, Rapid Prototyping, Lean Personas | Examples 2, 4, 6, 8, 10 |
+| **14** | `time_budget: "adequate"` | p06 | Deep Interviews, Usability Labs, Cross-Functional Workshops | Examples 3, 5, 7, 9 |
+| **15** | `ux_acceptance: "low"` | p01, p03 | Lightweight Deliverables, Embedded UX Sessions, Sketch Reviews | Examples 2, 4, 6, 8 |
+| **16** | `ux_acceptance: "high"` | p07, p08 | Continuous Testing, Design System Scaling, Component Governance | Examples 1, 3, 5, 7, 9, 10 |
+
+**Note:** Rules are evaluated in order (1-16), and **all matching rules** contribute to the final results. Multiple rules can match simultaneously.
+
+### 4.2 Rule Matching Matrix
+
+This matrix shows which rules match for each combination of answers:
+
+| Context | Challenge | Time/Budget | UX Acceptance | Matching Rules |
+|---------|-----------|-------------|---------------|----------------|
+| startup | efficiency | tight | high | **1**, **13**, **16** |
+| startup | efficiency | tight | low | **1**, **13**, **15** |
+| startup | efficiency | adequate | high | **1**, **14**, **16** |
+| startup | efficiency | adequate | low | **1**, **14**, **15** |
+| startup | fast_decisions | tight | high | **2**, **13**, **16** |
+| startup | fast_decisions | tight | low | **2**, **13**, **15** |
+| startup | fast_decisions | adequate | high | **2**, **14**, **16** |
+| startup | fast_decisions | adequate | low | **2**, **14**, **15** |
+| startup | iteration_churn | tight | high | **3**, **13**, **16** |
+| startup | iteration_churn | tight | low | **3**, **13**, **15** |
+| startup | iteration_churn | adequate | high | **3**, **14**, **16** |
+| startup | iteration_churn | adequate | low | **3**, **14**, **15** |
+| startup | ship_faster | tight | high | **4**, **13**, **16** |
+| startup | ship_faster | tight | low | **4**, **13**, **15** |
+| startup | ship_faster | adequate | high | **4**, **14**, **16** |
+| startup | ship_faster | adequate | low | **4**, **14**, **15** |
+| eng_driven | efficiency | tight | high | **5**, **13**, **16** |
+| eng_driven | efficiency | tight | low | **5**, **13**, **15** |
+| eng_driven | efficiency | adequate | high | **5**, **14**, **16** |
+| eng_driven | efficiency | adequate | low | **5**, **14**, **15** |
+| eng_driven | fast_decisions | tight | high | **6**, **13**, **16** |
+| eng_driven | fast_decisions | tight | low | **6**, **13**, **15** |
+| eng_driven | fast_decisions | adequate | high | **6**, **14**, **16** |
+| eng_driven | fast_decisions | adequate | low | **6**, **14**, **15** |
+| eng_driven | iteration_churn | tight | high | **7**, **13**, **16** |
+| eng_driven | iteration_churn | tight | low | **7**, **13**, **15** |
+| eng_driven | iteration_churn | adequate | high | **7**, **14**, **16** |
+| eng_driven | iteration_churn | adequate | low | **7**, **14**, **15** |
+| eng_driven | ship_faster | tight | high | **8**, **13**, **16** |
+| eng_driven | ship_faster | tight | low | **8**, **13**, **15** |
+| eng_driven | ship_faster | adequate | high | **8**, **14**, **16** |
+| eng_driven | ship_faster | adequate | low | **8**, **14**, **15** |
+| corporate | efficiency | tight | high | **9**, **13**, **16** |
+| corporate | efficiency | tight | low | **9**, **13**, **15** |
+| corporate | efficiency | adequate | high | **9**, **14**, **16** |
+| corporate | efficiency | adequate | low | **9**, **14**, **15** |
+| corporate | fast_decisions | tight | high | **10**, **13**, **16** |
+| corporate | fast_decisions | tight | low | **10**, **13**, **15** |
+| corporate | fast_decisions | adequate | high | **10**, **14**, **16** |
+| corporate | fast_decisions | adequate | low | **10**, **14**, **15** |
+| corporate | iteration_churn | tight | high | **11**, **13**, **16** |
+| corporate | iteration_churn | tight | low | **11**, **13**, **15** |
+| corporate | iteration_churn | adequate | high | **11**, **14**, **16** |
+| corporate | iteration_churn | adequate | low | **11**, **14**, **15** |
+| corporate | ship_faster | tight | high | **12**, **13**, **16** |
+| corporate | ship_faster | tight | low | **12**, **13**, **15** |
+| corporate | ship_faster | adequate | high | **12**, **14**, **16** |
+| corporate | ship_faster | adequate | low | **12**, **14**, **15** |
+
+**Key:**
+- **Bold numbers** = Context + Challenge rule (1-12)
+- **13** = Time/Budget: tight rule
+- **14** = Time/Budget: adequate rule
+- **15** = UX Acceptance: low rule
+- **16** = UX Acceptance: high rule
+
+**Example:** For `startup + fast_decisions + tight + low`, rules **2**, **13**, and **15** match, contributing:
+- From Rule 2: p03, p05, p04 + 4 methods
+- From Rule 13: p05, p04 + 3 methods
+- From Rule 15: p01, p03 + 3 methods
+- **Combined**: p03, p05, p04, p01 (4 principles) → limited to 3: p03, p05, p04
+- **Combined**: 10 methods → deduplicated → limited to 6
+
+### 4.3 Combining Multiple Rules
 
 ```mermaid
 graph TB
@@ -171,7 +265,7 @@ graph TB
     style Final fill:#ff9800
 ```
 
-### 4.2 Result Processing Steps
+### 4.4 Result Processing Steps
 
 ```typescript
 // Step 1: Collect all principles and methods from matching rules
@@ -215,7 +309,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 1**, **Rule 13**, **Rule 16**
+
+**Rule 1** (Context + Challenge):
 ```json
 {
   "if": { "context": "startup", "challenge": "efficiency" },
@@ -226,9 +322,35 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Result:**
-- **Principles**: p02, p01 (2 principles)
-- **Methods**: Task Flow Redesign, Checkout Simplification, Performance Audits (3 methods)
+**Rule 13** (Time/Budget: tight):
+```json
+{
+  "if": { "time_budget": "tight" },
+  "then": {
+    "principles": ["p05", "p04"],
+    "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+  }
+}
+```
+
+**Rule 16** (UX Acceptance: high):
+```json
+{
+  "if": { "ux_acceptance": "high" },
+  "then": {
+    "principles": ["p07", "p08"],
+    "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+  }
+}
+```
+
+**Combined Results (before deduplication):**
+- **Principles**: p02, p01, p05, p04, p07, p08 (6 entries)
+- **Methods**: Task Flow Redesign, Checkout Simplification, Performance Audits, Guerrilla Testing, Rapid Prototyping, Lean Personas, Continuous Testing, Design System Scaling, Component Governance (9 entries)
+
+**Final Results (after deduplication and limiting):**
+- **Principles**: p02, p01, p05 (3 principles - p04, p07, p08 dropped due to limit)
+- **Methods**: Task Flow Redesign, Checkout Simplification, Performance Audits, Guerrilla Testing, Rapid Prototyping, Lean Personas (6 methods)
 
 ---
 
@@ -240,9 +362,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "low"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 2**, **Rule 13**, **Rule 15**
 
-**Rule 1:**
+**Rule 2** (Context + Challenge):
 ```json
 {
   "if": { "context": "startup", "challenge": "fast_decisions" },
@@ -253,7 +375,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 13** (Time/Budget: tight):
 ```json
 {
   "if": { "time_budget": "tight" },
@@ -264,7 +386,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 15** (UX Acceptance: low):
 ```json
 {
   "if": { "ux_acceptance": "low" },
@@ -293,9 +415,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "adequate"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 11**, **Rule 14**, **Rule 16**
 
-**Rule 1:**
+**Rule 11** (Context + Challenge):
 ```json
 {
   "if": { "context": "corporate", "challenge": "iteration_churn" },
@@ -306,7 +428,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 14** (Time/Budget: adequate):
 ```json
 {
   "if": { "time_budget": "adequate" },
@@ -317,7 +439,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 16** (UX Acceptance: high):
 ```json
 {
   "if": { "ux_acceptance": "high" },
@@ -342,9 +464,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "low"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 5**, **Rule 13**, **Rule 15**
 
-**Rule 1:**
+**Rule 5** (Context + Challenge):
 ```json
 {
   "if": { "context": "eng_driven", "challenge": "efficiency" },
@@ -355,7 +477,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 13** (Time/Budget: tight):
 ```json
 {
   "if": { "time_budget": "tight" },
@@ -366,7 +488,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 15** (UX Acceptance: low):
 ```json
 {
   "if": { "ux_acceptance": "low" },
@@ -391,9 +513,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "adequate"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 4**, **Rule 14**, **Rule 16**
 
-**Rule 1:**
+**Rule 4** (Context + Challenge):
 ```json
 {
   "if": { "context": "startup", "challenge": "ship_faster" },
@@ -404,7 +526,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 14** (Time/Budget: adequate):
 ```json
 {
   "if": { "time_budget": "adequate" },
@@ -415,7 +537,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 16** (UX Acceptance: high):
 ```json
 {
   "if": { "ux_acceptance": "high" },
@@ -440,9 +562,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "low"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 10**, **Rule 13**, **Rule 15**
 
-**Rule 1:**
+**Rule 10** (Context + Challenge):
 ```json
 {
   "if": { "context": "corporate", "challenge": "fast_decisions" },
@@ -453,7 +575,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 13** (Time/Budget: tight):
 ```json
 {
   "if": { "time_budget": "tight" },
@@ -464,7 +586,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 15** (UX Acceptance: low):
 ```json
 {
   "if": { "ux_acceptance": "low" },
@@ -489,9 +611,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "adequate"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 7**, **Rule 14**, **Rule 16**
 
-**Rule 1:**
+**Rule 7** (Context + Challenge):
 ```json
 {
   "if": { "context": "eng_driven", "challenge": "iteration_churn" },
@@ -502,7 +624,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 14** (Time/Budget: adequate):
 ```json
 {
   "if": { "time_budget": "adequate" },
@@ -513,7 +635,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 16** (UX Acceptance: high):
 ```json
 {
   "if": { "ux_acceptance": "high" },
@@ -538,9 +660,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "low"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 3**, **Rule 13**, **Rule 15**
 
-**Rule 1:**
+**Rule 3** (Context + Challenge):
 ```json
 {
   "if": { "context": "startup", "challenge": "iteration_churn" },
@@ -551,7 +673,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 13** (Time/Budget: tight):
 ```json
 {
   "if": { "time_budget": "tight" },
@@ -562,7 +684,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 15** (UX Acceptance: low):
 ```json
 {
   "if": { "ux_acceptance": "low" },
@@ -587,9 +709,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "adequate"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 9**, **Rule 14**, **Rule 16**
 
-**Rule 1:**
+**Rule 9** (Context + Challenge):
 ```json
 {
   "if": { "context": "corporate", "challenge": "efficiency" },
@@ -600,7 +722,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 14** (Time/Budget: adequate):
 ```json
 {
   "if": { "time_budget": "adequate" },
@@ -611,7 +733,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 16** (UX Acceptance: high):
 ```json
 {
   "if": { "ux_acceptance": "high" },
@@ -636,9 +758,9 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 - `time_budget: "tight"`
 - `ux_acceptance: "high"`
 
-**Matching Rules:**
+**Matching Rules:** **Rule 8**, **Rule 13**, **Rule 16**
 
-**Rule 1:**
+**Rule 8** (Context + Challenge):
 ```json
 {
   "if": { "context": "eng_driven", "challenge": "ship_faster" },
@@ -649,7 +771,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 2:**
+**Rule 13** (Time/Budget: tight):
 ```json
 {
   "if": { "time_budget": "tight" },
@@ -660,7 +782,7 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 }
 ```
 
-**Rule 3:**
+**Rule 16** (UX Acceptance: high):
 ```json
 {
   "if": { "ux_acceptance": "high" },
