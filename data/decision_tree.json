@@ -1,0 +1,168 @@
+{
+  "version": "1.1",
+  "meta": {
+    "title": "Pragmatic UX Design Decision Helper",
+    "language": "en",
+    "description": "Interactive decision tree that suggests up to 3 Principles with supporting Methods.",
+    "principles_ref": "p01..p08 from the Principles JSON"
+  },
+  "questions": [
+    {
+      "id": "context",
+      "label": "What type of project environment are you working in?",
+      "type": "single",
+      "options": [
+        { "value": "startup", "label": "Startup / fast-paced" },
+        { "value": "eng_driven", "label": "Engineering-driven team" },
+        { "value": "corporate", "label": "Corporate / high risk or compliance" }
+      ]
+    },
+    {
+      "id": "challenge",
+      "label": "What is your biggest current challenge?",
+      "type": "single",
+      "options": [
+        { "value": "efficiency", "label": "Improving user efficiency" },
+        { "value": "fast_decisions", "label": "Stakeholders need quick decisions" },
+        { "value": "iteration_churn", "label": "Too much iteration without progress" },
+        { "value": "ship_faster", "label": "Shipping features faster" }
+      ]
+    },
+    {
+      "id": "time_budget",
+      "label": "How are your time and budget constraints?",
+      "type": "single",
+      "options": [
+        { "value": "tight", "label": "Tight / limited" },
+        { "value": "adequate", "label": "Adequate / flexible" }
+      ]
+    },
+    {
+      "id": "ux_acceptance",
+      "label": "How high is the UX acceptance in your team?",
+      "type": "single",
+      "options": [
+        { "value": "low", "label": "Rather low" },
+        { "value": "high", "label": "Rather high" }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "if": { "context": "startup", "challenge": "efficiency" },
+      "then": {
+        "principles": ["p02", "p01"],
+        "methods": ["Task Flow Redesign", "Checkout Simplification", "Performance Audits"]
+      }
+    },
+    {
+      "if": { "context": "startup", "challenge": "fast_decisions" },
+      "then": {
+        "principles": ["p03", "p05", "p04"],
+        "methods": ["One-Page Findings", "Rapid Usability Audit", "Guerrilla Testing", "Sketching Sessions"]
+      }
+    },
+    {
+      "if": { "context": "startup", "challenge": "iteration_churn" },
+      "then": {
+        "principles": ["p07", "p02"],
+        "methods": ["Impact Mapping", "Top-3 Friction Fix", "Focused A/B Testing"]
+      }
+    },
+    {
+      "if": { "context": "startup", "challenge": "ship_faster" },
+      "then": {
+        "principles": ["p08", "p01"],
+        "methods": ["Design System Adoption", "Component Reuse", "Design Tokens"]
+      }
+    },
+
+    {
+      "if": { "context": "eng_driven", "challenge": "efficiency" },
+      "then": {
+        "principles": ["p01", "p02"],
+        "methods": ["Co-Design with Devs", "Constraint-First Wireframes", "Performance Budgets"]
+      }
+    },
+    {
+      "if": { "context": "eng_driven", "challenge": "fast_decisions" },
+      "then": {
+        "principles": ["p03", "p04"],
+        "methods": ["Tech-Feasibility Notes", "One-Pager Decision Logs", "Rapid UX Audits"]
+      }
+    },
+    {
+      "if": { "context": "eng_driven", "challenge": "iteration_churn" },
+      "then": {
+        "principles": ["p07"],
+        "methods": ["UX Bug Bash", "Top-3 UX Debt List", "Canary Releases"]
+      }
+    },
+    {
+      "if": { "context": "eng_driven", "challenge": "ship_faster" },
+      "then": {
+        "principles": ["p08", "p01"],
+        "methods": ["Shared Component Libraries", "Design Tokens", "Pattern Documentation"]
+      }
+    },
+
+    {
+      "if": { "context": "corporate", "challenge": "efficiency" },
+      "then": {
+        "principles": ["p02", "p06"],
+        "methods": ["Workflow Simplification", "Field Studies", "Task Analysis"]
+      }
+    },
+    {
+      "if": { "context": "corporate", "challenge": "fast_decisions" },
+      "then": {
+        "principles": ["p03", "p05"],
+        "methods": ["Executive Summaries", "Rapid Testing", "Stakeholder Workshops"]
+      }
+    },
+    {
+      "if": { "context": "corporate", "challenge": "iteration_churn" },
+      "then": {
+        "principles": ["p07", "p06"],
+        "methods": ["Goal-Oriented Roadmaps", "Top-3 Metrics Dashboards", "Prioritization Workshops"]
+      }
+    },
+    {
+      "if": { "context": "corporate", "challenge": "ship_faster" },
+      "then": {
+        "principles": ["p08", "p06"],
+        "methods": ["Enterprise Design System", "Cross-Team Libraries", "Reusable Templates"]
+      }
+    },
+
+    {
+      "if": { "time_budget": "tight" },
+      "then": {
+        "principles": ["p05", "p04"],
+        "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+      }
+    },
+    {
+      "if": { "time_budget": "adequate" },
+      "then": {
+        "principles": ["p06"],
+        "methods": ["Deep Interviews", "Usability Labs", "Cross-Functional Workshops"]
+      }
+    },
+
+    {
+      "if": { "ux_acceptance": "low" },
+      "then": {
+        "principles": ["p01", "p03"],
+        "methods": ["Lightweight Deliverables", "Embedded UX Sessions", "Sketch Reviews"]
+      }
+    },
+    {
+      "if": { "ux_acceptance": "high" },
+      "then": {
+        "principles": ["p07", "p08"],
+        "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+      }
+    }
+  ]
+}

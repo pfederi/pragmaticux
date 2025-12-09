@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output
+dist/
+
+# Development
+.DS_Store
+*.log
+
+# SSH Config (contains sensitive data)
+ssh-config.js
+
+# Live Server
+.live-server.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db

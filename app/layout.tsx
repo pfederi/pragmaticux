@@ -1,0 +1,26 @@
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Layout from '@/components/Layout'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata: Metadata = {
+  title: 'Pragmatic UX Design - Maximising impact without overcomplicating design',
+  description: 'A practical approach to user experience that adapts to real-world conditions.',
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className="dark">
+      <body className={inter.className}>
+        <Layout>{children}</Layout>
+      </body>
+    </html>
+  )
+}
+

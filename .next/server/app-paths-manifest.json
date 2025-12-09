@@ -1,0 +1,6 @@
+{
+  "/principles/[id]/page": "app/principles/[id]/page.js",
+  "/decision-helper/page": "app/decision-helper/page.js",
+  "/page": "app/page.js",
+  "/about/page": "app/about/page.js"
+}
