@@ -334,6 +334,349 @@ combinedResults.methods = combinedResults.methods.slice(0, 6)
 
 ---
 
+### 5.4 Example 4: Engineering-Driven Team
+
+**User Answers:**
+- `context: "eng_driven"`
+- `challenge: "efficiency"`
+- `time_budget: "tight"`
+- `ux_acceptance: "low"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "eng_driven", "challenge": "efficiency" },
+  "then": {
+    "principles": ["p01", "p02"],
+    "methods": ["Co-Design with Devs", "Constraint-First Wireframes", "Performance Budgets"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "tight" },
+  "then": {
+    "principles": ["p05", "p04"],
+    "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "low" },
+  "then": {
+    "principles": ["p01", "p03"],
+    "methods": ["Lightweight Deliverables", "Embedded UX Sessions", "Sketch Reviews"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p01, p02, p05 (3 principles - p01 appears twice but deduplicated, p04 and p03 dropped due to limit)
+- **Methods**: Co-Design with Devs, Constraint-First Wireframes, Performance Budgets, Guerrilla Testing, Rapid Prototyping, Lean Personas (6 methods)
+
+---
+
+### 5.5 Example 5: Startup Shipping Faster
+
+**User Answers:**
+- `context: "startup"`
+- `challenge: "ship_faster"`
+- `time_budget: "adequate"`
+- `ux_acceptance: "high"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "startup", "challenge": "ship_faster" },
+  "then": {
+    "principles": ["p08", "p01"],
+    "methods": ["Design System Adoption", "Component Reuse", "Design Tokens"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "adequate" },
+  "then": {
+    "principles": ["p06"],
+    "methods": ["Deep Interviews", "Usability Labs", "Cross-Functional Workshops"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "high" },
+  "then": {
+    "principles": ["p07", "p08"],
+    "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p08, p01, p07 (3 principles - p08 appears twice but deduplicated, p06 dropped due to limit)
+- **Methods**: Design System Adoption, Component Reuse, Design Tokens, Deep Interviews, Usability Labs, Cross-Functional Workshops (6 methods)
+
+---
+
+### 5.6 Example 6: Corporate Fast Decisions
+
+**User Answers:**
+- `context: "corporate"`
+- `challenge: "fast_decisions"`
+- `time_budget: "tight"`
+- `ux_acceptance: "low"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "corporate", "challenge": "fast_decisions" },
+  "then": {
+    "principles": ["p03", "p05"],
+    "methods": ["Executive Summaries", "Rapid Testing", "Stakeholder Workshops"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "tight" },
+  "then": {
+    "principles": ["p05", "p04"],
+    "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "low" },
+  "then": {
+    "principles": ["p01", "p03"],
+    "methods": ["Lightweight Deliverables", "Embedded UX Sessions", "Sketch Reviews"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p03, p05, p01 (3 principles - p05 appears twice but deduplicated, p04 dropped due to limit)
+- **Methods**: Executive Summaries, Rapid Testing, Stakeholder Workshops, Guerrilla Testing, Rapid Prototyping, Lean Personas (6 methods)
+
+---
+
+### 5.7 Example 7: Engineering-Driven Iteration Churn
+
+**User Answers:**
+- `context: "eng_driven"`
+- `challenge: "iteration_churn"`
+- `time_budget: "adequate"`
+- `ux_acceptance: "high"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "eng_driven", "challenge": "iteration_churn" },
+  "then": {
+    "principles": ["p07"],
+    "methods": ["UX Bug Bash", "Top-3 UX Debt List", "Canary Releases"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "adequate" },
+  "then": {
+    "principles": ["p06"],
+    "methods": ["Deep Interviews", "Usability Labs", "Cross-Functional Workshops"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "high" },
+  "then": {
+    "principles": ["p07", "p08"],
+    "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p07, p06, p08 (3 principles - p07 appears twice but deduplicated)
+- **Methods**: UX Bug Bash, Top-3 UX Debt List, Canary Releases, Deep Interviews, Usability Labs, Cross-Functional Workshops (6 methods - some methods from Rule 3 dropped due to limit)
+
+---
+
+### 5.8 Example 8: Startup Iteration Churn
+
+**User Answers:**
+- `context: "startup"`
+- `challenge: "iteration_churn"`
+- `time_budget: "tight"`
+- `ux_acceptance: "low"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "startup", "challenge": "iteration_churn" },
+  "then": {
+    "principles": ["p07", "p02"],
+    "methods": ["Impact Mapping", "Top-3 Friction Fix", "Focused A/B Testing"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "tight" },
+  "then": {
+    "principles": ["p05", "p04"],
+    "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "low" },
+  "then": {
+    "principles": ["p01", "p03"],
+    "methods": ["Lightweight Deliverables", "Embedded UX Sessions", "Sketch Reviews"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p07, p02, p05 (3 principles - p01, p03, p04 dropped due to limit)
+- **Methods**: Impact Mapping, Top-3 Friction Fix, Focused A/B Testing, Guerrilla Testing, Rapid Prototyping, Lean Personas (6 methods)
+
+---
+
+### 5.9 Example 9: Corporate Efficiency
+
+**User Answers:**
+- `context: "corporate"`
+- `challenge: "efficiency"`
+- `time_budget: "adequate"`
+- `ux_acceptance: "high"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "corporate", "challenge": "efficiency" },
+  "then": {
+    "principles": ["p02", "p06"],
+    "methods": ["Workflow Simplification", "Field Studies", "Task Analysis"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "adequate" },
+  "then": {
+    "principles": ["p06"],
+    "methods": ["Deep Interviews", "Usability Labs", "Cross-Functional Workshops"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "high" },
+  "then": {
+    "principles": ["p07", "p08"],
+    "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p02, p06, p07 (3 principles - p06 appears twice but deduplicated, p08 dropped due to limit)
+- **Methods**: Workflow Simplification, Field Studies, Task Analysis, Deep Interviews, Usability Labs, Cross-Functional Workshops (6 methods)
+
+---
+
+### 5.10 Example 10: Engineering-Driven Ship Faster
+
+**User Answers:**
+- `context: "eng_driven"`
+- `challenge: "ship_faster"`
+- `time_budget: "tight"`
+- `ux_acceptance: "high"`
+
+**Matching Rules:**
+
+**Rule 1:**
+```json
+{
+  "if": { "context": "eng_driven", "challenge": "ship_faster" },
+  "then": {
+    "principles": ["p08", "p01"],
+    "methods": ["Shared Component Libraries", "Design Tokens", "Pattern Documentation"]
+  }
+}
+```
+
+**Rule 2:**
+```json
+{
+  "if": { "time_budget": "tight" },
+  "then": {
+    "principles": ["p05", "p04"],
+    "methods": ["Guerrilla Testing", "Rapid Prototyping", "Lean Personas"]
+  }
+}
+```
+
+**Rule 3:**
+```json
+{
+  "if": { "ux_acceptance": "high" },
+  "then": {
+    "principles": ["p07", "p08"],
+    "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+  }
+}
+```
+
+**Final Results:**
+- **Principles**: p08, p01, p07 (3 principles - p08 appears twice but deduplicated, p05 and p04 dropped due to limit)
+- **Methods**: Shared Component Libraries, Design Tokens, Pattern Documentation, Guerrilla Testing, Rapid Prototyping, Lean Personas (6 methods)
+
+---
+
 ## 6. Question Flow
 
 ### 6.1 Question Sequence
