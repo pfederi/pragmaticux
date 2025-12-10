@@ -71,7 +71,7 @@ export default function Workflow() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12 md:mb-16">
           {steps.map((step, index) => (
             <div key={index} className="text-center group">
-              <div className="flex justify-center mb-4 sm:mb-6 text-primary group-hover:scale-110 transition-transform duration-300">
+              <div className="flex justify-center mb-4 sm:mb-6 text-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 <div className="p-3 sm:p-4 bg-primary/10 rounded-full">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18">
                     {step.icon}
@@ -87,10 +87,11 @@ export default function Workflow() {
         <div className="text-center">
           <Link
             href="/decision-helper"
-            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-primary-foreground rounded-lg font-semibold hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-sm sm:text-base"
+            className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-primary-foreground rounded-lg font-semibold hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Try the Decision Helper tool"
           >
             Try Decision Helper
-            <span className="text-base sm:text-lg">→</span>
+            <span className="text-base sm:text-lg" aria-hidden="true">→</span>
           </Link>
         </div>
       </div>

@@ -19,10 +19,11 @@ export default function PrinciplesOverview() {
             <Link
               key={principle.id}
               href={`/principles/${principle.order}`}
-              className="group bg-card border rounded-xl p-4 sm:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 flex flex-col h-full"
+              className="group bg-card border rounded-xl p-4 sm:p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 flex flex-col h-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              aria-label={`Read more about principle ${principle.order}: ${principle.title}`}
             >
               <div className="flex flex-col items-start gap-3 sm:gap-4 mb-4 sm:mb-6 min-h-[6rem] sm:min-h-[7rem]">
-                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 shadow-lg">
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs sm:text-sm flex-shrink-0 shadow-lg" aria-hidden="true">
                   {principle.order}
                 </div>
                 <h3 className="text-base sm:text-lg font-semibold group-hover:text-primary transition-colors leading-tight text-left">
@@ -31,7 +32,7 @@ export default function PrinciplesOverview() {
               </div>
               <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed line-clamp-5 flex-grow">{principle.summary}</p>
               <div className="flex items-center text-primary text-xs sm:text-sm font-semibold group-hover:translate-x-1 transition-transform mt-auto">
-                Read More →
+                Read More <span aria-hidden="true">→</span>
               </div>
             </Link>
           ))}

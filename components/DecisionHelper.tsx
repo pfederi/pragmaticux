@@ -279,29 +279,43 @@ export default function DecisionHelper() {
             <div>
               <div className="mb-10">
                 <div className="flex justify-between mb-2">
-                  <span className="text-sm font-medium text-muted-foreground">
+                  <span className="text-sm font-medium text-muted-foreground" id="question-counter">
                     Question {currentQuestionIndex + 1} of {questions.length}
                   </span>
-                  <span className="text-sm text-muted-foreground">
+                  <span className="text-sm text-muted-foreground" aria-hidden="true">
                     {Math.round((currentQuestionIndex / questions.length) * 100)}%
                   </span>
                 </div>
-                <div className="w-full bg-muted rounded-full h-2">
+                <div
+                  role="progressbar"
+                  aria-valuenow={currentQuestionIndex}
+                  aria-valuemin={0}
+                  aria-valuemax={questions.length}
+                  aria-label={`Progress: Question ${currentQuestionIndex + 1} of ${questions.length}`}
+                  className="w-full bg-muted rounded-full h-2"
+                >
                   <div
                     className="bg-primary h-2 rounded-full transition-all duration-300"
                     style={{ width: `${(currentQuestionIndex / questions.length) * 100}%` }}
+                    aria-hidden="true"
                   />
                 </div>
               </div>
 
-              <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">{currentQuestion.label}</h3>
+              <h3 id="question-label" className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">{currentQuestion.label}</h3>
 
-              <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 flex flex-col">
+              <div
+                role="radiogroup"
+                aria-labelledby="question-label"
+                className="space-y-2 sm:space-y-3 mb-4 sm:mb-6 flex flex-col"
+              >
                 {currentQuestion.options.map((option) => (
                   <button
                     key={option.value}
                     onClick={() => handleAnswer(currentQuestion.id, option.value)}
-                    className="w-full text-left p-3 sm:p-4 border rounded-lg hover:bg-muted hover:border-primary transition-colors text-sm sm:text-base"
+                    role="radio"
+                    aria-checked={userAnswers[currentQuestion.id] === option.value}
+                    className="w-full text-left p-3 sm:p-4 border rounded-lg hover:bg-muted hover:border-primary transition-colors text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                   >
                     {option.label}
                   </button>
@@ -312,15 +326,17 @@ export default function DecisionHelper() {
                 {currentQuestionIndex > 0 && (
                   <button
                     onClick={handleBack}
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1"
+                    aria-label="Go back to previous question"
                   >
-                    ← Back
+                    <span aria-hidden="true">←</span> Back
                   </button>
                 )}
                 {isEditing && questions.every((q) => userAnswers[q.id]) && (
                   <button
                     onClick={handleBackToResults}
-                    className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors"
+                    className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                    aria-label="Return to results"
                   >
                     Back to Results
                   </button>
@@ -345,8 +361,8 @@ export default function DecisionHelper() {
                         </div>
                         <button
                           onClick={() => handleEditAnswer(questionId)}
-                          className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors flex-shrink-0 px-2"
-                          title="Change answer"
+                          className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors flex-shrink-0 px-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
+                          aria-label={`Change answer for: ${questions.find((q) => q.id === questionId)?.label}`}
                         >
                           Change
                         </button>
@@ -368,10 +384,11 @@ export default function DecisionHelper() {
                         <Link
                           key={principleId}
                           href={`/principles/${principle.order}`}
-                          className="group bg-card border rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 flex flex-col h-full"
+                          className="group bg-card border rounded-xl p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 flex flex-col h-full focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                          aria-label={`Read more about principle ${principle.order}: ${principle.title}`}
                         >
                           <div className="flex flex-col items-start gap-4 mb-6 min-h-[7rem]">
-                            <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-lg">
+                            <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold text-sm flex-shrink-0 shadow-lg" aria-hidden="true">
                               {principle.order}
                             </div>
                             <h3 className="text-lg font-semibold group-hover:text-primary transition-colors leading-tight text-left">
@@ -380,7 +397,7 @@ export default function DecisionHelper() {
                           </div>
                           <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-5 flex-grow">{principle.summary}</p>
                           <div className="flex items-center text-primary text-sm font-semibold group-hover:translate-x-1 transition-transform mt-auto">
-                            Read More →
+                            Read More <span aria-hidden="true">→</span>
                           </div>
                         </Link>
                       )
@@ -411,9 +428,10 @@ export default function DecisionHelper() {
               <div className="flex justify-center mt-6 sm:mt-8 pt-6 sm:pt-8 border-t">
                 <button
                   onClick={handleRestart}
-                  className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg text-sm sm:text-base"
+                  className="px-6 py-2.5 sm:px-8 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold flex items-center gap-2 hover:scale-105 hover:shadow-lg text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                  aria-label="Start over and reset all answers"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                   </svg>
                   Start Over
@@ -430,16 +448,18 @@ export default function DecisionHelper() {
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <a
                       href={getEmailLink()}
-                      className="px-5 py-2.5 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm sm:text-base"
+                      className="px-5 py-2.5 sm:px-6 sm:py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      aria-label="Get in touch via email with your results"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>
                       Get in Touch
                     </a>
                     <a
                       href="/about"
-                      className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
+                      className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                      aria-label="Learn more about us"
                     >
                       Learn More About Us
                     </a>

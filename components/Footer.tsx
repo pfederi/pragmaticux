@@ -10,7 +10,7 @@ export default function Footer() {
               &copy; 2025 Pragmatic UX Design. All rights reserved.
             </p>
             <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground">
-              <Link href="/impressum" className="hover:text-foreground transition-colors">
+              <Link href="/impressum" className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1">
                 Impressum
               </Link>
             </div>

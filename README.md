@@ -142,13 +142,37 @@ Fully optimized for mobile, tablet, and desktop devices:
 - Efficient code splitting
 - Fast page loads and smooth transitions
 
+### Accessibility (WCAG 2.1 Level AA Compliant)
+
+The website is fully accessible and meets WCAG 2.1 Level AA standards:
+
+- **Semantic HTML**: Proper use of semantic elements (`<nav>`, `<main>`, `<section>`, `<footer>`)
+- **ARIA Attributes**: Comprehensive ARIA labels, roles, and states for all interactive elements
+- **Keyboard Navigation**: Full keyboard support with visible focus indicators
+- **Screen Reader Support**: All content is accessible via screen readers
+- **Color Contrast**: WCAG AA compliant contrast ratios (minimum 4.5:1 for normal text, 3:1 for large text)
+- **Skip Links**: Skip-to-main-content link for keyboard users
+- **Focus Management**: Proper focus handling in modals and dropdowns
+- **Alternative Text**: All images include descriptive alt text
+- **Form Labels**: All form inputs have associated labels
+- **Progress Indicators**: Accessible progress bars with ARIA attributes
+- **Radio Groups**: Properly marked radio button groups in Decision Helper
+
+**Key Accessibility Features:**
+- Navigation dropdowns with `aria-expanded`, `aria-haspopup`, and `role="menu"`
+- Decision Helper progress bar with `role="progressbar"` and ARIA value attributes
+- Radio button groups with `role="radiogroup"` and `aria-checked` states
+- All buttons and links have descriptive `aria-label` attributes
+- Decorative elements marked with `aria-hidden="true"`
+- Focus rings on all interactive elements for keyboard navigation visibility
+
 ## 🎨 Design Principles
 
 The website itself follows pragmatic UX principles:
 
 - **Clear Information Architecture**: Easy navigation and content discovery
 - **Progressive Disclosure**: Information revealed as needed (mobile menu, decision helper)
-- **Accessible Design**: Semantic HTML, ARIA attributes, keyboard navigation
+- **Accessible Design**: Semantic HTML, ARIA attributes, keyboard navigation, WCAG 2.1 AA compliant
 - **Performance**: Optimized loading and rendering
 - **User-Centered**: Focus on user needs and goals
 - **Consistent Design Language**: Unified color scheme, typography, and spacing

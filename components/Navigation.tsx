@@ -50,7 +50,7 @@ export default function Navigation() {
     <nav className="fixed top-0 left-0 right-0 bg-background/80 backdrop-blur-sm border-b z-50">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-lg md:text-xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+          <Link href="/" className="text-lg md:text-xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1" aria-label="Pragmatic UX Design - Home">
             Pragmatic UX Design
           </Link>
           
@@ -59,9 +59,10 @@ export default function Navigation() {
             <Link
               href="/"
               className={cn(
-                "text-sm font-medium hover:text-primary transition-colors",
+                "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                 pathname === "/" && "text-primary"
               )}
+              aria-current={pathname === "/" ? "page" : undefined}
             >
               Home
             </Link>
@@ -70,9 +71,13 @@ export default function Navigation() {
               <button
                 onClick={togglePrinciples}
                 className={cn(
-                  "flex items-center gap-3 px-3 py-1 text-sm font-medium hover:text-primary transition-colors",
+                  "flex items-center gap-3 px-3 py-1 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md",
                   pathname.startsWith("/principles") && "text-primary"
                 )}
+                aria-expanded={isPrinciplesOpen}
+                aria-haspopup="true"
+                aria-controls="principles-menu"
+                id="principles-button"
               >
                 Principles
                 <ChevronDown
@@ -80,21 +85,28 @@ export default function Navigation() {
                     "w-4 h-4 transition-transform",
                     isPrinciplesOpen && "rotate-180"
                   )}
+                  aria-hidden="true"
                 />
               </button>
 
               {isPrinciplesOpen && (
-                <div className="absolute top-full mt-2 w-64 bg-background border border-border rounded-md shadow-lg py-2 z-50">
+                <div
+                  id="principles-menu"
+                  role="menu"
+                  aria-labelledby="principles-button"
+                  className="absolute top-full mt-2 w-64 bg-background border border-border rounded-md shadow-lg py-2 z-50"
+                >
                   {principles.map((p) => (
                     <button
                       key={p.id}
                       onClick={() => handlePrincipleClick(p.id)}
+                      role="menuitem"
                       className={cn(
-                        "w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors flex items-center gap-3",
+                        "w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors flex items-center gap-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
                         pathname === `/principles/${p.id}` && "bg-muted text-primary"
                       )}
                     >
-                      <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                      <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0" aria-hidden="true">
                         {p.id}
                       </span>
                       <span className="truncate">{p.title}</span>
@@ -107,18 +119,20 @@ export default function Navigation() {
             <Link
               href="/decision-helper"
               className={cn(
-                "text-sm font-medium hover:text-primary transition-colors",
+                "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                 pathname === "/decision-helper" && "text-primary"
               )}
+              aria-current={pathname === "/decision-helper" ? "page" : undefined}
             >
               Decision Helper
             </Link>
             <Link
               href="/about"
               className={cn(
-                "text-sm font-medium hover:text-primary transition-colors",
+                "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
                 pathname === "/about" && "text-primary"
               )}
+              aria-current={pathname === "/about" ? "page" : undefined}
             >
               About
             </Link>
@@ -126,26 +140,29 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
+            id="mobile-menu-button"
             onClick={() => {
               setIsMobileMenuOpen(!isMobileMenuOpen)
               if (isMobileMenuOpen) {
                 setIsPrinciplesOpen(false)
               }
             }}
-            className="md:hidden p-2 hover:bg-muted rounded-md transition-colors"
+            className="md:hidden p-2 hover:bg-muted rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             aria-label="Toggle menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
+              <X className="w-6 h-6" aria-hidden="true" />
             ) : (
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6" aria-hidden="true" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t py-4">
+          <div id="mobile-menu" className="md:hidden border-t py-4" role="menu" aria-labelledby="mobile-menu-button">
             <div className="flex flex-col gap-4">
               <Link
                 href="/"
@@ -154,23 +171,28 @@ export default function Navigation() {
                   setIsPrinciplesOpen(false)
                 }}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
+                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
                   pathname === "/" && "text-primary"
                 )}
+                role="menuitem"
               >
                 Home
               </Link>
 
               <div className="px-4">
                 <button
+                  id="mobile-principles-button"
                   onClick={(e) => {
                     e.preventDefault()
                     togglePrinciples()
                   }}
                   className={cn(
-                    "flex items-center justify-between w-full px-0 py-2 text-sm font-medium hover:text-primary transition-colors",
+                    "flex items-center justify-between w-full px-0 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
                     pathname.startsWith("/principles") && "text-primary"
                   )}
+                  aria-expanded={isPrinciplesOpen}
+                  aria-haspopup="true"
+                  aria-controls="mobile-principles-menu"
                 >
                   Principles
                   <ChevronDown
@@ -178,10 +200,11 @@ export default function Navigation() {
                       "w-4 h-4 transition-transform",
                       isPrinciplesOpen && "rotate-180"
                     )}
+                    aria-hidden="true"
                   />
                 </button>
                 {isPrinciplesOpen && (
-                  <div className="mt-2 ml-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
+                  <div id="mobile-principles-menu" role="menu" aria-labelledby="mobile-principles-button" className="mt-2 ml-4 space-y-2 animate-in slide-in-from-top-2 duration-200">
                     {principles.map((p) => (
                       <button
                         key={p.id}
@@ -191,12 +214,13 @@ export default function Navigation() {
                           setIsMobileMenuOpen(false)
                           setIsPrinciplesOpen(false)
                         }}
+                        role="menuitem"
                         className={cn(
-                          "w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors flex items-center gap-3 rounded-md",
+                          "w-full text-left px-4 py-2 text-sm hover:bg-muted transition-colors flex items-center gap-3 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset",
                           pathname === `/principles/${p.id}` && "bg-muted text-primary"
                         )}
                       >
-                        <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                        <span className="w-6 h-6 rounded-full bg-primary text-white text-xs font-bold flex items-center justify-center flex-shrink-0" aria-hidden="true">
                           {p.id}
                         </span>
                         <span className="truncate">{p.title}</span>
@@ -213,9 +237,10 @@ export default function Navigation() {
                   setIsPrinciplesOpen(false)
                 }}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
+                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
                   pathname === "/decision-helper" && "text-primary"
                 )}
+                role="menuitem"
               >
                 Decision Helper
               </Link>
@@ -226,9 +251,10 @@ export default function Navigation() {
                   setIsPrinciplesOpen(false)
                 }}
                 className={cn(
-                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors",
+                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
                   pathname === "/about" && "text-primary"
                 )}
+                role="menuitem"
               >
                 About
               </Link>

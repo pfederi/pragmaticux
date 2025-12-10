@@ -19,13 +19,15 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="#core-principles"
-                className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-dark transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left"
+                className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-dark transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Navigate to Core Principles section"
               >
                 Explore Core Principles
               </Link>
             <Link
                 href="/decision-helper"
-                className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left"
+                className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+                aria-label="Try the Decision Helper tool"
             >
                 Try Decision Helper
             </Link>
@@ -33,7 +35,7 @@ export default function Hero() {
           </div>
 
           {/* Right side - Animated circles */}
-          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <div className="flex justify-center lg:justify-end mt-8 lg:mt-0" aria-hidden="true">
             <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80">
               {/* Outer rings */}
               <div className="absolute inset-0 border-2 border-primary/10 rounded-full animate-spin-slow"></div>
