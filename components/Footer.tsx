@@ -1,11 +1,20 @@
+import Link from 'next/link'
+
 export default function Footer() {
   return (
     <footer className="border-t py-4 sm:py-6 mt-auto">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-            &copy; 2025 Pragmatic UX Design. All rights reserved.
-          </p>
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+            <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
+              &copy; 2025 Pragmatic UX Design. All rights reserved.
+            </p>
+            <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground">
+              <Link href="/impressum" className="hover:text-foreground transition-colors">
+                Impressum
+              </Link>
+            </div>
+          </div>
           <a
             href="https://www.ergon.ch"
             target="_blank"

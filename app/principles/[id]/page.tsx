@@ -30,11 +30,11 @@ export default async function PrincipleDetailPage({ params }: PageProps) {
           <div className="flex flex-col gap-4 sm:gap-6">
             {/* Title and Number on same line */}
             <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
-              <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary text-white rounded-full text-2xl sm:text-3xl md:text-4xl font-bold shadow-lg flex-shrink-0">
+              <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary text-white rounded-full text-2xl sm:text-3xl md:text-3xl font-bold shadow-lg flex-shrink-0">
                 {principle.order}
               </div>
               <div className="flex flex-col gap-3 sm:gap-4 flex-1">
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-full sm:max-w-[55%] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 max-w-full sm:max-w-[55%] bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-relaxed sm:leading-[1.2] md:leading-[1.2] lg:leading-[1.2] pb-1 pt-4">
                   {principle.title}
                 </h1>
                 {/* Subtitle below title, aligned with title text */}

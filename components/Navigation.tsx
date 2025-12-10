@@ -14,7 +14,7 @@ export default function Navigation() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   const principles = [
-    { id: 1, title: 'UX Design Should Fit the Process' },
+    { id: 1, title: 'UX Should Fit the Process' },
     { id: 2, title: 'Efficiency Over Delight' },
     { id: 3, title: 'Empower, Not Overcomplicate' },
     { id: 4, title: 'Theory Is Nice, but Execution Wins' },
