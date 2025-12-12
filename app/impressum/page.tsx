@@ -1,7 +1,4 @@
-export const metadata = {
-  title: 'Impressum - Pragmatic UX Design',
-  description: 'Legal information and contact details for Pragmatic UX Design.',
-}
+'use client'
 
 export default function ImpressumPage() {
   return (
@@ -66,8 +63,9 @@ export default function ImpressumPage() {
                 You can manage your cookie preferences using the cookie banner at the bottom of the page. You can choose to accept all cookies (including analytics) or only essential cookies. Your choice will be saved and you can{' '}
                 <span
                   onClick={() => {
-                    if (typeof window !== 'undefined' && window.reopenCookieBanner) {
-                      window.reopenCookieBanner()
+                    // Use global function set by CookieBanner component
+                    if (typeof window !== 'undefined' && (window as any).reopenCookieBanner) {
+                      (window as any).reopenCookieBanner()
                     } else {
                       // Fallback: force show banner via localStorage
                       localStorage.setItem('cookie-banner-force-show', 'true')
@@ -80,8 +78,8 @@ export default function ImpressumPage() {
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      if (typeof window !== 'undefined' && window.reopenCookieBanner) {
-                        window.reopenCookieBanner()
+                      if (typeof window !== 'undefined' && (window as any).reopenCookieBanner) {
+                        (window as any).reopenCookieBanner()
                       } else {
                         localStorage.setItem('cookie-banner-force-show', 'true')
                         window.location.reload()
