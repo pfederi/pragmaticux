@@ -63,7 +63,35 @@ export default function ImpressumPage() {
                 This website uses Vercel Analytics to collect anonymous usage data to improve our service. This includes information about pages visited, time spent on the site, and device information. The data is collected anonymously and does not contain personally identifiable information.
               </p>
               <p>
-                You can manage your cookie preferences using the cookie banner at the bottom of the page. You can choose to accept all cookies (including analytics) or only essential cookies. Your choice will be saved and you can change it anytime by clicking the cookie preferences link in the banner.
+                You can manage your cookie preferences using the cookie banner at the bottom of the page. You can choose to accept all cookies (including analytics) or only essential cookies. Your choice will be saved and you can{' '}
+                <span
+                  onClick={() => {
+                    if (typeof window !== 'undefined' && window.reopenCookieBanner) {
+                      window.reopenCookieBanner()
+                    } else {
+                      // Fallback: force show banner via localStorage
+                      localStorage.setItem('cookie-banner-force-show', 'true')
+                      window.location.reload()
+                    }
+                  }}
+                  className="text-primary hover:underline cursor-pointer"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault()
+                      if (typeof window !== 'undefined' && window.reopenCookieBanner) {
+                        window.reopenCookieBanner()
+                      } else {
+                        localStorage.setItem('cookie-banner-force-show', 'true')
+                        window.location.reload()
+                      }
+                    }
+                  }}
+                >
+                  change your preferences anytime
+                </span>
+                {' '}by reopening the cookie banner.
               </p>
               <p>
                 You can also opt out of analytics tracking by using browser extensions that block tracking, or by disabling JavaScript in your browser. However, this may affect the functionality of the website.

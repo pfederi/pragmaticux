@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 
 export default function Footer() {
@@ -10,6 +12,20 @@ export default function Footer() {
             &copy; 2025 Pragmatic UX Design. All rights reserved.
           </p>
             <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground">
+              <button
+                onClick={() => {
+                  if (typeof window !== 'undefined' && window.reopenCookieBanner) {
+                    window.reopenCookieBanner()
+                  } else {
+                    // Fallback: force show banner via localStorage
+                    localStorage.setItem('cookie-banner-force-show', 'true')
+                    window.location.reload()
+                  }
+                }}
+                className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1 cursor-pointer bg-transparent border-none"
+              >
+                Cookie Settings
+              </button>
               <Link href="/impressum" className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1">
                 Impressum
               </Link>
