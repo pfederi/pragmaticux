@@ -74,7 +74,7 @@ export default function Workflow() {
               <div className="flex justify-center items-center mb-4 sm:mb-6 text-primary group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 <div className="p-3 sm:p-4 bg-primary/10 rounded-full flex items-center justify-center">
                   <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-18 md:h-18 flex items-center justify-center">
-                    {step.icon}
+                  {step.icon}
                   </div>
                 </div>
               </div>

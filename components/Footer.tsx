@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
             <p className="text-xs sm:text-sm text-muted-foreground text-center sm:text-left">
-              &copy; 2025 Pragmatic UX Design. All rights reserved.
-            </p>
+            &copy; 2025 Pragmatic UX Design. All rights reserved.
+          </p>
             <div className="flex gap-4 text-xs sm:text-sm text-muted-foreground">
               <Link href="/impressum" className="hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1">
                 Impressum

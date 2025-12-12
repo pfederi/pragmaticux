@@ -57,8 +57,19 @@ export default function ImpressumPage() {
               <p>
                 The use of our website is usually possible without providing personal information. As far as personal data (such as name, address, or email addresses) is collected on our pages, this is always done on a voluntary basis, as far as possible.
               </p>
+
+              <h3 className="text-xl sm:text-2xl font-semibold mt-6 mb-3 text-foreground">Analytics and Cookies</h3>
               <p>
-                Our website does not use cookies. The Decision Helper tool uses localStorage to save your progress locally on your device. This data is stored only on your device and is not sent to our servers or shared with third parties.
+                This website uses Vercel Analytics to collect anonymous usage data to improve our service. This includes information about pages visited, time spent on the site, and device information. The data is collected anonymously and does not contain personally identifiable information.
+              </p>
+              <p>
+                You can manage your cookie preferences using the cookie banner at the bottom of the page. You can choose to accept all cookies (including analytics) or only essential cookies. Your choice will be saved and you can change it anytime by clicking the cookie preferences link in the banner.
+              </p>
+              <p>
+                You can also opt out of analytics tracking by using browser extensions that block tracking, or by disabling JavaScript in your browser. However, this may affect the functionality of the website.
+              </p>
+              <p>
+                The Decision Helper tool uses localStorage to save your progress locally on your device. This data is stored only on your device and is not sent to our servers or shared with third parties.
               </p>
 
               <p className="text-sm text-muted-foreground mt-8">

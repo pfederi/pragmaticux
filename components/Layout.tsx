@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
+import CookieBanner from '@/components/CookieBanner'
 
 interface LayoutProps {
   children: ReactNode
@@ -20,6 +21,7 @@ export default function Layout({ children }: LayoutProps) {
         {children}
       </main>
       <Footer />
+      <CookieBanner />
     </div>
   )
 }
