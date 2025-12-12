@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import Layout from '@/components/Layout'
 
@@ -23,6 +25,8 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={inter.className}>
         <Layout>{children}</Layout>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
