@@ -307,9 +307,17 @@ graph TB
 4. **Result Display**
    - User situation summary (editable)
    - Recommended principles (with links)
-   - Suggested methods (with descriptions)
+   - Suggested methods with detailed instructions (modal popup)
    - Email integration (pre-filled template)
    - Start Over functionality
+
+5. **Method Details Modal**
+   - Clickable method cards with hover effects
+   - Glassmorphism design with backdrop blur
+   - Gradient glow effect around modal border
+   - Step-by-step implementation instructions
+   - Practical tips for each method
+   - Direct contact integration
 
 5. **State Persistence**
    - localStorage key: `decisionHelper_state`
@@ -346,6 +354,7 @@ graph TB
 **Data Structures:**
 
 - **principles.json**: Array of 8 principles with title, summary, examples, etc.
+- **methods.json**: Detailed method instructions with steps and tips for modal display
 - **decision_tree.json**: Questions and rules for Decision Helper
 - **types/**: TypeScript interfaces for type safety
 
@@ -528,11 +537,18 @@ graph LR
 - Dark mode support (class-based)
 - Consistent spacing scale
 
+**Glassmorphism Design:**
+- Backdrop blur effects (`backdrop-blur-md`)
+- Semi-transparent backgrounds (`bg-card/95`)
+- Subtle borders (`border-white/30`)
+- Gradient glow effects around modals
+- Modern, premium visual effects
+
 **Design System:**
-- Primary Colors: Blue/Purple Gradient
+- Primary Colors: Blue/Purple Gradient with Glassmorphism accents
 - Typography: Inter Font Family
 - Spacing: Tailwind Default Scale
-- Components: Reusable Card, Button Patterns
+- Components: Reusable Card, Button Patterns with glassmorphism variants
 
 ### 8.2 State Management
 
@@ -715,6 +731,22 @@ graph TB
 - ✅ Easy to update rules (JSON file)
 - ⚠️ All logic in client bundle
 - ⚠️ Limited complexity for rules
+
+### ADR-6: Modal Design with Glassmorphism
+
+**Status:** Accepted
+
+**Context:** Enhanced user experience for method details display
+
+**Decision:** Modal overlay with glassmorphism effects and gradient glow
+
+**Consequences:**
+- ✅ Modern, premium visual appeal
+- ✅ Better focus on content with backdrop blur
+- ✅ Improved accessibility with clear modal hierarchy
+- ✅ Enhanced brand perception through polished UI
+- ⚠️ Slightly increased bundle size due to additional CSS classes
+- ⚠️ Requires modern browser support for backdrop-blur
 
 ---
 
@@ -962,8 +994,11 @@ interface DecisionTreeRule {
 
 ---
 
-**Documentation Version:** 1.0  
-**Last Updated:** 2025-12-09  
+**Documentation Version:** 1.1
+**Last Updated:** 2025-12-16
 **Author:** Patrick Federi
+
+
+
 
 

@@ -4,64 +4,40 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { decisionTree } from '@/data/decisionTree'
 import { principles, getPrincipleById } from '@/data/principles'
+import { getMethodInstructions } from '@/data/methods'
 import { DecisionTreeResults } from '@/types/decisionTree'
 
 const STORAGE_KEY = 'decisionHelper_state'
 
 export default function DecisionHelper() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        return parsed.currentQuestionIndex || 0
-      }
-    }
-    return 0
-  })
-  const [userAnswers, setUserAnswers] = useState<Record<string, string>>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        return parsed.userAnswers || {}
-      }
-    }
-    return {}
-  })
-  const [results, setResults] = useState<DecisionTreeResults | null>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        return parsed.results || null
-      }
-    }
-    return null
-  })
-  const [showResults, setShowResults] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        return parsed.showResults || false
-      }
-    }
-    return false
-  })
-  const [isEditing, setIsEditing] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
-      if (saved) {
-        const parsed = JSON.parse(saved)
-        return parsed.isEditing || false
-      }
-    }
-    return false
-  })
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+  const [userAnswers, setUserAnswers] = useState<Record<string, string>>({})
+  const [results, setResults] = useState<DecisionTreeResults | null>(null)
+  const [showResults, setShowResults] = useState(false)
+  const [isEditing, setIsEditing] = useState(false)
+  const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
   const questions = decisionTree.questions
   const currentQuestion = questions[currentQuestionIndex]
+
+  // Load state from localStorage on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved)
+          setCurrentQuestionIndex(parsed.currentQuestionIndex || 0)
+          setUserAnswers(parsed.userAnswers || {})
+          setResults(parsed.results || null)
+          setShowResults(parsed.showResults || false)
+          setIsEditing(parsed.isEditing || false)
+        } catch (error) {
+          console.warn('Failed to parse saved decision helper state:', error)
+        }
+      }
+    }
+  }, [])
 
   // Save state to localStorage whenever it changes
   useEffect(() => {
@@ -142,6 +118,7 @@ export default function DecisionHelper() {
     setResults(null)
     setShowResults(false)
     setIsEditing(false)
+    setSelectedMethod(null)
     if (typeof window !== 'undefined') {
       localStorage.removeItem(STORAGE_KEY)
     }
@@ -394,15 +371,19 @@ export default function DecisionHelper() {
                   <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">Suggested Methods</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {results.methods.map((method, index) => (
-                      <div
+                      <button
                         key={index}
-                        className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50"
+                        onClick={() => setSelectedMethod(method)}
+                        className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 text-left w-full"
                       >
                         <h4 className="font-semibold mb-2 text-sm sm:text-base">{method}</h4>
                         <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                           {getMethodDescription(method)}
                         </p>
-                      </div>
+                        <div className="mt-2 text-primary text-xs font-medium flex items-center gap-1">
+                          Learn more →
+                        </div>
+                      </button>
                     ))}
                   </div>
                 </div>
@@ -449,6 +430,91 @@ export default function DecisionHelper() {
             </div>
           )}
         </div>
+
+        {/* Method Details Modal */}
+        {selectedMethod && (
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+            <div className="relative">
+              <div className="absolute -inset-2 bg-gradient-to-r from-blue-500/40 via-purple-500/30 to-cyan-400/40 rounded-2xl blur opacity-90"></div>
+              <div className="relative bg-card/95 backdrop-blur-md border border-white/30 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-6 sm:p-8">
+                <div className="flex justify-between items-start mb-6">
+                  <h3 className="text-xl sm:text-2xl font-semibold">{selectedMethod}</h3>
+                  <button
+                    onClick={() => setSelectedMethod(null)}
+                    className="text-muted-foreground hover:text-foreground transition-colors p-1"
+                    aria-label="Close modal"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div className="space-y-6">
+                  <div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {getMethodInstructions(selectedMethod).description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="font-semibold mb-3 text-lg">How to Apply This Method:</h4>
+                    <ol className="space-y-2">
+                      {getMethodInstructions(selectedMethod).steps.map((step, index) => (
+                        <li key={index} className="flex gap-3 items-center">
+                          <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0">
+                            {index + 1}
+                          </span>
+                          <span className="text-sm leading-relaxed">{step}</span>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  {getMethodInstructions(selectedMethod).tips.length > 0 && (
+                    <div className="mb-20">
+                      <h4 className="font-semibold mb-3 text-lg">Tips:</h4>
+                      <ul className="space-y-2">
+                        {getMethodInstructions(selectedMethod).tips.map((tip, index) => (
+                          <li key={index} className="flex gap-3">
+                            <span className="text-primary text-lg leading-none mt-0.5">•</span>
+                            <span className="text-sm leading-relaxed">{tip}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6">
+                    <h4 className="font-semibold mb-2">Need Help Implementing This Method?</h4>
+                    <p className="text-sm text-muted-foreground mb-4">
+                      We're here to help you apply this method effectively in your project. Get personalized guidance and support.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href={getEmailLink()}
+                        className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center text-sm"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                        </svg>
+                        Get in Touch
+                      </a>
+                      <a
+                        href="/about"
+                        className="px-4 py-2 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm"
+                      >
+                        Learn More About Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

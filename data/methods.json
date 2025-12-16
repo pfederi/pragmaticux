@@ -1,0 +1,707 @@
+{
+  "Task Flow Redesign": {
+    "description": "Analyze and optimize user task flows to reduce friction and improve efficiency. This method helps identify bottlenecks and streamline user journeys.",
+    "steps": [
+      "Map out the current user journey from start to completion",
+      "Identify pain points, unnecessary steps, and friction areas",
+      "Benchmark against best practices for similar flows",
+      "Design simplified alternatives focusing on core user goals",
+      "Test the new flow with real users before implementation"
+    ],
+    "tips": [
+      "Focus on the 'happy path' first, then handle edge cases",
+      "Use tools like flowcharts or user journey maps for visualization",
+      "Involve stakeholders early to align on priorities"
+    ]
+  },
+  "Checkout Simplification": {
+    "description": "Streamline checkout processes to reduce abandonment and improve conversion rates.",
+    "steps": [
+      "Analyze current checkout analytics and drop-off points",
+      "Identify and remove unnecessary form fields",
+      "Implement guest checkout and saved payment methods",
+      "Add progress indicators and trust signals",
+      "Test different checkout variations with A/B testing"
+    ],
+    "tips": [
+      "Reduce required inputs and use progressive disclosure where possible.",
+      "Mobile checkout should be optimized for touch interactions",
+      "Consider implementing one-click purchasing for returning customers"
+    ]
+  },
+  "Performance Audits": {
+    "description": "Evaluate and optimize system performance to enhance user experience and engagement.",
+    "steps": [
+      "Measure current performance metrics (load times, responsiveness)",
+      "Identify performance bottlenecks using tools like Lighthouse",
+      "Prioritize fixes based on user impact and effort",
+      "Implement optimizations (caching, compression, lazy loading)",
+      "Monitor performance improvements and user metrics"
+    ],
+    "tips": [
+      "Define performance targets based on use case and user expectations, including perceived performance.",
+      "Mobile performance is often more critical than desktop",
+      "Use performance budgets to prevent regressions"
+    ]
+  },
+  "One-Page Findings": {
+    "description": "Condense research insights into concise, actionable one-page summaries that drive decisions.",
+    "steps": [
+      "Collect all research data from user interviews and testing",
+      "Identify the 3-5 most important insights and recommendations",
+      "Create a clear hierarchy: Problem → Insight → Recommendation",
+      "Use visuals, quotes, and metrics to support key points",
+      "Include next steps and success metrics for implementation"
+    ],
+    "tips": [
+      "Focus on actionable insights, not just observations",
+      "Use the 'So what?' test - ensure every insight matters to stakeholders",
+      "Include one strong visual element per page"
+    ]
+  },
+  "Rapid Usability Audit": {
+    "description": "Quick assessment of usability issues with immediate recommendations for improvement.",
+    "steps": [
+      "Review key user flows against Nielsen's 10 usability heuristics",
+      "Document critical usability issues with severity ratings",
+      "Prioritize fixes by user impact and implementation effort",
+      "Create quick mockups for high-impact improvements",
+      "Present findings with specific, actionable recommendations"
+    ],
+    "tips": [
+      "Focus on high-impact, low-effort improvements first",
+      "Use severity scales: Critical, Major, Minor, Cosmetic",
+      "Include before/after mockups for clarity"
+    ]
+  },
+  "Guerrilla Testing": {
+    "description": "Informal, low-cost user testing in natural environments to gather quick feedback.",
+    "steps": [
+      "Define specific tasks or questions to test",
+      "Find participants in relevant locations (cafes, parks, offices)",
+      "Conduct 5-10 minute sessions with your phone or tablet",
+      "Ask users to think out loud while completing tasks",
+      "Note patterns and pain points across multiple sessions"
+    ],
+    "tips": [
+      "Aim for 5-8 participants per testing round",
+      "Offer small incentives like coffee or candy",
+      "Test in the user's natural environment when possible"
+    ]
+  },
+  "Sketching Sessions": {
+    "description": "Collaborative sketching workshops to explore design solutions quickly and creatively.",
+    "steps": [
+      "Define the problem and constraints clearly",
+      "Provide sketching supplies and set a time limit (10-15 minutes)",
+      "Have participants sketch multiple solutions individually",
+      "Share and discuss ideas as a group",
+      "Identify the strongest concepts to develop further"
+    ],
+    "tips": [
+      "Emphasize quantity over quality - more ideas lead to better solutions",
+      "Include diverse participants (designers, developers, stakeholders)",
+      "Use timers to keep energy high and prevent overthinking"
+    ]
+  },
+  "Impact Mapping": {
+    "description": "Visualize user goals and map features to measurable outcomes and business objectives.",
+    "steps": [
+      "Define the main goal or outcome you want to achieve",
+      "Identify key user personas and their motivations",
+      "Map out deliverables and features that support user goals",
+      "Define success metrics for each deliverable",
+      "Prioritize based on impact vs. effort"
+    ],
+    "tips": [
+      "Start with the end goal and work backwards",
+      "Use sticky notes or digital tools for flexible mapping",
+      "Include both user and business impact metrics"
+    ]
+  },
+  "Top-3 Friction Fix": {
+    "description": "Identify and prioritize the top three user friction points to address with maximum impact.",
+    "steps": [
+      "Analyze user feedback, analytics, and session recordings",
+      "Identify the most common pain points and friction areas",
+      "Score issues by user impact, frequency, and fix effort",
+      "Select the top 3 issues with highest impact-to-effort ratio",
+      "Create detailed action plans for each friction point"
+    ],
+    "tips": [
+      "Focus on issues affecting the majority of users",
+      "Use the Impact = (User Impact × Frequency) / Effort formula",
+      "Start with quick wins to build momentum"
+    ]
+  },
+  "Focused A/B Testing": {
+    "description": "Targeted experiments to validate specific design decisions with statistical confidence.",
+    "steps": [
+      "Define a clear hypothesis and success metric",
+      "Create two versions (A and B) that differ in one key aspect",
+      "Ensure proper sample size and test duration",
+      "Run the test and analyze results statistically",
+      "Implement the winning version and document learnings"
+    ],
+    "tips": [
+      "Test one variable at a time to isolate effects",
+      "Ensure statistical significance before making decisions",
+      "Consider user segments - what works for one group may not work for others"
+    ]
+  },
+  "Design System Adoption": {
+    "description": "Implement consistent design patterns across products for better user experience and efficiency.",
+    "steps": [
+      "Audit existing components and design patterns",
+      "Define core design principles and component library",
+      "Create documentation and usage guidelines",
+      "Establish governance processes for contributions",
+      "Migrate existing products to use the design system"
+    ],
+    "tips": [
+      "Start with atomic components (buttons, inputs) before complex ones",
+      "Include code examples in multiple frameworks",
+      "Regularly update and maintain the system as needs evolve"
+    ]
+  },
+  "Component Reuse": {
+    "description": "Leverage existing components to speed up development and ensure consistency.",
+    "steps": [
+      "Catalog existing reusable components",
+      "Create clear documentation with usage examples",
+      "Establish naming conventions and component APIs",
+      "Implement component versioning and deprecation policies",
+      "Train team members on component usage and contribution"
+    ],
+    "tips": [
+      "Start with high-impact, frequently used components",
+      "Use design tokens for consistent styling",
+      "Regularly audit and update components based on usage analytics"
+    ]
+  },
+  "Design Tokens": {
+    "description": "Use design tokens for consistent styling and faster updates across products.",
+    "steps": [
+      "Define your design token structure (colors, typography, spacing)",
+      "Create tokens for different platforms and frameworks",
+      "Implement token usage in design tools and code",
+      "Set up automated token distribution and updates",
+      "Document token usage guidelines and naming conventions"
+    ],
+    "tips": [
+      "Start with a small set of core tokens",
+      "Use semantic naming (e.g., 'color-text-primary' vs 'color-blue-500')",
+      "Automate token updates to prevent drift"
+    ]
+  },
+  "Co-Design with Devs": {
+    "description": "Collaborate closely with developers during the design process to ensure feasibility.",
+    "steps": [
+      "Include developers in design reviews and brainstorming",
+      "Share design intent and user needs alongside mockups",
+      "Discuss technical constraints and opportunities early",
+      "Create shared understanding through collaborative prototyping",
+      "Establish regular design-development sync points"
+    ],
+    "tips": [
+      "Frame discussions around user needs, not just technical limitations",
+      "Use collaborative tools like Figma for real-time feedback",
+      "Celebrate successful collaborations to build momentum"
+    ]
+  },
+  "Constraint-First Wireframes": {
+    "description": "Create wireframes that account for technical constraints early in the design process.",
+    "steps": [
+      "Gather technical constraints and requirements upfront",
+      "Design within established boundaries and limitations",
+      "Create wireframes that reflect realistic implementation possibilities",
+      "Get early feedback from developers on feasibility",
+      "Iterate based on technical feedback while maintaining user needs"
+    ],
+    "tips": [
+      "Document constraints clearly for the entire team",
+      "Focus on user needs while working within constraints",
+      "Use this approach to avoid 'design in a vacuum' scenarios"
+    ]
+  },
+  "Performance Budgets": {
+    "description": "Set and monitor performance targets throughout development to prevent regressions.",
+    "steps": [
+      "Define key performance metrics and acceptable thresholds",
+      "Implement automated performance monitoring tools",
+      "Set up alerts for when budgets are exceeded",
+      "Regularly review and adjust budgets based on user needs",
+      "Document performance decisions and trade-offs"
+    ],
+    "tips": [
+      "Include core web vitals as baseline metrics",
+      "Include both technical and perceived performance metrics",
+      "Make budgets visible to the entire team"
+    ]
+  },
+  "Tech-Feasibility Notes": {
+    "description": "Document technical considerations alongside design decisions for better implementation.",
+    "steps": [
+      "Include technical notes in design documentation",
+      "Highlight potential implementation challenges",
+      "Suggest alternative approaches with different complexity levels",
+      "Document assumptions and dependencies",
+      "Create a shared knowledge base for technical decisions"
+    ],
+    "tips": [
+      "Use a consistent format for technical notes",
+      "Include effort estimates and risk assessments",
+      "Review notes regularly to ensure they remain accurate"
+    ]
+  },
+  "One-Pager Decision Logs": {
+    "description": "Maintain concise records of key design decisions and their rationale.",
+    "steps": [
+      "Document the problem, decision, and rationale briefly",
+      "Include key data or user insights that influenced the decision",
+      "Note alternative options considered and why they were rejected",
+      "Link to related designs, research, or metrics",
+      "Review and update logs periodically for learning"
+    ],
+    "tips": [
+      "Keep each log to one page for easy scanning",
+      "Include dates and decision-makers for context",
+      "Use logs to inform future similar decisions"
+    ]
+  },
+  "Rapid UX Audits": {
+    "description": "Quick evaluation of UX issues with actionable recommendations for immediate improvement.",
+    "steps": [
+      "Define audit scope and success criteria",
+      "Review key flows using established UX principles",
+      "Document issues with severity and impact assessments",
+      "Prioritize recommendations by user impact and effort",
+      "Create actionable next steps with timelines"
+    ],
+    "tips": [
+      "Use checklists based on established UX frameworks",
+      "Focus on high-impact, low-effort improvements first",
+      "Include quantitative data when available"
+    ]
+  },
+  "UX Bug Bash": {
+    "description": "Organized sessions to identify and prioritize UX issues across a product or feature.",
+    "steps": [
+      "Define the scope and goals for the bug bash",
+      "Recruit diverse participants from different roles",
+      "Provide clear instructions and time limits",
+      "Have participants document issues with screenshots",
+      "Review and prioritize findings as a group"
+    ],
+    "tips": [
+      "Set time limits (1-2 hours) to maintain focus",
+      "Provide issue templates to ensure consistent reporting",
+      "Follow up with clear action items and owners"
+    ]
+  },
+  "Top-3 UX Debt List": {
+    "description": "Maintain a prioritized list of UX improvements to address technical debt systematically.",
+    "steps": [
+      "Regularly audit for UX issues and inconsistencies",
+      "Score issues by user impact, frequency, and fix effort",
+      "Maintain a prioritized backlog of the top 3 issues",
+      "Allocate time in sprints for UX debt reduction",
+      "Track improvements in user metrics and satisfaction"
+    ],
+    "tips": [
+      "Review the list quarterly to ensure it remains relevant",
+      "Balance UX debt work with new feature development",
+      "Celebrate improvements to maintain momentum"
+    ]
+  },
+  "Canary Releases": {
+    "description": "Gradually roll out changes to minimize risk and gather feedback incrementally.",
+    "steps": [
+      "Identify low-risk user segments for initial rollout",
+      "Implement feature flags for gradual deployment",
+      "Monitor key metrics and user feedback during rollout",
+      "Gradually increase rollout percentage based on success",
+      "Have rollback plans ready for any issues"
+    ],
+    "tips": [
+      "Start with power users or internal employees",
+      "Define clear success metrics before rollout",
+      "Have communication plans for different rollout stages"
+    ]
+  },
+  "Shared Component Libraries": {
+    "description": "Build and maintain reusable component libraries across multiple teams and projects.",
+    "steps": [
+      "Define component ownership and contribution processes",
+      "Create comprehensive documentation and examples",
+      "Implement automated testing and quality assurance",
+      "Set up distribution mechanisms (npm, CDN, etc.)",
+      "Monitor usage and gather feedback for improvements"
+    ],
+    "tips": [
+      "Start with a core team to establish quality standards",
+      "Include automated testing and quality gates",
+      "Regularly communicate updates and new components"
+    ]
+  },
+  "Pattern Documentation": {
+    "description": "Document design patterns for consistency and reuse across projects and teams.",
+    "steps": [
+      "Identify recurring design patterns in your products",
+      "Document each pattern with usage guidelines and examples",
+      "Create a centralized pattern library or wiki",
+      "Include when and when not to use each pattern",
+      "Regularly update based on new learnings and feedback"
+    ],
+    "tips": [
+      "Include real examples from your products",
+      "Use clear, consistent documentation formats",
+      "Make patterns easily discoverable through search"
+    ]
+  },
+  "Workflow Simplification": {
+    "description": "Reduce complexity in user workflows to improve efficiency and satisfaction.",
+    "steps": [
+      "Map out current workflows and identify complexity sources",
+      "Analyze user pain points and unnecessary steps",
+      "Design simplified workflows focusing on core user goals",
+      "Test simplified workflows with real users",
+      "Implement changes iteratively with user feedback"
+    ],
+    "tips": [
+      "Focus on the 80% use case rather than edge cases",
+      "Consider progressive disclosure for complex workflows",
+      "Measure success through task completion rates and user satisfaction"
+    ]
+  },
+  "Field Studies": {
+    "description": "Observe users in their natural environment to understand context and real-world usage.",
+    "steps": [
+      "Define research objectives and target user groups",
+      "Develop observation protocols and data collection methods",
+      "Conduct observations in users' natural environments",
+      "Document findings with photos, notes, and insights",
+      "Analyze patterns and implications for design"
+    ],
+    "tips": [
+      "Get proper consent and permissions for observations",
+      "Combine observation with follow-up interviews",
+      "Focus on context, not just what users say they do"
+    ]
+  },
+  "Task Analysis": {
+    "description": "Break down user tasks to identify optimization opportunities and pain points.",
+    "steps": [
+      "Define key user tasks and goals",
+      "Break down tasks into specific steps and sub-steps",
+      "Identify decision points and potential failure modes",
+      "Analyze cognitive load and efficiency opportunities",
+      "Create improved task flows based on findings"
+    ],
+    "tips": [
+      "Use hierarchical task analysis for complex workflows",
+      "Include error recovery paths in your analysis",
+      "Validate findings through user testing"
+    ]
+  },
+  "Executive Summaries": {
+    "description": "Create high-level summaries for stakeholder communication and decision-making.",
+    "steps": [
+      "Identify key insights and recommendations from research",
+      "Structure information with clear problem-solution format",
+      "Use visuals and data to support key points",
+      "Focus on business impact and actionable next steps",
+      "Tailor content for executive audience and time constraints"
+    ],
+    "tips": [
+      "Limit to 1-2 pages maximum",
+      "Lead with the most important information",
+      "Include specific recommendations, not just findings"
+    ]
+  },
+  "Rapid Testing": {
+    "description": "Quick user testing cycles to validate assumptions and gather feedback efficiently.",
+    "steps": [
+      "Define specific questions or hypotheses to test",
+      "Create minimal test materials (prototypes, wireframes)",
+      "Recruit 3-5 users per testing round",
+      "Conduct 15-30 minute sessions focusing on key questions",
+      "Analyze patterns and iterate quickly"
+    ],
+    "tips": [
+      "Test early and often throughout the design process",
+      "Focus on learning over comprehensive testing",
+      "Use findings to inform next design iteration immediately"
+    ]
+  },
+  "Stakeholder Workshops": {
+    "description": "Facilitate collaborative sessions with key stakeholders to align on goals and decisions.",
+    "steps": [
+      "Define workshop objectives and desired outcomes",
+      "Prepare materials and activities in advance",
+      "Facilitate discussions to surface different perspectives",
+      "Document agreements and action items clearly",
+      "Follow up on action items and maintain momentum"
+    ],
+    "tips": [
+      "Include diverse stakeholders (business, technical, user-focused)",
+      "Use structured activities to ensure productive discussions",
+      "Assign clear owners and deadlines for follow-up items"
+    ]
+  },
+  "Goal-Oriented Roadmaps": {
+    "description": "Align product roadmaps with user and business goals rather than just feature lists.",
+    "steps": [
+      "Define clear user and business objectives",
+      "Map features and initiatives to specific goal outcomes",
+      "Create timelines based on goal achievement, not feature completion",
+      "Include success metrics for each goal",
+      "Regularly review and adjust based on progress and learnings"
+    ],
+    "tips": [
+      "Focus on outcomes over outputs",
+      "Include both leading and lagging indicators",
+      "Communicate roadmaps in terms of user and business value"
+    ]
+  },
+  "Top-3 Metrics Dashboards": {
+    "description": "Focus on the most important metrics for decision-making and progress tracking.",
+    "steps": [
+      "Identify key user and business outcomes",
+      "Select 3-5 metrics that directly indicate success",
+      "Create simple dashboards for regular monitoring",
+      "Set up alerts for significant changes or trends",
+      "Use metrics to inform decisions and prioritize work"
+    ],
+    "tips": [
+      "Choose metrics that teams can directly influence",
+      "Include both quantitative and qualitative measures",
+      "Review dashboard relevance quarterly"
+    ]
+  },
+  "Prioritization Workshops": {
+    "description": "Collaborative sessions to prioritize features and improvements based on impact and effort.",
+    "steps": [
+      "Create a backlog of potential features and improvements",
+      "Define evaluation criteria (impact, effort, risk, alignment)",
+      "Have team members score items independently",
+      "Discuss scores and reach consensus on priorities",
+      "Create action plan with timelines and owners"
+    ],
+    "tips": [
+      "Use frameworks like RICE (Reach, Impact, Confidence, Effort)",
+      "Include diverse perspectives in scoring",
+      "Revisit priorities regularly as context changes"
+    ]
+  },
+  "Enterprise Design System": {
+    "description": "Comprehensive design system for large organizations with multiple products and teams.",
+    "steps": [
+      "Assess current design and development landscape",
+      "Define governance structure and contribution processes",
+      "Create comprehensive component libraries and guidelines",
+      "Implement training and adoption programs",
+      "Establish metrics for measuring system success"
+    ],
+    "tips": [
+      "Start with executive sponsorship and clear vision",
+      "Create centers of excellence for system maintenance",
+      "Plan for multi-year adoption and scaling"
+    ]
+  },
+  "Cross-Team Libraries": {
+    "description": "Shared component libraries across multiple teams to ensure consistency and efficiency.",
+    "steps": [
+      "Identify common components used across teams",
+      "Create shared repositories and distribution mechanisms",
+      "Establish contribution and maintenance processes",
+      "Provide training and documentation for all teams",
+      "Monitor usage and gather feedback for improvements"
+    ],
+    "tips": [
+      "Start with high-impact components used by multiple teams",
+      "Include automated testing and quality gates",
+      "Regularly communicate updates and new components"
+    ]
+  },
+  "Reusable Templates": {
+    "description": "Create templates for common design patterns and workflows to speed up work.",
+    "steps": [
+      "Identify frequently repeated design and documentation tasks",
+      "Create standardized templates with clear guidelines",
+      "Test templates with different teams and gather feedback",
+      "Maintain and update templates based on usage patterns",
+      "Provide training on template usage and customization"
+    ],
+    "tips": [
+      "Include examples and do's/don'ts in templates",
+      "Make templates easily discoverable and accessible",
+      "Allow for reasonable customization while maintaining standards"
+    ]
+  },
+  "Rapid Prototyping": {
+    "description": "Quick creation of prototypes to test ideas and gather feedback efficiently.",
+    "steps": [
+      "Define the specific questions the prototype should answer",
+      "Choose appropriate fidelity level for the test objectives",
+      "Create prototype focusing on key interactions",
+      "Test with users and gather targeted feedback",
+      "Use insights to inform next design iteration"
+    ],
+    "tips": [
+      "Match prototype fidelity to testing goals",
+      "Focus on testing assumptions, not polishing details",
+      "Document learnings and decisions made during prototyping"
+    ]
+  },
+  "Lean Personas": {
+    "description": "Simplified user personas focused on key characteristics and needs.",
+    "steps": [
+      "Analyze user research data for common patterns",
+      "Identify 2-4 key user archetypes for your product",
+      "Focus on essential characteristics, goals, and pain points",
+      "Create simple, memorable representations",
+      "Use personas to inform design decisions and prioritize features"
+    ],
+    "tips": [
+      "Avoid over-engineering personas with unnecessary details",
+      "Base personas on real user data and observations",
+      "Keep personas living documents that evolve with new insights"
+    ]
+  },
+  "Deep Interviews": {
+    "description": "In-depth user interviews to understand needs, motivations, and behaviors.",
+    "steps": [
+      "Develop interview guide with open-ended questions",
+      "Recruit participants who represent target user groups",
+      "Conduct 45-60 minute interviews focusing on user stories",
+      "Probe deeper into motivations and pain points",
+      "Analyze themes and insights across multiple interviews"
+    ],
+    "tips": [
+      "Practice active listening and follow-up questions",
+      "Avoid leading questions that suggest desired answers",
+      "Look for emotional drivers beyond surface-level responses"
+    ]
+  },
+  "Usability Labs": {
+    "description": "Structured usability testing in controlled environments with detailed observation.",
+    "steps": [
+      "Define test objectives and participant criteria",
+      "Create test protocol with tasks and questions",
+      "Set up observation room and recording equipment",
+      "Conduct moderated testing sessions with think-aloud protocol",
+      "Analyze findings and create detailed recommendations"
+    ],
+    "tips": [
+      "Use one-way mirrors or remote observation when possible",
+      "Record sessions for later analysis and stakeholder sharing",
+      "Include both qualitative and quantitative measures"
+    ]
+  },
+  "Cross-Functional Workshops": {
+    "description": "Bring together different disciplines to solve problems collaboratively.",
+    "steps": [
+      "Define workshop objectives and desired outcomes",
+      "Invite representatives from relevant disciplines",
+      "Design workshop activities that leverage different expertise",
+      "Facilitate discussions to find integrated solutions",
+      "Document decisions and action items with clear owners"
+    ],
+    "tips": [
+      "Include technical, design, business, and user perspectives",
+      "Use structured activities to ensure productive discussions",
+      "Focus on finding win-win solutions for all stakeholders"
+    ]
+  },
+  "Lightweight Deliverables": {
+    "description": "Create minimal documentation that focuses on essentials and drives action.",
+    "steps": [
+      "Identify the key decisions or information stakeholders need",
+      "Create deliverables that focus on essentials only",
+      "Use clear, scannable formats with visual hierarchy",
+      "Include specific recommendations and next steps",
+      "Iterate based on usage and feedback"
+    ],
+    "tips": [
+      "Ask 'What does the reader need to know?' for each deliverable",
+      "Use progressive disclosure for complex information",
+      "Focus on decisions and actions over comprehensive documentation"
+    ]
+  },
+  "Embedded UX Sessions": {
+    "description": "Integrate UX activities directly into development sprints for continuous improvement.",
+    "steps": [
+      "Identify UX activities that can fit into sprint cycles",
+      "Allocate specific time slots for UX work in sprint planning",
+      "Create lightweight processes that don't slow down development",
+      "Demonstrate value through measurable improvements",
+      "Adjust processes based on team feedback and results"
+    ],
+    "tips": [
+      "Start with small, high-impact activities",
+      "Focus on activities that complement rather than compete with development",
+      "Celebrate wins to build team buy-in for UX processes"
+    ]
+  },
+  "Sketch Reviews": {
+    "description": "Quick design reviews using sketches and low-fidelity mockups to gather early feedback.",
+    "steps": [
+      "Create rough sketches exploring different design directions",
+      "Share sketches with team and stakeholders for quick feedback",
+      "Focus discussions on concepts rather than details",
+      "Document key insights and decisions from reviews",
+      "Use feedback to inform next design iteration"
+    ],
+    "tips": [
+      "Emphasize that sketches are about exploration, not final design",
+      "Set short time limits (10-15 minutes) to maintain momentum",
+      "Focus feedback on user needs and business goals"
+    ]
+  },
+  "Continuous Testing": {
+    "description": "Regular user testing throughout the development process to catch issues early.",
+    "steps": [
+      "Establish regular testing cadences (weekly, bi-weekly)",
+      "Create reusable test protocols for common user flows",
+      "Involve different team members in testing sessions",
+      "Track issues and improvements over time",
+      "Use findings to inform ongoing development decisions"
+    ],
+    "tips": [
+      "Make testing part of the team culture, not an extra activity",
+      "Start with the most critical user flows",
+      "Celebrate improvements and learnings from testing"
+    ]
+  },
+  "Design System Scaling": {
+    "description": "Expand design systems to support growing product needs and team sizes.",
+    "steps": [
+      "Assess current system usage and identify gaps",
+      "Prioritize new components based on team needs and usage",
+      "Create processes for scaling documentation and maintenance",
+      "Implement automated testing and quality assurance",
+      "Provide training and support for growing teams"
+    ],
+    "tips": [
+      "Scale governance processes alongside system growth",
+      "Monitor system usage analytics to guide expansion",
+      "Maintain balance between standardization and flexibility"
+    ]
+  },
+  "Component Governance": {
+    "description": "Establish processes for managing and evolving components within design systems.",
+    "steps": [
+      "Define component lifecycle stages (experimental, stable, deprecated)",
+      "Create contribution guidelines and review processes",
+      "Establish automated testing and quality standards",
+      "Set up regular maintenance and update cycles",
+      "Monitor component usage and health metrics"
+    ],
+    "tips": [
+      "Start with clear naming conventions and documentation standards",
+      "Include migration guides for breaking changes",
+      "Balance innovation with system stability"
+    ]
+  }
+}
