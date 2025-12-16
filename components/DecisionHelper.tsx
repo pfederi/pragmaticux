@@ -507,7 +507,7 @@ export default function DecisionHelper() {
                         </a>
                         <a
                           href="/about"
-                          className="px-4 py-2 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm flex justify-start"
+                          className="px-4 py-2 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-left"
                         >
                           Learn More About Us
                         </a>
