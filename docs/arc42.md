@@ -34,6 +34,7 @@ The Pragmatic UX Design website presents a practical framework for UX Design, co
 - Email integration for result sharing
 - Modal-based method details with contact integration and tips
 - Category filtering and method search functionality
+- Standalone embeddable tools for focused usage (`/embed/*`)
 
 **Target Audience:**
 - UX Designers and Product Managers
@@ -210,6 +211,9 @@ graph TB
 - **about/page.tsx**: About page with framework information
 - **decision-helper/page.tsx**: Wrapper for Decision Helper component
 - **methods/page.tsx**: Methods overview page with filtering and modal details
+- **embed/methods/page.tsx**: Standalone methods toolkit (embeddable)
+- **embed/principles/page.tsx**: Standalone principles guide (embeddable)
+- **embed/decision-helper/page.tsx**: Standalone decision helper (embeddable)
 - **principles/[id]/page.tsx**: Dynamic route for individual principles
 - **release-notes/page.tsx**: Version history and changelog page
 

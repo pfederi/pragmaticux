@@ -12,9 +12,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/impressum',
   ]
 
+  const embedPages = [
+    '/embed/methods',
+    '/embed/principles',
+    '/embed/decision-helper',
+  ]
+
   const principlePages = Array.from({ length: 8 }, (_, i) => `/principles/${i + 1}`)
 
-  const allPages = [...staticPages, ...principlePages]
+  const allPages = [...staticPages, ...embedPages, ...principlePages]
 
   return allPages.map((page) => ({
     url: `${baseUrl}${page}`,

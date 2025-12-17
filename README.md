@@ -48,11 +48,27 @@ The development server includes hot-reload, so changes will automatically refres
 - **Methods Filtering** - Browse methods by category with visual chips
 - **Mobile-Optimized Cookie Banner** - Improved responsive design for mobile devices
 - **Release Notes Page** - Dedicated page for version history and changelog
+- **Standalone Embed Tools** - Individual tools available at dedicated URLs for focused usage
 
 ### Technical Improvements
 - **Enhanced Type Safety** - Comprehensive TypeScript interfaces and strict typing
 - **Accessibility** - WCAG AA compliant with proper ARIA labels, keyboard navigation, and focus management
 - **Documentation** - Updated arc42 architecture docs and decision logic documentation
+
+## 🔗 Standalone Embed Tools
+
+Each core component is available as a standalone tool for focused usage:
+
+- **Methods Toolkit** (`/embed/methods`) - Browse and filter 51 UX methods
+- **Principles Guide** (`/embed/principles`) - Explore the 8 core UX principles
+- **Decision Helper** (`/embed/decision-helper`) - Interactive project assessment tool
+
+### Features
+- **Clean Interface** - Focused on the specific tool without navigation distractions
+- **Branding Links** - Clear attribution and links back to the full framework
+- **SEO Optimized** - Each embed page has proper meta tags and descriptions
+- **Mobile Responsive** - Optimized for all device sizes
+- **State Management** - Decision Helper progress persists across sessions
 
 ### Build for Production
 
@@ -73,32 +89,43 @@ npm run lint
 
 ## 📚 Documentation
 
+### 📖 Core Documentation
+- **[README.md](README.md)** - This file with setup and usage instructions
+- **[LICENSE](LICENSE)** - MIT License terms and conditions
+- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version history and changelog
+
+### 🏗️ Technical Documentation
 - **[docs/arc42.md](docs/arc42.md)** - Complete architecture documentation following arc42 template
 - **[docs/decision-logic.md](docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
-- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version history and changelog
-- **[README.md](README.md)** - This file with setup and usage instructions
+
+### 🤝 Community & Development
+- **[.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)** - Contributing guidelines and development setup
+- **[.github/CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)** - Community code of conduct
+- **[.github/SECURITY.md](.github/SECURITY.md)** - Security policy and vulnerability reporting
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](.github/CONTRIBUTING.md) for details on:
+We welcome contributions! See our [Contributing Guide](.github/CONTRIBUTING.md) for:
 
-- How to report bugs and request features
-- Code style and development guidelines
-- Pull request process
-- Testing requirements
+- Development setup and guidelines
+- Code style and architecture patterns
+- Pull request process and requirements
+- Testing and quality standards
 
-### Quick Links
+### Issue Templates
 
 - 🐛 [Bug Reports](.github/ISSUE_TEMPLATE/bug-report.yml)
 - ✨ [Feature Requests](.github/ISSUE_TEMPLATE/feature-request.yml)
 - 📚 [Documentation Issues](.github/ISSUE_TEMPLATE/documentation.yml)
 - ❓ [Questions](.github/ISSUE_TEMPLATE/question.yml)
-- 💬 [Discussions](https://github.com/pragmaticux/design/discussions)
-- 📧 [Contact](mailto:patrick.federi@ergon.ch)
 
-### Code of Conduct
+### Community
 
-This project follows a [Code of Conduct](.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
+- 💬 [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
+- 📧 [Email Support](mailto:patrick.federi@ergon.ch)
+- 🛡️ [Security Issues](mailto:security@pragmaticux.design)
+
+This project follows a [Code of Conduct](.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment.
 
 ## 🔒 Security
 
@@ -116,6 +143,10 @@ pragmaticux/
 │   ├── methods/          # Methods overview page (NEW)
 │   ├── principles/        # Individual principle pages
 │   │   └── [id]/         # Dynamic route for principle details
+│   ├── embed/            # Standalone embeddable tools
+│   │   ├── methods/      # Standalone methods toolkit
+│   │   ├── principles/   # Standalone principles guide
+│   │   └── decision-helper/ # Standalone decision helper
 │   ├── layout.tsx         # Root layout with Navigation & Footer
 │   ├── page.tsx          # Home page
 │   └── globals.css        # Global styles and Tailwind imports
@@ -340,12 +371,93 @@ This is a personal project by Patrick Federi. For questions or suggestions, plea
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+This project is licensed under the **GNU General Public License v3.0** with additional attribution requirements - see the [LICENSE](LICENSE) file for details.
+
+The GPL ensures that all derivatives and modifications remain open source, while the attribution clause maintains credit to the original Pragmatic UX Design framework.
+
+### Key Permissions
+- ✅ **Free use** - Use for any purpose
+- ✅ **Modification** - Modify and create derivatives
+- ✅ **Distribution** - Share copies of the code
+- ✅ **Private use** - Use privately without restrictions
+- ✅ **Integration** - Embed tools in your own applications
+
+### GPL Requirements
+- 📋 **Copyleft** - Modified versions must also be GPL-licensed
+- 📋 **Source code** - Must provide source code with binaries
+- 📋 **License notice** - Include GPL license text
+- 📋 **State changes** - Document all modifications
+
+### Attribution Requirements
+- 📋 **Website attribution** - When used publicly, link to https://pragmaticux.design
+- 📋 **Framework credit** - Acknowledge "Pragmatic UX Design" as the source
+- 📋 **Tool attribution** - Credit the original methods and decision helper
+
+### Usage Examples
+
+**For websites using the Decision Helper:**
+```html
+<div class="ux-attribution">
+  <small>
+    UX Decision Tool powered by
+    <a href="https://pragmaticux.design" target="_blank" rel="noopener">
+      Pragmatic UX Design
+    </a> (GPL v3.0)
+  </small>
+</div>
+```
+
+**For embedded methods:**
+```html
+<section class="methods-section">
+  <!-- Your embedded methods content -->
+  <footer class="attribution">
+    Methods from <a href="https://pragmaticux.design/methods">Pragmatic UX Design</a>
+    - Licensed under GPL v3.0
+  </footer>
+</section>
+```
+
+**For applications using the framework:**
+```javascript
+// In your app's about or credits section
+const credits = {
+  uxFramework: {
+    name: "Pragmatic UX Design",
+    url: "https://pragmaticux.design",
+    license: "GNU General Public License v3.0",
+    attribution: "Clear attribution and GPL compliance required"
+  }
+}
+```
+
+### GPL Compliance Checklist
+
+When using this code in your projects:
+
+- [ ] Include full GPL v3.0 license text
+- [ ] Provide source code access if distributing binaries
+- [ ] Document any modifications made
+- [ ] Attribute to Pragmatic UX Design with website link
+- [ ] Ensure derivative works are also GPL-licensed
 
 ## 👤 Author
 
 **Patrick Federi**  
 Head of UX at Ergon Informatik AG
+
+## 🔗 Links
+
+- 🌐 **Website**: [pragmaticux.design](https://pragmaticux.design)
+- 📧 **Contact**: [patrick.federi@ergon.ch](mailto:patrick.federi@ergon.ch)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/pragmaticux/design/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
+- 📖 **Documentation**: [Full Docs](https://pragmaticux.design/docs)
+- 🔒 **Security**: [Report Vulnerabilities](mailto:security@pragmaticux.design)
+
+---
+
+*Built with ❤️ using Next.js, TypeScript, and Tailwind CSS*
 
 ---
 
