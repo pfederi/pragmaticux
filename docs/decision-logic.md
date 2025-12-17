@@ -164,6 +164,9 @@ The decision tree contains **19 rules** total. Each rule has a unique condition 
 | **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Task Analysis, Stakeholder Workshops, Prioritization Workshops | - |
 | **18** | `project_phase: "project_middle"` | p02, p01 | Design Studio, Sketch Reviews, Rapid Prototyping, Usability Labs | - |
 | **19** | `project_phase: "project_end"` | p08, p07 | Performance Audits, Top-3 Friction Fix, Canary Releases, Checkout Simplification | - |
+| **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Task Analysis, Stakeholder Workshops, Prioritization Workshops | - |
+| **18** | `project_phase: "project_middle"` | p02, p01 | Design Studio, Sketch Reviews, Rapid Prototyping, Usability Labs | - |
+| **19** | `project_phase: "project_end"` | p08, p07 | Performance Audits, Top-3 Friction Fix, Canary Releases, Checkout Simplification | - |
 
 **Note:** Rules are evaluated in order (1-19), and **all matching rules** contribute to the final results. Multiple rules can match simultaneously.
 

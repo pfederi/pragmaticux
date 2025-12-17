@@ -5,7 +5,7 @@ A practical framework for maximizing UX impact without overcomplicating design p
 ## ✨ Key Features
 
 - **Eight Core UX Principles** - Practical guidance for effective UX design
-- **50 UX Methods** - Comprehensive collection organized by category (Research, Design, Testing, Implementation, Strategy, Optimization)
+- **51 UX Methods** - Comprehensive collection organized by category (Research, Design, Testing, Implementation, Strategy, Optimization)
 - **Interactive Decision Helper** - 5-question flow providing personalized recommendations
 - **Project Phase Integration** - Methods tailored to project stages (start, middle, end)
 - **Methods Overview** - Browse and filter all available UX methods
@@ -118,7 +118,7 @@ pragmaticux/
 - **Navigation Update** - Methods now appear before Decision Helper
 
 ### 📊 Content Expansion
-- **64 UX Methods** - Comprehensive collection across 6 categories
+- **51 UX Methods** - Comprehensive collection across 6 categories
 - **New Methods Added**: Design Studio, Analytics Audit, Conversion Funnel Analysis, User Segmentation Analysis
 - **Method Renaming**: "Field Studies" → "Contextual Inquiry" for better UX terminology
 - **Duplicate Removal**: Cleaned up categorization data

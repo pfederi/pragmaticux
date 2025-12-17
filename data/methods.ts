@@ -103,6 +103,7 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Continuous Testing', category: 'testing', details: methods['Continuous Testing'] },
   { name: 'Focused A/B Testing', category: 'testing', details: methods['Focused A/B Testing'] },
   { name: 'Rapid Usability Audit', category: 'testing', details: methods['Rapid Usability Audit'] },
+  { name: 'Rapid UX Audits', category: 'testing', details: methods['Rapid UX Audits'] },
   { name: 'UX Bug Bash', category: 'testing', details: methods['UX Bug Bash'] },
 
   // Implementation

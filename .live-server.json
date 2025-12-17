@@ -1,0 +1,11 @@
+{
+  "port": 8001,
+  "host": "localhost",
+  "root": ".",
+  "open": false,
+  "ignore": "node_modules,dist,.git,package-lock.json,*.log",
+  "file": "index.html",
+  "wait": 1000,
+  "logLevel": 0,
+  "mount": [["/", "./index.html"]]
+}
