@@ -18,7 +18,7 @@ If you discover a security vulnerability in Pragmatic UX Design, please help us 
 **Please do not report security vulnerabilities through public GitHub issues.**
 
 Instead, please report security vulnerabilities by emailing:
-**security@pragmaticux.design**
+**patrick.federi@ergon.ch**
 
 You can also use our [security.txt file](https://pragmaticux.design/.well-known/security.txt) for contact information.
 
@@ -64,5 +64,5 @@ We appreciate security researchers who help keep our users safe. With your permi
 ## Contact
 
 For security-related questions or concerns:
-- Email: security@pragmaticux.design
+- Email: patrick.federi@ergon.ch
 - Security.txt: https://pragmaticux.design/.well-known/security.txt

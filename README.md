@@ -90,22 +90,22 @@ npm run lint
 ## 📚 Documentation
 
 ### 📖 Core Documentation
-- **[README.md](README.md)** - This file with setup and usage instructions
-- **[LICENSE](LICENSE)** - MIT License terms and conditions
-- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version history and changelog
+- **[README.md](https://github.com/pragmaticux/design/blob/main/README.md)** - This file with setup and usage instructions
+- **[LICENSE](https://github.com/pragmaticux/design/blob/main/LICENSE)** - GPL v3.0 License terms and conditions
+- **[RELEASE_NOTES.md](https://github.com/pragmaticux/design/blob/main/RELEASE_NOTES.md)** - Version history and changelog
 
 ### 🏗️ Technical Documentation
-- **[docs/arc42.md](docs/arc42.md)** - Complete architecture documentation following arc42 template
-- **[docs/decision-logic.md](docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
+- **[docs/arc42.md](https://github.com/pragmaticux/design/blob/main/docs/arc42.md)** - Complete architecture documentation following arc42 template
+- **[docs/decision-logic.md](https://github.com/pragmaticux/design/blob/main/docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
 
 ### 🤝 Community & Development
-- **[.github/CONTRIBUTING.md](.github/CONTRIBUTING.md)** - Contributing guidelines and development setup
-- **[.github/CODE_OF_CONDUCT.md](.github/CODE_OF_CONDUCT.md)** - Community code of conduct
-- **[.github/SECURITY.md](.github/SECURITY.md)** - Security policy and vulnerability reporting
+- **[CONTRIBUTING.md](https://github.com/pragmaticux/design/blob/main/.github/CONTRIBUTING.md)** - Contributing guidelines and development setup
+- **[CODE_OF_CONDUCT.md](https://github.com/pragmaticux/design/blob/main/.github/CODE_OF_CONDUCT.md)** - Community code of conduct
+- **[SECURITY.md](https://github.com/pragmaticux/design/blob/main/.github/SECURITY.md)** - Security policy and vulnerability reporting
 
 ## 🤝 Contributing
 
-We welcome contributions! See our [Contributing Guide](.github/CONTRIBUTING.md) for:
+We welcome contributions! See our [Contributing Guide](https://github.com/pragmaticux/design/blob/main/.github/CONTRIBUTING.md) for:
 
 - Development setup and guidelines
 - Code style and architecture patterns
@@ -123,14 +123,14 @@ We welcome contributions! See our [Contributing Guide](.github/CONTRIBUTING.md) 
 
 - 💬 [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
 - 📧 [Email Support](mailto:patrick.federi@ergon.ch)
-- 🛡️ [Security Issues](mailto:security@pragmaticux.design)
+- 🛡️ [Security Issues](mailto:patrick.federi@ergon.ch)
 
-This project follows a [Code of Conduct](.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment.
+This project follows a [Code of Conduct](https://github.com/pragmaticux/design/blob/main/.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment.
 
 ## 🔒 Security
 
 - **[Security Policy](.github/SECURITY.md)** - How to report security vulnerabilities
-- **Contact**: security@pragmaticux.design
+- **Contact**: patrick.federi@ergon.ch
 - **Security.txt**: https://pragmaticux.design/.well-known/security.txt
 
 ## 📁 Project Structure
@@ -371,7 +371,7 @@ This is a personal project by Patrick Federi. For questions or suggestions, plea
 
 ## 📄 License
 
-This project is licensed under the **GNU General Public License v3.0** with additional attribution requirements - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **GNU General Public License v3.0** with additional attribution requirements - see the [LICENSE](https://github.com/pragmaticux/design/blob/main/LICENSE) file for details.
 
 The GPL ensures that all derivatives and modifications remain open source, while the attribution clause maintains credit to the original Pragmatic UX Design framework.
 
@@ -453,12 +453,8 @@ Head of UX at Ergon Informatik AG
 - 🐛 **Issues**: [GitHub Issues](https://github.com/pragmaticux/design/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
 - 📖 **Documentation**: [Full Docs](https://pragmaticux.design/docs)
-- 🔒 **Security**: [Report Vulnerabilities](mailto:security@pragmaticux.design)
+- 🔒 **Security**: [Report Vulnerabilities](mailto:patrick.federi@ergon.ch)
 
 ---
 
-*Built with ❤️ using Next.js, TypeScript, and Tailwind CSS*
-
----
-
-Built with ❤️ using Next.js 15, React 19, and Tailwind CSS
+*Built with ❤️ using Next.js 15, React 19, and Tailwind CSS*
