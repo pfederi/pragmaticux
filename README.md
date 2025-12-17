@@ -131,7 +131,6 @@ This project follows a [Code of Conduct](https://github.com/pfederi/pragmaticux/
 
 - **[Security Policy](https://github.com/pfederi/pragmaticux/blob/main/.github/SECURITY.md)** - How to report security vulnerabilities
 - **Contact**: patrick.federi@ergon.ch
-- **Security.txt**: https://pragmaticux.design/.well-known/security.txt
 
 ## 📁 Project Structure
 
@@ -371,7 +370,7 @@ This is a personal project by Patrick Federi. For questions or suggestions, plea
 
 ## 📄 License
 
-This project is licensed under the **GNU General Public License v3.0** with additional attribution requirements - see the [LICENSE](https://github.com/pragmaticux/design/blob/main/LICENSE) file for details.
+This project is licensed under the **GNU General Public License v3.0** with additional attribution requirements - see the [LICENSE](https://github.com/pfederi/pragmaticux/blob/main/LICENSE) file for details.
 
 The GPL ensures that all derivatives and modifications remain open source, while the attribution clause maintains credit to the original Pragmatic UX Design framework.
 
@@ -448,7 +447,7 @@ Head of UX at Ergon Informatik AG
 
 ## 🔗 Links
 
-- 🌐 **Website**: [pragmaticux.design](https://pragmaticuxdesign.com)
+- 🌐 **Website**: [pragmaticux.design](https://pragmaticux.design)
 - 📧 **Contact**: [patrick.federi@ergon.ch](mailto:patrick.federi@ergon.ch)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/pfederi/pragmaticux/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/pfederi/pragmaticux/discussions)
