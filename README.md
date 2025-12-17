@@ -388,7 +388,7 @@ The GPL ensures that all derivatives and modifications remain open source, while
 - 📋 **State changes** - Document all modifications
 
 ### Attribution Requirements
-- 📋 **Website attribution** - When used publicly, link to https://pragmaticux.design
+- 📋 **Website attribution** - When used publicly, link to https://www.pragmaticuxdesign.com
 - 📋 **Framework credit** - Acknowledge "Pragmatic UX Design" as the source
 - 📋 **Tool attribution** - Credit the original methods and decision helper
 
@@ -399,7 +399,7 @@ The GPL ensures that all derivatives and modifications remain open source, while
 <div class="ux-attribution">
   <small>
     UX Decision Tool powered by
-    <a href="https://pragmaticux.design" target="_blank" rel="noopener">
+    <a href="https://www.pragmaticuxdesign.com" target="_blank" rel="noopener">
       Pragmatic UX Design
     </a> (GPL v3.0)
   </small>
@@ -411,7 +411,7 @@ The GPL ensures that all derivatives and modifications remain open source, while
 <section class="methods-section">
   <!-- Your embedded methods content -->
   <footer class="attribution">
-    Methods from <a href="https://pragmaticux.design/methods">Pragmatic UX Design</a>
+    Methods from <a href="https://www.pragmaticuxdesign.com/methods">Pragmatic UX Design</a>
     - Licensed under GPL v3.0
   </footer>
 </section>
@@ -423,7 +423,7 @@ The GPL ensures that all derivatives and modifications remain open source, while
 const credits = {
   uxFramework: {
     name: "Pragmatic UX Design",
-    url: "https://pragmaticux.design",
+    url: "https://www.pragmaticuxdesign.com",
     license: "GNU General Public License v3.0",
     attribution: "Clear attribution and GPL compliance required"
   }
@@ -447,7 +447,7 @@ Head of UX at Ergon Informatik AG
 
 ## 🔗 Links
 
-- 🌐 **Website**: [pragmaticux.design](https://pragmaticux.design)
+- 🌐 **Website**: [www.pragmaticuxdesign.com](https://www.pragmaticuxdesign.com)
 - 📧 **Contact**: [patrick.federi@ergon.ch](mailto:patrick.federi@ergon.ch)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/pfederi/pragmaticux/issues)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/pfederi/pragmaticux/discussions)

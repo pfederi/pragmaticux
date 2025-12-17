@@ -10,20 +10,20 @@ const structuredData = {
   "@type": "WebSite",
   "name": "Pragmatic UX Design",
   "description": "A practical framework for UX design with 8 core principles and 51 proven methods to maximize user experience impact.",
-  "url": "https://pragmaticux.design",
+  "url": "https://www.pragmaticuxdesign.com",
   "author": {
     "@type": "Person",
     "name": "Patrick Federi",
-    "url": "https://pragmaticux.design/about"
+    "url": "https://www.pragmaticuxdesign.com/about"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Pragmatic UX Design",
-    "url": "https://pragmaticux.design"
+    "url": "https://www.pragmaticuxdesign.com"
   },
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://pragmaticux.design/decision-helper",
+    "target": "https://www.pragmaticuxdesign.com/decision-helper",
     "query-input": "required name=search"
   },
   "about": [
@@ -72,14 +72,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://pragmaticux.design'),
+  metadataBase: new URL('https://www.pragmaticuxdesign.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://pragmaticux.design',
+    url: 'https://www.pragmaticuxdesign.com',
     title: 'Pragmatic UX Design - Maximising impact without overcomplicating the process',
     description: 'Discover 8 practical UX principles and 51 proven methods to improve user experience. Interactive decision helper guides you to the most relevant UX practices for your project.',
     siteName: 'Pragmatic UX Design',
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
     title: 'Pragmatic UX Design - Maximising impact without overcomplicating the process',
     description: 'Discover 8 practical UX principles and 51 proven methods to improve user experience.',
     creator: '@pragmaticux',
-    images: ['https://pragmaticux.design/og-image.jpg'],
+    images: ['https://www.pragmaticuxdesign.com/og-image.svg'],
   },
   robots: {
     index: true,
