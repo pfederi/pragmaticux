@@ -100,7 +100,7 @@ export default function MethodsOverview() {
               className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group"
             >
               {/* Category Chip */}
-              <div className="flex items-center justify-between mb-2">
+              <div className="flex items-center justify-end mb-2">
                 <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
