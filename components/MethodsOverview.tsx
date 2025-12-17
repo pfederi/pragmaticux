@@ -101,7 +101,7 @@ export default function MethodsOverview() {
             >
 
               {/* Header with title and chip */}
-              <div className="flex items-center justify-between mb-2 gap-2">
+              <div className="flex items-center justify-between mb-4 gap-2">
                 <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
                   {method.name}
                 </h4>
