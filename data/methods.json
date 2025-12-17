@@ -722,5 +722,56 @@
       "Include migration guides for breaking changes",
       "Balance innovation with system stability"
     ]
+  },
+  "Analytics Audit": {
+    "description": "Comprehensive review of analytics data to identify user behavior patterns, conversion bottlenecks, and optimization opportunities.",
+    "steps": [
+      "Define key performance indicators and success metrics",
+      "Review analytics dashboards and identify data gaps",
+      "Analyze user journey flows and drop-off points",
+      "Identify high-impact optimization opportunities",
+      "Create data-driven recommendations with prioritization"
+    ],
+    "tips": [
+      "Focus on actionable insights rather than vanity metrics",
+      "Correlate quantitative data with qualitative feedback when possible",
+      "Set up automated alerts for significant metric changes",
+      "Include seasonal and external factors in your analysis",
+      "Present findings with clear business impact estimates"
+    ]
+  },
+  "Conversion Funnel Analysis": {
+    "description": "Analyze user conversion funnels to identify bottlenecks and optimize the path to desired outcomes.",
+    "steps": [
+      "Map out the complete user conversion funnel",
+      "Identify drop-off points and friction areas",
+      "Calculate conversion rates at each stage",
+      "Conduct A/B tests on high-impact funnel steps",
+      "Implement optimizations and measure impact"
+    ],
+    "tips": [
+      "Start with macro funnel analysis before diving into micro details",
+      "Consider mobile vs desktop funnel differences",
+      "Use cohort analysis to understand user segments",
+      "Test one change at a time to isolate impact",
+      "Monitor long-term funnel health, not just short-term wins"
+    ]
+  },
+  "User Segmentation Analysis": {
+    "description": "Divide users into meaningful segments based on behavior, demographics, and usage patterns to enable targeted optimization.",
+    "steps": [
+      "Identify key user characteristics and segmentation variables",
+      "Analyze behavioral patterns across different user groups",
+      "Create user personas based on quantitative data",
+      "Develop segment-specific optimization strategies",
+      "Measure impact of targeted interventions"
+    ],
+    "tips": [
+      "Start with broad segments and refine based on data insights",
+      "Combine quantitative segmentation with qualitative research",
+      "Use statistical significance testing for segment comparisons",
+      "Avoid over-segmentation that leads to analysis paralysis",
+      "Regularly validate and update segments as user behavior evolves"
+    ]
   }
 }

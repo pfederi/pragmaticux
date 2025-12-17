@@ -81,6 +81,9 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Lean Personas', category: 'research', details: methods['Lean Personas'] },
   { name: 'Executive Summaries', category: 'research', details: methods['Executive Summaries'] },
   { name: 'One-Page Findings', category: 'research', details: methods['One-Page Findings'] },
+  { name: 'Analytics Audit', category: 'research', details: methods['Analytics Audit'] },
+  { name: 'Conversion Funnel Analysis', category: 'research', details: methods['Conversion Funnel Analysis'] },
+  { name: 'User Segmentation Analysis', category: 'research', details: methods['User Segmentation Analysis'] },
 
   // Strategy & Planning
   { name: 'Design Studio', category: 'design', details: methods['Design Studio'] },
