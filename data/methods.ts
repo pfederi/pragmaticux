@@ -18,6 +18,14 @@ export const getMethodInstructions = (method: string): MethodDetails => {
   }
 }
 
+export const getMethodDescription = (method: string): string => {
+  const methodData = methods[method]
+  if (methodData && methodData.description) {
+    return methodData.description
+  }
+  return "A practical method to improve your UX process."
+}
+
 export type MethodCategory =
   | 'research'
   | 'design'

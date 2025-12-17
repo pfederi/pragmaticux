@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { categorizedMethods, methodCategories, type MethodCategory, getMethodInstructions } from '@/data/methods'
+import { categorizedMethods, methodCategories, type MethodCategory, getMethodInstructions, getMethodDescription } from '@/data/methods'
 import { getMethodDescription } from '@/data/methods'
 
 export default function MethodsOverview() {
