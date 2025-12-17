@@ -8,15 +8,15 @@ export default function MethodsOverview() {
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
-  // Glassmorphism colors for filter chips
+  // Glassmorphism colors for filter chips with white borders
   const chipColors: Record<string, string> = {
-    all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-gray-200/50',
-    research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-blue-200/50',
-    design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-purple-200/50',
-    testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-green-200/50',
-    implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-orange-200/50',
-    strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-indigo-200/50',
-    optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-red-200/50'
+    all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
+    research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
+    design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-white/60',
+    testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-white/60',
+    implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-white/60',
+    strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-white/60',
+    optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
   }
 
   const filteredMethods = selectedCategory === 'all'
@@ -58,7 +58,7 @@ export default function MethodsOverview() {
               onClick={() => setSelectedCategory('all')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                 selectedCategory === 'all'
-                  ? 'bg-primary text-primary-foreground shadow-lg border-primary'
+                  ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                   : `${chipColors.all} hover:shadow-md`
               }`}
             >
@@ -72,7 +72,7 @@ export default function MethodsOverview() {
                   onClick={() => setSelectedCategory(key as MethodCategory)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                     selectedCategory === key
-                      ? 'bg-primary text-primary-foreground shadow-lg border-primary'
+                      ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                       : `${chipColors[key]} hover:shadow-md`
                   }`}
                 >
@@ -97,11 +97,11 @@ export default function MethodsOverview() {
             <button
               key={index}
               onClick={() => setSelectedMethod(method.name)}
-              className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 text-left w-full group"
+              className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group"
             >
               {/* Category Chip */}
               <div className="flex items-center justify-between mb-2">
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${chipColors[method.category]}`}>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
               </div>
@@ -121,7 +121,7 @@ export default function MethodsOverview() {
 
         {/* CTA Section */}
         <div className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t">
-          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-white/60/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
             <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Choosing the Right Method?</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
               Use our Decision Helper to get personalized method recommendations based on your specific situation and project needs.
@@ -138,7 +138,7 @@ export default function MethodsOverview() {
               </Link>
               <Link
                 href="/about"
-                className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-white/60/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
               >
                 Learn More About Us
               </Link>
@@ -206,7 +206,7 @@ export default function MethodsOverview() {
                     </div>
                   )}
 
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6">
+                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-white/60/20 rounded-xl p-4 sm:p-6">
                     <h4 className="font-semibold mb-2">Need Help Implementing This Method?</h4>
                     <p className="text-sm text-muted-foreground mb-4">
                       We're here to help you apply this method effectively in your project. Get personalized guidance and support.
@@ -223,7 +223,7 @@ export default function MethodsOverview() {
                       </a>
                       <Link
                         href="/about"
-                        className="px-4 py-2 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-center"
+                        className="px-4 py-2 border-2 border-white/60/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-center"
                       >
                         Learn More About Us
                       </Link>
