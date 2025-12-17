@@ -100,11 +100,11 @@ export default function MethodsOverview() {
               className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group"
             >
 
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors">
+              <div className="flex items-center justify-between mb-2 gap-2">
+                <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
                   {method.name}
                 </h4>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate max-w-full ${chipColors[method.category]}`}>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
               </div>
