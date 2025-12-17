@@ -56,7 +56,7 @@ export default function MethodsOverview() {
           <div className="flex flex-wrap gap-2 sm:gap-3">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap ${
                 selectedCategory === 'all'
                   ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                   : `${chipColors.all} hover:shadow-md`
@@ -70,7 +70,7 @@ export default function MethodsOverview() {
                 <button
                   key={key}
                   onClick={() => setSelectedCategory(key as MethodCategory)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap ${
                     selectedCategory === key
                       ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                       : `${chipColors[key]} hover:shadow-md`
@@ -104,7 +104,7 @@ export default function MethodsOverview() {
                 <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors">
                   {method.name}
                 </h4>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 ${chipColors[method.category]}`}>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate max-w-full ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
               </div>
