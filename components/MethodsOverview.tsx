@@ -8,6 +8,17 @@ export default function MethodsOverview() {
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
+  // Different colors for filter chips
+  const chipColors: Record<string, string> = {
+    all: 'bg-gray-100 text-gray-800 border-gray-200',
+    research: 'bg-blue-100 text-blue-800 border-blue-200',
+    design: 'bg-purple-100 text-purple-800 border-purple-200',
+    testing: 'bg-green-100 text-green-800 border-green-200',
+    implementation: 'bg-orange-100 text-orange-800 border-orange-200',
+    strategy: 'bg-indigo-100 text-indigo-800 border-indigo-200',
+    optimization: 'bg-red-100 text-red-800 border-red-200'
+  }
+
   const filteredMethods = selectedCategory === 'all'
     ? categorizedMethods
     : categorizedMethods.filter(method => method.category === selectedCategory)
@@ -45,10 +56,10 @@ export default function MethodsOverview() {
           <div className="flex flex-wrap gap-2 sm:gap-3">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                 selectedCategory === 'all'
-                  ? 'bg-primary text-primary-foreground shadow-lg'
-                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                  ? 'bg-primary text-primary-foreground shadow-lg border-primary'
+                  : `${chipColors.all} hover:shadow-md`
               }`}
             >
               All Methods ({categorizedMethods.length})
@@ -62,7 +73,7 @@ export default function MethodsOverview() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border ${
                     selectedCategory === key
                       ? 'bg-primary text-primary-foreground shadow-lg border-primary'
-                      : `${category.color} hover:shadow-md`
+                      : `${chipColors[key]} hover:shadow-md`
                   }`}
                 >
                   {category.label} ({count})
@@ -90,7 +101,7 @@ export default function MethodsOverview() {
             >
               {/* Category Chip */}
               <div className="flex items-center justify-between mb-2">
-                <span className={`px-2 py-1 rounded-full text-xs font-medium ${methodCategories[method.category].color}`}>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
               </div>
