@@ -90,22 +90,22 @@ npm run lint
 ## 📚 Documentation
 
 ### 📖 Core Documentation
-- **[README.md](https://github.com/pragmaticux/design/blob/main/README.md)** - This file with setup and usage instructions
-- **[LICENSE](https://github.com/pragmaticux/design/blob/main/LICENSE)** - GPL v3.0 License terms and conditions
-- **[RELEASE_NOTES.md](https://github.com/pragmaticux/design/blob/main/RELEASE_NOTES.md)** - Version history and changelog
+- **[README.md](https://github.com/pfederi/pragmaticux/blob/main/README.md)** - This file with setup and usage instructions
+- **[LICENSE](https://github.com/pfederi/pragmaticux/blob/main/LICENSE)** - GPL v3.0 License terms and conditions
+- **[RELEASE_NOTES.md](https://github.com/pfederi/pragmaticux/blob/main/RELEASE_NOTES.md)** - Version history and changelog
 
 ### 🏗️ Technical Documentation
-- **[docs/arc42.md](https://github.com/pragmaticux/design/blob/main/docs/arc42.md)** - Complete architecture documentation following arc42 template
-- **[docs/decision-logic.md](https://github.com/pragmaticux/design/blob/main/docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
+- **[docs/arc42.md](https://github.com/pfederi/pragmaticux/blob/main/docs/arc42.md)** - Complete architecture documentation following arc42 template
+- **[docs/decision-logic.md](https://github.com/pfederi/pragmaticux/blob/main/docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
 
 ### 🤝 Community & Development
-- **[CONTRIBUTING.md](https://github.com/pragmaticux/design/blob/main/.github/CONTRIBUTING.md)** - Contributing guidelines and development setup
-- **[CODE_OF_CONDUCT.md](https://github.com/pragmaticux/design/blob/main/.github/CODE_OF_CONDUCT.md)** - Community code of conduct
-- **[SECURITY.md](https://github.com/pragmaticux/design/blob/main/.github/SECURITY.md)** - Security policy and vulnerability reporting
+- **[CONTRIBUTING.md](https://github.com/pfederi/pragmaticux/blob/main/.github/CONTRIBUTING.md)** - Contributing guidelines and development setup
+- **[CODE_OF_CONDUCT.md](https://github.com/pfederi/pragmaticux/blob/main/.github/CODE_OF_CONDUCT.md)** - Community code of conduct
+- **[SECURITY.md](https://github.com/pfederi/pragmaticux/blob/main/.github/SECURITY.md)** - Security policy and vulnerability reporting
 
 ## 🤝 Contributing
 
-We welcome contributions! See our [Contributing Guide](https://github.com/pragmaticux/design/blob/main/.github/CONTRIBUTING.md) for:
+We welcome contributions! See our [Contributing Guide](https://github.com/pfederi/pragmaticux/blob/main/.github/CONTRIBUTING.md) for:
 
 - Development setup and guidelines
 - Code style and architecture patterns
@@ -114,22 +114,22 @@ We welcome contributions! See our [Contributing Guide](https://github.com/pragma
 
 ### Issue Templates
 
-- 🐛 [Bug Reports](.github/ISSUE_TEMPLATE/bug-report.yml)
-- ✨ [Feature Requests](.github/ISSUE_TEMPLATE/feature-request.yml)
-- 📚 [Documentation Issues](.github/ISSUE_TEMPLATE/documentation.yml)
-- ❓ [Questions](.github/ISSUE_TEMPLATE/question.yml)
+- 🐛 [Bug Reports](https://github.com/pfederi/pragmaticux/issues/new?template=bug-report.yml)
+- ✨ [Feature Requests](https://github.com/pfederi/pragmaticux/issues/new?template=feature-request.yml)
+- 📚 [Documentation Issues](https://github.com/pfederi/pragmaticux/issues/new?template=documentation.yml)
+- ❓ [Questions](https://github.com/pfederi/pragmaticux/issues/new?template=question.yml)
 
 ### Community
 
-- 💬 [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
+- 💬 [GitHub Discussions](https://github.com/pfederi/pragmaticux/discussions)
 - 📧 [Email Support](mailto:patrick.federi@ergon.ch)
 - 🛡️ [Security Issues](mailto:patrick.federi@ergon.ch)
 
-This project follows a [Code of Conduct](https://github.com/pragmaticux/design/blob/main/.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment.
+This project follows a [Code of Conduct](https://github.com/pfederi/pragmaticux/blob/main/.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment.
 
 ## 🔒 Security
 
-- **[Security Policy](.github/SECURITY.md)** - How to report security vulnerabilities
+- **[Security Policy](https://github.com/pfederi/pragmaticux/blob/main/.github/SECURITY.md)** - How to report security vulnerabilities
 - **Contact**: patrick.federi@ergon.ch
 - **Security.txt**: https://pragmaticux.design/.well-known/security.txt
 
@@ -448,11 +448,11 @@ Head of UX at Ergon Informatik AG
 
 ## 🔗 Links
 
-- 🌐 **Website**: [pragmaticux.design](https://pragmaticux.design)
+- 🌐 **Website**: [pragmaticux.design](https://pragmaticuxdesign.com)
 - 📧 **Contact**: [patrick.federi@ergon.ch](mailto:patrick.federi@ergon.ch)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/pragmaticux/design/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/pragmaticux/design/discussions)
-- 📖 **Documentation**: [Full Docs](https://pragmaticux.design/docs)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/pfederi/pragmaticux/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/pfederi/pragmaticux/discussions)
+- 📖 **Documentation**: [Full Docs](https://github.com/pfederi/pragmaticux/tree/main/docs)
 - 🔒 **Security**: [Report Vulnerabilities](mailto:patrick.federi@ergon.ch)
 
 ---
