@@ -68,10 +68,8 @@ pragmaticux/
 │   └── Workflow.tsx       # Workflow section
 ├── data/                  # Data files
 │   ├── principles.json    # Core principles data
-│   ├── methods.json       # Method instructions for modal
 │   ├── decision_tree.json # Decision tree for helper
 │   ├── principles.ts      # Principles TypeScript exports
-│   ├── methods.ts         # Methods TypeScript exports
 │   └── decisionTree.ts    # Decision tree TypeScript exports
 ├── lib/                   # Utility functions
 │   └── utils.ts           # Helper functions (cn, etc.)
@@ -126,8 +124,6 @@ An interactive tool that guides users through a series of questions to identify 
 - **State Persistence**: Progress saved in localStorage across sessions
 - **Personalized Recommendations**: Get tailored principle suggestions based on your answers
 - **Suggested Methods**: Receive specific UX methods to implement
-- **Method Details Modal**: Click on any suggested method to see detailed implementation instructions with step-by-step guides and practical tips
-- **Glassmorphism UI**: Modern modal design with backdrop blur, gradient glow effects, and premium visual appeal
 - **Email Integration**: Pre-filled email template with results for easy sharing
 
 ### Responsive Design
@@ -145,13 +141,6 @@ Fully optimized for mobile, tablet, and desktop devices:
 - Optimized images and assets
 - Efficient code splitting
 - Fast page loads and smooth transitions
-
-### Modern UI Features
-
-- **Glassmorphism Design**: Backdrop blur effects and semi-transparent elements for a modern, premium look
-- **Gradient Glow Effects**: Subtle colored gradients around interactive elements like modals
-- **Smooth Animations**: Hover effects, transitions, and micro-interactions for enhanced user experience
-- **Responsive Modal System**: Fully responsive modals with proper focus management and accessibility
 
 ### Accessibility (WCAG 2.1 Level AA Compliant)
 

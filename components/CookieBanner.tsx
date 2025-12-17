@@ -68,46 +68,42 @@ export default function CookieBanner() {
   if (!showBanner) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50 p-3 sm:p-4">
+    <div className="fixed bottom-0 left-0 right-0 bg-card border-t border-border shadow-lg z-50 p-4">
       <div className="container mx-auto max-w-4xl">
-        {/* Mobile: Stack vertically, Desktop: Horizontal layout */}
-        <div className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-4">
-          {/* Close button - top right on mobile, right side on desktop */}
-          <button
-            onClick={closeBanner}
-            className="self-end sm:self-start p-1 hover:bg-muted rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 sm:order-3"
-            aria-label="Close cookie banner"
-          >
-            <X className="w-4 h-4" />
-          </button>
-
-          {/* Content */}
-          <div className="flex-1 sm:order-1">
-            <h3 className="text-base sm:text-lg font-semibold mb-2 text-foreground">
+        <div className="flex items-start gap-4">
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold mb-2 text-foreground">
               Cookie Preferences
             </h3>
-            <p className="text-sm sm:text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               We use cookies and analytics to improve your experience on our website.
               Analytics help us understand how visitors use our site to make it better.
               You can choose to accept all cookies or only essential ones.
             </p>
           </div>
 
-          {/* Buttons - full width on mobile, inline on desktop */}
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 sm:items-center sm:order-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:items-center">
             <button
               onClick={acceptEssentialOnly}
-              className="w-full sm:w-auto px-4 py-2.5 sm:py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md border border-muted-foreground/20 hover:border-muted-foreground/40"
+              className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
             >
               Essential Only
             </button>
             <button
               onClick={acceptAll}
-              className="w-full sm:w-auto px-4 py-2.5 sm:py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
               Accept All
             </button>
           </div>
+
+          <button
+            onClick={closeBanner}
+            className="p-1 hover:bg-muted rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Close cookie banner"
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
       </div>
     </div>

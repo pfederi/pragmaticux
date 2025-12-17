@@ -127,6 +127,16 @@ export default function Navigation() {
               Decision Helper
             </Link>
             <Link
+              href="/methods"
+              className={cn(
+                "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                pathname === "/methods" && "text-primary"
+              )}
+              aria-current={pathname === "/methods" ? "page" : undefined}
+            >
+              Methods
+            </Link>
+            <Link
               href="/about"
               className={cn(
                 "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
@@ -243,6 +253,20 @@ export default function Navigation() {
                 role="menuitem"
               >
                 Decision Helper
+              </Link>
+              <Link
+                href="/methods"
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setIsPrinciplesOpen(false)
+                }}
+                className={cn(
+                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
+                  pathname === "/methods" && "text-primary"
+                )}
+                role="menuitem"
+              >
+                Methods
               </Link>
               <Link
                 href="/about"
