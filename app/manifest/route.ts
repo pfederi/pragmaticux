@@ -1,0 +1,27 @@
+import { NextResponse } from 'next/server'
+
+const manifest = {
+  name: "Pragmatic UX Design",
+  short_name: "Pragmatic UX",
+  description: "Practical UX framework with 8 core principles and 51 proven methods for maximum user experience impact.",
+  start_url: "/",
+  display: "standalone",
+  background_color: "#000000",
+  theme_color: "#7c3aed",
+  icons: [
+    {
+      src: "/favicon.svg",
+      sizes: "any",
+      type: "image/svg+xml"
+    }
+  ]
+}
+
+export async function GET() {
+  return NextResponse.json(manifest, {
+    headers: {
+      'Content-Type': 'application/manifest+json',
+      'Cache-Control': 'public, max-age=31536000, immutable',
+    },
+  })
+}
