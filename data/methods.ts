@@ -75,7 +75,7 @@ export const methodCategories: Record<MethodCategory, { label: string, color: st
 
 export const categorizedMethods: CategorizedMethod[] = [
   // Research & Analysis
-  { name: 'Field Studies', category: 'research', details: methods['Field Studies'] },
+  { name: 'Contextual Inquiry', category: 'research', details: methods['Contextual Inquiry'] },
   { name: 'Task Analysis', category: 'research', details: methods['Task Analysis'] },
   { name: 'Deep Interviews', category: 'research', details: methods['Deep Interviews'] },
   { name: 'Lean Personas', category: 'research', details: methods['Lean Personas'] },
