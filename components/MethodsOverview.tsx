@@ -8,15 +8,15 @@ export default function MethodsOverview() {
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
-  // Different colors for filter chips
+  // Glassmorphism colors for filter chips
   const chipColors: Record<string, string> = {
-    all: 'bg-gray-100 text-gray-800 border-gray-200',
-    research: 'bg-blue-100 text-blue-800 border-blue-200',
-    design: 'bg-purple-100 text-purple-800 border-purple-200',
-    testing: 'bg-green-100 text-green-800 border-green-200',
-    implementation: 'bg-orange-100 text-orange-800 border-orange-200',
-    strategy: 'bg-indigo-100 text-indigo-800 border-indigo-200',
-    optimization: 'bg-red-100 text-red-800 border-red-200'
+    all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-gray-200/50',
+    research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-blue-200/50',
+    design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-purple-200/50',
+    testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-green-200/50',
+    implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-orange-200/50',
+    strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-indigo-200/50',
+    optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-red-200/50'
   }
 
   const filteredMethods = selectedCategory === 'all'
