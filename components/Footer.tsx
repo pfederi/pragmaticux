@@ -20,7 +20,6 @@ export default function Footer() {
                   if (typeof window !== 'undefined' && window.reopenCookieBanner) {
                     window.reopenCookieBanner()
                   } else {
-                    // Fallback: force show banner via localStorage
                     localStorage.setItem('cookie-banner-force-show', 'true')
                     window.location.reload()
                   }

@@ -2,11 +2,50 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, ArrowLeft, CheckCircle, Lightbulb } from 'lucide-react'
 import { getPrincipleByOrder, principles } from '@/data/principles'
+import type { Metadata } from 'next'
 
 interface PageProps {
   params: Promise<{
     id: string
   }>
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { id } = await params
+  const order = parseInt(id)
+  const principle = getPrincipleByOrder(order)
+
+  if (!principle) {
+    return {
+      title: 'Principle Not Found - Pragmatic UX Design',
+      description: 'The requested UX principle could not be found.',
+    }
+  }
+
+  return {
+    title: `${principle.title} - UX Principle ${principle.id} | Pragmatic UX Design`,
+    description: `${principle.summary} Learn how to apply this core UX principle in real-world projects with practical examples and implementation guidance.`,
+    keywords: [
+      `UX principle ${principle.id}`,
+      principle.title.toLowerCase(),
+      'user experience principles',
+      'design principles',
+      'UX best practices',
+      'interaction design',
+      'user-centered design'
+    ],
+    openGraph: {
+      title: `${principle.title} - UX Principle ${principle.id} | Pragmatic UX Design`,
+      description: principle.summary,
+      url: `https://pragmaticux.design/principles/${id}`,
+      type: 'article',
+    },
+    twitter: {
+      title: `${principle.title} - UX Principle ${principle.id}`,
+      description: principle.summary,
+      card: 'summary_large_image',
+    },
+  }
 }
 
 export default async function PrincipleDetailPage({ params }: PageProps) {

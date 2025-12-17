@@ -28,11 +28,12 @@ The Pragmatic UX Design website presents a practical framework for UX Design, co
 **Core Features:**
 - Presentation of eight UX Design principles with detailed explanations
 - Interactive Decision Helper with 5-question flow including project phase
-- Methods Overview page with 64+ UX methods across 6 categories
-- Responsive design with glassmorphism UI effects
+- Methods Overview page with 51 UX methods across 6 categories
+- Responsive design with glassmorphism UI effects and gradient glows
 - Decision Helper state persistence with localStorage
 - Email integration for result sharing
-- Modal-based method details with contact integration
+- Modal-based method details with contact integration and tips
+- Category filtering and method search functionality
 
 **Target Audience:**
 - UX Designers and Product Managers
@@ -208,8 +209,9 @@ graph TB
 - **page.tsx**: Homepage with Hero, Workflow, Principles Overview
 - **about/page.tsx**: About page with framework information
 - **decision-helper/page.tsx**: Wrapper for Decision Helper component
-- **methods/page.tsx**: Methods overview page with filtering (NEW)
+- **methods/page.tsx**: Methods overview page with filtering and modal details
 - **principles/[id]/page.tsx**: Dynamic route for individual principles
+- **release-notes/page.tsx**: Version history and changelog page
 
 ### 5.3 Level 3: Components Layer
 
@@ -342,20 +344,26 @@ graph TB
 graph TB
     subgraph "Data Layer"
         PrinciplesJSON[principles.json<br/>8 Core Principles]
+        MethodsJSON[methods.json<br/>51 UX Methods]
         PrinciplesTS[principles.ts<br/>TypeScript Export]
+        MethodsTS[methods.ts<br/>Methods & Categories]
         DecisionJSON[decision_tree.json<br/>Questions & Rules]
         DecisionTS[decisionTree.ts<br/>TypeScript Export]
         Types[types/<br/>Type Definitions]
         Utils[lib/utils.ts<br/>Utility Functions]
     end
-    
+
     PrinciplesJSON --> PrinciplesTS
+    MethodsJSON --> MethodsTS
     DecisionJSON --> DecisionTS
     Types --> PrinciplesTS
+    Types --> MethodsTS
     Types --> DecisionTS
-    
+
     style PrinciplesJSON fill:#29b6f6
+    style MethodsJSON fill:#29b6f6
     style PrinciplesTS fill:#29b6f6
+    style MethodsTS fill:#29b6f6
     style DecisionJSON fill:#29b6f6
     style DecisionTS fill:#29b6f6
     style Types fill:#29b6f6
@@ -365,8 +373,10 @@ graph TB
 **Data Structures:**
 
 - **principles.json**: Array of 8 principles with title, summary, examples, etc.
-- **decision_tree.json**: Questions and rules for Decision Helper
-- **types/**: TypeScript interfaces for type safety
+- **methods.json**: Object with 51 UX methods, each containing description, steps, and tips
+- **decision_tree.json**: Questions and rules for Decision Helper with project phase integration
+- **types/**: TypeScript interfaces for type safety (DecisionTree, MethodDetails, etc.)
+- **methods.ts**: Categorized method exports and utility functions
 
 ---
 

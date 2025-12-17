@@ -1,4 +1,4 @@
-# Pragmatic UX Design
+# Pragmatic UX Design v2.0
 
 A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles and methods for your specific situation.
 
@@ -8,9 +8,10 @@ A practical framework for maximizing UX impact without overcomplicating design p
 - **51 UX Methods** - Comprehensive collection organized by category (Research, Design, Testing, Implementation, Strategy, Optimization)
 - **Interactive Decision Helper** - 5-question flow providing personalized recommendations
 - **Project Phase Integration** - Methods tailored to project stages (start, middle, end)
-- **Methods Overview** - Browse and filter all available UX methods
+- **Methods Overview** - Browse and filter all available UX methods with modal details
 - **Responsive Design** - Optimized for all devices with modern glassmorphism UI
 - **State Persistence** - Decision Helper progress automatically saved
+- **Contact Integration** - Direct email integration for method implementation support
 
 ## 🚀 Getting Started
 
@@ -37,6 +38,22 @@ npm run dev
 
 The development server includes hot-reload, so changes will automatically refresh in your browser.
 
+## 🆕 What's New in v2.0
+
+### New Features
+- **Modal-based Method Details** - Interactive method cards with detailed descriptions, steps, and tips
+- **Glassmorphism UI Effects** - Modern visual design with backdrop blur and gradient glows
+- **Project Phase Integration** - Decision Helper now considers project stage (start/middle/end)
+- **Contact Integration** - Direct email links for implementation support
+- **Methods Filtering** - Browse methods by category with visual chips
+- **Mobile-Optimized Cookie Banner** - Improved responsive design for mobile devices
+- **Release Notes Page** - Dedicated page for version history and changelog
+
+### Technical Improvements
+- **Enhanced Type Safety** - Comprehensive TypeScript interfaces and strict typing
+- **Accessibility** - WCAG AA compliant with proper ARIA labels, keyboard navigation, and focus management
+- **Documentation** - Updated arc42 architecture docs and decision logic documentation
+
 ### Build for Production
 
 ```bash
@@ -54,6 +71,13 @@ npm start
 npm run lint
 ```
 
+## 📚 Documentation
+
+- **[docs/arc42.md](docs/arc42.md)** - Complete architecture documentation following arc42 template
+- **[docs/decision-logic.md](docs/decision-logic.md)** - Detailed Decision Helper logic and rule engine documentation
+- **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version history and changelog
+- **[README.md](README.md)** - This file with setup and usage instructions
+
 ## 📁 Project Structure
 
 ```
@@ -70,20 +94,21 @@ pragmaticux/
 ├── components/            # React components
 │   ├── About.tsx          # About page content
 │   ├── CTA.tsx            # Call-to-action component
-│   ├── CookieBanner.tsx   # GDPR cookie consent banner
-│   ├── DecisionHelper.tsx # Interactive decision helper (5 questions)
-│   ├── Footer.tsx         # Site footer
+│   ├── CookieBanner.tsx   # GDPR cookie consent banner (mobile optimized)
+│   ├── DecisionHelper.tsx # Interactive decision helper (5 questions + project phase)
+│   ├── Footer.tsx         # Site footer with cookie settings
 │   ├── Hero.tsx           # Hero section
 │   ├── Layout.tsx         # Main layout wrapper
-│   ├── MethodsOverview.tsx # Methods overview with filtering (NEW)
-│   ├── Modal.tsx          # Reusable modal component
+│   ├── MethodsOverview.tsx # Methods overview with filtering and modals
 │   ├── Navigation.tsx     # Header navigation with mobile menu
 │   ├── PrinciplesOverview.tsx # Principles grid overview
 │   └── Workflow.tsx       # Workflow section
 ├── data/                  # Data files
 │   ├── principles.json    # Core principles data
+│   ├── methods.json       # UX methods data with descriptions and steps
 │   ├── decision_tree.json # Decision tree for helper
 │   ├── principles.ts      # Principles TypeScript exports
+│   ├── methods.ts         # Methods TypeScript exports with categories
 │   └── decisionTree.ts    # Decision tree TypeScript exports
 ├── lib/                   # Utility functions
 │   └── utils.ts           # Helper functions (cn, etc.)

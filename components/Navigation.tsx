@@ -24,10 +24,8 @@ export default function Navigation() {
     { id: 8, title: 'Reuse Design Systems' },
   ]
 
-  // Close dropdown when clicking outside (desktop only)
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      // Only handle desktop dropdown, not mobile menu
       if (window.innerWidth >= 768 && dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsPrinciplesOpen(false)
       }

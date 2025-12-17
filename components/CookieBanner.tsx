@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
 
-// Global function to reopen cookie banner
 declare global {
   interface Window {
     reopenCookieBanner?: () => void;
@@ -15,28 +14,23 @@ export default function CookieBanner() {
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
 
   useEffect(() => {
-    // Prüfe, ob bereits eine Entscheidung getroffen wurde
     const consent = localStorage.getItem('cookie-consent')
     const analytics = localStorage.getItem('analytics-enabled')
     const forceShow = localStorage.getItem('cookie-banner-force-show')
 
     if (forceShow === 'true' || !consent) {
-      // Zeige Banner wenn forced oder noch keine Entscheidung getroffen wurde
       setShowBanner(true)
-      localStorage.removeItem('cookie-banner-force-show') // Reset force flag
+      localStorage.removeItem('cookie-banner-force-show')
     } else if (analytics === 'true') {
       setAnalyticsEnabled(true)
-      // Hier könntest du Analytics aktivieren
       console.log('Analytics enabled')
     }
 
-    // Global function to reopen banner
     window.reopenCookieBanner = () => {
       setShowBanner(true)
     }
 
     return () => {
-      // Cleanup
       delete window.reopenCookieBanner
     }
   }, [])
@@ -46,7 +40,6 @@ export default function CookieBanner() {
     localStorage.setItem('analytics-enabled', 'true')
     setAnalyticsEnabled(true)
     setShowBanner(false)
-    // Hier Analytics aktivieren
     console.log('All cookies accepted, analytics enabled')
   }
 
@@ -59,7 +52,6 @@ export default function CookieBanner() {
   }
 
   const closeBanner = () => {
-    // Banner schließen ohne Entscheidung (essential only)
     localStorage.setItem('cookie-consent', 'essential-only')
     localStorage.setItem('analytics-enabled', 'false')
     setShowBanner(false)

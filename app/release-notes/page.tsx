@@ -1,28 +1,47 @@
 import { promises as fs } from 'fs'
 import path from 'path'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Release Notes & Changelog - Pragmatic UX Design',
+  description: 'Stay updated with the latest features, improvements, and bug fixes in Pragmatic UX Design v2.0. Complete changelog and version history.',
+  keywords: [
+    'release notes',
+    'changelog',
+    'version history',
+    'UX updates',
+    'feature updates',
+    'bug fixes'
+  ],
+  openGraph: {
+    title: 'Release Notes & Changelog - Pragmatic UX Design',
+    description: 'Complete changelog and version history for Pragmatic UX Design updates and improvements.',
+    url: 'https://pragmaticux.design/release-notes',
+    type: 'website',
+  },
+  twitter: {
+    title: 'Release Notes & Changelog - Pragmatic UX Design',
+    description: 'Stay updated with the latest features and improvements.',
+    card: 'summary_large_image',
+  },
+}
 
 function parseMarkdown(content: string) {
   return content
-    // Headers
     .replace(/^# (.+)$/gm, '<h1 class="text-2xl font-bold mb-4 mt-8 first:mt-0 text-foreground">$1</h1>')
     .replace(/^## (.+)$/gm, '<h2 class="text-xl font-semibold mb-3 mt-6 text-foreground">$1</h2>')
     .replace(/^### (.+)$/gm, '<h3 class="text-lg font-medium mb-2 mt-4 text-foreground">$1</h3>')
     .replace(/^#### (.+)$/gm, '<h4 class="text-base font-medium mb-2 mt-3 text-foreground">$1</h4>')
 
-    // Bold text
     .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold">$1</strong>')
 
-    // Inline code
     .replace(/`(.+?)`/g, '<code class="bg-muted px-1.5 py-0.5 rounded text-sm font-mono">$1</code>')
 
-    // Links (simple pattern)
     .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-primary hover:text-primary/80 underline">$1</a>')
 
-    // Lists
     .replace(/^- (.+)$/gm, '<li class="mb-1 ml-4">$1</li>')
     .replace(/(<li>.*<\/li>\n?)+/g, '<ul class="list-disc list-inside mb-4 space-y-1">$&</ul>')
 
-    // Paragraphs (split by double newlines and wrap in p tags)
     .split('\n\n')
     .map(paragraph => {
       if (paragraph.trim() && !paragraph.includes('<h') && !paragraph.includes('<ul') && !paragraph.includes('<li')) {
@@ -37,7 +56,6 @@ export default async function ReleaseNotesPage() {
   const filePath = path.join(process.cwd(), 'RELEASE_NOTES.md')
   const content = await fs.readFile(filePath, 'utf8')
 
-  // Remove the first line (main title) as we have our own
   const contentWithoutTitle = content.replace(/^# .*\n/, '')
 
   return (

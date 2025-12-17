@@ -74,7 +74,6 @@ export const methodCategories: Record<MethodCategory, { label: string, color: st
 }
 
 export const categorizedMethods: CategorizedMethod[] = [
-  // Research & Analysis
   { name: 'Contextual Inquiry', category: 'research', details: methods['Contextual Inquiry'] },
   { name: 'Task Analysis', category: 'research', details: methods['Task Analysis'] },
   { name: 'Deep Interviews', category: 'research', details: methods['Deep Interviews'] },
@@ -85,7 +84,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Conversion Funnel Analysis', category: 'research', details: methods['Conversion Funnel Analysis'] },
   { name: 'User Segmentation Analysis', category: 'research', details: methods['User Segmentation Analysis'] },
 
-  // Strategy & Planning
   { name: 'Design Studio', category: 'design', details: methods['Design Studio'] },
   { name: 'Sketching Sessions', category: 'design', details: methods['Sketching Sessions'] },
   { name: 'Sketch Reviews', category: 'design', details: methods['Sketch Reviews'] },
@@ -96,7 +94,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Task Flow Redesign', category: 'design', details: methods['Task Flow Redesign'] },
   { name: 'Impact Mapping', category: 'design', details: methods['Impact Mapping'] },
 
-  // Testing & Validation
   { name: 'Guerrilla Testing', category: 'testing', details: methods['Guerrilla Testing'] },
   { name: 'Rapid Testing', category: 'testing', details: methods['Rapid Testing'] },
   { name: 'Usability Labs', category: 'testing', details: methods['Usability Labs'] },
@@ -106,7 +103,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Rapid UX Audits', category: 'testing', details: methods['Rapid UX Audits'] },
   { name: 'UX Bug Bash', category: 'testing', details: methods['UX Bug Bash'] },
 
-  // Implementation
   { name: 'Design Tokens', category: 'implementation', details: methods['Design Tokens'] },
   { name: 'Component Reuse', category: 'implementation', details: methods['Component Reuse'] },
   { name: 'Design System Adoption', category: 'implementation', details: methods['Design System Adoption'] },
@@ -121,7 +117,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Cross-Team Libraries', category: 'implementation', details: methods['Cross-Team Libraries'] },
   { name: 'Embedded UX Sessions', category: 'implementation', details: methods['Embedded UX Sessions'] },
 
-  // Strategy & Planning
   { name: 'Stakeholder Workshops', category: 'strategy', details: methods['Stakeholder Workshops'] },
   { name: 'Prioritization Workshops', category: 'strategy', details: methods['Prioritization Workshops'] },
   { name: 'Goal-Oriented Roadmaps', category: 'strategy', details: methods['Goal-Oriented Roadmaps'] },
@@ -130,7 +125,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'One-Pager Decision Logs', category: 'strategy', details: methods['One-Pager Decision Logs'] },
   { name: 'Cross-Functional Workshops', category: 'strategy', details: methods['Cross-Functional Workshops'] },
 
-  // Optimization
   { name: 'Top-3 Friction Fix', category: 'optimization', details: methods['Top-3 Friction Fix'] },
   { name: 'Top-3 UX Debt List', category: 'optimization', details: methods['Top-3 UX Debt List'] },
   { name: 'Performance Audits', category: 'optimization', details: methods['Performance Audits'] },

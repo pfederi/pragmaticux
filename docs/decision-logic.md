@@ -18,9 +18,9 @@ The Decision Helper uses a **rule-based decision tree** to match user answers to
 
 ### Key Concepts
 
-- **Questions**: 5 questions about the user's project context
-- **Rules**: Conditional logic that maps answers to principles and methods
-- **Results**: Up to 3 principles and up to 6 methods based on matching rules
+- **Questions**: 5 questions about the user's project context including project phase
+- **Rules**: Conditional logic that maps answers to principles and methods with phase prioritization
+- **Results**: Up to 3 principles and up to 6 methods based on matching rules, prioritizing project phase relevance
 
 ---
 
@@ -96,9 +96,10 @@ sequenceDiagram
         Matching->>Combine: Add methods
     end
     
-    Combine->>Limit: Remove duplicates
+    Combine->>Limit: Prioritize project phase rules
+    Limit->>Limit: Remove duplicates
     Limit->>Limit: Limit to 3 principles
-    Limit->>Limit: Limit to 6 methods
+    Limit->>Limit: Limit to 6 methods (phase-relevant first)
     Limit->>Display: Show results
 ```
 
@@ -139,7 +140,35 @@ This rule matches if:
 
 ## 4. Result Calculation
 
-### 4.1 Complete Rule Reference
+### 4.1 Project Phase Prioritization
+
+**New in v2.0:** Project phase rules (17-19) are **prioritized** in the results. When a project phase matches, those methods are added to the **beginning** of the results array, ensuring they appear first in the suggested methods list.
+
+**Prioritization Logic:**
+```typescript
+const projectPhaseRules = matchingRules.filter(rule =>
+  Object.keys(rule.if).includes('project_phase')
+)
+const otherRules = matchingRules.filter(rule =>
+  !Object.keys(rule.if).includes('project_phase')
+)
+
+// Add project phase methods FIRST (prioritized)
+projectPhaseRules.forEach((rule) => {
+  if (rule.then.methods) {
+    combinedResults.methods.unshift(...rule.then.methods)
+  }
+})
+
+// Then add other methods
+otherRules.forEach((rule) => {
+  if (rule.then.methods) {
+    combinedResults.methods.push(...rule.then.methods)
+  }
+})
+```
+
+### 4.2 Complete Rule Reference
 
 The decision tree contains **19 rules** total. Each rule has a unique condition and contributes principles and methods when matched.
 
@@ -161,10 +190,7 @@ The decision tree contains **19 rules** total. Each rule has a unique condition 
 | **14** | `time_budget: "adequate"` | p06 | Deep Interviews, Usability Labs, Cross-Functional Workshops | Examples 3, 5, 7, 9 |
 | **15** | `ux_acceptance: "low"` | p01, p03 | Lightweight Deliverables, Embedded UX Sessions, Sketch Reviews | Examples 2, 4, 6, 8 |
 | **16** | `ux_acceptance: "high"` | p07, p08 | Continuous Testing, Design System Scaling, Component Governance | Examples 1, 3, 5, 7, 9, 10 |
-| **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Task Analysis, Stakeholder Workshops, Prioritization Workshops | - |
-| **18** | `project_phase: "project_middle"` | p02, p01 | Design Studio, Sketch Reviews, Rapid Prototyping, Usability Labs | - |
-| **19** | `project_phase: "project_end"` | p08, p07 | Performance Audits, Top-3 Friction Fix, Canary Releases, Checkout Simplification | - |
-| **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Task Analysis, Stakeholder Workshops, Prioritization Workshops | - |
+| **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Lean Personas, Goal-Oriented Roadmaps, One-Page Findings | - |
 | **18** | `project_phase: "project_middle"` | p02, p01 | Design Studio, Sketch Reviews, Rapid Prototyping, Usability Labs | - |
 | **19** | `project_phase: "project_end"` | p08, p07 | Performance Audits, Top-3 Friction Fix, Canary Releases, Checkout Simplification | - |
 

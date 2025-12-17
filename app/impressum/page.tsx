@@ -63,11 +63,9 @@ export default function ImpressumPage() {
                 You can manage your cookie preferences using the cookie banner at the bottom of the page. You can choose to accept all cookies (including analytics) or only essential cookies. Your choice will be saved and you can{' '}
                 <span
                   onClick={() => {
-                    // Use global function set by CookieBanner component
                     if (typeof window !== 'undefined' && (window as any).reopenCookieBanner) {
                       (window as any).reopenCookieBanner()
                     } else {
-                      // Fallback: force show banner via localStorage
                       localStorage.setItem('cookie-banner-force-show', 'true')
                       window.location.reload()
                     }

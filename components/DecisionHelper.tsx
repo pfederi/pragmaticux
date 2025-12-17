@@ -1,15 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import Link from 'next/link'
 import { decisionTree } from '@/data/decisionTree'
 import { principles, getPrincipleById } from '@/data/principles'
-import { getMethodInstructions } from '@/data/methods'
+import { getMethodInstructions, categorizedMethods, methodCategories } from '@/data/methods'
 import { DecisionTreeResults } from '@/types/decisionTree'
 
 const STORAGE_KEY = 'decisionHelper_state'
 
-// Glassmorphism colors for method chips (same as MethodsOverview)
 const chipColors: Record<string, string> = {
   all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
   research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
@@ -20,79 +19,12 @@ const chipColors: Record<string, string> = {
   optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
 }
 
-// Get chip colors for a method
 const getChipColors = (methodName: string): string => {
   const category = getMethodCategory(methodName).toLowerCase()
   return chipColors[category] || chipColors.all
 }
 
-// Get method category label
 const getMethodCategory = (methodName: string): string => {
-  // Find the method in categorizedMethods
-  const categorizedMethods = [
-    // Research & Analysis
-    { name: 'Contextual Inquiry', category: 'Research & Analysis' },
-    { name: 'Task Analysis', category: 'Research & Analysis' },
-    { name: 'Deep Interviews', category: 'Research & Analysis' },
-    { name: 'Lean Personas', category: 'Research & Analysis' },
-    { name: 'Executive Summaries', category: 'Research & Analysis' },
-    { name: 'One-Page Findings', category: 'Research & Analysis' },
-    { name: 'Analytics Audit', category: 'Research & Analysis' },
-    { name: 'Conversion Funnel Analysis', category: 'Research & Analysis' },
-    { name: 'User Segmentation Analysis', category: 'Research & Analysis' },
-
-    // Strategy & Planning
-    { name: 'Stakeholder Workshops', category: 'Strategy & Planning' },
-    { name: 'Prioritization Workshops', category: 'Strategy & Planning' },
-    { name: 'Goal-Oriented Roadmaps', category: 'Strategy & Planning' },
-    { name: 'Top-3 Metrics Dashboards', category: 'Strategy & Planning' },
-    { name: 'Enterprise Design System', category: 'Strategy & Planning' },
-    { name: 'One-Pager Decision Logs', category: 'Strategy & Planning' },
-    { name: 'Cross-Functional Workshops', category: 'Strategy & Planning' },
-
-    // Design & Creation
-    { name: 'Design Studio', category: 'Design & Creation' },
-    { name: 'Sketching Sessions', category: 'Design & Creation' },
-    { name: 'Sketch Reviews', category: 'Design & Creation' },
-    { name: 'Rapid Prototyping', category: 'Design & Creation' },
-    { name: 'Reusable Templates', category: 'Design & Creation' },
-    { name: 'Pattern Documentation', category: 'Design & Creation' },
-    { name: 'Workflow Simplification', category: 'Design & Creation' },
-    { name: 'Task Flow Redesign', category: 'Design & Creation' },
-    { name: 'Impact Mapping', category: 'Design & Creation' },
-
-    // Testing & Validation
-    { name: 'Guerrilla Testing', category: 'Testing & Validation' },
-    { name: 'Rapid Testing', category: 'Testing & Validation' },
-    { name: 'Usability Labs', category: 'Testing & Validation' },
-    { name: 'Continuous Testing', category: 'Testing & Validation' },
-    { name: 'Focused A/B Testing', category: 'Testing & Validation' },
-    { name: 'Rapid Usability Audit', category: 'Testing & Validation' },
-    { name: 'UX Bug Bash', category: 'Testing & Validation' },
-
-    // Implementation
-    { name: 'Design Tokens', category: 'Implementation' },
-    { name: 'Component Reuse', category: 'Implementation' },
-    { name: 'Design System Adoption', category: 'Implementation' },
-    { name: 'Co-Design with Devs', category: 'Implementation' },
-    { name: 'Constraint-First Wireframes', category: 'Implementation' },
-    { name: 'Tech-Feasibility Notes', category: 'Implementation' },
-    { name: 'Performance Budgets', category: 'Implementation' },
-    { name: 'Canary Releases', category: 'Implementation' },
-    { name: 'Shared Component Libraries', category: 'Implementation' },
-    { name: 'Component Governance', category: 'Implementation' },
-    { name: 'Design System Scaling', category: 'Implementation' },
-    { name: 'Cross-Team Libraries', category: 'Implementation' },
-    { name: 'Embedded UX Sessions', category: 'Implementation' },
-
-    // Optimization
-    { name: 'Top-3 Friction Fix', category: 'Optimization' },
-    { name: 'Top-3 UX Debt List', category: 'Optimization' },
-    { name: 'Performance Audits', category: 'Optimization' },
-    { name: 'Checkout Simplification', category: 'Optimization' },
-    { name: 'Lightweight Deliverables', category: 'Optimization' }
-  ]
-
   const method = categorizedMethods.find(m => m.name === methodName)
   return method ? method.category : 'General'
 }
@@ -108,7 +40,6 @@ export default function DecisionHelper() {
   const questions = decisionTree.questions
   const currentQuestion = questions[currentQuestionIndex]
 
-  // Load state from localStorage on mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem(STORAGE_KEY)
@@ -127,7 +58,6 @@ export default function DecisionHelper() {
     }
   }, [])
 
-  // Save state to localStorage whenever it changes
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const stateToSave = {
@@ -145,18 +75,12 @@ export default function DecisionHelper() {
     const newAnswers = { ...userAnswers, [questionId]: value }
     setUserAnswers(newAnswers)
 
-    // Check if all questions are answered
     const allAnswered = questions.every((q) => newAnswers[q.id])
-    
+
     if (allAnswered) {
-      // If all questions are answered, show results
       evaluateResults(newAnswers)
-      // Keep editing mode active so user can continue editing
     } else if (isEditing) {
-      // If we're editing and not all questions are answered, stay on current question
-      // User can continue editing other questions
     } else if (currentQuestionIndex < questions.length - 1) {
-      // Otherwise, go to next question
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     }
   }
@@ -171,7 +95,7 @@ export default function DecisionHelper() {
     }
   }
 
-  const evaluateResults = (answers: Record<string, string>) => {
+  const evaluateResults = useCallback((answers: Record<string, string>) => {
     const matchingRules = decisionTree.rules.filter((rule) => {
       return Object.entries(rule.if).every(([key, value]) => {
         return answers[key] === value
@@ -183,7 +107,6 @@ export default function DecisionHelper() {
       methods: [],
     }
 
-    // Separate project phase rules from other rules for prioritization
     const projectPhaseRules = matchingRules.filter(rule =>
       Object.keys(rule.if).includes('project_phase')
     )
@@ -191,7 +114,6 @@ export default function DecisionHelper() {
       !Object.keys(rule.if).includes('project_phase')
     )
 
-    // Add other rules first
     otherRules.forEach((rule) => {
       if (rule.then.principles) {
         combinedResults.principles.push(...rule.then.principles)
@@ -201,7 +123,6 @@ export default function DecisionHelper() {
       }
     })
 
-    // Add project phase rules with higher priority (prepend to ensure they appear)
     projectPhaseRules.forEach((rule) => {
       if (rule.then.principles) {
         combinedResults.principles.unshift(...rule.then.principles)
@@ -211,13 +132,12 @@ export default function DecisionHelper() {
       }
     })
 
-    // Remove duplicates and limit results
     combinedResults.principles = [...new Set(combinedResults.principles)].slice(0, 3)
     combinedResults.methods = [...new Set(combinedResults.methods)].slice(0, 6)
 
     setResults(combinedResults)
     setShowResults(true)
-  }
+  }, [])
 
   const handleRestart = () => {
     setCurrentQuestionIndex(0)
@@ -244,7 +164,6 @@ export default function DecisionHelper() {
     const allAnswered = questions.every((q) => userAnswers[q.id])
     if (allAnswered) {
       evaluateResults(userAnswers)
-      // Keep editing mode active
     }
   }
 
@@ -488,7 +407,11 @@ export default function DecisionHelper() {
                           <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
                             {method}
                           </h4>
-                          <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${getChipColors(method)}`}>
+                          <span
+                            className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${getChipColors(method)}`}
+                            aria-label={`Category: ${getMethodCategory(method)}`}
+                            role="status"
+                          >
                             {getMethodCategory(method)}
                           </span>
                         </div>

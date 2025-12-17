@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import Link from 'next/link'
 import { categorizedMethods, methodCategories, type MethodCategory, getMethodInstructions, getMethodDescription } from '@/data/methods'
 
@@ -8,7 +8,6 @@ export default function MethodsOverview() {
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
-  // Glassmorphism colors for filter chips with white borders
   const chipColors: Record<string, string> = {
     all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
     research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
@@ -19,11 +18,14 @@ export default function MethodsOverview() {
     optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
   }
 
-  const filteredMethods = selectedCategory === 'all'
-    ? categorizedMethods
-    : categorizedMethods.filter(method => method.category === selectedCategory)
+  const filteredMethods = useMemo(() =>
+    selectedCategory === 'all'
+      ? categorizedMethods
+      : categorizedMethods.filter(method => method.category === selectedCategory),
+    [selectedCategory]
+  )
 
-  const getEmailLink = (): string => {
+  const getEmailLink = useCallback((): string => {
     if (!selectedMethod) return 'mailto:patrick.federi@ergon.ch'
 
     const subject = encodeURIComponent('Pragmatic UX Design Method Inquiry')
@@ -36,7 +38,7 @@ export default function MethodsOverview() {
     body += 'Best regards'
 
     return `mailto:patrick.federi@ergon.ch?subject=${subject}&body=${encodeURIComponent(body)}`
-  }
+  }, [selectedMethod])
 
   return (
     <section className="py-12 sm:py-16 md:py-32">
@@ -56,11 +58,13 @@ export default function MethodsOverview() {
           <div className="flex flex-wrap gap-2 sm:gap-3">
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                 selectedCategory === 'all'
                   ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                   : `${chipColors.all} hover:shadow-md`
               }`}
+              aria-pressed={selectedCategory === 'all'}
+              aria-label={`Show all methods (${categorizedMethods.length} total)`}
             >
               All ({categorizedMethods.length})
             </button>
@@ -70,11 +74,13 @@ export default function MethodsOverview() {
                 <button
                   key={key}
                   onClick={() => setSelectedCategory(key as MethodCategory)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap ${
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                     selectedCategory === key
                       ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
                       : `${chipColors[key]} hover:shadow-md`
                   }`}
+                  aria-pressed={selectedCategory === key}
+                  aria-label={`Filter by ${category.label} category (${count} methods)`}
                 >
                   {category.label} ({count})
                 </button>
@@ -105,7 +111,11 @@ export default function MethodsOverview() {
                 <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
                   {method.name}
                 </h4>
-                <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}>
+                <span
+                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}
+                  aria-label={`Category: ${methodCategories[method.category].label}`}
+                  role="status"
+                >
                   {methodCategories[method.category].label}
                 </span>
               </div>
