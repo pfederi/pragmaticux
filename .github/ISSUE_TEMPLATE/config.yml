@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Join the Discussion
+    url: https://github.com/pragmaticux/design/discussions
+    about: Have a general discussion or ask for help
+  - name: 📧 Contact the Creator
+    url: mailto:patrick.federi@ergon.ch
+    about: For business inquiries or partnerships
+  - name: 🐛 Security Issue
+    url: mailto:security@pragmaticux.design
+    about: Report security vulnerabilities privately
+  - name: 📖 Read the Documentation
+    url: https://pragmaticux.design
+    about: Check our website for guides and information

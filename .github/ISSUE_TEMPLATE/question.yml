@@ -1,0 +1,65 @@
+name: ❓ Question
+description: Ask a question about Pragmatic UX Design
+title: "[QUESTION] "
+labels: ["question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ❓ Question
+
+        Have a question about Pragmatic UX Design? We're here to help!
+
+        **Before asking:**
+        - [ ] I have checked the documentation
+        - [ ] I have searched existing issues
+        - [ ] This is not a bug report or feature request
+
+  - type: dropdown
+    id: question-category
+    attributes:
+      label: Question Category
+      description: What is your question about?
+      options:
+        - Using the Decision Helper
+        - Understanding UX Principles
+        - Applying UX Methods
+        - Technical Implementation
+        - Contributing to the project
+        - General UX concepts
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Ask your question clearly and concisely
+      placeholder: "How do I apply Principle 3 (Efficiency Over Delight) in a corporate environment?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Provide context to help us answer your question better
+      placeholder: "I'm working on a B2B SaaS product with 500+ users. The current workflow has 7 steps but users are complaining it's too slow..."
+
+  - type: textarea
+    id: what-i-tried
+    attributes:
+      label: What I've Tried
+      description: If applicable, describe what you've already tried
+      placeholder: "I've read the principle description and looked at the recommended methods, but I'm not sure how to prioritize them for my specific situation."
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This is not covered in the documentation
+          required: true
+        - label: This is not a bug report or feature request
+        - label: I understand questions are answered on a best-effort basis

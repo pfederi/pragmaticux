@@ -1,0 +1,85 @@
+name: 📚 Documentation
+description: Report documentation issues or suggest improvements
+title: "[DOCS] "
+labels: ["documentation"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📚 Documentation Issue
+
+        Help us improve our documentation! Report unclear sections, missing information, or suggest enhancements.
+
+        **Before submitting:**
+        - [ ] I have checked the current documentation
+        - [ ] This is about documentation, not code functionality
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: Which type of documentation are you referring to?
+      options:
+        - README.md
+        - docs/arc42.md (Architecture)
+        - docs/decision-logic.md (Decision Helper)
+        - Website content
+        - Code comments
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: input
+    id: doc-url
+    attributes:
+      label: Documentation URL
+      description: If applicable, provide the URL of the documentation page
+      placeholder: "https://github.com/username/pragmaticux/blob/main/README.md"
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of documentation issue is this?
+      options:
+        - Unclear or confusing explanation
+        - Missing information
+        - Outdated information
+        - Incorrect information
+        - Poor formatting/structure
+        - Translation issue
+        - Other (please specify)
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-description
+    attributes:
+      label: Current Description
+      description: Quote the current documentation text (if applicable)
+      placeholder: "The current text says: 'Use the decision helper to find relevant methods...'"
+
+  - type: textarea
+    id: suggested-improvement
+    attributes:
+      label: Suggested Improvement
+      description: How should this be improved?
+      placeholder: "Change to: 'The interactive decision helper analyzes your project context through 5 targeted questions to recommend the most relevant UX principles and methods from our 51-method toolkit.'"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Provide any additional context or examples
+      placeholder: "This would help users understand that the decision helper is interactive and comprehensive"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have provided specific suggestions for improvement
+          required: true
+        - label: This is about documentation quality, not code functionality

@@ -78,6 +78,34 @@ npm run lint
 - **[RELEASE_NOTES.md](RELEASE_NOTES.md)** - Version history and changelog
 - **[README.md](README.md)** - This file with setup and usage instructions
 
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](.github/CONTRIBUTING.md) for details on:
+
+- How to report bugs and request features
+- Code style and development guidelines
+- Pull request process
+- Testing requirements
+
+### Quick Links
+
+- 🐛 [Bug Reports](.github/ISSUE_TEMPLATE/bug-report.yml)
+- ✨ [Feature Requests](.github/ISSUE_TEMPLATE/feature-request.yml)
+- 📚 [Documentation Issues](.github/ISSUE_TEMPLATE/documentation.yml)
+- ❓ [Questions](.github/ISSUE_TEMPLATE/question.yml)
+- 💬 [Discussions](https://github.com/pragmaticux/design/discussions)
+- 📧 [Contact](mailto:patrick.federi@ergon.ch)
+
+### Code of Conduct
+
+This project follows a [Code of Conduct](.github/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
+
+## 🔒 Security
+
+- **[Security Policy](.github/SECURITY.md)** - How to report security vulnerabilities
+- **Contact**: security@pragmaticux.design
+- **Security.txt**: https://pragmaticux.design/.well-known/security.txt
+
 ## 📁 Project Structure
 
 ```
