@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { categorizedMethods, methodCategories, type MethodCategory, getMethodInstructions, getMethodDescription } from '@/data/methods'
-import { getMethodDescription } from '@/data/methods'
 
 export default function MethodsOverview() {
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
