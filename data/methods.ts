@@ -120,21 +120,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Cross-Team Libraries', category: 'implementation', details: methods['Cross-Team Libraries'] },
   { name: 'Embedded UX Sessions', category: 'implementation', details: methods['Embedded UX Sessions'] },
 
-  // Implementation
-  { name: 'Design Tokens', category: 'implementation', details: methods['Design Tokens'] },
-  { name: 'Component Reuse', category: 'implementation', details: methods['Component Reuse'] },
-  { name: 'Design System Adoption', category: 'implementation', details: methods['Design System Adoption'] },
-  { name: 'Co-Design with Devs', category: 'implementation', details: methods['Co-Design with Devs'] },
-  { name: 'Constraint-First Wireframes', category: 'implementation', details: methods['Constraint-First Wireframes'] },
-  { name: 'Tech-Feasibility Notes', category: 'implementation', details: methods['Tech-Feasibility Notes'] },
-  { name: 'Performance Budgets', category: 'implementation', details: methods['Performance Budgets'] },
-  { name: 'Canary Releases', category: 'implementation', details: methods['Canary Releases'] },
-  { name: 'Shared Component Libraries', category: 'implementation', details: methods['Shared Component Libraries'] },
-  { name: 'Component Governance', category: 'implementation', details: methods['Component Governance'] },
-  { name: 'Design System Scaling', category: 'implementation', details: methods['Design System Scaling'] },
-  { name: 'Cross-Team Libraries', category: 'implementation', details: methods['Cross-Team Libraries'] },
-  { name: 'Embedded UX Sessions', category: 'implementation', details: methods['Embedded UX Sessions'] },
-
   // Strategy & Planning
   { name: 'Stakeholder Workshops', category: 'strategy', details: methods['Stakeholder Workshops'] },
   { name: 'Prioritization Workshops', category: 'strategy', details: methods['Prioritization Workshops'] },
