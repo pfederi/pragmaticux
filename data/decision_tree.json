@@ -45,6 +45,16 @@
         { "value": "low", "label": "Rather low" },
         { "value": "high", "label": "Rather high" }
       ]
+    },
+    {
+      "id": "project_phase",
+      "label": "What phase of the project are you currently in?",
+      "type": "single",
+      "options": [
+        { "value": "project_start", "label": "Project start / planning phase" },
+        { "value": "project_middle", "label": "Middle of development" },
+        { "value": "project_end", "label": "Near release / final phase" }
+      ]
     }
   ],
   "rules": [
@@ -162,6 +172,28 @@
       "then": {
         "principles": ["p07", "p08"],
         "methods": ["Continuous Testing", "Design System Scaling", "Component Governance"]
+      }
+    },
+
+    {
+      "if": { "project_phase": "project_start" },
+      "then": {
+        "principles": ["p06", "p03"],
+        "methods": ["Contextual Inquiry", "Task Analysis", "Stakeholder Workshops", "Prioritization Workshops"]
+      }
+    },
+    {
+      "if": { "project_phase": "project_middle" },
+      "then": {
+        "principles": ["p02", "p01"],
+        "methods": ["Design Studio", "Sketch Reviews", "Rapid Prototyping", "Usability Labs"]
+      }
+    },
+    {
+      "if": { "project_phase": "project_end" },
+      "then": {
+        "principles": ["p08", "p07"],
+        "methods": ["Performance Audits", "Top-3 Friction Fix", "Canary Releases", "Checkout Simplification"]
       }
     }
   ]

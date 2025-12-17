@@ -9,6 +9,94 @@ import { DecisionTreeResults } from '@/types/decisionTree'
 
 const STORAGE_KEY = 'decisionHelper_state'
 
+// Glassmorphism colors for method chips (same as MethodsOverview)
+const chipColors: Record<string, string> = {
+  all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
+  research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
+  design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-white/60',
+  testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-white/60',
+  implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-white/60',
+  strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-white/60',
+  optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
+}
+
+// Get chip colors for a method
+const getChipColors = (methodName: string): string => {
+  const category = getMethodCategory(methodName).toLowerCase()
+  return chipColors[category] || chipColors.all
+}
+
+// Get method category label
+const getMethodCategory = (methodName: string): string => {
+  // Find the method in categorizedMethods
+  const categorizedMethods = [
+    // Research & Analysis
+    { name: 'Contextual Inquiry', category: 'Research & Analysis' },
+    { name: 'Task Analysis', category: 'Research & Analysis' },
+    { name: 'Deep Interviews', category: 'Research & Analysis' },
+    { name: 'Lean Personas', category: 'Research & Analysis' },
+    { name: 'Executive Summaries', category: 'Research & Analysis' },
+    { name: 'One-Page Findings', category: 'Research & Analysis' },
+    { name: 'Analytics Audit', category: 'Research & Analysis' },
+    { name: 'Conversion Funnel Analysis', category: 'Research & Analysis' },
+    { name: 'User Segmentation Analysis', category: 'Research & Analysis' },
+
+    // Strategy & Planning
+    { name: 'Stakeholder Workshops', category: 'Strategy & Planning' },
+    { name: 'Prioritization Workshops', category: 'Strategy & Planning' },
+    { name: 'Goal-Oriented Roadmaps', category: 'Strategy & Planning' },
+    { name: 'Top-3 Metrics Dashboards', category: 'Strategy & Planning' },
+    { name: 'Enterprise Design System', category: 'Strategy & Planning' },
+    { name: 'One-Pager Decision Logs', category: 'Strategy & Planning' },
+    { name: 'Cross-Functional Workshops', category: 'Strategy & Planning' },
+
+    // Design & Creation
+    { name: 'Design Studio', category: 'Design & Creation' },
+    { name: 'Sketching Sessions', category: 'Design & Creation' },
+    { name: 'Sketch Reviews', category: 'Design & Creation' },
+    { name: 'Rapid Prototyping', category: 'Design & Creation' },
+    { name: 'Reusable Templates', category: 'Design & Creation' },
+    { name: 'Pattern Documentation', category: 'Design & Creation' },
+    { name: 'Workflow Simplification', category: 'Design & Creation' },
+    { name: 'Task Flow Redesign', category: 'Design & Creation' },
+    { name: 'Impact Mapping', category: 'Design & Creation' },
+
+    // Testing & Validation
+    { name: 'Guerrilla Testing', category: 'Testing & Validation' },
+    { name: 'Rapid Testing', category: 'Testing & Validation' },
+    { name: 'Usability Labs', category: 'Testing & Validation' },
+    { name: 'Continuous Testing', category: 'Testing & Validation' },
+    { name: 'Focused A/B Testing', category: 'Testing & Validation' },
+    { name: 'Rapid Usability Audit', category: 'Testing & Validation' },
+    { name: 'UX Bug Bash', category: 'Testing & Validation' },
+
+    // Implementation
+    { name: 'Design Tokens', category: 'Implementation' },
+    { name: 'Component Reuse', category: 'Implementation' },
+    { name: 'Design System Adoption', category: 'Implementation' },
+    { name: 'Co-Design with Devs', category: 'Implementation' },
+    { name: 'Constraint-First Wireframes', category: 'Implementation' },
+    { name: 'Tech-Feasibility Notes', category: 'Implementation' },
+    { name: 'Performance Budgets', category: 'Implementation' },
+    { name: 'Canary Releases', category: 'Implementation' },
+    { name: 'Shared Component Libraries', category: 'Implementation' },
+    { name: 'Component Governance', category: 'Implementation' },
+    { name: 'Design System Scaling', category: 'Implementation' },
+    { name: 'Cross-Team Libraries', category: 'Implementation' },
+    { name: 'Embedded UX Sessions', category: 'Implementation' },
+
+    // Optimization
+    { name: 'Top-3 Friction Fix', category: 'Optimization' },
+    { name: 'Top-3 UX Debt List', category: 'Optimization' },
+    { name: 'Performance Audits', category: 'Optimization' },
+    { name: 'Checkout Simplification', category: 'Optimization' },
+    { name: 'Lightweight Deliverables', category: 'Optimization' }
+  ]
+
+  const method = categorizedMethods.find(m => m.name === methodName)
+  return method ? method.category : 'General'
+}
+
 export default function DecisionHelper() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({})
@@ -95,12 +183,31 @@ export default function DecisionHelper() {
       methods: [],
     }
 
-    matchingRules.forEach((rule) => {
+    // Separate project phase rules from other rules for prioritization
+    const projectPhaseRules = matchingRules.filter(rule =>
+      Object.keys(rule.if).includes('project_phase')
+    )
+    const otherRules = matchingRules.filter(rule =>
+      !Object.keys(rule.if).includes('project_phase')
+    )
+
+    // Add other rules first
+    otherRules.forEach((rule) => {
       if (rule.then.principles) {
         combinedResults.principles.push(...rule.then.principles)
       }
       if (rule.then.methods) {
         combinedResults.methods.push(...rule.then.methods)
+      }
+    })
+
+    // Add project phase rules with higher priority (prepend to ensure they appear)
+    projectPhaseRules.forEach((rule) => {
+      if (rule.then.principles) {
+        combinedResults.principles.unshift(...rule.then.principles)
+      }
+      if (rule.then.methods) {
+        combinedResults.methods.unshift(...rule.then.methods)
       }
     })
 
@@ -374,14 +481,26 @@ export default function DecisionHelper() {
                       <button
                         key={index}
                         onClick={() => setSelectedMethod(method)}
-                        className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 text-left w-full"
+                        className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[140px] flex flex-col"
                       >
-                        <h4 className="font-semibold mb-2 text-sm sm:text-base">{method}</h4>
-                        <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-                          {getMethodDescription(method)}
-                        </p>
-                        <div className="mt-2 text-primary text-xs font-medium flex items-center gap-1">
-                          Learn more →
+                        {/* Header with title and chip */}
+                        <div className="flex items-center justify-between mb-4 gap-2">
+                          <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
+                            {method}
+                          </h4>
+                          <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${getChipColors(method)}`}>
+                            {getMethodCategory(method)}
+                          </span>
+                        </div>
+
+                        {/* Content area that expands */}
+                        <div className="flex-1 flex flex-col justify-between">
+                          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3">
+                            {getMethodDescription(method)}
+                          </p>
+                          <div className="text-primary text-xs font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-auto">
+                            Learn more →
+                          </div>
                         </div>
                       </button>
                     ))}

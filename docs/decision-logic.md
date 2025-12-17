@@ -18,7 +18,7 @@ The Decision Helper uses a **rule-based decision tree** to match user answers to
 
 ### Key Concepts
 
-- **Questions**: 4 questions about the user's project context
+- **Questions**: 5 questions about the user's project context
 - **Rules**: Conditional logic that maps answers to principles and methods
 - **Results**: Up to 3 principles and up to 6 methods based on matching rules
 
@@ -31,7 +31,7 @@ The Decision Helper uses a **rule-based decision tree** to match user answers to
 ```mermaid
 graph TB
     subgraph "Decision Tree Structure"
-        Questions[Questions Array<br/>4 Questions]
+        Questions[Questions Array<br/>5 Questions]
         Rules[Rules Array<br/>Multiple Rules]
     end
     
@@ -141,7 +141,7 @@ This rule matches if:
 
 ### 4.1 Complete Rule Reference
 
-The decision tree contains **16 rules** total. Each rule has a unique condition and contributes principles and methods when matched.
+The decision tree contains **19 rules** total. Each rule has a unique condition and contributes principles and methods when matched.
 
 | Rule # | Condition (IF) | Principles | Methods | Used in Examples |
 |--------|----------------|-----------|---------|------------------|
@@ -153,7 +153,7 @@ The decision tree contains **16 rules** total. Each rule has a unique condition 
 | **6** | `context: "eng_driven"` AND `challenge: "fast_decisions"` | p03, p04 | Tech-Feasibility Notes, One-Pager Decision Logs, Rapid UX Audits | - |
 | **7** | `context: "eng_driven"` AND `challenge: "iteration_churn"` | p07 | UX Bug Bash, Top-3 UX Debt List, Canary Releases | Example 7 |
 | **8** | `context: "eng_driven"` AND `challenge: "ship_faster"` | p08, p01 | Shared Component Libraries, Design Tokens, Pattern Documentation | Example 10 |
-| **9** | `context: "corporate"` AND `challenge: "efficiency"` | p02, p06 | Workflow Simplification, Field Studies, Task Analysis | Example 9 |
+| **9** | `context: "corporate"` AND `challenge: "efficiency"` | p02, p06 | Workflow Simplification, Contextual Inquiry, Task Analysis | Example 9 |
 | **10** | `context: "corporate"` AND `challenge: "fast_decisions"` | p03, p05 | Executive Summaries, Rapid Testing, Stakeholder Workshops | Example 6 |
 | **11** | `context: "corporate"` AND `challenge: "iteration_churn"` | p07, p06 | Goal-Oriented Roadmaps, Top-3 Metrics Dashboards, Prioritization Workshops | Example 3 |
 | **12** | `context: "corporate"` AND `challenge: "ship_faster"` | p08, p06 | Enterprise Design System, Cross-Team Libraries, Reusable Templates | - |
@@ -161,8 +161,11 @@ The decision tree contains **16 rules** total. Each rule has a unique condition 
 | **14** | `time_budget: "adequate"` | p06 | Deep Interviews, Usability Labs, Cross-Functional Workshops | Examples 3, 5, 7, 9 |
 | **15** | `ux_acceptance: "low"` | p01, p03 | Lightweight Deliverables, Embedded UX Sessions, Sketch Reviews | Examples 2, 4, 6, 8 |
 | **16** | `ux_acceptance: "high"` | p07, p08 | Continuous Testing, Design System Scaling, Component Governance | Examples 1, 3, 5, 7, 9, 10 |
+| **17** | `project_phase: "project_start"` | p06, p03 | Contextual Inquiry, Task Analysis, Stakeholder Workshops, Prioritization Workshops | - |
+| **18** | `project_phase: "project_middle"` | p02, p01 | Design Studio, Sketch Reviews, Rapid Prototyping, Usability Labs | - |
+| **19** | `project_phase: "project_end"` | p08, p07 | Performance Audits, Top-3 Friction Fix, Canary Releases, Checkout Simplification | - |
 
-**Note:** Rules are evaluated in order (1-16), and **all matching rules** contribute to the final results. Multiple rules can match simultaneously.
+**Note:** Rules are evaluated in order (1-19), and **all matching rules** contribute to the final results. Multiple rules can match simultaneously.
 
 ### 4.2 Rule Matching Matrix
 
@@ -455,6 +458,7 @@ graph TD
 | `challenge` | What is your biggest current challenge? | efficiency, fast_decisions, iteration_churn, ship_faster |
 | `time_budget` | How are your time and budget constraints? | tight, adequate |
 | `ux_acceptance` | How high is the UX acceptance in your team? | low, high |
+| `project_phase` | What phase of the project are you currently in? | project_start, project_middle, project_end |
 
 ### 6.4 Progress Calculation
 
@@ -466,10 +470,11 @@ const progress = currentQuestionIndex === 0
 
 **Progress Indicator:**
 - **0%**: Before answering first question
-- **25%**: After answering Q1
-- **50%**: After answering Q2
-- **75%**: After answering Q3
-- **100%**: After answering Q4 (results shown)
+- **20%**: After answering Q1
+- **40%**: After answering Q2
+- **60%**: After answering Q3
+- **80%**: After answering Q4
+- **100%**: After answering Q5 (results shown)
 
 ---
 
@@ -479,7 +484,7 @@ const progress = currentQuestionIndex === 0
 
 ```typescript
 interface DecisionHelperState {
-  currentQuestionIndex: number;        // Current question (0-3)
+  currentQuestionIndex: number;        // Current question (0-4)
   userAnswers: Record<string, string>; // Map of questionId -> answer value
   results: DecisionTreeResults | null; // Calculated results
   showResults: boolean;                // Whether to show results
@@ -703,6 +708,32 @@ All method descriptions are hardcoded in `DecisionHelper.tsx` in the `getMethodD
 
 ---
 
-**Documentation Version:** 1.0  
-**Last Updated:** 2025-12-09  
+**Documentation Version:** 2.0
+**Last Updated:** 2025-12-17
 **Author:** Patrick Federi
+
+---
+
+## Changelog
+
+### Version 2.0 (December 2025)
+
+#### New Features
+- **5th Question Added**: Project phase question (start/middle/end) with 3 new rules
+- **Project Phase Prioritization**: Phase-specific rules get higher priority in results
+- **Expanded Method Set**: Updated to 64 methods total (removed duplicates, added analytics methods)
+
+#### Rule Engine Updates
+- **19 Total Rules**: Increased from 16 rules with 3 new project phase rules
+- **Prioritized Matching**: Project phase rules are processed first for guaranteed inclusion
+- **Enhanced Logic**: `unshift()` method ensures phase-specific methods appear in top 6 results
+
+#### Content Updates
+- **New Methods**: Design Studio, Analytics Audit, Conversion Funnel Analysis, User Segmentation Analysis
+- **Method Renaming**: "Field Studies" → "Contextual Inquiry"
+- **Duplicate Removal**: Cleaned up Testing & Validation and Implementation categories
+
+#### Technical Improvements
+- **Progress Calculation**: Updated from 25% to 20% per question (5 questions total)
+- **State Management**: Enhanced question indexing (0-4 instead of 0-3)
+- **Rule Matching**: Improved algorithm for multi-rule scenarios

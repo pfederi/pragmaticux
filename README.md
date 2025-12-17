@@ -1,6 +1,16 @@
 # Pragmatic UX Design
 
-A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles for your specific situation.
+A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles and methods for your specific situation.
+
+## ✨ Key Features
+
+- **Eight Core UX Principles** - Practical guidance for effective UX design
+- **50 UX Methods** - Comprehensive collection organized by category (Research, Design, Testing, Implementation, Strategy, Optimization)
+- **Interactive Decision Helper** - 5-question flow providing personalized recommendations
+- **Project Phase Integration** - Methods tailored to project stages (start, middle, end)
+- **Methods Overview** - Browse and filter all available UX methods
+- **Responsive Design** - Optimized for all devices with modern glassmorphism UI
+- **State Persistence** - Decision Helper progress automatically saved
 
 ## 🚀 Getting Started
 
@@ -51,6 +61,7 @@ pragmaticux/
 ├── app/                    # Next.js app directory
 │   ├── about/             # About page
 │   ├── decision-helper/  # Decision Helper page
+│   ├── methods/          # Methods overview page (NEW)
 │   ├── principles/        # Individual principle pages
 │   │   └── [id]/         # Dynamic route for principle details
 │   ├── layout.tsx         # Root layout with Navigation & Footer
@@ -59,10 +70,13 @@ pragmaticux/
 ├── components/            # React components
 │   ├── About.tsx          # About page content
 │   ├── CTA.tsx            # Call-to-action component
-│   ├── DecisionHelper.tsx # Interactive decision helper
+│   ├── CookieBanner.tsx   # GDPR cookie consent banner
+│   ├── DecisionHelper.tsx # Interactive decision helper (5 questions)
 │   ├── Footer.tsx         # Site footer
 │   ├── Hero.tsx           # Hero section
 │   ├── Layout.tsx         # Main layout wrapper
+│   ├── MethodsOverview.tsx # Methods overview with filtering (NEW)
+│   ├── Modal.tsx          # Reusable modal component
 │   ├── Navigation.tsx     # Header navigation with mobile menu
 │   ├── PrinciplesOverview.tsx # Principles grid overview
 │   └── Workflow.tsx       # Workflow section
@@ -86,6 +100,34 @@ pragmaticux/
 ├── postcss.config.js     # PostCSS configuration
 └── tsconfig.json         # TypeScript configuration
 ```
+
+## 🆕 Recent Updates (v2.0)
+
+### ✨ New Features
+- **Methods Overview Page** - Browse all 64+ UX methods with category filtering
+- **Enhanced Decision Helper** - Added 5th question about project phase (start/middle/end)
+- **Project Phase Methods** - Phase-specific method recommendations
+- **Unified Design System** - Consistent card layouts and glassmorphism effects
+- **Analytics Integration** - New quantitative research methods (Analytics Audit, Conversion Analysis)
+
+### 🎨 UI/UX Improvements
+- **Glassmorphism Design** - Modern glass effects on all interactive elements
+- **Responsive Chips** - Category chips with consistent styling across pages
+- **Unified Card Heights** - Perfect alignment of method cards
+- **Mobile Optimization** - Improved touch targets and spacing
+- **Navigation Update** - Methods now appear before Decision Helper
+
+### 📊 Content Expansion
+- **64 UX Methods** - Comprehensive collection across 6 categories
+- **New Methods Added**: Design Studio, Analytics Audit, Conversion Funnel Analysis, User Segmentation Analysis
+- **Method Renaming**: "Field Studies" → "Contextual Inquiry" for better UX terminology
+- **Duplicate Removal**: Cleaned up categorization data
+
+### 🏗 Technical Improvements
+- **TypeScript Enhancement** - Better type safety across components
+- **State Management** - Improved localStorage persistence
+- **Performance** - Optimized rendering and bundle size
+- **Accessibility** - Enhanced keyboard navigation and ARIA labels
 
 ## 🛠️ Tech Stack
 

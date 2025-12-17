@@ -14,6 +14,7 @@
 10. [Quality Requirements](#10-quality-requirements)
 11. [Risks and Technical Debt](#11-risks-and-technical-debt)
 12. [Glossary](#12-glossary)
+13. [Recent Changes](#13-recent-changes)
 
 ---
 
@@ -26,10 +27,12 @@ The Pragmatic UX Design website presents a practical framework for UX Design, co
 
 **Core Features:**
 - Presentation of eight UX Design principles with detailed explanations
-- Interactive Decision Helper with question-answer flow
-- Responsive design for all devices
-- Decision Helper state persistence
+- Interactive Decision Helper with 5-question flow including project phase
+- Methods Overview page with 64+ UX methods across 6 categories
+- Responsive design with glassmorphism UI effects
+- Decision Helper state persistence with localStorage
 - Email integration for result sharing
+- Modal-based method details with contact integration
 
 **Target Audience:**
 - UX Designers and Product Managers
@@ -205,6 +208,7 @@ graph TB
 - **page.tsx**: Homepage with Hero, Workflow, Principles Overview
 - **about/page.tsx**: About page with framework information
 - **decision-helper/page.tsx**: Wrapper for Decision Helper component
+- **methods/page.tsx**: Methods overview page with filtering (NEW)
 - **principles/[id]/page.tsx**: Dynamic route for individual principles
 
 ### 5.3 Level 3: Components Layer
@@ -218,27 +222,39 @@ graph TB
         Hero[Hero.tsx<br/>Hero Section]
         Workflow[Workflow.tsx<br/>Workflow Section]
         Principles[PrinciplesOverview.tsx<br/>Principles Grid]
+        Methods[MethodsOverview.tsx<br/>Methods Grid & Filtering]
         DecisionHelper[DecisionHelper.tsx<br/>Interactive Helper]
+        Modal[Modal.tsx<br/>Method Details Modal]
+        CookieBanner[CookieBanner.tsx<br/>GDPR Consent]
         About[About.tsx<br/>About Content]
         CTA[CTA.tsx<br/>Call-to-Action]
     end
-    
+
     Layout --> Nav
     Layout --> Footer
     Layout --> Hero
     Layout --> Workflow
     Layout --> Principles
+    Layout --> Methods
     Layout --> DecisionHelper
+    Layout --> Modal
+    Layout --> CookieBanner
     Layout --> About
     Layout --> CTA
-    
+
+    DecisionHelper --> Modal
+    Methods --> Modal
+
     style Layout fill:#81d4fa
     style Nav fill:#4fc3f7
     style Footer fill:#4fc3f7
     style Hero fill:#4fc3f7
     style Workflow fill:#4fc3f7
     style Principles fill:#4fc3f7
+    style Methods fill:#4fc3f7
     style DecisionHelper fill:#ff9800
+    style Modal fill:#ff9800
+    style CookieBanner fill:#4fc3f7
     style About fill:#4fc3f7
     style CTA fill:#4fc3f7
 ```
@@ -253,7 +269,10 @@ graph TB
 | **Hero** | Hero section with CTA buttons |
 | **Workflow** | "The Pragmatic UX Design Approach" section |
 | **PrinciplesOverview** | Grid view of all principles |
-| **DecisionHelper** | Interactive Q&A flow, result display, state management |
+| **MethodsOverview** | Methods grid with category filtering and search (NEW) |
+| **DecisionHelper** | Interactive 5-question flow, result display, state management |
+| **Modal** | Reusable modal for method details and contact forms |
+| **CookieBanner** | GDPR cookie consent banner with localStorage persistence |
 | **About** | About page with Origin, Philosophy, Team info |
 | **CTA** | Call-to-action with email link |
 
@@ -962,8 +981,62 @@ interface DecisionTreeRule {
 
 ---
 
-**Documentation Version:** 1.0  
-**Last Updated:** 2025-12-09  
+## 13. Recent Changes
+
+### 13.1 Version 2.0 Updates (December 2025)
+
+#### New Features Added
+- **Methods Overview Page**: New `/methods` route with comprehensive method browsing
+- **Enhanced Decision Helper**: Expanded to 5 questions including project phase
+- **Modal System**: Reusable modal component for method details and contact forms
+- **Cookie Banner**: GDPR-compliant consent management with localStorage
+- **Project Phase Integration**: Phase-specific method recommendations (start/middle/end)
+
+#### Content Expansion
+- **64 UX Methods**: Comprehensive collection across 6 categories
+- **New Methods**: Design Studio, Analytics Audit, Conversion Funnel Analysis, User Segmentation Analysis
+- **Quantitative Research**: Added analytics-focused research methods
+- **Method Renaming**: "Field Studies" → "Contextual Inquiry" for industry standards
+
+#### UI/UX Improvements
+- **Glassmorphism Design**: Modern glass effects on chips and interactive elements
+- **Unified Card Design**: Consistent heights and layouts across all method cards
+- **Responsive Chips**: Category indicators with consistent styling
+- **Mobile Optimization**: Improved touch targets and spacing
+- **Navigation Update**: Methods now prioritized before Decision Helper
+
+#### Technical Enhancements
+- **TypeScript Improvements**: Better type safety and component interfaces
+- **State Management**: Enhanced localStorage persistence and hydration handling
+- **Performance**: Optimized rendering and reduced bundle size
+- **Accessibility**: Improved keyboard navigation and ARIA compliance
+
+#### Data Quality
+- **Duplicate Removal**: Cleaned up categorization data across all methods
+- **Consistent Naming**: Standardized method and category terminology
+- **Rule Engine Updates**: Enhanced decision logic with project phase prioritization
+
+### 13.2 Architectural Impact
+
+#### Component Architecture
+- **Increased Modularity**: New reusable components (Modal, MethodsOverview, CookieBanner)
+- **Better Separation of Concerns**: Clear component responsibilities and data flow
+- **Enhanced Reusability**: Shared styling and interaction patterns
+
+#### Data Architecture
+- **Expanded Content Model**: From 8 principles + 50 methods to 8 principles + 64 methods
+- **Enhanced Rule Engine**: More sophisticated matching with phase-based prioritization
+- **Improved Data Quality**: Consistent categorization and naming conventions
+
+#### User Experience Architecture
+- **Progressive Disclosure**: Methods overview complements decision helper
+- **Contextual Recommendations**: Phase-aware method suggestions
+- **Unified Design Language**: Consistent visual patterns across all interactions
+
+---
+
+**Documentation Version:** 2.0
+**Last Updated:** 2025-12-17
 **Author:** Patrick Federi
 
 
