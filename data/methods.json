@@ -104,6 +104,25 @@
       "Use timers to keep energy high and prevent overthinking"
     ]
   },
+  "Design Studio": {
+    "description": "Structured design workshops where cross-functional teams collaborate to solve complex design challenges through ideation, prototyping, and critique.",
+    "steps": [
+      "Define the design challenge and success criteria",
+      "Assemble a diverse team (designers, developers, product managers, users)",
+      "Conduct research review and problem framing (30-45 minutes)",
+      "Run ideation sessions with different techniques (brainstorming, crazy 8s, etc.)",
+      "Create rapid prototypes and test concepts with users",
+      "Facilitate design critique and iteration rounds",
+      "Document decisions and next steps"
+    ],
+    "tips": [
+      "Include 6-8 participants for optimal collaboration",
+      "Dedicate specific time blocks for each activity (research: 30min, ideation: 60min, prototyping: 90min)",
+      "Use digital collaboration tools for remote participation",
+      "Have a skilled facilitator to keep discussions focused and productive",
+      "Follow up with action items and accountability assignments"
+    ]
+  },
   "Impact Mapping": {
     "description": "Visualize user goals and map features to measurable outcomes and business objectives.",
     "steps": [

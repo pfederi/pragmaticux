@@ -83,6 +83,7 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'One-Page Findings', category: 'research', details: methods['One-Page Findings'] },
 
   // Strategy & Planning
+  { name: 'Design Studio', category: 'design', details: methods['Design Studio'] },
   { name: 'Sketching Sessions', category: 'design', details: methods['Sketching Sessions'] },
   { name: 'Sketch Reviews', category: 'design', details: methods['Sketch Reviews'] },
   { name: 'Rapid Prototyping', category: 'design', details: methods['Rapid Prototyping'] },

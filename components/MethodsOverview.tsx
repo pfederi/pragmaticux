@@ -62,7 +62,7 @@ export default function MethodsOverview() {
                   : `${chipColors.all} hover:shadow-md`
               }`}
             >
-              All Methods ({categorizedMethods.length})
+              All ({categorizedMethods.length})
             </button>
             {Object.entries(methodCategories).map(([key, category]) => {
               const count = categorizedMethods.filter(m => m.category === key).length
