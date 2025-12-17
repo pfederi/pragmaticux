@@ -82,7 +82,7 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Executive Summaries', category: 'research', details: methods['Executive Summaries'] },
   { name: 'One-Page Findings', category: 'research', details: methods['One-Page Findings'] },
 
-  // Design & Creation
+  // Strategy & Planning
   { name: 'Sketching Sessions', category: 'design', details: methods['Sketching Sessions'] },
   { name: 'Sketch Reviews', category: 'design', details: methods['Sketch Reviews'] },
   { name: 'Rapid Prototyping', category: 'design', details: methods['Rapid Prototyping'] },
@@ -91,6 +91,30 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Workflow Simplification', category: 'design', details: methods['Workflow Simplification'] },
   { name: 'Task Flow Redesign', category: 'design', details: methods['Task Flow Redesign'] },
   { name: 'Impact Mapping', category: 'design', details: methods['Impact Mapping'] },
+
+  // Testing & Validation
+  { name: 'Guerrilla Testing', category: 'testing', details: methods['Guerrilla Testing'] },
+  { name: 'Rapid Testing', category: 'testing', details: methods['Rapid Testing'] },
+  { name: 'Usability Labs', category: 'testing', details: methods['Usability Labs'] },
+  { name: 'Continuous Testing', category: 'testing', details: methods['Continuous Testing'] },
+  { name: 'Focused A/B Testing', category: 'testing', details: methods['Focused A/B Testing'] },
+  { name: 'Rapid Usability Audit', category: 'testing', details: methods['Rapid Usability Audit'] },
+  { name: 'UX Bug Bash', category: 'testing', details: methods['UX Bug Bash'] },
+
+  // Implementation
+  { name: 'Design Tokens', category: 'implementation', details: methods['Design Tokens'] },
+  { name: 'Component Reuse', category: 'implementation', details: methods['Component Reuse'] },
+  { name: 'Design System Adoption', category: 'implementation', details: methods['Design System Adoption'] },
+  { name: 'Co-Design with Devs', category: 'implementation', details: methods['Co-Design with Devs'] },
+  { name: 'Constraint-First Wireframes', category: 'implementation', details: methods['Constraint-First Wireframes'] },
+  { name: 'Tech-Feasibility Notes', category: 'implementation', details: methods['Tech-Feasibility Notes'] },
+  { name: 'Performance Budgets', category: 'implementation', details: methods['Performance Budgets'] },
+  { name: 'Canary Releases', category: 'implementation', details: methods['Canary Releases'] },
+  { name: 'Shared Component Libraries', category: 'implementation', details: methods['Shared Component Libraries'] },
+  { name: 'Component Governance', category: 'implementation', details: methods['Component Governance'] },
+  { name: 'Design System Scaling', category: 'implementation', details: methods['Design System Scaling'] },
+  { name: 'Cross-Team Libraries', category: 'implementation', details: methods['Cross-Team Libraries'] },
+  { name: 'Embedded UX Sessions', category: 'implementation', details: methods['Embedded UX Sessions'] },
 
   // Testing & Validation
   { name: 'Guerrilla Testing', category: 'testing', details: methods['Guerrilla Testing'] },
