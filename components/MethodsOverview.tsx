@@ -104,7 +104,7 @@ export default function MethodsOverview() {
                 <h4 className="font-semibold text-sm sm:text-base group-hover:text-primary transition-colors flex-1 min-w-0">
                   {method.name}
                 </h4>
-                <span className={`px-2 py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}>
+                <span className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}>
                   {methodCategories[method.category].label}
                 </span>
               </div>
