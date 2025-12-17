@@ -120,15 +120,6 @@ export const categorizedMethods: CategorizedMethod[] = [
   { name: 'Cross-Team Libraries', category: 'implementation', details: methods['Cross-Team Libraries'] },
   { name: 'Embedded UX Sessions', category: 'implementation', details: methods['Embedded UX Sessions'] },
 
-  // Testing & Validation
-  { name: 'Guerrilla Testing', category: 'testing', details: methods['Guerrilla Testing'] },
-  { name: 'Rapid Testing', category: 'testing', details: methods['Rapid Testing'] },
-  { name: 'Usability Labs', category: 'testing', details: methods['Usability Labs'] },
-  { name: 'Continuous Testing', category: 'testing', details: methods['Continuous Testing'] },
-  { name: 'Focused A/B Testing', category: 'testing', details: methods['Focused A/B Testing'] },
-  { name: 'Rapid Usability Audit', category: 'testing', details: methods['Rapid Usability Audit'] },
-  { name: 'UX Bug Bash', category: 'testing', details: methods['UX Bug Bash'] },
-
   // Implementation
   { name: 'Design Tokens', category: 'implementation', details: methods['Design Tokens'] },
   { name: 'Component Reuse', category: 'implementation', details: methods['Component Reuse'] },
