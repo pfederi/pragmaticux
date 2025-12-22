@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/about',
     '/decision-helper',
     '/methods',
+    '/books',
     '/release-notes',
     '/impressum',
   ]

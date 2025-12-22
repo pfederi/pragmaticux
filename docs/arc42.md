@@ -235,7 +235,7 @@ graph TB
         About[About.tsx<br/>About Content]
         CTA[CTA.tsx<br/>Call-to-Action]
     end
-
+    
     Layout --> Nav
     Layout --> Footer
     Layout --> Hero
@@ -250,7 +250,7 @@ graph TB
 
     DecisionHelper --> Modal
     Methods --> Modal
-
+    
     style Layout fill:#81d4fa
     style Nav fill:#4fc3f7
     style Footer fill:#4fc3f7
@@ -356,14 +356,14 @@ graph TB
         Types[types/<br/>Type Definitions]
         Utils[lib/utils.ts<br/>Utility Functions]
     end
-
+    
     PrinciplesJSON --> PrinciplesTS
     MethodsJSON --> MethodsTS
     DecisionJSON --> DecisionTS
     Types --> PrinciplesTS
     Types --> MethodsTS
     Types --> DecisionTS
-
+    
     style PrinciplesJSON fill:#29b6f6
     style MethodsJSON fill:#29b6f6
     style PrinciplesTS fill:#29b6f6

@@ -135,6 +135,16 @@ export default function Navigation() {
               Decision Helper
             </Link>
             <Link
+              href="/books"
+              className={cn(
+                "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
+                pathname === "/books" && "text-primary"
+              )}
+              aria-current={pathname === "/books" ? "page" : undefined}
+            >
+              Books
+            </Link>
+            <Link
               href="/about"
               className={cn(
                 "text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md px-2 py-1",
@@ -265,6 +275,20 @@ export default function Navigation() {
                 role="menuitem"
               >
                 Decision Helper
+              </Link>
+              <Link
+                href="/books"
+                onClick={() => {
+                  setIsMobileMenuOpen(false)
+                  setIsPrinciplesOpen(false)
+                }}
+                className={cn(
+                  "px-4 py-2 text-sm font-medium hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset rounded-md",
+                  pathname === "/books" && "text-primary"
+                )}
+                role="menuitem"
+              >
+                Books
               </Link>
               <Link
                 href="/about"

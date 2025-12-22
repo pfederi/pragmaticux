@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "title": "UX Book Recommendations",
+    "description": "Curated list of essential UX design books recommended by Pragmatic UX Design",
+    "last_updated": "2024"
+  },
+  "books": [
+    {
+      "id": "b01",
+      "title": "Don't Make Me Think",
+      "author": "Steve Krug",
+      "year": 2014,
+      "category": "usability",
+      "level": "beginner",
+      "description": "A common-sense approach to web usability. This book explains why people leave websites and how to make them more user-friendly.",
+      "why_recommended": "Essential reading for anyone working on web interfaces. Krug's approach aligns perfectly with pragmatic UX principles.",
+      "key_takeaways": [
+        "Users don't read, they scan",
+        "Make it obvious what's clickable",
+        "Eliminate question marks"
+      ],
+      "amazon_url": "https://www.amazon.com/Dont-Make-Think-Revisited-Usability/dp/0321965515",
+      "cover_image_url": "/images/books/dont-make-me-think.jpg",
+      "cover_color": "#FF6B6B"
+    },
+    {
+      "id": "b02",
+      "title": "The Design of Everyday Things",
+      "author": "Don Norman",
+      "year": 2013,
+      "category": "fundamentals",
+      "level": "intermediate",
+      "description": "The classic introduction to design thinking and human-centered design. Explains how good design makes products usable and enjoyable.",
+      "why_recommended": "Foundational understanding of design principles that apply to all products, not just digital.",
+      "key_takeaways": [
+        "Affordances and signifiers",
+        "Mapping and feedback",
+        "Error prevention and recovery"
+      ],
+      "amazon_url": "https://www.amazon.com/Design-Everyday-Things-Revised-Expanded/dp/0465050654",
+      "cover_image_url": "/images/books/design-of-everyday-things.jpg",
+      "cover_color": "#4ECDC4"
+    },
+    {
+      "id": "b03",
+      "title": "About Face: The Essentials of Interaction Design",
+      "author": "Alan Cooper, Robert Reimann, David Cronin, Christopher Noessel",
+      "year": 2014,
+      "category": "interaction",
+      "level": "intermediate",
+      "description": "Comprehensive guide to interaction design principles and practices. Covers everything from user research to interface design.",
+      "why_recommended": "Deep dive into interaction design with practical methods and frameworks.",
+      "key_takeaways": [
+        "Goal-directed design process",
+        "Personas and scenarios",
+        "Design patterns and principles"
+      ],
+      "amazon_url": "https://www.amazon.com/About-Face-Essentials-Interaction-Design/dp/1118766571",
+      "cover_image_url": "/images/books/about-face.jpg",
+      "cover_color": "#95E1D3"
+    },
+    {
+      "id": "b04",
+      "title": "Lean UX",
+      "author": "Jeff Gothelf, Josh Seiden",
+      "year": 2021,
+      "category": "process",
+      "level": "intermediate",
+      "description": "How to apply lean principles to UX design. Focuses on building better products faster through experimentation and iteration.",
+      "why_recommended": "Perfect for teams working in agile environments. Emphasizes collaboration and continuous learning.",
+      "key_takeaways": [
+        "Build-Measure-Learn cycle",
+        "Cross-functional collaboration",
+        "Hypothesis-driven design"
+      ],
+      "amazon_url": "https://www.amazon.com/Lean-UX-Designing-Great-Products/dp/1491953608",
+      "cover_image_url": "/images/books/lean-ux.jpg",
+      "cover_color": "#F38181"
+    },
+    {
+      "id": "b05",
+      "title": "The Elements of User Experience",
+      "author": "Jesse James Garrett",
+      "year": 2010,
+      "category": "fundamentals",
+      "level": "beginner",
+      "description": "A clear, concise introduction to the field of user experience design. Explains the five planes of UX from strategy to surface.",
+      "why_recommended": "Great starting point for understanding the full scope of UX work and how different elements connect.",
+      "key_takeaways": [
+        "Five planes of user experience",
+        "Strategy, scope, structure, skeleton, surface",
+        "User-centered design process"
+      ],
+      "amazon_url": "https://www.amazon.com/Elements-User-Experience-User-Centered-Design/dp/0321683684",
+      "cover_image_url": "/images/books/elements-of-user-experience.jpg",
+      "cover_color": "#AA96DA"
+    },
+    {
+      "id": "b06",
+      "title": "Hooked: How to Build Habit-Forming Products",
+      "author": "Nir Eyal",
+      "year": 2014,
+      "category": "psychology",
+      "level": "intermediate",
+      "description": "Explains the psychology behind habit-forming products and how to design for user engagement.",
+      "why_recommended": "Understanding user psychology helps create more engaging and effective products.",
+      "key_takeaways": [
+        "The Hook Model: Trigger, Action, Reward, Investment",
+        "Variable rewards",
+        "Building user habits"
+      ],
+      "amazon_url": "https://www.amazon.com/Hooked-How-Build-Habit-Forming-Products/dp/1591847788",
+      "cover_image_url": "/images/books/hooked.jpg",
+      "cover_color": "#FCBAD3"
+    },
+    {
+      "id": "b07",
+      "title": "Measuring the User Experience",
+      "author": "William Albert, Thomas Tullis",
+      "year": 2022,
+      "category": "research",
+      "level": "intermediate",
+      "description": "Practical guide to measuring usability and user experience. Covers quantitative and qualitative methods.",
+      "why_recommended": "Essential for UX professionals who need to prove the value of their work with data.",
+      "key_takeaways": [
+        "Usability metrics and KPIs",
+        "A/B testing and analytics",
+        "Reporting UX findings"
+      ],
+      "amazon_url": "https://www.amazon.com/Measuring-User-Experience-Interactive-Technologies/dp/0128180804",
+      "cover_image_url": "/images/books/measuring-user-experience.jpg",
+      "cover_color": "#A8E6CF"
+    },
+    {
+      "id": "b08",
+      "title": "Sprint: How to Solve Big Problems and Test New Ideas in Just Five Days",
+      "author": "Jake Knapp, John Zeratsky, Braden Kowitz",
+      "year": 2016,
+      "category": "process",
+      "level": "beginner",
+      "description": "A practical guide to running design sprints. Step-by-step process for solving problems and testing ideas quickly.",
+      "why_recommended": "Perfect for teams that need to move fast and validate ideas quickly. Very actionable.",
+      "key_takeaways": [
+        "Five-day sprint process",
+        "Rapid prototyping and testing",
+        "Team collaboration techniques"
+      ],
+      "amazon_url": "https://www.amazon.com/Sprint-Solve-Problems-Test-Ideas/dp/150112174X",
+      "cover_image_url": "/images/books/sprint.jpg",
+      "cover_color": "#FFD93D"
+    },
+    {
+      "id": "b09",
+      "title": "The User Experience Team of One",
+      "author": "Leah Buley",
+      "year": 2013,
+      "category": "process",
+      "level": "beginner",
+      "description": "Practical guide for solo UX practitioners. Covers how to do UX work effectively when you're the only designer.",
+      "why_recommended": "Invaluable for UX designers working alone or in small teams. Very pragmatic approach.",
+      "key_takeaways": [
+        "Solo UX strategies",
+        "Quick research methods",
+        "Building UX influence"
+      ],
+      "amazon_url": "https://www.amazon.com/User-Experience-Team-One-Research/dp/1933820187",
+      "cover_image_url": "/images/books/user-experience-team-of-one.jpg",
+      "cover_color": "#6BCB77"
+    },
+    {
+      "id": "b10",
+      "title": "Universal Principles of Design",
+      "author": "William Lidwell, Kritina Holden, Jill Butler",
+      "year": 2010,
+      "category": "fundamentals",
+      "level": "all",
+      "description": "125 fundamental design principles explained with examples. Quick reference guide for design decisions.",
+      "why_recommended": "Great reference book for understanding design principles and when to apply them.",
+      "key_takeaways": [
+        "125 design principles",
+        "Visual examples and explanations",
+        "Quick reference format"
+      ],
+      "amazon_url": "https://www.amazon.com/Universal-Principles-Design-Revised-Updated/dp/1592535879",
+      "cover_image_url": "/images/books/universal-principles-of-design.jpg",
+      "cover_color": "#4D96FF"
+    },
+    {
+      "id": "b11",
+      "title": "Laws of UX",
+      "author": "Jon Yablonski",
+      "year": 2020,
+      "category": "fundamentals",
+      "level": "intermediate",
+      "description": "A collection of the key maxims that designers must consider when building user interfaces. Based on psychological principles of human behavior.",
+      "why_recommended": "Practical, actionable principles based on psychology. Great reference for making design decisions.",
+      "key_takeaways": [
+        "Jakob's Law: Users prefer familiar interfaces",
+        "Fitts's Law: Time to target depends on size and distance",
+        "Miller's Law: Working memory is limited"
+      ],
+      "amazon_url": "https://www.amazon.com/Laws-UX-Designers-Psychology-Designers/dp/1492055318",
+      "cover_image_url": "/images/books/laws-of-ux.jpg",
+      "cover_color": "#FF6B9D"
+    },
+    {
+      "id": "b12",
+      "title": "Just Enough Research",
+      "author": "Erika Hall",
+      "year": 2019,
+      "category": "research",
+      "level": "beginner",
+      "description": "A practical guide to user research for designers. Shows how to do just enough research to make informed decisions without overcomplicating.",
+      "why_recommended": "Perfect for pragmatic UX practitioners who need research methods that fit real-world constraints.",
+      "key_takeaways": [
+        "Research doesn't have to be expensive or time-consuming",
+        "Different research methods for different questions",
+        "How to conduct research with limited resources"
+      ],
+      "amazon_url": "https://www.amazon.com/Just-Enough-Research-Erika-Hall/dp/1937557100",
+      "cover_image_url": "/images/books/just-enough-research.jpg",
+      "cover_color": "#C7CEEA"
+    },
+    {
+      "id": "b13",
+      "title": "Interviewing Users",
+      "author": "Steve Portigal",
+      "year": 2013,
+      "category": "research",
+      "level": "intermediate",
+      "description": "A practical guide to conducting effective user interviews. Covers everything from planning to analysis.",
+      "why_recommended": "Essential skill for UX researchers. Portigal provides actionable techniques and real-world examples.",
+      "key_takeaways": [
+        "How to ask the right questions",
+        "Building rapport with participants",
+        "Analyzing and synthesizing interview data"
+      ],
+      "amazon_url": "https://www.amazon.com/Interviewing-Users-Uncover-Compelling-Insights/dp/193382011X",
+      "cover_image_url": "/images/books/interviewing-users.jpg",
+      "cover_color": "#FFB4A2"
+    },
+    {
+      "id": "b14",
+      "title": "Mental Models",
+      "author": "Indi Young",
+      "year": 2008,
+      "category": "research",
+      "level": "intermediate",
+      "description": "How to understand users' mental models to design better products. Explains how people think about tasks and goals.",
+      "why_recommended": "Deep dive into understanding user thinking. Helps design products that align with how users actually work.",
+      "key_takeaways": [
+        "What mental models are and why they matter",
+        "How to research and document mental models",
+        "Using mental models to inform design decisions"
+      ],
+      "amazon_url": "https://www.amazon.com/Mental-Models-Aligning-Strategy-Experience/dp/1933820063",
+      "cover_image_url": "/images/books/mental-models.jpg",
+      "cover_color": "#B5EAD7"
+    },
+    {
+      "id": "b15",
+      "title": "Rocket Surgery Made Easy",
+      "author": "Steve Krug",
+      "year": 2009,
+      "category": "usability",
+      "level": "beginner",
+      "description": "A do-it-yourself guide to finding and fixing usability problems. Practical approach to usability testing.",
+      "why_recommended": "Companion to Don't Make Me Think. Shows how to test and fix usability issues yourself.",
+      "key_takeaways": [
+        "How to conduct your own usability tests",
+        "Finding and fixing common usability problems",
+        "Making testing a regular part of your process"
+      ],
+      "amazon_url": "https://www.amazon.com/Rocket-Surgery-Made-Easy-Yourself/dp/0321657292",
+      "cover_image_url": "/images/books/rocket-surgery-made-easy.jpg",
+      "cover_color": "#FFD93D"
+    },
+    {
+      "id": "b16",
+      "title": "Designing with the Mind in Mind",
+      "author": "Jeff Johnson",
+      "year": 2020,
+      "category": "psychology",
+      "level": "intermediate",
+      "description": "Simple guide to understanding user interface design guidelines based on human perception and cognition.",
+      "why_recommended": "Bridges the gap between psychology and design. Explains why design guidelines work.",
+      "key_takeaways": [
+        "How perception works",
+        "Memory and attention limitations",
+        "Applying psychology to interface design"
+      ],
+      "amazon_url": "https://www.amazon.com/Designing-Mind-Simple-Understanding-Interface/dp/0128182025",
+      "cover_image_url": "/images/books/designing-with-the-mind-in-mind.jpg",
+      "cover_color": "#95E1D3"
+    },
+    {
+      "id": "b17",
+      "title": "Orchestrating Experiences",
+      "author": "Chris Risdon, Patrick Quattlebaum",
+      "year": 2018,
+      "category": "process",
+      "level": "intermediate",
+      "description": "Collaborative design for complexity. How to design connected experiences across multiple touchpoints.",
+      "why_recommended": "Essential for designing complex, multi-channel experiences. Practical frameworks for service design.",
+      "key_takeaways": [
+        "Journey mapping techniques",
+        "Collaborative design methods",
+        "Designing for complex systems"
+      ],
+      "amazon_url": "https://www.amazon.com/Orchestrating-Experiences-Collaborative-Complexity-Voices/dp/1933820319",
+      "cover_image_url": "/images/books/orchestrating-experiences.jpg",
+      "cover_color": "#AA96DA"
+    },
+    {
+      "id": "b18",
+      "title": "User Story Mapping",
+      "author": "Jeff Patton",
+      "year": 2014,
+      "category": "process",
+      "level": "intermediate",
+      "description": "Technique for better user understanding in agile product development. How to build shared understanding.",
+      "why_recommended": "Perfect for agile teams. Helps bridge the gap between user needs and product development.",
+      "key_takeaways": [
+        "How to create user story maps",
+        "Building shared understanding",
+        "Prioritizing features effectively"
+      ],
+      "amazon_url": "https://www.amazon.com/User-Story-Mapping-Discover-Product/dp/1491904909",
+      "cover_image_url": "/images/books/user-story-mapping.jpg",
+      "cover_color": "#FFB4A2"
+    },
+    {
+      "id": "b19",
+      "title": "Paper Prototyping",
+      "author": "Carolyn Snyder",
+      "year": 2003,
+      "category": "process",
+      "level": "beginner",
+      "description": "The fast and easy way to define and refine user interfaces. Practical guide to low-fidelity prototyping.",
+      "why_recommended": "Classic book on rapid prototyping. Shows how to test ideas quickly and cheaply.",
+      "key_takeaways": [
+        "How to create paper prototypes",
+        "Testing early and often",
+        "Iterating based on user feedback"
+      ],
+      "amazon_url": "https://www.amazon.com/Paper-Prototyping-Interactive-Technologies-Kaufmann/dp/1558608702",
+      "cover_image_url": "/images/books/paper-prototyping.jpg",
+      "cover_color": "#C7CEEA"
+    },
+    {
+      "id": "b20",
+      "title": "Designing for Emotion",
+      "author": "Aarron Walter",
+      "year": 2011,
+      "category": "interaction",
+      "level": "intermediate",
+      "description": "How to create products that people will love. Explores the role of emotion in design.",
+      "why_recommended": "Goes beyond usability to create delightful experiences. Shows how emotion drives user engagement.",
+      "key_takeaways": [
+        "Emotional design principles",
+        "Building personality into products",
+        "Creating memorable experiences"
+      ],
+      "amazon_url": "https://www.amazon.com/Designing-Emotion-Voices-Matter-Walter/dp/1937557003",
+      "cover_image_url": "/images/books/designing-for-emotion.jpg",
+      "cover_color": "#FF6B9D"
+    },
+    {
+      "id": "b21",
+      "title": "Collaborative UX Design",
+      "author": "Toni Steimle, Dieter Wallach",
+      "year": 2022,
+      "category": "process",
+      "level": "intermediate",
+      "description": "A practical guide to collaborative UX design. Shows how to work effectively with stakeholders, developers, and other team members.",
+      "why_recommended": "Essential for UX designers working in cross-functional teams. Provides frameworks for effective collaboration.",
+      "key_takeaways": [
+        "Collaborative design methods",
+        "Working with stakeholders",
+        "Building consensus in teams"
+      ],
+      "amazon_url": "https://www.amazon.com/Collaborative-UX-Design-German-Steimle/dp/3864909001",
+      "cover_image_url": "/images/books/collaborative-ux-design.jpg",
+      "cover_color": "#95E1D3"
+    },
+    {
+      "id": "b22",
+      "title": "UX for Beginners",
+      "author": "Joel Marsh",
+      "year": 2015,
+      "category": "fundamentals",
+      "level": "beginner",
+      "description": "A crash course in 100 short lessons covering the fundamentals of UX design. Comprehensive yet entertaining guide for anyone interested in user experience design.",
+      "why_recommended": "Perfect starting point for UX beginners. Covers all fundamentals in digestible, engaging lessons.",
+      "key_takeaways": [
+        "100 self-contained lessons on UX",
+        "Understanding diversity in user behavior",
+        "Designing for different user types"
+      ],
+      "amazon_url": "https://www.amazon.com/UX-Beginners-Crash-Course-Lessons/dp/1491921681",
+      "cover_image_url": "/images/books/ux-for-beginners.jpg",
+      "cover_color": "#FFB4A2"
+    },
+    {
+      "id": "b23",
+      "title": "User Friendly",
+      "author": "Cliff Kuang, Robert Fabricant",
+      "year": 2019,
+      "category": "fundamentals",
+      "level": "intermediate",
+      "description": "How the hidden rules of design are changing the way we live, work and play. Explores how design principles subtly shape our daily lives and the world around us.",
+      "why_recommended": "Fascinating historical narrative showing the evolution of UX design and its impact on society. Great for understanding the bigger picture.",
+      "key_takeaways": [
+        "Hidden rules of design",
+        "How design shapes behavior and lifestyles",
+        "Evolution of UX from niche to universal"
+      ],
+      "amazon_url": "https://www.amazon.com/User-Friendly-Hidden-Design-Changing/dp/0374279756",
+      "cover_image_url": "/images/books/user-friendly.jpg",
+      "cover_color": "#C7CEEA"
+    },
+    {
+      "id": "b24",
+      "title": "Refactoring UI",
+      "author": "Adam Wathan, Steve Schoger",
+      "year": 2018,
+      "category": "interaction",
+      "level": "intermediate",
+      "description": "A practical guide to UI design packed with actionable information. Covers design principles, hierarchy, typography, and more with excellent examples.",
+      "why_recommended": "No BS, great examples, concise writing. Perfect for UX designers who want to improve their UI skills. Packed with value in just 252 pages.",
+      "key_takeaways": [
+        "Design principles and hierarchy",
+        "Typography and text design",
+        "Practical UI patterns and examples"
+      ],
+      "amazon_url": "https://www.refactoringui.com/",
+      "cover_image_url": "/images/books/refactoring-ui.jpg",
+      "cover_color": "#FF6B9D"
+    },
+    {
+      "id": "b25",
+      "title": "100 Things Every Designer Needs to Know about People",
+      "author": "Susan M. Weinschenk",
+      "year": 2011,
+      "category": "psychology",
+      "level": "all",
+      "description": "100 facts about user behavior, categorized into clear chapters. Each section includes actionable takeaways for applying psychological principles to design.",
+      "why_recommended": "Well-supported facts about user behavior presented in an accessible format. Practical advice backed by research for designers of all levels.",
+      "key_takeaways": [
+        "100 facts about human behavior",
+        "Psychological principles in design",
+        "Actionable tips for each concept"
+      ],
+      "amazon_url": "https://www.amazon.com/Things-Every-Designer-Needs-People/dp/0321767535",
+      "cover_image_url": "/images/books/100-things-every-designer.jpg",
+      "cover_color": "#B5EAD7"
+    },
+    {
+      "id": "b26",
+      "title": "Design Is a Job",
+      "author": "Mike Monteiro",
+      "year": 2012,
+      "category": "process",
+      "level": "intermediate",
+      "description": "A short, conversational guide to the business of design. Covers money, handling clients, contracts, and building confidence as a designer.",
+      "why_recommended": "Essential reading for freelance designers. Builds confidence and awareness of your value. Many designers wish they had read it earlier.",
+      "key_takeaways": [
+        "The business side of design",
+        "Handling clients and contracts",
+        "Understanding your value as a designer"
+      ],
+      "amazon_url": "https://www.amazon.com/Design-Job-Mike-Monteiro/dp/1937557038",
+      "cover_image_url": "/images/books/design-is-a-job.jpg",
+      "cover_color": "#FFB4A2"
+    },
+    {
+      "id": "b27",
+      "title": "Designing Interfaces",
+      "author": "Jennifer Tidwell",
+      "year": 2005,
+      "category": "interaction",
+      "level": "intermediate",
+      "description": "A comprehensive reference book on UX/UI design patterns and terminology. Explains common design patterns with examples and screenshots.",
+      "why_recommended": "One-stop shop for UX/UI terminology and patterns. Helps you communicate more professionally and understand design patterns.",
+      "key_takeaways": [
+        "UX/UI design patterns",
+        "Design terminology",
+        "Common interface solutions"
+      ],
+      "amazon_url": "https://www.amazon.com/Designing-Interfaces-Patterns-Effective-Interaction/dp/1449379702",
+      "cover_image_url": "/images/books/designing-interfaces.jpg",
+      "cover_color": "#AA96DA"
+    },
+    {
+      "id": "b28",
+      "title": "Observing the User Experience",
+      "author": "Elizabeth Goodman, Mike Kuniavsky, Andrea Moed",
+      "year": 2012,
+      "category": "research",
+      "level": "intermediate",
+      "description": "A comprehensive guide to user research methods. Covers observation techniques, interviews, surveys, and usability testing.",
+      "why_recommended": "Excellent reference for UX researchers. Provides detailed methods for understanding users through observation and research.",
+      "key_takeaways": [
+        "User observation techniques",
+        "Research planning and execution",
+        "Analyzing and reporting research findings"
+      ],
+      "amazon_url": "https://www.amazon.com/Observing-User-Experience-Researchers-Practitioners/dp/0123848695",
+      "cover_image_url": "/images/books/observing-the-user-experience.jpg",
+      "cover_color": "#B5EAD7"
+    },
+    {
+      "id": "b29",
+      "title": "Think Like a UX Researcher",
+      "author": "David Travis, Philip Hodgson",
+      "year": 2019,
+      "category": "research",
+      "level": "intermediate",
+      "description": "How to observe users, influence design, and create better products. Focuses on developing a researcher mindset and critical thinking.",
+      "why_recommended": "Helps develop the thinking patterns of experienced UX researchers. Great for understanding the 'why' behind research methods.",
+      "key_takeaways": [
+        "Researcher mindset and thinking",
+        "Critical analysis of user behavior",
+        "Influencing design through research"
+      ],
+      "amazon_url": "https://www.amazon.com/Think-Like-UX-Researcher-Observe/dp/1138365295",
+      "cover_image_url": "/images/books/think-like-a-ux-researcher.jpg",
+      "cover_color": "#FFB4A2"
+    },
+    {
+      "id": "b30",
+      "title": "Doorbells, Danger, and Dead Batteries",
+      "author": "Steve Portigal",
+      "year": 2016,
+      "category": "research",
+      "level": "intermediate",
+      "description": "User research war stories from the field. Real-world examples of what can go wrong in user research and how to handle it.",
+      "why_recommended": "Entertaining and educational. Learn from real mistakes and challenges in user research. Helps prepare for the unexpected.",
+      "key_takeaways": [
+        "Real-world research challenges",
+        "Handling difficult situations",
+        "Learning from research mistakes"
+      ],
+      "amazon_url": "https://www.amazon.com/Doorbells-Danger-Dead-Batteries-Research/dp/1933820772",
+      "cover_image_url": "/images/books/doorbells-danger-dead-batteries.jpg",
+      "cover_color": "#C7CEEA"
+    },
+    {
+      "id": "b31",
+      "title": "Validating Product Ideas",
+      "author": "Tomer Sharon",
+      "year": 2016,
+      "category": "research",
+      "level": "intermediate",
+      "description": "Through lean user research. Practical guide to validating product ideas quickly and effectively using lean research methods.",
+      "why_recommended": "Perfect for product teams. Shows how to validate ideas without extensive research. Very pragmatic approach.",
+      "key_takeaways": [
+        "Lean user research methods",
+        "Validating product ideas quickly",
+        "Research for product decisions"
+      ],
+      "amazon_url": "https://www.amazon.com/Validating-Product-Ideas-Through-Research/dp/1933820292",
+      "cover_image_url": "/images/books/validating-product-ideas.jpg",
+      "cover_color": "#95E1D3"
+    },
+    {
+      "id": "b32",
+      "title": "Remote Research",
+      "author": "Nate Bolt, Tony Tulathimutte",
+      "year": 2010,
+      "category": "research",
+      "level": "intermediate",
+      "description": "Real users, real time, real research. Guide to conducting effective user research remotely using various tools and techniques.",
+      "why_recommended": "Essential for remote research. Practical guide to conducting user research when you can't be in the same room.",
+      "key_takeaways": [
+        "Remote research methods",
+        "Tools and techniques for remote testing",
+        "Conducting effective remote interviews"
+      ],
+      "amazon_url": "https://www.amazon.com/Remote-Research-Users-Real-Research/dp/1933820772",
+      "cover_image_url": "/images/books/remote-research.jpg",
+      "cover_color": "#FF6B9D"
+    },
+    {
+      "id": "b33",
+      "title": "Designing for the Digital Age",
+      "author": "Kim Goodwin",
+      "year": 2009,
+      "category": "process",
+      "level": "advanced",
+      "description": "How to create human-centered products and services. Comprehensive guide covering research, design, and development processes.",
+      "why_recommended": "Comprehensive guide to the entire design process. Excellent for understanding how research connects to design and development.",
+      "key_takeaways": [
+        "Human-centered design process",
+        "Research to design workflow",
+        "Comprehensive product design approach"
+      ],
+      "amazon_url": "https://www.amazon.com/Designing-Digital-Age-Human-Centered-Products/dp/0470229101",
+      "cover_image_url": "/images/books/designing-for-the-digital-age.jpg",
+      "cover_color": "#AA96DA"
+    }
+  ]
+}
