@@ -29,11 +29,13 @@ The Pragmatic UX Design website presents a practical framework for UX Design, co
 - Presentation of eight UX Design principles with detailed explanations
 - Interactive Decision Helper with 5-question flow including project phase
 - Methods Overview page with 51 UX methods across 6 categories
+- Books Recommendations page with 33 curated UX design books
 - Responsive design with glassmorphism UI effects and gradient glows
 - Decision Helper state persistence with localStorage
 - Email integration for result sharing
-- Modal-based method details with contact integration and tips
-- Category filtering and method search functionality
+- Modal-based method and book details with contact integration and tips
+- Category filtering for methods and books
+- Level filtering for books (beginner, intermediate, advanced, all)
 - Standalone embeddable tools for focused usage (`/embed/*`)
 
 **Target Audience:**

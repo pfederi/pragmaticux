@@ -6,9 +6,11 @@ A practical framework for maximizing UX impact without overcomplicating design p
 
 - **Eight Core UX Principles** - Practical guidance for effective UX design
 - **51 UX Methods** - Comprehensive collection organized by category (Research, Design, Testing, Implementation, Strategy, Optimization)
+- **33 UX Book Recommendations** - Curated selection of essential UX design books with descriptions, key takeaways, and Amazon links
 - **Interactive Decision Helper** - 5-question flow providing personalized recommendations
 - **Project Phase Integration** - Methods tailored to project stages (start, middle, end)
 - **Methods Overview** - Browse and filter all available UX methods with modal details
+- **Books Overview** - Browse recommended UX books filtered by category and level
 - **Responsive Design** - Optimized for all devices with modern glassmorphism UI
 - **State Persistence** - Decision Helper progress automatically saved
 - **Contact Integration** - Direct email integration for method implementation support
@@ -41,11 +43,13 @@ The development server includes hot-reload, so changes will automatically refres
 ## 🆕 What's New in v2.0
 
 ### New Features
+- **UX Book Recommendations** - New `/books` page with 33 curated UX design books, filterable by category and level
 - **Modal-based Method Details** - Interactive method cards with detailed descriptions, steps, and tips
 - **Glassmorphism UI Effects** - Modern visual design with backdrop blur and gradient glows
 - **Project Phase Integration** - Decision Helper now considers project stage (start/middle/end)
 - **Contact Integration** - Direct email links for implementation support
 - **Methods Filtering** - Browse methods by category with visual chips
+- **Books Filtering** - Filter books by category (usability, fundamentals, interaction, process, psychology, research) and level (beginner, intermediate, advanced, all)
 - **Mobile-Optimized Cookie Banner** - Improved responsive design for mobile devices
 - **Release Notes Page** - Dedicated page for version history and changelog
 - **Standalone Embed Tools** - Individual tools available at dedicated URLs for focused usage
@@ -62,6 +66,7 @@ Each core component is available as a standalone tool for focused usage:
 - **Methods Toolkit** (`/embed/methods`) - Browse and filter 51 UX methods
 - **Principles Guide** (`/embed/principles`) - Explore the 8 core UX principles
 - **Decision Helper** (`/embed/decision-helper`) - Interactive project assessment tool
+- **Books Library** (`/books`) - Browse 33 recommended UX design books
 
 ### Features
 - **Clean Interface** - Focused on the specific tool without navigation distractions
@@ -138,10 +143,12 @@ This project follows a [Code of Conduct](https://github.com/pfederi/pragmaticux/
 pragmaticux/
 ├── app/                    # Next.js app directory
 │   ├── about/             # About page
+│   ├── books/             # Books recommendations page (NEW)
 │   ├── decision-helper/  # Decision Helper page
-│   ├── methods/          # Methods overview page (NEW)
+│   ├── methods/          # Methods overview page
 │   ├── principles/        # Individual principle pages
 │   │   └── [id]/         # Dynamic route for principle details
+│   ├── release-notes/    # Release notes page
 │   ├── embed/            # Standalone embeddable tools
 │   │   ├── methods/      # Standalone methods toolkit
 │   │   ├── principles/   # Standalone principles guide
@@ -151,6 +158,7 @@ pragmaticux/
 │   └── globals.css        # Global styles and Tailwind imports
 ├── components/            # React components
 │   ├── About.tsx          # About page content
+│   ├── BooksOverview.tsx # Books overview with filtering and modals (NEW)
 │   ├── CTA.tsx            # Call-to-action component
 │   ├── CookieBanner.tsx   # GDPR cookie consent banner (mobile optimized)
 │   ├── DecisionHelper.tsx # Interactive decision helper (5 questions + project phase)
@@ -164,16 +172,22 @@ pragmaticux/
 ├── data/                  # Data files
 │   ├── principles.json    # Core principles data
 │   ├── methods.json       # UX methods data with descriptions and steps
+│   ├── books.json         # UX book recommendations data (NEW)
+│   ├── books.ts           # Books TypeScript exports (NEW)
 │   ├── decision_tree.json # Decision tree for helper
 │   ├── principles.ts      # Principles TypeScript exports
 │   ├── methods.ts         # Methods TypeScript exports with categories
 │   └── decisionTree.ts    # Decision tree TypeScript exports
+├── scripts/               # Utility scripts
+│   └── download-book-covers.js # Script to download book cover images (NEW)
 ├── lib/                   # Utility functions
 │   └── utils.ts           # Helper functions (cn, etc.)
 ├── public/                # Static assets
-│   └── assets/
-│       └── images/
-│           └── ergon_logo.svg
+│   ├── assets/
+│   │   └── images/
+│   │       └── ergon_logo.svg
+│   └── images/
+│       └── books/         # Book cover images (33 images) (NEW)
 ├── types/                 # TypeScript type definitions
 │   ├── decisionTree.ts    # Decision tree types
 │   └── index.ts          # Shared types (Principle, etc.)
@@ -187,11 +201,13 @@ pragmaticux/
 ## 🆕 Recent Updates (v2.0)
 
 ### ✨ New Features
-- **Methods Overview Page** - Browse all 64+ UX methods with category filtering
+- **Books Recommendations Page** - Browse 33 curated UX design books with filtering by category and level
+- **Methods Overview Page** - Browse all 51 UX methods with category filtering
 - **Enhanced Decision Helper** - Added 5th question about project phase (start/middle/end)
 - **Project Phase Methods** - Phase-specific method recommendations
 - **Unified Design System** - Consistent card layouts and glassmorphism effects
 - **Analytics Integration** - New quantitative research methods (Analytics Audit, Conversion Analysis)
+- **Book Cover Images** - Automated download script for book cover images from Goodreads API
 
 ### 🎨 UI/UX Improvements
 - **Glassmorphism Design** - Modern glass effects on all interactive elements

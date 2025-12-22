@@ -2,13 +2,21 @@
 
 ## Version 2.0.0 (Current Release)
 
-**Release Date:** December 17, 2025
+**Release Date:** December 22, 2025
 
 ## Overview
 
-Version 2.0 brings major enhancements to the Pragmatic UX Design framework website, including a comprehensive Methods Overview, enhanced Decision Helper with project phase awareness, and significant UI/UX improvements with modern glassmorphism design.
+Version 2.0 brings major enhancements to the Pragmatic UX Design framework website, including a comprehensive Methods Overview, enhanced Decision Helper with project phase awareness, a new Books Recommendations page with 33 curated UX books, and significant UI/UX improvements with modern glassmorphism design.
 
 ## New Features
+
+### Books Recommendations Page
+- **New Route**: `/books` - Complete overview of 33 curated UX design books
+- **Category Filtering**: Filter books by Usability, Fundamentals, Interaction Design, Process & Methods, Psychology, Research
+- **Level Filtering**: Filter by Beginner, Intermediate, Advanced, or All levels
+- **Book Details**: Each book includes description, why it's recommended, key takeaways, Amazon link, and cover image
+- **Cover Images**: 32 book cover images automatically downloaded from Goodreads API
+- **Responsive Design**: Optimized card layouts with gradient backgrounds matching the design system
 
 ### Methods Overview Page
 - **New Route**: `/methods` - Complete overview of all UX methods
@@ -29,21 +37,25 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 - **Mobile Optimization**: Improved touch targets and compact layouts
 
 ### Content Expansion
-- **51 UX Methods**: Comprehensive collection across 6 categories
+- **51 UX Methods** - Comprehensive collection across 6 categories
+- **33 UX Books** - Curated selection of essential UX design books from multiple sources
 - **New Methods Added**:
   - Design Studio (Design & Creation)
   - Analytics Audit (Research & Analysis)
   - Conversion Funnel Analysis (Research & Analysis)
   - User Segmentation Analysis (Research & Analysis)
 - **Method Renaming**: "Field Studies" → "Contextual Inquiry" for industry standards
+- **Book Sources**: Books curated from Interaction Design Foundation, UXfolio, UX Planet, and internal library
 
 ## Technical Improvements
 
 ### Architecture Updates
-- **New Components**: MethodsOverview, Modal, CookieBanner
+- **New Components**: MethodsOverview, BooksOverview, Modal, CookieBanner
+- **New Scripts**: `download-book-covers.js` - Automated script to download book cover images from Goodreads API
 - **Enhanced State Management**: Improved localStorage persistence
-- **Better Type Safety**: Expanded TypeScript interfaces
+- **Better Type Safety**: Expanded TypeScript interfaces for books data
 - **Performance**: Optimized rendering and reduced bundle size
+- **Image Management**: Book cover images stored locally in `public/images/books/`
 
 ### Design System
 - **Consistent Styling**: Unified color schemes and spacing
@@ -66,9 +78,10 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 
 ## Documentation Updates
 
-- **README.md**: Comprehensive feature overview and setup instructions
-- **arc42.md**: Complete architecture documentation with new components
+- **README.md**: Comprehensive feature overview including Books page, setup instructions, and new scripts
+- **arc42.md**: Complete architecture documentation with new BooksOverview component
 - **decision-logic.md**: Updated rule engine documentation (19 rules total)
+- **public/images/books/README.md**: Documentation for book cover image management
 
 ## Migration Notes
 
