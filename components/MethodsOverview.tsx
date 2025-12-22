@@ -103,7 +103,7 @@ export default function MethodsOverview() {
             <button
               key={index}
               onClick={() => setSelectedMethod(method.name)}
-              className="bg-card border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[140px] flex flex-col"
+              className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[140px] flex flex-col"
             >
 
               {/* Header with title and chip */}
