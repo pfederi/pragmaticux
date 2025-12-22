@@ -1,0 +1,32 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d2d2d;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="text" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <circle cx="150" cy="150" r="80" fill="url(#text)" opacity="0.1"/>
+  <circle cx="1050" cy="480" r="120" fill="url(#text)" opacity="0.05"/>
+  <circle cx="1100" cy="200" r="60" fill="url(#text)" opacity="0.08"/>
+
+  <text x="600" y="280" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="bold" fill="url(#text)" text-anchor="middle">
+    Pragmatic UX Design
+  </text>
+
+  <text x="600" y="340" font-family="system-ui, -apple-system, sans-serif" font-size="24" fill="#9ca3af" text-anchor="middle">
+    Practical UX Framework for Maximum Impact
+  </text>
+
+  <text x="600" y="400" font-family="system-ui, -apple-system, sans-serif" font-size="18" fill="#6b7280" text-anchor="middle">
+    8 Core Principles • 51 Proven Methods • Interactive Decision Helper
+  </text>
+
+  <rect x="100" y="480" width="1000" height="4" fill="url(#text)" opacity="0.3"/>
+</svg>

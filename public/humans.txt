@@ -1,0 +1,22 @@
+# Pragmatic UX Design
+
+/* TEAM */
+Creator: Patrick Federi
+Contact: patrick.federi@ergon.ch
+Location: Switzerland
+Twitter: @pragmaticux
+Site: https://pragmaticux.design
+
+/* THANKS */
+Design Framework: Pragmatic UX Design
+Technology: Next.js, React, TypeScript, Tailwind CSS
+Hosting: Vercel
+Analytics: Vercel Analytics
+Performance: Vercel Speed Insights
+
+/* SITE */
+Last update: 2025
+Language: English
+Standards: HTML5, CSS3, WCAG 2.1 AA
+Components: Custom React components
+IDE: Cursor AI

@@ -1,0 +1,2 @@
+# Pragmatic UX Design Security Policy
+# For security issues, please contact: patrick.federi@ergon.ch
