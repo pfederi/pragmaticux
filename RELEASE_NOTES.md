@@ -1,12 +1,12 @@
 # Release Notes - Pragmatic UX Design Website
 
-## Version 2.0.0 (Current Release)
+## Version 2.1.0 (Current Release)
 
 **Release Date:** December 22, 2025
 
 ## Overview
 
-Version 2.0 brings major enhancements to the Pragmatic UX Design framework website, including a comprehensive Methods Overview, enhanced Decision Helper with project phase awareness, a new Books Recommendations page with 33 curated UX books, and significant UI/UX improvements with modern glassmorphism design.
+Version 2.1 adds a comprehensive Books Recommendations page with 33 curated UX design books, expanding the learning resources available on the Pragmatic UX Design framework website.
 
 ## New Features
 
@@ -17,6 +17,35 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 - **Book Details**: Each book includes description, why it's recommended, key takeaways, Amazon link, and cover image
 - **Cover Images**: 32 book cover images automatically downloaded from Goodreads API
 - **Responsive Design**: Optimized card layouts with gradient backgrounds matching the design system
+
+### Content Expansion
+- **33 UX Books** - Curated selection of essential UX design books from multiple sources
+- **Book Sources**: Books curated from Interaction Design Foundation, UXfolio, UX Planet, and internal library
+- **Automated Image Management**: Script to download book cover images from Goodreads API
+
+### Technical Improvements
+- **New Component**: BooksOverview - Complete books browsing interface with filtering and modals
+- **New Scripts**: `download-book-covers.js` - Automated script to download book cover images
+- **Image Management**: Book cover images stored locally in `public/images/books/`
+- **Type Safety**: Expanded TypeScript interfaces for books data
+
+## Documentation Updates
+
+- **README.md**: Comprehensive feature overview including Books page, setup instructions, and new scripts
+- **arc42.md**: Complete architecture documentation with new BooksOverview component
+- **public/images/books/README.md**: Documentation for book cover image management
+
+---
+
+## Version 2.0.0
+
+**Release Date:** December 17, 2025
+
+## Overview
+
+Version 2.0 brings major enhancements to the Pragmatic UX Design framework website, including a comprehensive Methods Overview, enhanced Decision Helper with project phase awareness, and significant UI/UX improvements with modern glassmorphism design.
+
+## New Features
 
 ### Methods Overview Page
 - **New Route**: `/methods` - Complete overview of all UX methods
@@ -38,24 +67,20 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 
 ### Content Expansion
 - **51 UX Methods** - Comprehensive collection across 6 categories
-- **33 UX Books** - Curated selection of essential UX design books from multiple sources
 - **New Methods Added**:
   - Design Studio (Design & Creation)
   - Analytics Audit (Research & Analysis)
   - Conversion Funnel Analysis (Research & Analysis)
   - User Segmentation Analysis (Research & Analysis)
 - **Method Renaming**: "Field Studies" → "Contextual Inquiry" for industry standards
-- **Book Sources**: Books curated from Interaction Design Foundation, UXfolio, UX Planet, and internal library
 
 ## Technical Improvements
 
 ### Architecture Updates
-- **New Components**: MethodsOverview, BooksOverview, Modal, CookieBanner
-- **New Scripts**: `download-book-covers.js` - Automated script to download book cover images from Goodreads API
+- **New Components**: MethodsOverview, Modal, CookieBanner
 - **Enhanced State Management**: Improved localStorage persistence
-- **Better Type Safety**: Expanded TypeScript interfaces for books data
+- **Better Type Safety**: Expanded TypeScript interfaces
 - **Performance**: Optimized rendering and reduced bundle size
-- **Image Management**: Book cover images stored locally in `public/images/books/`
 
 ### Design System
 - **Consistent Styling**: Unified color schemes and spacing
@@ -78,10 +103,9 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 
 ## Documentation Updates
 
-- **README.md**: Comprehensive feature overview including Books page, setup instructions, and new scripts
-- **arc42.md**: Complete architecture documentation with new BooksOverview component
+- **README.md**: Comprehensive feature overview and setup instructions
+- **arc42.md**: Complete architecture documentation with new components
 - **decision-logic.md**: Updated rule engine documentation (19 rules total)
-- **public/images/books/README.md**: Documentation for book cover image management
 
 ## Migration Notes
 
@@ -133,6 +157,6 @@ Special thanks to the UX community for feedback and inspiration. This release re
 
 ---
 
-**Version**: 2.0.0
-**Release Date**: December 17, 2025
-**Previous Version**: 1.0.0
+**Version**: 2.1.0
+**Release Date**: December 22, 2025
+**Previous Version**: 2.0.0

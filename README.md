@@ -40,16 +40,19 @@ npm run dev
 
 The development server includes hot-reload, so changes will automatically refresh in your browser.
 
-## 🆕 What's New in v2.0
+## 🆕 What's New
 
-### New Features
+### Version 2.1.0 (Latest)
 - **UX Book Recommendations** - New `/books` page with 33 curated UX design books, filterable by category and level
+- **Books Filtering** - Filter books by category (usability, fundamentals, interaction, process, psychology, research) and level (beginner, intermediate, advanced, all)
+- **Automated Book Cover Downloads** - Script to download book cover images from Goodreads API
+
+### Version 2.0.0
 - **Modal-based Method Details** - Interactive method cards with detailed descriptions, steps, and tips
 - **Glassmorphism UI Effects** - Modern visual design with backdrop blur and gradient glows
 - **Project Phase Integration** - Decision Helper now considers project stage (start/middle/end)
 - **Contact Integration** - Direct email links for implementation support
 - **Methods Filtering** - Browse methods by category with visual chips
-- **Books Filtering** - Filter books by category (usability, fundamentals, interaction, process, psychology, research) and level (beginner, intermediate, advanced, all)
 - **Mobile-Optimized Cookie Banner** - Improved responsive design for mobile devices
 - **Release Notes Page** - Dedicated page for version history and changelog
 - **Standalone Embed Tools** - Individual tools available at dedicated URLs for focused usage
