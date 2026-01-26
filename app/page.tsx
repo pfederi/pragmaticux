@@ -3,6 +3,7 @@ import PrinciplesOverview from '@/components/PrinciplesOverview'
 import Workflow from '@/components/Workflow'
 import CTA from '@/components/CTA'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: 'Pragmatic UX Design - Practical Framework for Better User Experience',
@@ -38,6 +39,7 @@ export default function Home() {
       <Workflow />
       <PrinciplesOverview />
       <CTA />
+      <Analytics />
     </>
   )
 }
