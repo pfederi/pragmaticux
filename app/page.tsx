@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Pragmatic UX Design - Practical Framework for Better User Experience',
     description: 'Master UX design with 8 core principles and 51 proven methods. Interactive decision helper for project-specific UX guidance.',
-    url: 'https://pragmaticux.design',
+    url: 'https://pragmaticuxdesign.com',
     type: 'website',
   },
   twitter: {

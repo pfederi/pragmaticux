@@ -1,6 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="min-h-[70vh] flex items-center bg-gradient-to-br from-primary/5 via-background to-secondary/5 pt-16 relative overflow-hidden">
       {/* Animated background gradient */}
@@ -11,10 +16,10 @@ export default function Hero() {
           {/* Left side - Text content */}
           <div className="text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent leading-relaxed sm:leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] pb-2 sm:pb-3">
-              Pragmatic UX Design
+              {t.hero.title}
           </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 md:mb-12 leading-relaxed">
-            Maximising impact without overcomplicating the process. A practical approach to user experience design that adapts to real-world conditions.
+            {t.hero.subtitle}. {t.hero.description}
           </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
@@ -22,14 +27,14 @@ export default function Hero() {
                 className="px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-dark transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 aria-label="Navigate to Core Principles section"
               >
-                Explore Core Principles
+                {t.hero.ctaPrimary}
               </Link>
             <Link
                 href="/decision-helper"
                 className="px-6 py-3 sm:px-8 sm:py-4 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-center sm:text-left focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
                 aria-label="Try the Decision Helper tool"
             >
-                Try Decision Helper
+                {t.hero.ctaSecondary}
             </Link>
             </div>
           </div>

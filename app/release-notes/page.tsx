@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Release Notes & Changelog - Pragmatic UX Design',
     description: 'Complete changelog and version history for Pragmatic UX Design updates and improvements.',
-    url: 'https://pragmaticux.design/release-notes',
+    url: 'https://pragmaticuxdesign.com/release-notes',
     type: 'website',
   },
   twitter: {

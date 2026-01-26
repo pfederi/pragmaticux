@@ -1,16 +1,22 @@
+'use client'
+
 import Link from 'next/link'
-import { principles } from '@/data/principles'
+import { getPrinciples } from '@/data/principles'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function PrinciplesOverview() {
+  const { t, locale } = useLanguage()
+  const principles = getPrinciples(locale)
+
   return (
     <section id="core-principles" className="py-12 sm:py-16 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-left mb-8 sm:mb-12 md:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">
-            Core Principles
+            {t.principles.title}
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Eight fundamental concepts that guide pragmatic UX Design practice. Click any principle to explore it in detail.
+            {t.principles.subtitle}
           </p>
         </div>
 
@@ -32,7 +38,7 @@ export default function PrinciplesOverview() {
               </div>
               <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed line-clamp-5 flex-grow">{principle.summary}</p>
               <div className="flex items-center text-primary text-xs sm:text-sm font-semibold group-hover:translate-x-1 transition-transform mt-auto">
-                Read More <span aria-hidden="true">→</span>
+                {t.common.readMore} <span aria-hidden="true">→</span>
               </div>
             </Link>
           ))}

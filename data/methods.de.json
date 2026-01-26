@@ -1,0 +1,777 @@
+{
+  "Task Flow Redesign": {
+    "description": "Analysiere und optimiere Nutzer-Task-Flows, um Reibung zu reduzieren und Effizienz zu verbessern. Diese Methode hilft, Engpässe zu identifizieren und Nutzer-Journeys zu optimieren.",
+    "steps": [
+      "Bilde die aktuelle User Journey von Anfang bis Ende ab",
+      "Identifiziere Schmerzpunkte, unnötige Schritte und Reibungsbereiche",
+      "Vergleiche mit Best Practices für ähnliche Flows",
+      "Gestalte vereinfachte Alternativen mit Fokus auf Kernziele der Nutzer",
+      "Teste den neuen Flow mit echten Nutzern vor der Implementierung"
+    ],
+    "tips": [
+      "Fokussiere dich zuerst auf den 'Happy Path', dann auf Randfälle",
+      "Verwende Tools wie Flowcharts oder User Journey Maps zur Visualisierung",
+      "Binde Stakeholder früh ein, um Prioritäten abzustimmen"
+    ]
+  },
+  "Checkout Simplification": {
+    "description": "Optimiere Checkout-Prozesse, um Abbrüche zu reduzieren und Conversion-Raten zu verbessern.",
+    "steps": [
+      "Analysiere aktuelle Checkout-Analytics und Abbruchpunkte",
+      "Identifiziere und entferne unnötige Formularfelder",
+      "Implementiere Gast-Checkout und gespeicherte Zahlungsmethoden",
+      "Füge Fortschrittsindikatoren und Vertrauenssignale hinzu",
+      "Teste verschiedene Checkout-Varianten mit A/B Testing"
+    ],
+    "tips": [
+      "Reduziere erforderliche Eingaben und nutze Progressive Disclosure wo möglich",
+      "Mobile Checkout sollte für Touch-Interaktionen optimiert sein",
+      "Erwäge One-Click-Purchasing für wiederkehrende Kunden"
+    ]
+  },
+  "Performance Audits": {
+    "description": "Bewerten und optimiere die Systemleistung, um User Experience und Engagement zu verbessern.",
+    "steps": [
+      "Messe aktuelle Performance-Metriken (Ladezeiten, Reaktionsfähigkeit)",
+      "Identifiziere Performance-Engpässe mit Tools wie Lighthouse",
+      "Priorisiere Fixes basierend auf Nutzerauswirkung und Aufwand",
+      "Implementiere Optimierungen (Caching, Kompression, Lazy Loading)",
+      "Überwache Performance-Verbesserungen und Nutzermetriken"
+    ],
+    "tips": [
+      "Definiere Performance-Ziele basierend auf Use Case und Nutzererwartungen, einschließlich wahrgenommener Performance",
+      "Mobile Performance ist oft kritischer als Desktop",
+      "Verwende Performance Budgets, um Rückschritte zu verhindern"
+    ]
+  },
+  "One-Page Findings": {
+    "description": "Verdichte Research-Insights in prägnante, umsetzbare einseitige Zusammenfassungen, die Entscheidungen vorantreiben.",
+    "steps": [
+      "Sammle alle Research-Daten aus User Interviews und Testing",
+      "Identifiziere die 3-5 wichtigsten Erkenntnisse und Empfehlungen",
+      "Erstelle eine klare Hierarchie: Problem → Erkenntnis → Empfehlung",
+      "Verwende Visualisierungen, Zitate und Metriken zur Unterstützung wichtiger Punkte",
+      "Füge nächste Schritte und Erfolgsmetriken für die Implementierung hinzu"
+    ],
+    "tips": [
+      "Fokussiere dich auf umsetzbare Erkenntnisse, nicht nur Beobachtungen",
+      "Verwende den 'Na und?'-Test - stelle sicher, dass jede Erkenntnis für Stakeholder wichtig ist",
+      "Füge ein starkes visuelles Element pro Seite hinzu"
+    ]
+  },
+  "Rapid Usability Audit": {
+    "description": "Schnelle Bewertung von Usability-Problemen mit sofortigen Verbesserungsempfehlungen.",
+    "steps": [
+      "Überprüfe wichtige User Flows anhand von Nielsens 10 Usability-Heuristiken",
+      "Dokumentiere kritische Usability-Probleme mit Schweregrad-Bewertungen",
+      "Priorisiere Fixes nach Nutzerauswirkung und Implementierungsaufwand",
+      "Erstelle schnelle Mockups für wirkungsvolle Verbesserungen",
+      "Präsentiere Erkenntnisse mit spezifischen, umsetzbaren Empfehlungen"
+    ],
+    "tips": [
+      "Fokussiere dich zuerst auf High-Impact, Low-Effort Verbesserungen",
+      "Verwende Schweregrad-Skalen: Kritisch, Wichtig, Klein, Kosmetisch",
+      "Füge Vorher/Nachher-Mockups zur Klarheit hinzu"
+    ]
+  },
+  "Guerrilla Testing": {
+    "description": "Informelles, kostengünstiges User Testing in natürlichen Umgebungen, um schnelles Feedback zu sammeln.",
+    "steps": [
+      "Definiere spezifische Aufgaben oder Fragen zum Testen",
+      "Finde Teilnehmer an relevanten Orten (Cafés, Parks, Büros)",
+      "Führe 5-10 Minuten Sessions mit deinem Smartphone oder Tablet durch",
+      "Bitte Nutzer, laut zu denken, während sie Aufgaben erledigen",
+      "Notiere Muster und Schmerzpunkte über mehrere Sessions hinweg"
+    ],
+    "tips": [
+      "Strebe 5-8 Teilnehmer pro Testing-Runde an",
+      "Biete kleine Anreize wie Kaffee oder Süßigkeiten",
+      "Teste wenn möglich in der natürlichen Umgebung der Nutzer"
+    ]
+  },
+  "Sketching Sessions": {
+    "description": "Kollaborative Sketching-Workshops, um Design-Lösungen schnell und kreativ zu erkunden.",
+    "steps": [
+      "Definiere das Problem und die Einschränkungen klar",
+      "Stelle Sketching-Material bereit und setze ein Zeitlimit (10-15 Minuten)",
+      "Lass Teilnehmer individuell mehrere Lösungen skizzieren",
+      "Teile und diskutiere Ideen als Gruppe",
+      "Identifiziere die stärksten Konzepte zur Weiterentwicklung"
+    ],
+    "tips": [
+      "Betone Quantität über Qualität - mehr Ideen führen zu besseren Lösungen",
+      "Beziehe diverse Teilnehmer ein (Designer, Entwickler, Stakeholder)",
+      "Verwende Timer, um die Energie hochzuhalten und Überdenken zu verhindern"
+    ]
+  },
+  "Design Studio": {
+    "description": "Strukturierte Design-Workshops, bei denen cross-funktionale Teams zusammenarbeiten, um komplexe Design-Herausforderungen durch Ideation, Prototyping und Kritik zu lösen.",
+    "steps": [
+      "Definiere die Design-Herausforderung und Erfolgskriterien",
+      "Stelle ein diverses Team zusammen (Designer, Entwickler, Product Manager, Nutzer)",
+      "Führe Research Review und Problem Framing durch (30-45 Minuten)",
+      "Führe Ideation Sessions mit verschiedenen Techniken durch (Brainstorming, Crazy 8s, etc.)",
+      "Erstelle schnelle Prototypen und teste Konzepte mit Nutzern",
+      "Moderiere Design Critique und Iterationsrunden",
+      "Dokumentiere Entscheidungen und nächste Schritte"
+    ],
+    "tips": [
+      "Beziehe 6-8 Teilnehmer für optimale Zusammenarbeit ein",
+      "Widme spezifische Zeitblöcke für jede Aktivität (Research: 30min, Ideation: 60min, Prototyping: 90min)",
+      "Verwende digitale Kollaborationstools für Remote-Teilnahme",
+      "Habe einen erfahrenen Moderator, um Diskussionen fokussiert und produktiv zu halten",
+      "Folge mit Action-Items und Verantwortlichkeitszuweisungen nach"
+    ]
+  },
+  "Impact Mapping": {
+    "description": "Visualisiere Nutzerziele und ordne Features messbaren Ergebnissen und Geschäftszielen zu.",
+    "steps": [
+      "Definiere das Hauptziel oder Ergebnis, das du erreichen möchtest",
+      "Identifiziere wichtige User Personas und ihre Motivationen",
+      "Bilde Deliverables und Features ab, die Nutzerziele unterstützen",
+      "Definiere Erfolgsmetriken für jedes Deliverable",
+      "Priorisiere basierend auf Impact vs. Aufwand"
+    ],
+    "tips": [
+      "Beginne mit dem Endziel und arbeite rückwärts",
+      "Verwende Sticky Notes oder digitale Tools für flexibles Mapping",
+      "Beziehe sowohl Nutzer- als auch Business-Impact-Metriken ein"
+    ]
+  },
+  "Top-3 Friction Fix": {
+    "description": "Identifiziere und priorisiere die drei größten Nutzer-Reibungspunkte für maximale Wirkung.",
+    "steps": [
+      "Analysiere Nutzerfeedback, Analytics und Session Recordings",
+      "Identifiziere die häufigsten Schmerzpunkte und Reibungsbereiche",
+      "Bewerte Probleme nach Nutzerauswirkung, Häufigkeit und Fix-Aufwand",
+      "Wähle die Top 3 Probleme mit höchstem Impact-to-Effort-Verhältnis",
+      "Erstelle detaillierte Aktionspläne für jeden Reibungspunkt"
+    ],
+    "tips": [
+      "Fokussiere dich auf Probleme, die die Mehrheit der Nutzer betreffen",
+      "Verwende die Formel: Impact = (Nutzerauswirkung × Häufigkeit) / Aufwand",
+      "Beginne mit Quick Wins, um Momentum aufzubauen"
+    ]
+  },
+  "Focused A/B Testing": {
+    "description": "Gezielte Experimente zur Validierung spezifischer Design-Entscheidungen mit statistischer Sicherheit.",
+    "steps": [
+      "Definiere eine klare Hypothese und Erfolgsmetrik",
+      "Erstelle zwei Versionen (A und B), die sich in einem Schlüsselaspekt unterscheiden",
+      "Stelle angemessene Stichprobengröße und Testdauer sicher",
+      "Führe den Test durch und analysiere Ergebnisse statistisch",
+      "Implementiere die gewinnende Version und dokumentiere Erkenntnisse"
+    ],
+    "tips": [
+      "Teste eine Variable zur Zeit, um Effekte zu isolieren",
+      "Stelle statistische Signifikanz sicher, bevor du Entscheidungen triffst",
+      "Berücksichtige Nutzersegmente - was für eine Gruppe funktioniert, funktioniert möglicherweise nicht für andere"
+    ]
+  },
+  "Design System Adoption": {
+    "description": "Implementiere konsistente Design-Patterns über Produkte hinweg für bessere User Experience und Effizienz.",
+    "steps": [
+      "Auditiere bestehende Komponenten und Design-Patterns",
+      "Definiere Kern-Design-Prinzipien und Component Library",
+      "Erstelle Dokumentation und Nutzungsrichtlinien",
+      "Etabliere Governance-Prozesse für Beiträge",
+      "Migriere bestehende Produkte zur Nutzung des Design Systems"
+    ],
+    "tips": [
+      "Beginne mit atomaren Komponenten (Buttons, Inputs) vor komplexen",
+      "Füge Code-Beispiele in mehreren Frameworks hinzu",
+      "Aktualisiere und pflege das System regelmäßig, wenn sich Bedürfnisse entwickeln"
+    ]
+  },
+  "Component Reuse": {
+    "description": "Nutze bestehende Komponenten, um Entwicklung zu beschleunigen und Konsistenz zu gewährleisten.",
+    "steps": [
+      "Katalogisiere bestehende wiederverwendbare Komponenten",
+      "Erstelle klare Dokumentation mit Nutzungsbeispielen",
+      "Etabliere Namenskonventionen und Komponenten-APIs",
+      "Implementiere Component Versioning und Deprecation Policies",
+      "Schule Teammitglieder in Komponentennutzung und -beitrag"
+    ],
+    "tips": [
+      "Beginne mit wirkungsvollen, häufig genutzten Komponenten",
+      "Verwende Design Tokens für konsistentes Styling",
+      "Auditiere und aktualisiere Komponenten regelmäßig basierend auf Nutzungsanalysen"
+    ]
+  },
+  "Design Tokens": {
+    "description": "Verwende Design Tokens für konsistentes Styling und schnellere Updates über Produkte hinweg.",
+    "steps": [
+      "Definiere deine Design Token-Struktur (Farben, Typografie, Abstände)",
+      "Erstelle Tokens für verschiedene Plattformen und Frameworks",
+      "Implementiere Token-Nutzung in Design-Tools und Code",
+      "Richte automatisierte Token-Verteilung und Updates ein",
+      "Dokumentiere Token-Nutzungsrichtlinien und Namenskonventionen"
+    ],
+    "tips": [
+      "Beginne mit einem kleinen Set von Kern-Tokens",
+      "Verwende semantische Benennung (z.B. 'color-text-primary' vs 'color-blue-500')",
+      "Automatisiere Token-Updates, um Drift zu verhindern"
+    ]
+  },
+  "Co-Design with Devs": {
+    "description": "Arbeite eng mit Entwicklern während des Design-Prozesses zusammen, um Machbarkeit sicherzustellen.",
+    "steps": [
+      "Beziehe Entwickler in Design Reviews und Brainstorming ein",
+      "Teile Design-Intent und Nutzerbedürfnisse zusammen mit Mockups",
+      "Diskutiere technische Einschränkungen und Möglichkeiten früh",
+      "Schaffe gemeinsames Verständnis durch kollaboratives Prototyping",
+      "Etabliere regelmäßige Design-Development Sync Points"
+    ],
+    "tips": [
+      "Rahme Diskussionen um Nutzerbedürfnisse, nicht nur technische Limitierungen",
+      "Verwende kollaborative Tools wie Figma für Echtzeit-Feedback",
+      "Feiere erfolgreiche Zusammenarbeit, um Momentum aufzubauen"
+    ]
+  },
+  "Constraint-First Wireframes": {
+    "description": "Erstelle Wireframes, die technische Einschränkungen früh im Design-Prozess berücksichtigen.",
+    "steps": [
+      "Sammle technische Einschränkungen und Anforderungen im Voraus",
+      "Designe innerhalb etablierter Grenzen und Limitierungen",
+      "Erstelle Wireframes, die realistische Implementierungsmöglichkeiten widerspiegeln",
+      "Hole frühes Feedback von Entwicklern zur Machbarkeit ein",
+      "Iteriere basierend auf technischem Feedback unter Beibehaltung der Nutzerbedürfnisse"
+    ],
+    "tips": [
+      "Dokumentiere Einschränkungen klar für das gesamte Team",
+      "Fokussiere dich auf Nutzerbedürfnisse, während du innerhalb von Einschränkungen arbeitest",
+      "Verwende diesen Ansatz, um 'Design im Vakuum'-Szenarien zu vermeiden"
+    ]
+  },
+  "Performance Budgets": {
+    "description": "Setze und überwache Performance-Ziele während der Entwicklung, um Rückschritte zu verhindern.",
+    "steps": [
+      "Definiere wichtige Performance-Metriken und akzeptable Schwellenwerte",
+      "Implementiere automatisierte Performance-Monitoring-Tools",
+      "Richte Alerts ein, wenn Budgets überschritten werden",
+      "Überprüfe und passe Budgets regelmäßig basierend auf Nutzerbedürfnissen an",
+      "Dokumentiere Performance-Entscheidungen und Trade-offs"
+    ],
+    "tips": [
+      "Beziehe Core Web Vitals als Basis-Metriken ein",
+      "Beziehe sowohl technische als auch wahrgenommene Performance-Metriken ein",
+      "Mache Budgets für das gesamte Team sichtbar"
+    ]
+  },
+  "Tech-Feasibility Notes": {
+    "description": "Dokumentiere technische Überlegungen neben Design-Entscheidungen für bessere Implementierung.",
+    "steps": [
+      "Füge technische Notizen in Design-Dokumentation ein",
+      "Hebe potenzielle Implementierungsherausforderungen hervor",
+      "Schlage alternative Ansätze mit verschiedenen Komplexitätsstufen vor",
+      "Dokumentiere Annahmen und Abhängigkeiten",
+      "Erstelle eine gemeinsame Wissensbasis für technische Entscheidungen"
+    ],
+    "tips": [
+      "Verwende ein konsistentes Format für technische Notizen",
+      "Füge Aufwandsschätzungen und Risikobewertungen hinzu",
+      "Überprüfe Notizen regelmäßig, um sicherzustellen, dass sie aktuell bleiben"
+    ]
+  },
+  "One-Pager Decision Logs": {
+    "description": "Führe prägnante Aufzeichnungen wichtiger Design-Entscheidungen und ihrer Begründung.",
+    "steps": [
+      "Dokumentiere Problem, Entscheidung und Begründung kurz",
+      "Füge wichtige Daten oder Nutzererkenntnisse hinzu, die die Entscheidung beeinflusst haben",
+      "Notiere alternative Optionen und warum sie abgelehnt wurden",
+      "Verlinke zu verwandten Designs, Research oder Metriken",
+      "Überprüfe und aktualisiere Logs regelmäßig zum Lernen"
+    ],
+    "tips": [
+      "Halte jedes Log auf einer Seite für einfaches Scannen",
+      "Füge Daten und Entscheidungsträger für Kontext hinzu",
+      "Verwende Logs, um zukünftige ähnliche Entscheidungen zu informieren"
+    ]
+  },
+  "Rapid UX Audits": {
+    "description": "Schnelle Bewertung von UX-Problemen mit umsetzbaren Empfehlungen für sofortige Verbesserung.",
+    "steps": [
+      "Definiere Audit-Umfang und Erfolgskriterien",
+      "Überprüfe wichtige Flows anhand etablierter UX-Prinzipien",
+      "Dokumentiere Probleme mit Schweregrad- und Impact-Bewertungen",
+      "Priorisiere Empfehlungen nach Nutzerauswirkung und Aufwand",
+      "Erstelle umsetzbare nächste Schritte mit Zeitplänen"
+    ],
+    "tips": [
+      "Verwende Checklisten basierend auf etablierten UX-Frameworks",
+      "Fokussiere dich zuerst auf High-Impact, Low-Effort Verbesserungen",
+      "Beziehe quantitative Daten ein, wenn verfügbar"
+    ]
+  },
+  "UX Bug Bash": {
+    "description": "Organisierte Sessions zur Identifizierung und Priorisierung von UX-Problemen über ein Produkt oder Feature hinweg.",
+    "steps": [
+      "Definiere Umfang und Ziele für den Bug Bash",
+      "Rekrutiere diverse Teilnehmer aus verschiedenen Rollen",
+      "Gib klare Anweisungen und Zeitlimits",
+      "Lass Teilnehmer Probleme mit Screenshots dokumentieren",
+      "Überprüfe und priorisiere Erkenntnisse als Gruppe"
+    ],
+    "tips": [
+      "Setze Zeitlimits (1-2 Stunden), um Fokus zu bewahren",
+      "Stelle Issue-Templates bereit, um konsistente Berichterstattung sicherzustellen",
+      "Folge mit klaren Action-Items und Verantwortlichen nach"
+    ]
+  },
+  "Top-3 UX Debt List": {
+    "description": "Führe eine priorisierte Liste von UX-Verbesserungen, um technische Schulden systematisch anzugehen.",
+    "steps": [
+      "Auditiere regelmäßig auf UX-Probleme und Inkonsistenzen",
+      "Bewerte Probleme nach Nutzerauswirkung, Häufigkeit und Fix-Aufwand",
+      "Führe einen priorisierten Backlog der Top 3 Probleme",
+      "Allokiere Zeit in Sprints für UX Debt Reduction",
+      "Verfolge Verbesserungen in Nutzermetriken und Zufriedenheit"
+    ],
+    "tips": [
+      "Überprüfe die Liste vierteljährlich, um Relevanz sicherzustellen",
+      "Balanciere UX Debt-Arbeit mit neuer Feature-Entwicklung",
+      "Feiere Verbesserungen, um Momentum zu bewahren"
+    ]
+  },
+  "Canary Releases": {
+    "description": "Rolle Änderungen schrittweise aus, um Risiko zu minimieren und Feedback inkrementell zu sammeln.",
+    "steps": [
+      "Identifiziere risikoarme Nutzersegmente für initialen Rollout",
+      "Implementiere Feature Flags für schrittweise Bereitstellung",
+      "Überwache wichtige Metriken und Nutzerfeedback während des Rollouts",
+      "Erhöhe den Rollout-Prozentsatz schrittweise basierend auf Erfolg",
+      "Habe Rollback-Pläne für eventuelle Probleme bereit"
+    ],
+    "tips": [
+      "Beginne mit Power Users oder internen Mitarbeitern",
+      "Definiere klare Erfolgsmetriken vor dem Rollout",
+      "Habe Kommunikationspläne für verschiedene Rollout-Phasen"
+    ]
+  },
+  "Shared Component Libraries": {
+    "description": "Erstelle und pflege wiederverwendbare Component Libraries über mehrere Teams und Projekte hinweg.",
+    "steps": [
+      "Definiere Komponenten-Ownership und Beitragsprozesse",
+      "Erstelle umfassende Dokumentation und Beispiele",
+      "Implementiere automatisiertes Testing und Qualitätssicherung",
+      "Richte Verteilungsmechanismen ein (npm, CDN, etc.)",
+      "Überwache Nutzung und sammle Feedback für Verbesserungen"
+    ],
+    "tips": [
+      "Beginne mit einem Kernteam, um Qualitätsstandards zu etablieren",
+      "Beziehe automatisiertes Testing und Quality Gates ein",
+      "Kommuniziere Updates und neue Komponenten regelmäßig"
+    ]
+  },
+  "Pattern Documentation": {
+    "description": "Dokumentiere Design-Patterns für Konsistenz und Wiederverwendung über Projekte und Teams hinweg.",
+    "steps": [
+      "Identifiziere wiederkehrende Design-Patterns in deinen Produkten",
+      "Dokumentiere jedes Pattern mit Nutzungsrichtlinien und Beispielen",
+      "Erstelle eine zentralisierte Pattern Library oder Wiki",
+      "Füge hinzu, wann und wann nicht jedes Pattern zu verwenden ist",
+      "Aktualisiere regelmäßig basierend auf neuen Erkenntnissen und Feedback"
+    ],
+    "tips": [
+      "Beziehe echte Beispiele aus deinen Produkten ein",
+      "Verwende klare, konsistente Dokumentationsformate",
+      "Mache Patterns leicht auffindbar durch Suche"
+    ]
+  },
+  "Workflow Simplification": {
+    "description": "Reduziere Komplexität in Nutzer-Workflows, um Effizienz und Zufriedenheit zu verbessern.",
+    "steps": [
+      "Bilde aktuelle Workflows ab und identifiziere Komplexitätsquellen",
+      "Analysiere Nutzer-Schmerzpunkte und unnötige Schritte",
+      "Gestalte vereinfachte Workflows mit Fokus auf Kern-Nutzerziele",
+      "Teste vereinfachte Workflows mit echten Nutzern",
+      "Implementiere Änderungen iterativ mit Nutzerfeedback"
+    ],
+    "tips": [
+      "Fokussiere dich auf den 80%-Use-Case statt auf Randfälle",
+      "Erwäge Progressive Disclosure für komplexe Workflows",
+      "Messe Erfolg durch Task Completion Rates und Nutzerzufriedenheit"
+    ]
+  },
+  "Contextual Inquiry": {
+    "description": "Beobachte Nutzer in ihrer natürlichen Umgebung, um Kontext und reale Nutzung zu verstehen.",
+    "steps": [
+      "Definiere Research-Ziele und Zielnutzergruppen",
+      "Entwickle Beobachtungsprotokolle und Datensammlungsmethoden",
+      "Führe Beobachtungen in natürlichen Umgebungen der Nutzer durch",
+      "Dokumentiere Erkenntnisse mit Fotos, Notizen und Insights",
+      "Analysiere Muster und Implikationen für Design"
+    ],
+    "tips": [
+      "Hole angemessene Zustimmung und Genehmigungen für Beobachtungen ein",
+      "Kombiniere Beobachtung mit Follow-up Interviews",
+      "Fokussiere dich auf Kontext, nicht nur auf das, was Nutzer sagen, dass sie tun"
+    ]
+  },
+  "Task Analysis": {
+    "description": "Zerlege Nutzeraufgaben, um Optimierungsmöglichkeiten und Schmerzpunkte zu identifizieren.",
+    "steps": [
+      "Definiere wichtige Nutzeraufgaben und -ziele",
+      "Zerlege Aufgaben in spezifische Schritte und Unterschritte",
+      "Identifiziere Entscheidungspunkte und potenzielle Fehlermodi",
+      "Analysiere kognitive Last und Effizienzmöglichkeiten",
+      "Erstelle verbesserte Task Flows basierend auf Erkenntnissen"
+    ],
+    "tips": [
+      "Verwende hierarchische Task Analysis für komplexe Workflows",
+      "Beziehe Error Recovery Paths in deine Analyse ein",
+      "Validiere Erkenntnisse durch User Testing"
+    ]
+  },
+  "Executive Summaries": {
+    "description": "Erstelle High-Level-Zusammenfassungen für Stakeholder-Kommunikation und Entscheidungsfindung.",
+    "steps": [
+      "Identifiziere wichtige Erkenntnisse und Empfehlungen aus Research",
+      "Strukturiere Informationen mit klarem Problem-Lösungs-Format",
+      "Verwende Visualisierungen und Daten zur Unterstützung wichtiger Punkte",
+      "Fokussiere dich auf Business Impact und umsetzbare nächste Schritte",
+      "Passe Inhalte an Executive-Publikum und Zeitbeschränkungen an"
+    ],
+    "tips": [
+      "Begrenze auf maximal 1-2 Seiten",
+      "Führe mit den wichtigsten Informationen",
+      "Füge spezifische Empfehlungen hinzu, nicht nur Erkenntnisse"
+    ]
+  },
+  "Rapid Testing": {
+    "description": "Schnelle User-Testing-Zyklen zur effizienten Validierung von Annahmen und Feedback-Sammlung.",
+    "steps": [
+      "Definiere spezifische Fragen oder Hypothesen zum Testen",
+      "Erstelle minimale Testmaterialien (Prototypen, Wireframes)",
+      "Rekrutiere 3-5 Nutzer pro Testing-Runde",
+      "Führe 15-30 Minuten Sessions mit Fokus auf Schlüsselfragen durch",
+      "Analysiere Muster und iteriere schnell"
+    ],
+    "tips": [
+      "Teste früh und oft während des Design-Prozesses",
+      "Fokussiere dich auf Lernen über umfassendes Testing",
+      "Verwende Erkenntnisse, um die nächste Design-Iteration sofort zu informieren"
+    ]
+  },
+  "Stakeholder Workshops": {
+    "description": "Moderiere kollaborative Sessions mit wichtigen Stakeholdern, um Ziele und Entscheidungen abzustimmen.",
+    "steps": [
+      "Definiere Workshop-Ziele und gewünschte Ergebnisse",
+      "Bereite Materialien und Aktivitäten im Voraus vor",
+      "Moderiere Diskussionen, um verschiedene Perspektiven aufzudecken",
+      "Dokumentiere Vereinbarungen und Action-Items klar",
+      "Folge Action-Items nach und bewahre Momentum"
+    ],
+    "tips": [
+      "Beziehe diverse Stakeholder ein (Business, Technical, User-focused)",
+      "Verwende strukturierte Aktivitäten, um produktive Diskussionen sicherzustellen",
+      "Weise klare Verantwortliche und Deadlines für Follow-up Items zu"
+    ]
+  },
+  "Goal-Oriented Roadmaps": {
+    "description": "Richte Produkt-Roadmaps an Nutzer- und Geschäftszielen aus, nicht nur an Feature-Listen.",
+    "steps": [
+      "Definiere klare Nutzer- und Geschäftsziele",
+      "Ordne Features und Initiativen spezifischen Zielergebnissen zu",
+      "Erstelle Zeitpläne basierend auf Zielerreichung, nicht Feature-Fertigstellung",
+      "Füge Erfolgsmetriken für jedes Ziel hinzu",
+      "Überprüfe und passe regelmäßig basierend auf Fortschritt und Erkenntnissen an"
+    ],
+    "tips": [
+      "Fokussiere dich auf Outcomes über Outputs",
+      "Beziehe sowohl Leading als auch Lagging Indicators ein",
+      "Kommuniziere Roadmaps in Bezug auf Nutzer- und Business-Wert"
+    ]
+  },
+  "Top-3 Metrics Dashboards": {
+    "description": "Fokussiere dich auf die wichtigsten Metriken für Entscheidungsfindung und Fortschrittsverfolgung.",
+    "steps": [
+      "Identifiziere wichtige Nutzer- und Geschäftsergebnisse",
+      "Wähle 3-5 Metriken, die Erfolg direkt anzeigen",
+      "Erstelle einfache Dashboards für regelmäßiges Monitoring",
+      "Richte Alerts für signifikante Änderungen oder Trends ein",
+      "Verwende Metriken, um Entscheidungen zu informieren und Arbeit zu priorisieren"
+    ],
+    "tips": [
+      "Wähle Metriken, die Teams direkt beeinflussen können",
+      "Beziehe sowohl quantitative als auch qualitative Maße ein",
+      "Überprüfe Dashboard-Relevanz vierteljährlich"
+    ]
+  },
+  "Prioritization Workshops": {
+    "description": "Kollaborative Sessions zur Priorisierung von Features und Verbesserungen basierend auf Impact und Aufwand.",
+    "steps": [
+      "Erstelle einen Backlog potenzieller Features und Verbesserungen",
+      "Definiere Bewertungskriterien (Impact, Aufwand, Risiko, Alignment)",
+      "Lass Teammitglieder Items unabhängig bewerten",
+      "Diskutiere Bewertungen und erreiche Konsens über Prioritäten",
+      "Erstelle Aktionsplan mit Zeitplänen und Verantwortlichen"
+    ],
+    "tips": [
+      "Verwende Frameworks wie RICE (Reach, Impact, Confidence, Effort)",
+      "Beziehe diverse Perspektiven in die Bewertung ein",
+      "Überdenke Prioritäten regelmäßig, wenn sich der Kontext ändert"
+    ]
+  },
+  "Enterprise Design System": {
+    "description": "Umfassendes Design System für große Organisationen mit mehreren Produkten und Teams.",
+    "steps": [
+      "Bewerte aktuelle Design- und Entwicklungslandschaft",
+      "Definiere Governance-Struktur und Beitragsprozesse",
+      "Erstelle umfassende Component Libraries und Richtlinien",
+      "Implementiere Schulungs- und Adoptionsprogramme",
+      "Etabliere Metriken zur Messung des System-Erfolgs"
+    ],
+    "tips": [
+      "Beginne mit Executive Sponsorship und klarer Vision",
+      "Erstelle Centers of Excellence für System-Wartung",
+      "Plane für mehrjährige Adoption und Skalierung"
+    ]
+  },
+  "Cross-Team Libraries": {
+    "description": "Gemeinsame Component Libraries über mehrere Teams hinweg zur Gewährleistung von Konsistenz und Effizienz.",
+    "steps": [
+      "Identifiziere gemeinsame Komponenten, die über Teams hinweg genutzt werden",
+      "Erstelle gemeinsame Repositories und Verteilungsmechanismen",
+      "Etabliere Beitrags- und Wartungsprozesse",
+      "Biete Schulung und Dokumentation für alle Teams",
+      "Überwache Nutzung und sammle Feedback für Verbesserungen"
+    ],
+    "tips": [
+      "Beginne mit wirkungsvollen Komponenten, die von mehreren Teams genutzt werden",
+      "Beziehe automatisiertes Testing und Quality Gates ein",
+      "Kommuniziere Updates und neue Komponenten regelmäßig"
+    ]
+  },
+  "Reusable Templates": {
+    "description": "Erstelle Templates für gängige Design-Patterns und Workflows, um Arbeit zu beschleunigen.",
+    "steps": [
+      "Identifiziere häufig wiederholte Design- und Dokumentationsaufgaben",
+      "Erstelle standardisierte Templates mit klaren Richtlinien",
+      "Teste Templates mit verschiedenen Teams und sammle Feedback",
+      "Pflege und aktualisiere Templates basierend auf Nutzungsmustern",
+      "Biete Schulung zur Template-Nutzung und -Anpassung"
+    ],
+    "tips": [
+      "Füge Beispiele und Do's/Don'ts in Templates hinzu",
+      "Mache Templates leicht auffindbar und zugänglich",
+      "Erlaube angemessene Anpassung unter Beibehaltung von Standards"
+    ]
+  },
+  "Rapid Prototyping": {
+    "description": "Schnelle Erstellung von Prototypen, um Ideen zu testen und effizient Feedback zu sammeln.",
+    "steps": [
+      "Definiere die spezifischen Fragen, die der Prototyp beantworten soll",
+      "Wähle angemessenes Fidelity-Level für die Testziele",
+      "Erstelle Prototyp mit Fokus auf Schlüsselinteraktionen",
+      "Teste mit Nutzern und sammle gezieltes Feedback",
+      "Verwende Erkenntnisse, um die nächste Design-Iteration zu informieren"
+    ],
+    "tips": [
+      "Passe Prototyp-Fidelity an Testziele an",
+      "Fokussiere dich auf das Testen von Annahmen, nicht auf Details polieren",
+      "Dokumentiere Erkenntnisse und Entscheidungen während des Prototyping"
+    ]
+  },
+  "Lean Personas": {
+    "description": "Vereinfachte User Personas mit Fokus auf Schlüsselcharakteristika und Bedürfnisse.",
+    "steps": [
+      "Analysiere User-Research-Daten für gemeinsame Muster",
+      "Identifiziere 2-4 Schlüssel-Nutzerarchetypen für dein Produkt",
+      "Fokussiere dich auf wesentliche Charakteristika, Ziele und Schmerzpunkte",
+      "Erstelle einfache, einprägsame Darstellungen",
+      "Verwende Personas, um Design-Entscheidungen zu informieren und Features zu priorisieren"
+    ],
+    "tips": [
+      "Vermeide Over-Engineering von Personas mit unnötigen Details",
+      "Basiere Personas auf echten Nutzerdaten und Beobachtungen",
+      "Halte Personas als lebende Dokumente, die sich mit neuen Erkenntnissen entwickeln"
+    ]
+  },
+  "Deep Interviews": {
+    "description": "Tiefgehende User Interviews, um Bedürfnisse, Motivationen und Verhaltensweisen zu verstehen.",
+    "steps": [
+      "Entwickle Interview-Leitfaden mit offenen Fragen",
+      "Rekrutiere Teilnehmer, die Zielnutzergruppen repräsentieren",
+      "Führe 45-60 Minuten Interviews mit Fokus auf User Stories durch",
+      "Bohre tiefer in Motivationen und Schmerzpunkte",
+      "Analysiere Themen und Erkenntnisse über mehrere Interviews hinweg"
+    ],
+    "tips": [
+      "Übe aktives Zuhören und Follow-up-Fragen",
+      "Vermeide Leading Questions, die gewünschte Antworten suggerieren",
+      "Suche nach emotionalen Treibern jenseits oberflächlicher Antworten"
+    ]
+  },
+  "Usability Labs": {
+    "description": "Strukturiertes Usability Testing in kontrollierten Umgebungen mit detaillierter Beobachtung.",
+    "steps": [
+      "Definiere Testziele und Teilnehmerkriterien",
+      "Erstelle Testprotokoll mit Aufgaben und Fragen",
+      "Richte Beobachtungsraum und Aufnahmeequipment ein",
+      "Führe moderierte Testing-Sessions mit Think-Aloud-Protokoll durch",
+      "Analysiere Erkenntnisse und erstelle detaillierte Empfehlungen"
+    ],
+    "tips": [
+      "Verwende Einwegspiegel oder Remote-Beobachtung wenn möglich",
+      "Nehme Sessions für spätere Analyse und Stakeholder-Sharing auf",
+      "Beziehe sowohl qualitative als auch quantitative Maße ein"
+    ]
+  },
+  "Cross-Functional Workshops": {
+    "description": "Bringe verschiedene Disziplinen zusammen, um Probleme kollaborativ zu lösen.",
+    "steps": [
+      "Definiere Workshop-Ziele und gewünschte Ergebnisse",
+      "Lade Vertreter relevanter Disziplinen ein",
+      "Gestalte Workshop-Aktivitäten, die verschiedene Expertise nutzen",
+      "Moderiere Diskussionen, um integrierte Lösungen zu finden",
+      "Dokumentiere Entscheidungen und Action-Items mit klaren Verantwortlichen"
+    ],
+    "tips": [
+      "Beziehe technische, Design-, Business- und Nutzerperspektiven ein",
+      "Verwende strukturierte Aktivitäten, um produktive Diskussionen sicherzustellen",
+      "Fokussiere dich darauf, Win-Win-Lösungen für alle Stakeholder zu finden"
+    ]
+  },
+  "Lightweight Deliverables": {
+    "description": "Erstelle minimale Dokumentation, die sich auf das Wesentliche konzentriert und Handeln vorantreibt.",
+    "steps": [
+      "Identifiziere die wichtigsten Entscheidungen oder Informationen, die Stakeholder benötigen",
+      "Erstelle Deliverables, die sich nur auf das Wesentliche konzentrieren",
+      "Verwende klare, scannbare Formate mit visueller Hierarchie",
+      "Füge spezifische Empfehlungen und nächste Schritte hinzu",
+      "Iteriere basierend auf Nutzung und Feedback"
+    ],
+    "tips": [
+      "Frage 'Was muss der Leser wissen?' für jedes Deliverable",
+      "Verwende Progressive Disclosure für komplexe Informationen",
+      "Fokussiere dich auf Entscheidungen und Aktionen über umfassende Dokumentation"
+    ]
+  },
+  "Embedded UX Sessions": {
+    "description": "Integriere UX-Aktivitäten direkt in Entwicklungs-Sprints für kontinuierliche Verbesserung.",
+    "steps": [
+      "Identifiziere UX-Aktivitäten, die in Sprint-Zyklen passen",
+      "Allokiere spezifische Zeitslots für UX-Arbeit im Sprint Planning",
+      "Erstelle leichtgewichtige Prozesse, die Entwicklung nicht verlangsamen",
+      "Demonstriere Wert durch messbare Verbesserungen",
+      "Passe Prozesse basierend auf Team-Feedback und Ergebnissen an"
+    ],
+    "tips": [
+      "Beginne mit kleinen, wirkungsvollen Aktivitäten",
+      "Fokussiere dich auf Aktivitäten, die Entwicklung ergänzen statt konkurrieren",
+      "Feiere Erfolge, um Team Buy-in für UX-Prozesse aufzubauen"
+    ]
+  },
+  "Sketch Reviews": {
+    "description": "Schnelle Design Reviews mit Sketches und Low-Fidelity Mockups, um frühes Feedback zu sammeln.",
+    "steps": [
+      "Erstelle grobe Sketches, die verschiedene Design-Richtungen erkunden",
+      "Teile Sketches mit Team und Stakeholdern für schnelles Feedback",
+      "Fokussiere Diskussionen auf Konzepte statt Details",
+      "Dokumentiere wichtige Erkenntnisse und Entscheidungen aus Reviews",
+      "Verwende Feedback, um die nächste Design-Iteration zu informieren"
+    ],
+    "tips": [
+      "Betone, dass Sketches über Exploration gehen, nicht finales Design",
+      "Setze kurze Zeitlimits (10-15 Minuten), um Momentum zu bewahren",
+      "Fokussiere Feedback auf Nutzerbedürfnisse und Geschäftsziele"
+    ]
+  },
+  "Continuous Testing": {
+    "description": "Regelmäßiges User Testing während des gesamten Entwicklungsprozesses, um Probleme früh zu erkennen.",
+    "steps": [
+      "Etabliere regelmäßige Testing-Kadenzen (wöchentlich, zweiwöchentlich)",
+      "Erstelle wiederverwendbare Testprotokolle für gängige User Flows",
+      "Beziehe verschiedene Teammitglieder in Testing-Sessions ein",
+      "Verfolge Probleme und Verbesserungen über die Zeit",
+      "Verwende Erkenntnisse, um laufende Entwicklungsentscheidungen zu informieren"
+    ],
+    "tips": [
+      "Mache Testing zu einem Teil der Team-Kultur, nicht zu einer Extra-Aktivität",
+      "Beginne mit den kritischsten User Flows",
+      "Feiere Verbesserungen und Erkenntnisse aus Testing"
+    ]
+  },
+  "Design System Scaling": {
+    "description": "Erweitere Design Systems, um wachsende Produktbedürfnisse und Teamgrößen zu unterstützen.",
+    "steps": [
+      "Bewerte aktuelle Systemnutzung und identifiziere Lücken",
+      "Priorisiere neue Komponenten basierend auf Team-Bedürfnissen und Nutzung",
+      "Erstelle Prozesse für Skalierung von Dokumentation und Wartung",
+      "Implementiere automatisiertes Testing und Qualitätssicherung",
+      "Biete Schulung und Support für wachsende Teams"
+    ],
+    "tips": [
+      "Skaliere Governance-Prozesse parallel zum System-Wachstum",
+      "Überwache System-Nutzungsanalysen, um Expansion zu leiten",
+      "Bewahre Balance zwischen Standardisierung und Flexibilität"
+    ]
+  },
+  "Component Governance": {
+    "description": "Etabliere Prozesse für das Management und die Evolution von Komponenten innerhalb von Design Systems.",
+    "steps": [
+      "Definiere Component Lifecycle Stages (experimentell, stabil, deprecated)",
+      "Erstelle Beitragsrichtlinien und Review-Prozesse",
+      "Etabliere automatisiertes Testing und Qualitätsstandards",
+      "Richte regelmäßige Wartungs- und Update-Zyklen ein",
+      "Überwache Komponentennutzung und Health Metrics"
+    ],
+    "tips": [
+      "Beginne mit klaren Namenskonventionen und Dokumentationsstandards",
+      "Füge Migration Guides für Breaking Changes hinzu",
+      "Balanciere Innovation mit System-Stabilität"
+    ]
+  },
+  "Analytics Audit": {
+    "description": "Umfassende Überprüfung von Analytics-Daten zur Identifizierung von Nutzerverhaltenmustern, Conversion-Engpässen und Optimierungsmöglichkeiten.",
+    "steps": [
+      "Definiere Key Performance Indicators und Erfolgsmetriken",
+      "Überprüfe Analytics-Dashboards und identifiziere Datenlücken",
+      "Analysiere User Journey Flows und Drop-off-Points",
+      "Identifiziere wirkungsvolle Optimierungsmöglichkeiten",
+      "Erstelle datengetriebene Empfehlungen mit Priorisierung"
+    ],
+    "tips": [
+      "Fokussiere dich auf umsetzbare Erkenntnisse statt Vanity Metrics",
+      "Korreliere quantitative Daten mit qualitativem Feedback wenn möglich",
+      "Richte automatisierte Alerts für signifikante Metrik-Änderungen ein",
+      "Beziehe saisonale und externe Faktoren in deine Analyse ein",
+      "Präsentiere Erkenntnisse mit klaren Business-Impact-Schätzungen"
+    ]
+  },
+  "Conversion Funnel Analysis": {
+    "description": "Analysiere User Conversion Funnels, um Engpässe zu identifizieren und den Weg zu gewünschten Ergebnissen zu optimieren.",
+    "steps": [
+      "Bilde den kompletten User Conversion Funnel ab",
+      "Identifiziere Drop-off-Points und Reibungsbereiche",
+      "Berechne Conversion-Raten in jeder Phase",
+      "Führe A/B Tests auf wirkungsvollen Funnel-Schritten durch",
+      "Implementiere Optimierungen und miss Impact"
+    ],
+    "tips": [
+      "Beginne mit Makro-Funnel-Analyse, bevor du in Mikrodetails eintauchst",
+      "Berücksichtige Mobile vs. Desktop Funnel-Unterschiede",
+      "Verwende Cohort Analysis, um Nutzersegmente zu verstehen",
+      "Teste eine Änderung zur Zeit, um Impact zu isolieren",
+      "Überwache langfristige Funnel-Gesundheit, nicht nur kurzfristige Gewinne"
+    ]
+  },
+  "User Segmentation Analysis": {
+    "description": "Teile Nutzer in bedeutungsvolle Segmente basierend auf Verhalten, Demografie und Nutzungsmustern, um gezielte Optimierung zu ermöglichen.",
+    "steps": [
+      "Identifiziere wichtige Nutzercharakteristika und Segmentierungsvariablen",
+      "Analysiere Verhaltensmuster über verschiedene Nutzergruppen hinweg",
+      "Erstelle User Personas basierend auf quantitativen Daten",
+      "Entwickle segmentspezifische Optimierungsstrategien",
+      "Messe Impact gezielter Interventionen"
+    ],
+    "tips": [
+      "Beginne mit breiten Segmenten und verfeinere basierend auf Datenerkenntnissen",
+      "Kombiniere quantitative Segmentierung mit qualitativer Research",
+      "Verwende statistische Signifikanztests für Segmentvergleiche",
+      "Vermeide Über-Segmentierung, die zu Analyse-Paralyse führt",
+      "Validiere und aktualisiere Segmente regelmäßig, wenn sich Nutzerverhalten entwickelt"
+    ]
+  }
+}

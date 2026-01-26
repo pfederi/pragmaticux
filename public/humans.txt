@@ -5,7 +5,7 @@ Creator: Patrick Federi
 Contact: patrick.federi@ergon.ch
 Location: Switzerland
 Twitter: @pragmaticux
-Site: https://pragmaticux.design
+Site: https://pragmaticuxdesign.com
 
 /* THANKS */
 Design Framework: Pragmatic UX Design

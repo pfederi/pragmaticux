@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'UX Book Recommendations - Essential Reading List | Pragmatic UX Design',
     description: 'Curated selection of essential UX design books with recommendations and key takeaways.',
-    url: 'https://pragmaticux.design/books',
+    url: 'https://pragmaticuxdesign.com/books',
     type: 'website',
   },
   twitter: {

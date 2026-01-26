@@ -1,4 +1,5 @@
-import booksData from './books.json'
+import booksDataEn from './books.json'
+import booksDataDe from './books.de.json'
 
 export interface Book {
   id: string
@@ -24,10 +25,16 @@ export interface BooksData {
   books: Book[]
 }
 
-const booksDataTyped = booksData as BooksData
+export function getBooks(locale: string = 'en'): Book[] {
+  const data = locale === 'de' ? booksDataDe : booksDataEn
+  return (data as BooksData).books || []
+}
+
+// Default export for backwards compatibility
+const booksDataTyped = booksDataEn as BooksData
 export const books: Book[] = booksDataTyped.books || []
 
-export const bookCategories = {
+const bookCategoriesEn = {
   usability: { label: 'Usability', description: 'Books focused on usability and user-friendly design' },
   fundamentals: { label: 'Fundamentals', description: 'Essential UX design principles and concepts' },
   interaction: { label: 'Interaction Design', description: 'Deep dives into interaction design patterns' },
@@ -36,24 +43,57 @@ export const bookCategories = {
   research: { label: 'Research', description: 'User research methods and measurement' }
 } as const
 
-export type BookCategory = keyof typeof bookCategories
+const bookCategoriesDe = {
+  usability: { label: 'Usability', description: 'Fokus auf Benutzerfreundlichkeit und intuitive Interaktionsmodelle.' },
+  fundamentals: { label: 'Grundlagen', description: 'Essenzielle Prinzipien und zeitlose UX-Konzepte.' },
+  interaction: { label: 'Interaction Design', description: 'Tiefgehende Patterns und Strategien für digitales Produktdesign.' },
+  process: { label: 'Prozess & Methoden', description: 'Effiziente Workflows, Methodologien und Team-Kollaboration.' },
+  psychology: { label: 'Psychologie', description: 'Menschliches Verhalten und kognitive Muster verstehen.' },
+  research: { label: 'Research', description: 'Methoden zur Nutzerforschung, Datenerhebung und Analyse.' }
+} as const
 
-export const levelLabels = {
+export function getBookCategories(locale: string = 'en') {
+  return locale === 'de' ? bookCategoriesDe : bookCategoriesEn
+}
+
+// Default export for backwards compatibility
+export const bookCategories = bookCategoriesEn
+
+export type BookCategory = keyof typeof bookCategoriesEn
+
+const levelLabelsEn = {
   beginner: 'Beginner',
   intermediate: 'Intermediate',
   advanced: 'Advanced',
   all: 'All Levels'
 } as const
 
-export function getBookById(id: string): Book | undefined {
-  return books.find(book => book.id === id)
+const levelLabelsDe = {
+  beginner: 'Anfänger',
+  intermediate: 'Fortgeschritten',
+  advanced: 'Experte',
+  all: 'Alle Niveaus'
+} as const
+
+export function getLevelLabels(locale: string = 'en') {
+  return locale === 'de' ? levelLabelsDe : levelLabelsEn
 }
 
-export function getBooksByCategory(category: BookCategory): Book[] {
-  return books.filter(book => book.category === category)
+// Default export for backwards compatibility
+export const levelLabels = levelLabelsEn
+
+export function getBookById(id: string, locale: string = 'en'): Book | undefined {
+  const booksData = getBooks(locale)
+  return booksData.find(book => book.id === id)
 }
 
-export function getBooksByLevel(level: Book['level']): Book[] {
-  return books.filter(book => book.level === level || book.level === 'all')
+export function getBooksByCategory(category: BookCategory, locale: string = 'en'): Book[] {
+  const booksData = getBooks(locale)
+  return booksData.filter(book => book.category === category)
+}
+
+export function getBooksByLevel(level: Book['level'], locale: string = 'en'): Book[] {
+  const booksData = getBooks(locale)
+  return booksData.filter(book => book.level === level || book.level === 'all')
 }
 

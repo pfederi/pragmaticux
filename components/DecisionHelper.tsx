@@ -2,34 +2,15 @@
 
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import Link from 'next/link'
-import { decisionTree } from '@/data/decisionTree'
-import { principles, getPrincipleById } from '@/data/principles'
-import { getMethodInstructions, categorizedMethods, methodCategories } from '@/data/methods'
+import { getDecisionTree } from '@/data/decisionTree'
+import { getPrinciples, getPrincipleById } from '@/data/principles'
+import { getMethodInstructions, getCategorizedMethods, getMethodCategories, getMethodCategory, getMethodDescription } from '@/data/methods'
 import { DecisionTreeResults } from '@/types/decisionTree'
-
-const STORAGE_KEY = 'decisionHelper_state'
-
-const chipColors: Record<string, string> = {
-  all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
-  research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
-  design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-white/60',
-  testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-white/60',
-  implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-white/60',
-  strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-white/60',
-  optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
-}
-
-const getChipColors = (methodName: string): string => {
-  const category = getMethodCategory(methodName).toLowerCase()
-  return chipColors[category] || chipColors.all
-}
-
-const getMethodCategory = (methodName: string): string => {
-  const method = categorizedMethods.find(m => m.name === methodName)
-  return method ? method.category : 'General'
-}
+import { useLanguage } from '@/contexts/LanguageContext'
+import { STORAGE_KEYS, METHOD_CHIP_COLORS } from '@/lib/constants'
 
 export default function DecisionHelper() {
+  const { t, locale } = useLanguage()
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({})
   const [results, setResults] = useState<DecisionTreeResults | null>(null)
@@ -37,12 +18,29 @@ export default function DecisionHelper() {
   const [isEditing, setIsEditing] = useState(false)
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
 
+  const categorizedMethods = useMemo(() => getCategorizedMethods(locale), [locale])
+  const methodCategories = useMemo(() => getMethodCategories(locale), [locale])
+
+  const getChipColors = useCallback((methodName: string): string => {
+    const category = getMethodCategory(methodName, locale).toLowerCase()
+    return METHOD_CHIP_COLORS[category] || METHOD_CHIP_COLORS.all
+  }, [locale])
+  
+  const decisionTree = useMemo(() => getDecisionTree(locale), [locale])
+  const principles = useMemo(() => getPrinciples(locale), [locale])
+  
   const questions = decisionTree.questions
   const currentQuestion = questions[currentQuestionIndex]
+  
+  const getMethodCategoryLabel = useCallback((methodName: string): string => {
+    const category = getMethodCategory(methodName, locale)
+    if (category === 'General') return 'General'
+    return methodCategories[category].label
+  }, [methodCategories, locale])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem(STORAGE_KEY)
+      const saved = localStorage.getItem(STORAGE_KEYS.DECISION_HELPER)
       if (saved) {
         try {
           const parsed = JSON.parse(saved)
@@ -67,7 +65,7 @@ export default function DecisionHelper() {
         showResults,
         isEditing,
       }
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave))
+      localStorage.setItem(STORAGE_KEYS.DECISION_HELPER, JSON.stringify(stateToSave))
     }
   }, [currentQuestionIndex, userAnswers, results, showResults, isEditing])
 
@@ -79,8 +77,7 @@ export default function DecisionHelper() {
 
     if (allAnswered) {
       evaluateResults(newAnswers)
-    } else if (isEditing) {
-    } else if (currentQuestionIndex < questions.length - 1) {
+    } else if (!isEditing && currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1)
     }
   }
@@ -147,7 +144,7 @@ export default function DecisionHelper() {
     setIsEditing(false)
     setSelectedMethod(null)
     if (typeof window !== 'undefined') {
-      localStorage.removeItem(STORAGE_KEY)
+      localStorage.removeItem(STORAGE_KEYS.DECISION_HELPER)
     }
   }
 
@@ -192,7 +189,7 @@ export default function DecisionHelper() {
     if (results.principles.length > 0) {
       body += 'Recommended Principles:\n'
       results.principles.forEach((principleId) => {
-        const principle = getPrincipleById(principleId)
+        const principle = getPrincipleById(principleId, locale)
         if (principle) {
           body += `- ${principle.order}. ${principle.title}\n`
         }
@@ -214,66 +211,13 @@ export default function DecisionHelper() {
     return `mailto:patrick.federi@ergon.ch?subject=${subject}&body=${encodeURIComponent(body)}`
   }
 
-  const getMethodDescription = (method: string): string => {
-    const methodDescriptions: Record<string, string> = {
-      "Task Flow Redesign": "Analyze and optimize user task flows to reduce friction and improve efficiency.",
-      "Checkout Simplification": "Streamline checkout processes to reduce abandonment and improve conversion.",
-      "Performance Audits": "Evaluate and optimize system performance to enhance user experience.",
-      "One-Page Findings": "Condense research insights into concise, actionable one-page summaries.",
-      "Rapid Usability Audit": "Quick assessment of usability issues with immediate recommendations.",
-      "Guerrilla Testing": "Informal, low-cost user testing in natural environments.",
-      "Sketching Sessions": "Collaborative sketching workshops to explore design solutions quickly.",
-      "Impact Mapping": "Visualize user goals and map features to measurable outcomes.",
-      "Top-3 Friction Fix": "Identify and prioritize the top three user friction points to address.",
-      "Focused A/B Testing": "Targeted experiments to validate specific design decisions.",
-      "Design System Adoption": "Implement consistent design patterns across products.",
-      "Component Reuse": "Leverage existing components to speed up development.",
-      "Design Tokens": "Use design tokens for consistent styling and faster updates.",
-      "Co-Design with Devs": "Collaborate closely with developers during the design process.",
-      "Constraint-First Wireframes": "Create wireframes that account for technical constraints early.",
-      "Performance Budgets": "Set and monitor performance targets throughout development.",
-      "Tech-Feasibility Notes": "Document technical considerations alongside design decisions.",
-      "One-Pager Decision Logs": "Maintain concise records of key design decisions.",
-      "Rapid UX Audits": "Quick evaluation of UX issues with actionable recommendations.",
-      "UX Bug Bash": "Organized sessions to identify and prioritize UX issues.",
-      "Top-3 UX Debt List": "Maintain a prioritized list of UX improvements to address.",
-      "Canary Releases": "Gradually roll out changes to minimize risk.",
-      "Shared Component Libraries": "Build and maintain reusable component libraries.",
-      "Pattern Documentation": "Document design patterns for consistency and reuse.",
-      "Workflow Simplification": "Reduce complexity in user workflows.",
-      "Field Studies": "Observe users in their natural environment to understand context.",
-      "Task Analysis": "Break down user tasks to identify optimization opportunities.",
-      "Executive Summaries": "Create high-level summaries for stakeholder communication.",
-      "Rapid Testing": "Quick user testing cycles to validate assumptions.",
-      "Stakeholder Workshops": "Facilitate collaborative sessions with key stakeholders.",
-      "Goal-Oriented Roadmaps": "Align product roadmaps with user and business goals.",
-      "Top-3 Metrics Dashboards": "Focus on the most important metrics for decision-making.",
-      "Prioritization Workshops": "Collaborative sessions to prioritize features and improvements.",
-      "Enterprise Design System": "Comprehensive design system for large organizations.",
-      "Cross-Team Libraries": "Shared component libraries across multiple teams.",
-      "Reusable Templates": "Create templates for common design patterns and workflows.",
-      "Rapid Prototyping": "Quick creation of prototypes to test ideas.",
-      "Lean Personas": "Simplified user personas focused on key characteristics.",
-      "Deep Interviews": "In-depth user interviews to understand needs and motivations.",
-      "Usability Labs": "Structured usability testing in controlled environments.",
-      "Cross-Functional Workshops": "Bring together different disciplines to solve problems.",
-      "Lightweight Deliverables": "Create minimal documentation that focuses on essentials.",
-      "Embedded UX Sessions": "Integrate UX activities directly into development sprints.",
-      "Sketch Reviews": "Quick design reviews using sketches and low-fidelity mockups.",
-      "Continuous Testing": "Regular user testing throughout the development process.",
-      "Design System Scaling": "Expand design systems to support growing product needs.",
-      "Component Governance": "Establish processes for managing and evolving components."
-    }
-    return methodDescriptions[method] || "A practical method to improve your UX process."
-  }
-
   return (
     <section id="approach" className="py-12 sm:py-16 md:py-32">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="mb-8 sm:mb-12">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">Decision Helper</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">{t.decisionHelper.title}</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Use the decision helper to find the principles most relevant to your situation.
+            {t.decisionHelper.subtitle}
           </p>
         </div>
 
@@ -283,7 +227,7 @@ export default function DecisionHelper() {
               <div className="mb-10">
                 <div className="flex justify-between mb-2">
                   <span className="text-sm font-medium text-muted-foreground">
-                    Question {currentQuestionIndex + 1} of {questions.length}
+                    {t.decisionHelper.questionOf.replace('{current}', (currentQuestionIndex + 1).toString()).replace('{total}', questions.length.toString())}
                   </span>
                   <span className="text-sm text-muted-foreground">
                     {Math.round((currentQuestionIndex / questions.length) * 100)}%
@@ -317,7 +261,7 @@ export default function DecisionHelper() {
                     onClick={handleBack}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    ← Back
+                    ← {t.decisionHelper.backButton}
                   </button>
                 )}
                 {isEditing && questions.every((q) => userAnswers[q.id]) && (
@@ -325,7 +269,7 @@ export default function DecisionHelper() {
                     onClick={handleBackToResults}
                     className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors"
                   >
-                    Back to Results
+                    {t.decisionHelper.backToResults}
                   </button>
                 )}
               </div>
@@ -333,7 +277,7 @@ export default function DecisionHelper() {
           ) : (
             <div>
               <div className="mb-6 sm:mb-8">
-                <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">Your Situation</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">{t.decisionHelper.yourSituation}</h3>
                 <div className="space-y-2 sm:space-y-3">
                   {Object.entries(userAnswers).map(([questionId, value]) => (
                     <div key={questionId} className="border rounded-lg p-3 sm:p-4 hover:bg-muted/50 transition-colors">
@@ -349,9 +293,9 @@ export default function DecisionHelper() {
                         <button
                           onClick={() => handleEditAnswer(questionId)}
                           className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors flex-shrink-0 px-2"
-                          title="Change answer"
+                          title={t.decisionHelper.changeAnswer}
                         >
-                          Change
+                          {t.decisionHelper.changeAnswer}
                         </button>
                       </div>
                     </div>
@@ -361,10 +305,10 @@ export default function DecisionHelper() {
 
               {results && results.principles.length > 0 && (
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">Recommended Principles</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">{t.decisionHelper.recommendedPrinciples}</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {results.principles.map((principleId) => {
-                      const principle = getPrincipleById(principleId)
+                      const principle = getPrincipleById(principleId, locale)
                       if (!principle) return null
 
                       return (
@@ -383,7 +327,7 @@ export default function DecisionHelper() {
                           </div>
                           <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-5 flex-grow">{principle.summary}</p>
                           <div className="flex items-center text-primary text-sm font-semibold group-hover:translate-x-1 transition-transform mt-auto">
-                            Read More →
+                            {t.common.readMore} →
                           </div>
                         </Link>
                       )
@@ -394,13 +338,13 @@ export default function DecisionHelper() {
 
               {results && results.methods.length > 0 && (
                 <div className="mb-6 sm:mb-8">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">Suggested Methods</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-left">{t.decisionHelper.suggestedMethods}</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {results.methods.map((method, index) => (
                       <button
                         key={index}
                         onClick={() => setSelectedMethod(method)}
-                        className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[140px] flex flex-col"
+                        className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 text-left w-full group min-h-[140px] flex flex-col"
                       >
                         {/* Header with title and chip */}
                         <div className="flex items-center justify-between mb-4 gap-2">
@@ -409,20 +353,20 @@ export default function DecisionHelper() {
                           </h4>
                           <span
                             className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${getChipColors(method)}`}
-                            aria-label={`Category: ${getMethodCategory(method)}`}
+                            aria-label={`Category: ${getMethodCategoryLabel(method)}`}
                             role="status"
                           >
-                            {getMethodCategory(method)}
+                            {getMethodCategoryLabel(method)}
                           </span>
                         </div>
 
                         {/* Content area that expands */}
                         <div className="flex-1 flex flex-col justify-between">
                           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3">
-                            {getMethodDescription(method)}
+                            {getMethodDescription(method, locale)}
                           </p>
                           <div className="text-primary text-xs font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-auto">
-                            Learn more →
+                            {t.methods.learnMoreButton}
                           </div>
                         </div>
                       </button>
@@ -439,16 +383,16 @@ export default function DecisionHelper() {
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
                   </svg>
-                  Start Over
+                  {t.decisionHelper.startOver}
                 </button>
               </div>
 
               {/* CTA Section */}
               <div className="mt-6 sm:mt-8 pt-6 sm:pt-8">
                 <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Implementing These Principles?</h3>
+                  <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">{t.decisionHelper.needHelp}</h3>
                   <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
-                    We'd love to help you apply these pragmatic UX principles to your project. Let's work together to create better user experiences.
+                    {t.decisionHelper.needHelpDescription}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                     <a
@@ -458,14 +402,14 @@ export default function DecisionHelper() {
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                       </svg>
-                      Get in Touch
+                      {t.cta.button}
                     </a>
-                    <a
+                    <Link
                       href="/about"
                       className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
                     >
-                      Learn More About Us
-                    </a>
+                      {t.cta.secondaryButton}
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -500,14 +444,14 @@ export default function DecisionHelper() {
                   <div className="space-y-6">
                     <div>
                       <p className="text-muted-foreground leading-relaxed">
-                        {getMethodInstructions(selectedMethod).description}
+                        {getMethodInstructions(selectedMethod, locale).description}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-3 text-lg">How to Apply This Method:</h4>
+                      <h4 className="font-semibold mb-3 text-lg">{t.methods.modalHowToApply}</h4>
                       <ol className="space-y-2">
-                        {getMethodInstructions(selectedMethod).steps.map((step, index) => (
+                        {getMethodInstructions(selectedMethod, locale).steps.map((step, index) => (
                           <li key={index} className="flex gap-3 items-center">
                             <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0">
                               {index + 1}
@@ -518,11 +462,11 @@ export default function DecisionHelper() {
                       </ol>
                     </div>
 
-                    {getMethodInstructions(selectedMethod).tips.length > 0 && (
+                    {getMethodInstructions(selectedMethod, locale).tips.length > 0 && (
                       <div className="mb-20">
-                        <h4 className="font-semibold mb-3 text-lg">Tips:</h4>
+                        <h4 className="font-semibold mb-3 text-lg">{t.methods.modalTips}</h4>
                         <ul className="space-y-2">
-                          {getMethodInstructions(selectedMethod).tips.map((tip, index) => (
+                          {getMethodInstructions(selectedMethod, locale).tips.map((tip, index) => (
                             <li key={index} className="flex gap-3">
                               <span className="text-primary text-lg leading-none mt-0.5">•</span>
                               <span className="text-sm leading-relaxed">{tip}</span>
@@ -533,9 +477,9 @@ export default function DecisionHelper() {
                     )}
 
                     <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6">
-                      <h4 className="font-semibold mb-2">Need Help Implementing This Method?</h4>
+                      <h4 className="font-semibold mb-2">{t.methods.modalNeedHelp}</h4>
                       <p className="text-sm text-muted-foreground mb-4">
-                        We're here to help you apply this method effectively in your project. Get personalized guidance and support.
+                        {t.methods.modalNeedHelpDescription}
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3">
                         <a
@@ -545,14 +489,14 @@ export default function DecisionHelper() {
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                           </svg>
-                          Get in Touch
+                          {t.methods.modalGetInTouch}
                         </a>
-                        <a
+                        <Link
                           href="/about"
                           className="px-4 py-2 border-2 border-primary/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-center"
                         >
-                          Learn More About Us
-                        </a>
+                          {t.methods.modalLearnMore}
+                        </Link>
                       </div>
                     </div>
                   </div>

@@ -1,0 +1,194 @@
+{
+  "schema": {
+    "id": "string",
+    "order": "number",
+    "slug": "string",
+    "title": "string",
+    "summary": "string",
+    "narrative": ["string"],
+    "examples": ["string"],
+    "why_matters": ["string"],
+    "instead_of_asking": ["string"]
+  },
+  "principles": [
+    {
+      "id": "p01",
+      "order": 1,
+      "slug": "ux-fits-process",
+      "title": "UX-Design sollte sich in den Prozess integrieren und ihn nicht stören.",
+      "summary": "UX Design ist am effektivsten, wenn es nahtlos in bestehende Arbeitsabläufe integriert wird, statt als starre, isolierte Phase aufzutreten. Ein übermäßig strukturierter Prozess erzeugt oft Reibung – nicht weil UX unwichtig wäre, sondern weil es sich wie eine zusätzliche Belastung anfühlt statt wie ein natürlicher Teil der Produktentwicklung.\n\nPragmatic UX Design passt sich den Realitäten deines Teams und deiner Organisation an. Dabei geht es nicht nur um Integration, sondern um Optimierung: Wir identifizieren Bereiche, in denen Prozesse verbessert werden können, um bessere Nutzererlebnisse effizienter zu unterstützen.",
+      "narrative": [],
+      "examples": [
+        "Agile Entwicklung: Statt umfangreicher Research-Phasen vorab integrierst du leichtgewichtige Methoden wie schnelle Usability-Tests direkt in deine Sprints.",
+        "Engineering-getriebene Teams: Wenn die technische Machbarkeit dominiert, liefert UX Design praktische, entwicklerfreundliche Lösungen statt isolierter Visionen.",
+        "Schnelllebige Startups: Bei hohem Zeitdruck priorisierst du schnelles Prototyping und Validierung statt langwieriger Discovery-Phasen."
+      ],
+      "why_matters": [
+        "Höhere Akzeptanz: Wenn UX mit dem bestehenden Workflow harmoniert, wird es vom Team bereitwilliger angenommen.",
+        "Gesteigerte Effizienz: UX Design beschleunigt die zielgerichtete Entwicklung, statt sie durch Bürokratie zu bremsen.",
+        "Nachhaltige Wirkung: Ein natürlich integrierter UX-Ansatz wird konsistenter über das gesamte Produkt hinweg angewendet."
+      ],
+      "instead_of_asking": [
+        "Wie kann UX einen wertvollen Beitrag leisten, ohne den Prozess unnötig zu verkomplizieren?",
+        "Welche Methoden passen am besten zum aktuellen Reifegrad und Workflow des Teams?"
+      ]
+    },
+    {
+      "id": "p02",
+      "order": 2,
+      "slug": "efficiency-over-delight",
+      "title": "Effizienz schlägt dekorative Details",
+      "summary": "Pragmatic UX Design priorisiert Nutzen und Effizienz vor reinem Dekor. Ästhetik ist kein Selbstzweck, sondern dient der Klarheit und Geschwindigkeit. Für die meisten Nutzer ist ein reibungsloser Ablauf wichtiger als visuelle Spielereien. Ein Interface ist dann wirklich 'erfreulich' (delightful), wenn es intuitiv funktioniert.\n\nWir betrachten Usability als das Fundament. Visuelles Design und subtile Interaktionen veredeln eine bereits funktionierende Erfahrung, dürfen aber niemals die Geschwindigkeit oder Verständlichkeit beeinträchtigen. Wahre Freude entsteht durch Erfolgserlebnisse bei der Nutzung.",
+      "narrative": [],
+      "examples": [
+        "E-Commerce: Statt aufwendiger Animationen optimierst du den Checkout-Flow, um Klicks zu minimieren und Kaufabbrüche zu verhindern.",
+        "Mobile Apps: Fokus auf schnelle Ladezeiten und intuitive Navigation statt die UI mit Mikrointeraktionen zu überladen.",
+        "B2B-Software: Vereinfachung komplexer Workflows, damit Profi-Nutzer ihre Aufgaben mit minimalem kognitivem Aufwand erledigen können."
+      ],
+      "why_matters": [
+        "Höhere Nutzerzufriedenheit: Menschen schätzen Tools, die sie nicht aufhalten.",
+        "Geringere Komplexität: Weniger unnötige Elemente bedeuten weniger Fehlerquellen und geringeren Wartungsaufwand.",
+        "Bessere Conversion: Eine effiziente User Experience hilft Nutzern, ihre Ziele schneller und sicherer zu erreichen."
+      ],
+      "instead_of_asking": [
+        "Wie können wir diesen Prozess so einfach und schnell wie möglich gestalten?",
+        "Was ist der direkteste Weg für den Nutzer, sein Ziel zu erreichen?"
+      ]
+    },
+    {
+      "id": "p03",
+      "order": 3,
+      "slug": "empower-dont-overcomplicate",
+      "title": "UX soll befähigen, nicht blockieren",
+      "summary": "Wir eliminieren unnötigen Overhead und unterstützen Teams mit klaren, umsetzbaren Erkenntnissen, anstatt sie mit komplexen theoretischen Prozessen zu überfrachten. UX soll Produkte vereinfachen und klären. Wird es jedoch als starres Korsett präsentiert, entsteht Widerstand. Dann nehmen Teams UX oft als bremsende Dokumentationsschicht statt als wertvolles Werkzeug für Entscheidungen wahr.\n\nPragmatic UX Design sorgt dafür, dass UX eine strategische Kraft bleibt. Wir reduzieren den Prozess auf das Wesentliche, um Teams zu besseren und schnelleren Entscheidungen zu befähigen. UX ist nicht nur eine Reaktion auf Probleme, sondern bettet nutzerzentriertes Denken so früh ein, dass Probleme gar nicht erst entstehen.",
+      "narrative": [],
+      "examples": [
+        "Schnelle Entscheidungen für Stakeholder: Statt eines 50-seitigen Berichts lieferst du eine prägnante, einseitige Liste mit konkreten Handlungsempfehlungen.",
+        "Klare Richtung für Entwickler: Statt übermäßig detaillierter Spezifikationen nutzt du schnelle Skizzen, die gemeinsam iteriert werden können.",
+        "Input für Cross-funktionale Teams: Du lieferst verdauliche Insights, die sofort in die Tat umgesetzt werden können."
+      ],
+      "why_matters": [
+        "Höhere Relevanz: Leicht verdauliche UX-Erkenntnisse werden von Stakeholdern tatsächlich gelesen und genutzt.",
+        "Schnellere Time-to-Market: Schlanke Dokumentation bedeutet weniger Wartezeit und schnelleres Handeln.",
+        "Bessere Kollaboration: Wenn UX klar und pragmatisch ist, wird es zu einer gemeinsamen Sprache im Team."
+      ],
+      "instead_of_asking": [
+        "Was ist die einfachste Form, diese Erkenntnis so zu vermitteln, dass sie direkt umgesetzt werden kann?",
+        "Was ist das absolute Minimum an Dokumentation, um eine positive Veränderung zu bewirken?"
+      ]
+    },
+    {
+      "id": "p04",
+      "order": 4,
+      "slug": "execution-over-theory",
+      "title": "Theorie ist gut, Umsetzung ist entscheidend",
+      "summary": "Frameworks bieten eine Struktur, doch der Schlüssel zum Erfolg liegt in der Anpassung an die realen Rahmenbedingungen. Methoden wie Design Thinking oder der Double Diamond sehen in Präsentationen zwar perfekt aus, scheitern in der Praxis der Produktentwicklung jedoch oft an engen Deadlines, wechselnden Prioritäten und begrenzten Budgets.\n\nPragmatic UX Design weiß, wann Frameworks gestrafft oder angepasst werden müssen. Das Ziel ist kein „lehrbuchgetreuer” Prozess, sondern ein messbar besseres Erlebnis für die Nutzenden ohne unnötigen Ballast. UX-Methoden sind flexible Werkzeuge und keine unumstößlichen Gesetze.",
+      "narrative": [],
+      "examples": [
+        "Zeitdruck im Team: Statt eines mehrtägigen Workshops führst du eine fokussierte Fokus-Session zur sofortigen Problemlösung durch.",
+        "Forderung nach schnellen Ergebnissen: Du priorisierst ein schnelles Usability-Audit vor einer wochenlangen Discovery-Phase.",
+        "MVP-Entwicklung: Statt Personas bis ins Detail auszuarbeiten, startest du mit fundierten Annahmen und validierst diese direkt nach dem Launch mit echten Daten."
+      ],
+      "why_matters": [
+        "UX bleibt relevant: Praktikable Lösungen werden im Projektalltag nicht ignoriert.",
+        "Fokus auf das Ergebnis: Wir investieren Energie in die Verbesserung des Produkts, nicht in die Perfektionierung von Artefakten.",
+        "Respektiert Realitäten: Der Ansatz passt sich an Zeit, Budget und Business-Ziele an."
+      ],
+      "instead_of_asking": [
+        "Welcher Teil der UX-Methodik bringt uns in diesem spezifischen Projekt am schnellsten weiter?",
+        "Wie können wir UX effizient anwenden, statt theoretische Perfektion anzustreben?"
+      ]
+    },
+    {
+      "id": "p05",
+      "order": 5,
+      "slug": "right-sized-research",
+      "title": "Research mit Augenmaß",
+      "summary": "Beim Pragmatic UX Design wird die Research-Tiefe dem Kontext angepasst. Die Erkenntnisse müssen schnell verfügbar und nutzbringend sein, ohne den Projektfortschritt zu beeinträchtigen. Ein weitverbreiteter Irrtum ist, dass gute Forschung immer hohe Budgets und viel Zeit erfordert.\n\nZwar haben umfassende Studien ihren Wert, doch sind sie nicht für jede Entscheidung nötig. Der Schlüssel liegt darin, die Methode dem Risiko und der Tragweite der jeweiligen Entscheidung anzupassen. Oft liefert ein schlanker Ansatz bereits 80% der benötigten Erkenntnisse für die nächsten Schritte.",
+      "narrative": [],
+      "examples": [
+        "Kein dediziertes Research-Budget: Statt Agenturen zu beauftragen, testest du selbst mit 5 echten Nutzern und beobachtest ihr Verhalten.",
+        "Schnelllebige Startups: Nutzung von In-App-Feedback und schnellen Remote-Tests statt aufwendiger Feldstudien.",
+        "Agile Teams: Usability-Tests werden fester Bestandteil jeder Iteration, statt den Sprint für eine 'Research-Phase' zu unterbrechen."
+      ],
+      "why_matters": [
+        "Demokratisierung von Insights: Jedes Team kann fundierte Entscheidungen treffen, unabhängig vom Budget.",
+        "Schnellere Feedback-Zyklen: Kontinuierliches Lernen wird zum Standard, nicht zur Ausnahme.",
+        "Vermeidung von 'Analysis Paralysis': Wir konzentrieren uns auf das Anwenden von Wissen statt nur auf das Sammeln von Daten."
+      ],
+      "instead_of_asking": [
+        "Was ist der schnellste und günstigste Weg, um unsere kritischsten Annahmen zu prüfen?",
+        "Welche minimalen Erkenntnisse benötigen wir, um mit gutem Gewissen den nächsten Schritt zu gehen?"
+      ]
+    },
+    {
+      "id": "p06",
+      "order": 6,
+      "slug": "scale-to-needs",
+      "title": "UX-Design an Produktanforderungen ausrichten.",
+      "summary": "UX-Design ist zwar immer relevant, doch die Intensität muss zur Komplexität, zum Risiko und zu den Zielen des jeweiligen Produkts passen. Es gibt keinen Einheitsansatz. Die gleiche methodische Strenge auf jedes Projekt anzuwenden, führt zu Ressourcenverschwendung und trägen Prozessen.\n\nWir stellen sicher, dass UX-Denken immer präsent ist, jedoch in angemessener Tiefe. So erfordert ein hochkomplexes Medizintechnik-Produkt eine andere Detailtiefe als ein internes Admin-Tool. Pragmatismus bedeutet, die Wirkung zu maximieren und dabei die gegebenen Ressourcen zu respektieren.",
+      "narrative": [],
+      "examples": [
+        "Interne Tools: Anwendung von Best Practices und Optimierung durch direktes Feedback der Kollegen im laufenden Betrieb.",
+        "Hochrisiko-Anwendungen: Hier investierst du intensiv in UX, da Fehler schwerwiegende Konsequenzen haben können.",
+        "Frühe MVP-Phase: Fokus auf die Kern-Usability der wichtigsten Funktionen, bevor Mikro-Interaktionen verfeinert werden."
+      ],
+      "why_matters": [
+        "Ressourcenschonung: Zeit und Geld fließen dorthin, wo sie den größten Unterschied machen.",
+        "Vermeidung von Over-Engineering: UX bleibt so schlank wie möglich und so tief wie nötig.",
+        "Fokus auf Impact: Maximale Wirkung bei minimalem prozessualem Overhead."
+      ],
+      "instead_of_asking": [
+        "Welches Maß an UX-Unterstützung ist für den Erfolg dieses spezifischen Projekts wirklich notwendig?",
+        "Wo erzielen wir mit unserem UX-Einsatz den größten Hebel?"
+      ]
+    },
+    {
+      "id": "p07",
+      "order": 7,
+      "slug": "iterate-with-purpose",
+      "title": "Gezielt iterieren statt endlos optimieren",
+      "summary": "Iterationen müssen fokussiert, datenbasiert und zielgerichtet sein. Endloses Polieren ohne klare Richtung verschwendet wertvolle Zeit und garantiert kein besseres Nutzererlebnis. Wirkliche Verbesserungen entstehen durch gezielte Änderungen an den entscheidenden Stellen.\n\nPragmatic UX Design nutzt Nutzerfeedback und messbare Daten, um Iterationen zu steuern. Es geht nicht darum, Perfektion zu erreichen, sondern die Usability und Performance des Produkts kontinuierlich an den Punkten zu steigern, die für die Nutzer den größten Unterschied machen.",
+      "narrative": [],
+      "examples": [
+        "Punktuelle Optimierung: Statt die gesamte UI umzubauen, konzentrierst du dich auf die 2-3 Schritte im Prozess, an denen die meisten Nutzer scheitern.",
+        "Conversion-Optimierung: Gezielte A/B-Tests für Elemente mit hoher Hebelwirkung (z.B. CTA-Texte oder Formularfelder) statt wahlloser Änderungen.",
+        "Content-Iteration: Analyse von Support-Anfragen, um nur die wirklich missverständlichen Hilfetexte gezielt zu verbessern."
+      ],
+      "why_matters": [
+        "Vermeidung von ständigem Redesign: Jede Änderung hat einen klaren Grund und ein Ziel.",
+        "Zeitersparnis: Fokussierte Verbesserungen sind schneller umsetzbar und leichter zu validieren.",
+        "Messbarer Erfolg: Iterationen zahlen direkt auf definierte Erfolgsmetriken ein."
+      ],
+      "instead_of_asking": [
+        "Welche kleine Änderung hätte heute den größten positiven Effekt auf unsere Nutzer?",
+        "Wie können wir effizient iterieren, ohne den Gesamtprozess ins Stocken zu bringen?"
+      ]
+    },
+    {
+      "id": "p08",
+      "order": 8,
+      "slug": "reuse-design-systems",
+      "title": "Intelligenter arbeiten: Bestehendes nutzen",
+      "summary": "Beim UX-Design muss das Rad nicht jedes Mal neu erfunden werden. Viele Herausforderungen sind bereits durch Design-Systeme, wiederverwendbare Komponenten und etablierte Best Practices gelöst worden. Die Nutzung dieser Ressourcen beschleunigt die Entwicklung, sorgt für Konsistenz und vermeidet redundante Arbeit.\n\nAnstatt bei Null zu beginnen, nutzt du vorhandene Standards strategisch. Das spart nicht nur Zeit, sondern verbessert auch die Zugänglichkeit und schafft Vertrautheit bei den Nutzern. Die Kunst besteht darin, Effizienz mit gezielter Anpassung zu kombinieren, wo spezifische Nutzerbedürfnisse es erfordern.",
+      "narrative": [
+        "UX Design muss das Rad nicht jedes Mal neu erfinden. Viele Herausforderungen sind bereits durch Design-Systeme, wiederverwendbare Komponenten und etablierte Best Practices gelöst. Die Nutzung dieser Ressourcen beschleunigt die Entwicklung, sichert Konsistenz und eliminiert redundante Arbeit.",
+        "Statt bei Null zu beginnen, nutzt du strategisch vorhandene Standards. Das spart nicht nur Zeit, sondern verbessert die Zugänglichkeit und schafft Vertrautheit beim Nutzer. Die Kunst liegt darin, Effizienz mit gezielter Anpassung dort zu kombinieren, wo spezifische Nutzerbedürfnisse es erfordern."
+      ],
+      "examples": [
+        "Etablierte Design-Systeme: Material Design oder Apples HIG bieten bewährte Prinzipien für Usability und Skalierbarkeit 'out of the box'.",
+        "Komponenten-Bibliotheken: Frameworks wie Tailwind oder unternehmensinterne UI-Kits sichern die visuelle Konsistenz bei minimalem Aufwand.",
+        "UX-Standards: Bewährte Muster (z.B. für Suche oder Navigation) verhindern Usability-Probleme, bevor sie überhaupt entstehen können."
+      ],
+      "why_matters": [
+        "Schnellere Ausführung: Die Nutzung von Standards verkürzt Design- und Entwicklungszyklen massiv.",
+        "Konsistenz: Ein einheitliches Look & Feel schafft Vertrauen und Orientierung über verschiedene Plattformen hinweg.",
+        "Fokus auf Innovation: Da Standard-Probleme gelöst sind, bleibt mehr Energie für die wirklich einzigartigen Aspekte deines Produkts."
+      ],
+      "instead_of_asking": [
+        "Gibt es ein bereits gelöstes Muster oder eine Komponente, die wir hier einsetzen können?",
+        "Welcher Standard hilft uns, dieses Problem ohne individuellen Design-Aufwand zu lösen?"
+      ]
+    }
+  ]
+}

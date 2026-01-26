@@ -1,27 +1,32 @@
+'use client'
+
 import { ExternalLink } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
+
   return (
     <section className="py-12 sm:py-16 md:py-32">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-left mb-8 sm:mb-12 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">About The Pragmatic UX Design Approach</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">{t.about.title}</h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Pragmatic UX Design emerged from real-world challenges in product development, where traditional UX processes often clashed with business realities.
+            {t.about.subtitle}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
           <div className="bg-gradient-to-br from-card to-muted/20 border rounded-xl p-4 sm:p-6 md:p-8">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">The Origin</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">{t.about.originTitle}</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Pragmatic UX Design was developed through hands-on experience working on diverse projects at Ergon, where I encountered teams with varying UX maturity, timelines, and constraints. Rather than forcing a one-size-fits-all approach, I learned to adapt UX methods to each unique context.
+                {t.about.originText}
               </p>
             </div>
           <div className="bg-gradient-to-br from-card to-muted/20 border rounded-xl p-4 sm:p-6 md:p-8">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">The Philosophy</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">{t.about.philosophyTitle}</h3>
             <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Pragmatic UX Design isn't about cutting corners, it's about being strategic. It's the result of countless projects where I discovered that the most impactful UX work happens when we focus on what truly matters for users and business goals, rather than following rigid processes.
+                {t.about.philosophyText}
               </p>
           </div>
         </div>
@@ -31,9 +36,9 @@ export default function About() {
           <div className="bg-gradient-to-br from-card to-muted/20 border rounded-xl p-4 sm:p-6 md:p-8">
             <div className="flex flex-col md:flex-row items-start md:items-center gap-4 sm:gap-6">
               <div className="flex-1">
-                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">The Original Article</h3>
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-foreground">{t.about.articleTitle}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                  This website emerged from the Medium article <strong className="text-foreground">"Pragmatic UX: Maximising Impact Without Overcomplicating Design"</strong>. The article explores the core principles and practical approaches that form the foundation of this methodology. Read the full article to dive deeper into the concepts, real-world examples, and the thinking behind each principle.
+                  {t.about.articleText} <strong className="text-foreground">"{t.about.articleName}"</strong>. {t.about.articleDescription}
                 </p>
                 <a
                   href="https://medium.com/design-bootcamp/pragmatic-ux-maximising-impact-without-overcomplicating-design-6d92f3ee373d"
@@ -43,7 +48,7 @@ export default function About() {
                   aria-label="Read the original Medium article about Pragmatic UX (opens in new tab)"
                 >
                   <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                  Read the Article on Medium
+                  {t.about.articleButton}
                 </a>
               </div>
             </div>
@@ -54,36 +59,36 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
             {/* Patrick Federi */}
           <div className="bg-gradient-to-br from-card to-muted/20 border rounded-xl p-4 sm:p-6 md:p-8 flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-foreground">Patrick Federi</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-foreground">{t.about.patrickTitle}</h3>
             <div className="space-y-2 mb-6 sm:mb-8 flex-grow">
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  <strong>Head of UX</strong> at Ergon Informatik AG
+                  <strong>{t.about.patrickRole}</strong> {t.about.patrickCompany}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Experienced UX designer with a passion for user-centred design and digital innovation
+                  {t.about.patrickBio1}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Creator of Pragmatic UX Design - adapting methods to project requirements
+                  {t.about.patrickBio2}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Extensive experience in product development from conception to optimisation
+                  {t.about.patrickBio3}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Actively researching AI technologies for future UX design
+                  {t.about.patrickBio4}
                 </p>
               </div>
             </div>
@@ -95,42 +100,42 @@ export default function About() {
                 aria-label="Connect with Patrick Federi on LinkedIn (opens in new tab)"
               >
                 <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                Connect on LinkedIn
+                {t.about.patrickButton}
               </a>
             </div>
 
           {/* Ergon Informatik AG */}
           <div className="bg-gradient-to-br from-card to-muted/20 border rounded-xl p-4 sm:p-6 md:p-8 flex flex-col">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-foreground">Ergon Informatik AG</h3>
+            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-foreground">{t.about.ergonTitle}</h3>
             <div className="space-y-2 mb-6 sm:mb-8 flex-grow">
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  <strong>Smart software for smart ambitions</strong> - Swiss IT Company
+                  <strong>{t.about.ergonTagline}</strong> - {t.about.ergonSubtitle}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Leading Swiss IT company combining technology, security and business expertise
+                  {t.about.ergonBio1}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Specializes in custom software solutions and digital transformation
+                  {t.about.ergonBio2}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  Transforms digitalisation trends into unique customer benefits
+                  {t.about.ergonBio3}
                 </p>
               </div>
               <div className="flex items-start gap-2 sm:gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  From concept to market success across various industries
+                  {t.about.ergonBio4}
                 </p>
               </div>
             </div>
@@ -142,7 +147,7 @@ export default function About() {
                 aria-label="Visit Ergon Informatik AG website (opens in new tab)"
               >
               <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" aria-hidden="true" />
-                Visit Website
+                {t.about.ergonButton}
               </a>
           </div>
         </div>

@@ -1,6 +1,24 @@
 # Release Notes - Pragmatic UX Design Website
 
-## Version 2.1.0 (Current Release)
+## Version 2.2.0 (Current Release)
+
+**Release Date:** January 2026
+
+## Overview
+
+Version 2.2 brings multilingual support and a downloadable PDF poster, making the Pragmatic UX Design framework accessible to a wider audience and easier to share.
+
+## New Features
+
+### Multilingual Support
+- **German and English**: The entire website is now available in both languages
+- **Automatic Language Detection**: Your browser language preference is automatically detected
+- **Easy Language Switching**: Change language anytime via the menu in the header
+- **Fully Translated Content**: All principles, methods, books, Decision Helper questions, and navigation are translated
+
+---
+
+## Version 2.1.0
 
 **Release Date:** December 22, 2025
 
@@ -157,6 +175,6 @@ Special thanks to the UX community for feedback and inspiration. This release re
 
 ---
 
-**Version**: 2.1.0
-**Release Date**: December 22, 2025
-**Previous Version**: 2.0.0
+**Version**: 2.2.0
+**Release Date**: January 2026
+**Previous Version**: 2.1.0

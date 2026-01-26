@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { X } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { STORAGE_KEYS } from '@/lib/constants'
 
 declare global {
   interface Window {
@@ -10,20 +12,20 @@ declare global {
 }
 
 export default function CookieBanner() {
+  const { t } = useLanguage()
   const [showBanner, setShowBanner] = useState(false)
   const [analyticsEnabled, setAnalyticsEnabled] = useState(false)
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookie-consent')
-    const analytics = localStorage.getItem('analytics-enabled')
-    const forceShow = localStorage.getItem('cookie-banner-force-show')
+    const consent = localStorage.getItem(STORAGE_KEYS.COOKIE_CONSENT)
+    const analytics = localStorage.getItem(STORAGE_KEYS.ANALYTICS_ENABLED)
+    const forceShow = localStorage.getItem(STORAGE_KEYS.COOKIE_BANNER_FORCE_SHOW)
 
     if (forceShow === 'true' || !consent) {
       setShowBanner(true)
-      localStorage.removeItem('cookie-banner-force-show')
+      localStorage.removeItem(STORAGE_KEYS.COOKIE_BANNER_FORCE_SHOW)
     } else if (analytics === 'true') {
       setAnalyticsEnabled(true)
-      console.log('Analytics enabled')
     }
 
     window.reopenCookieBanner = () => {
@@ -36,24 +38,22 @@ export default function CookieBanner() {
   }, [])
 
   const acceptAll = () => {
-    localStorage.setItem('cookie-consent', 'accepted')
-    localStorage.setItem('analytics-enabled', 'true')
+    localStorage.setItem(STORAGE_KEYS.COOKIE_CONSENT, 'accepted')
+    localStorage.setItem(STORAGE_KEYS.ANALYTICS_ENABLED, 'true')
     setAnalyticsEnabled(true)
     setShowBanner(false)
-    console.log('All cookies accepted, analytics enabled')
   }
 
   const acceptEssentialOnly = () => {
-    localStorage.setItem('cookie-consent', 'essential-only')
-    localStorage.setItem('analytics-enabled', 'false')
+    localStorage.setItem(STORAGE_KEYS.COOKIE_CONSENT, 'essential-only')
+    localStorage.setItem(STORAGE_KEYS.ANALYTICS_ENABLED, 'false')
     setAnalyticsEnabled(false)
     setShowBanner(false)
-    console.log('Only essential cookies accepted')
   }
 
   const closeBanner = () => {
-    localStorage.setItem('cookie-consent', 'essential-only')
-    localStorage.setItem('analytics-enabled', 'false')
+    localStorage.setItem(STORAGE_KEYS.COOKIE_CONSENT, 'essential-only')
+    localStorage.setItem(STORAGE_KEYS.ANALYTICS_ENABLED, 'false')
     setShowBanner(false)
   }
 
@@ -65,12 +65,10 @@ export default function CookieBanner() {
         <div className="flex items-start gap-4">
           <div className="flex-1">
             <h3 className="text-lg font-semibold mb-2 text-foreground">
-              Cookie Preferences
+              {t.cookies.title}
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              We use cookies and analytics to improve your experience on our website.
-              Analytics help us understand how visitors use our site to make it better.
-              You can choose to accept all cookies or only essential ones.
+              {t.cookies.description}
             </p>
           </div>
 
@@ -79,13 +77,13 @@ export default function CookieBanner() {
               onClick={acceptEssentialOnly}
               className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-md"
             >
-              Essential Only
+              {t.cookies.essentialOnly}
             </button>
             <button
               onClick={acceptAll}
               className="px-4 py-2 text-sm font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
-              Accept All
+              {t.cookies.acceptAll}
             </button>
           </div>
 

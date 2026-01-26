@@ -1,6 +1,11 @@
+'use client'
+
 import Link from 'next/link'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Workflow() {
+  const { t } = useLanguage()
+
   const steps = [
     {
       icon: (
@@ -12,8 +17,8 @@ export default function Workflow() {
           </g>
         </svg>
       ),
-      title: 'Assess Context',
-      description: 'What are your real constraints? Time, budget, team, business goals?',
+      titleKey: 'step1Title',
+      descriptionKey: 'step1Description',
     },
     {
       icon: (
@@ -24,8 +29,8 @@ export default function Workflow() {
           </g>
         </svg>
       ),
-      title: 'Choose Methods',
-      description: 'Select UX methods that fit your context, not textbook ideals.',
+      titleKey: 'step2Title',
+      descriptionKey: 'step2Description',
     },
     {
       icon: (
@@ -41,8 +46,8 @@ export default function Workflow() {
           </g>
         </svg>
       ),
-      title: 'Test Fast',
-      description: 'Quick validation beats perfect execution that never happens.',
+      titleKey: 'step3Title',
+      descriptionKey: 'step3Description',
     },
     {
       icon: (
@@ -51,8 +56,8 @@ export default function Workflow() {
           <path d="M3.25 9.84l-.56-.56c-.4-.4-1.03-.4-1.42 0 -.4.39-.4 1.02 0 1.41l2 2c.32.32.82.38 1.22.15l2.5-1.5c.47-.29.62-.9.34-1.38 -.29-.48-.9-.63-1.38-.35l-.72.43 -.72.43 -.4.23 -.35-.35 -.56-.56Z"/>
         </svg>
       ),
-      title: 'Learn & Adapt',
-      description: 'Document insights and refine your approach for next time.',
+      titleKey: 'step4Title',
+      descriptionKey: 'step4Description',
     },
   ]
 
@@ -61,10 +66,10 @@ export default function Workflow() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-left mb-8 sm:mb-12 md:mb-16">
           <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight pb-1">
-            The Pragmatic UX Design Approach
+            {t.workflow.title}
           </h3>
           <p className="text-base sm:text-lg text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Our systematic approach to practical UX implementation that works in real projects.
+            {t.workflow.subtitle}
           </p>
         </div>
 
@@ -78,8 +83,8 @@ export default function Workflow() {
                   </div>
                 </div>
               </div>
-              <h4 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">{step.title}</h4>
-              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{step.description}</p>
+              <h4 className="text-lg sm:text-xl font-semibold mb-2 sm:mb-3 text-foreground">{t.workflow[step.titleKey as keyof typeof t.workflow]}</h4>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{t.workflow[step.descriptionKey as keyof typeof t.workflow]}</p>
             </div>
           ))}
         </div>
@@ -90,7 +95,7 @@ export default function Workflow() {
             className="inline-flex items-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-primary to-primary-dark text-primary-foreground rounded-lg font-semibold hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             aria-label="Try the Decision Helper tool"
           >
-            Try Decision Helper
+            {t.workflow.ctaButton}
             <span className="text-base sm:text-lg" aria-hidden="true">→</span>
           </Link>
         </div>

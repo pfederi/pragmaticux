@@ -1,16 +1,21 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { books, bookCategories, levelLabels, type BookCategory, type Book } from '@/data/books'
+import { getBooks, getBookCategories, getLevelLabels, type BookCategory, type Book } from '@/data/books'
 import { ExternalLink } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function BooksOverview() {
+  const { t, locale } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState<BookCategory | 'all'>('all')
   const [selectedLevel, setSelectedLevel] = useState<Book['level'] | 'all'>('all')
   const [selectedBook, setSelectedBook] = useState<Book | null>(null)
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
 
-  // Ensure books is always an array
+  // Get books and labels based on current locale
+  const books = useMemo(() => getBooks(locale), [locale])
+  const bookCategories = useMemo(() => getBookCategories(locale), [locale])
+  const levelLabels = useMemo(() => getLevelLabels(locale), [locale])
   const booksArray = Array.isArray(books) ? books : []
 
   const handleImageError = (bookId: string) => {
@@ -49,10 +54,10 @@ export default function BooksOverview() {
         {/* Header */}
         <div className="mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
-            UX Book Recommendations
+            {t.books.title}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Curated selection of essential UX design books. Each recommendation includes why it is valuable and key takeaways to help you choose the right book for your needs.
+            {t.books.subtitle}
           </p>
         </div>
 
@@ -60,7 +65,7 @@ export default function BooksOverview() {
         <div className="mb-8 sm:mb-12 space-y-4">
           {/* Category Filter */}
           <div>
-            <h3 className="text-sm font-semibold mb-3 text-muted-foreground">Category</h3>
+            <h3 className="text-sm font-semibold mb-3 text-muted-foreground">{t.books.filterCategory}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               <button
                 onClick={() => setSelectedCategory('all')}
@@ -72,7 +77,7 @@ export default function BooksOverview() {
                 aria-pressed={selectedCategory === 'all'}
                 aria-label={`Show all books (${booksArray.length} total)`}
               >
-                All ({booksArray.length})
+                {t.books.filterAll} ({booksArray.length})
               </button>
               {Object.entries(bookCategories).map(([key, category]) => {
                 const count = booksArray.filter(b => b.category === key).length
@@ -97,7 +102,7 @@ export default function BooksOverview() {
 
           {/* Level Filter */}
           <div>
-            <h3 className="text-sm font-semibold mb-3 text-muted-foreground">Level</h3>
+            <h3 className="text-sm font-semibold mb-3 text-muted-foreground">{t.books.filterLevel}</h3>
             <div className="flex flex-wrap gap-2 sm:gap-3">
               <button
                 onClick={() => setSelectedLevel('all')}
@@ -108,7 +113,7 @@ export default function BooksOverview() {
                 }`}
                 aria-pressed={selectedLevel === 'all'}
               >
-                All Levels
+                {t.books.filterAllLevels}
               </button>
               {Object.entries(levelLabels).map(([key, label]) => {
                 if (key === 'all') return null
@@ -139,7 +144,7 @@ export default function BooksOverview() {
             <button
               key={book.id}
               onClick={() => setSelectedBook(book)}
-              className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[200px] flex flex-col"
+              className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 text-left w-full group min-h-[200px] flex flex-col"
               aria-label={`Learn more about ${book.title} by ${book.author}`}
             >
               {/* Header with title and chips */}
@@ -186,7 +191,7 @@ export default function BooksOverview() {
                   {book.description}
                 </p>
                 <div className="text-primary text-xs font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-auto">
-                  Learn more →
+                  {t.books.learnMoreButton}
                 </div>
               </div>
             </button>
@@ -195,7 +200,7 @@ export default function BooksOverview() {
 
         {filteredBooks.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-muted-foreground">No books match your selected filters.</p>
+            <p className="text-muted-foreground">{t.books.noResults}</p>
             <button
               onClick={() => {
                 setSelectedCategory('all')
@@ -203,7 +208,7 @@ export default function BooksOverview() {
               }}
               className="mt-4 px-4 py-2 text-primary hover:underline"
             >
-              Clear filters
+              {t.books.clearFilters}
             </button>
           </div>
         )}
@@ -268,17 +273,17 @@ export default function BooksOverview() {
               <div className="p-6 sm:p-8 overflow-y-auto max-h-[calc(90vh-200px)]">
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-semibold mb-2 text-lg">Description</h4>
+                    <h4 className="font-semibold mb-2 text-lg">{t.books.modalDescription}</h4>
                     <p className="text-muted-foreground leading-relaxed">{selectedBook.description}</p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-2 text-lg">Why We Recommend This Book</h4>
+                    <h4 className="font-semibold mb-2 text-lg">{t.books.modalWhyRecommended}</h4>
                     <p className="text-muted-foreground leading-relaxed">{selectedBook.why_recommended}</p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3 text-lg">Key Takeaways</h4>
+                    <h4 className="font-semibold mb-3 text-lg">{t.books.modalKeyTakeaways}</h4>
                     <ul className="space-y-2">
                       {selectedBook.key_takeaways.map((takeaway, index) => (
                         <li key={index} className="flex gap-3">
@@ -289,10 +294,10 @@ export default function BooksOverview() {
                     </ul>
                   </div>
 
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-white/60/20 rounded-xl p-4 sm:p-6">
-                    <h4 className="font-semibold mb-2">Get This Book</h4>
+                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6">
+                    <h4 className="font-semibold mb-2">{t.books.modalGetBook}</h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      Purchase this book on Amazon to support the authors and continue your UX learning journey.
+                      {t.books.modalGetBookDescription}
                     </p>
                     <a
                       href={selectedBook.amazon_url}
@@ -300,7 +305,7 @@ export default function BooksOverview() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary-dark transition-all duration-300 font-semibold hover:scale-105 hover:shadow-lg text-sm"
                     >
-                      View on Amazon
+                      {t.books.modalViewAmazon}
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   </div>

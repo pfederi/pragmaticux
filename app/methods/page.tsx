@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: '51 UX Methods - Complete UX Toolkit | Pragmatic UX Design',
     description: 'Comprehensive collection of practical UX methods with step-by-step guides and filtering by category.',
-    url: 'https://pragmaticux.design/methods',
+    url: 'https://pragmaticuxdesign.com/methods',
     type: 'website',
   },
   twitter: {

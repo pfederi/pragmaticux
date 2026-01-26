@@ -63,4 +63,4 @@ We appreciate security researchers who help keep our users safe. With your permi
 
 For security-related questions or concerns:
 - Email: patrick.federi@ergon.ch
-- Security.txt: https://pragmaticux.design/.well-known/security.txt
+- Security.txt: https://pragmaticuxdesign.com/.well-known/security.txt

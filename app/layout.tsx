@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     siteName: 'Pragmatic UX Design',
     images: [
       {
-        url: 'https://pragmaticux.design/og-image.jpg',
+        url: 'https://pragmaticuxdesign.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Pragmatic UX Design - Practical UX Framework',

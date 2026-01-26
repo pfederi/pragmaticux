@@ -2,21 +2,17 @@
 
 import { useState, useMemo, useCallback } from 'react'
 import Link from 'next/link'
-import { categorizedMethods, methodCategories, type MethodCategory, getMethodInstructions, getMethodDescription } from '@/data/methods'
+import { getCategorizedMethods, getMethodCategories, type MethodCategory, getMethodInstructions, getMethodDescription } from '@/data/methods'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { METHOD_CHIP_COLORS } from '@/lib/constants'
 
 export default function MethodsOverview() {
+  const { t, locale } = useLanguage()
   const [selectedCategory, setSelectedCategory] = useState<MethodCategory | 'all'>('all')
   const [selectedMethod, setSelectedMethod] = useState<string | null>(null)
-
-  const chipColors: Record<string, string> = {
-    all: 'bg-gray-100/80 backdrop-blur-sm text-gray-800 border border-white/60',
-    research: 'bg-blue-100/80 backdrop-blur-sm text-blue-800 border border-white/60',
-    design: 'bg-purple-100/80 backdrop-blur-sm text-purple-800 border border-white/60',
-    testing: 'bg-green-100/80 backdrop-blur-sm text-green-800 border border-white/60',
-    implementation: 'bg-orange-100/80 backdrop-blur-sm text-orange-800 border border-white/60',
-    strategy: 'bg-indigo-100/80 backdrop-blur-sm text-indigo-800 border border-white/60',
-    optimization: 'bg-red-100/80 backdrop-blur-sm text-red-800 border border-white/60'
-  }
+  
+  const categorizedMethods = useMemo(() => getCategorizedMethods(locale), [locale])
+  const methodCategories = useMemo(() => getMethodCategories(locale), [locale])
 
   const filteredMethods = useMemo(() =>
     selectedCategory === 'all'
@@ -46,10 +42,10 @@ export default function MethodsOverview() {
         {/* Header */}
         <div className="mb-8 sm:mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 md:mb-8 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent leading-tight">
-            UX Methods
+            {t.methods.title}
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-full sm:max-w-[75%] leading-relaxed">
-            Discover practical UX methods organized by category. Each method includes detailed implementation guidance and best practices.
+            {t.methods.subtitle}
           </p>
         </div>
 
@@ -61,12 +57,12 @@ export default function MethodsOverview() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                 selectedCategory === 'all'
                   ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
-                  : `${chipColors.all} hover:shadow-md`
+                  : `${METHOD_CHIP_COLORS.all} hover:shadow-md`
               }`}
               aria-pressed={selectedCategory === 'all'}
               aria-label={`Show all methods (${categorizedMethods.length} total)`}
             >
-              All ({categorizedMethods.length})
+              {t.methods.filterAll} ({categorizedMethods.length})
             </button>
             {Object.entries(methodCategories).map(([key, category]) => {
               const count = categorizedMethods.filter(m => m.category === key).length
@@ -77,7 +73,7 @@ export default function MethodsOverview() {
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 border whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                     selectedCategory === key
                       ? 'bg-primary text-primary-foreground shadow-lg border-white/60'
-                      : `${chipColors[key]} hover:shadow-md`
+                      : `${METHOD_CHIP_COLORS[key] || METHOD_CHIP_COLORS.all} hover:shadow-md`
                   }`}
                   aria-pressed={selectedCategory === key}
                   aria-label={`Filter by ${category.label} category (${count} methods)`}
@@ -103,7 +99,7 @@ export default function MethodsOverview() {
             <button
               key={index}
               onClick={() => setSelectedMethod(method.name)}
-              className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-white/60/50 text-left w-full group min-h-[140px] flex flex-col"
+              className="bg-gradient-to-br from-card to-muted/50 border rounded-lg p-3 sm:p-4 hover:shadow-md transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 text-left w-full group min-h-[140px] flex flex-col"
             >
 
               {/* Header with title and chip */}
@@ -112,7 +108,7 @@ export default function MethodsOverview() {
                   {method.name}
                 </h4>
                 <span
-                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${chipColors[method.category]}`}
+                  className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-xs font-medium border border-white/60 whitespace-nowrap truncate ${METHOD_CHIP_COLORS[method.category] || METHOD_CHIP_COLORS.all}`}
                   aria-label={`Category: ${methodCategories[method.category].label}`}
                   role="status"
                 >
@@ -123,10 +119,10 @@ export default function MethodsOverview() {
               {/* Content area that expands */}
               <div className="flex-1 flex flex-col justify-between">
                 <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3">
-                  {getMethodDescription(method.name)}
+                  {getMethodDescription(method.name, locale)}
                 </p>
                 <div className="text-primary text-xs font-medium flex items-center gap-1 group-hover:translate-x-1 transition-transform mt-auto">
-                  Learn more →
+                  {t.methods.learnMoreButton}
                 </div>
               </div>
             </button>
@@ -135,10 +131,10 @@ export default function MethodsOverview() {
 
         {/* CTA Section */}
         <div className="mt-12 sm:mt-16 pt-8 sm:pt-12 border-t">
-          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-white/60/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
-            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">Need Help Choosing the Right Method?</h3>
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6 md:p-8 text-center">
+            <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3">{t.methods.ctaTitle}</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto">
-              Use our Decision Helper to get personalized method recommendations based on your specific situation and project needs.
+              {t.methods.ctaSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
@@ -148,13 +144,13 @@ export default function MethodsOverview() {
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                 </svg>
-                Take Decision Helper
+                {t.methods.ctaPrimary}
               </Link>
               <Link
                 href="/about"
-                className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-white/60/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
+                className="px-5 py-2.5 sm:px-6 sm:py-3 border-2 border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold hover:scale-105 text-sm sm:text-base"
               >
-                Learn More About Us
+                {t.methods.ctaSecondary}
               </Link>
             </div>
           </div>
@@ -188,14 +184,14 @@ export default function MethodsOverview() {
                 <div className="space-y-6">
                   <div>
                     <p className="text-muted-foreground leading-relaxed">
-                      {getMethodInstructions(selectedMethod).description}
+                      {getMethodInstructions(selectedMethod, locale).description}
                     </p>
                   </div>
 
                   <div>
-                    <h4 className="font-semibold mb-3 text-lg">How to Apply This Method:</h4>
+                    <h4 className="font-semibold mb-3 text-lg">{t.methods.modalHowToApply}</h4>
                     <ol className="space-y-2">
-                      {getMethodInstructions(selectedMethod).steps.map((step, index) => (
+                      {getMethodInstructions(selectedMethod, locale).steps.map((step, index) => (
                         <li key={index} className="flex gap-3 items-center">
                           <span className="bg-primary text-primary-foreground rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0">
                             {index + 1}
@@ -206,11 +202,11 @@ export default function MethodsOverview() {
                     </ol>
                   </div>
 
-                  {getMethodInstructions(selectedMethod).tips.length > 0 && (
-                    <div className="mb-20">
-                      <h4 className="font-semibold mb-3 text-lg">Tips:</h4>
+                  {getMethodInstructions(selectedMethod, locale).tips.length > 0 && (
+                    <div className="mb-8">
+                      <h4 className="font-semibold mb-3 text-lg">{t.methods.modalTips}</h4>
                       <ul className="space-y-2">
-                        {getMethodInstructions(selectedMethod).tips.map((tip, index) => (
+                        {getMethodInstructions(selectedMethod, locale).tips.map((tip, index) => (
                           <li key={index} className="flex gap-3">
                             <span className="text-primary text-lg leading-none mt-0.5">•</span>
                             <span className="text-sm leading-relaxed">{tip}</span>
@@ -220,10 +216,10 @@ export default function MethodsOverview() {
                     </div>
                   )}
 
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-white/60/20 rounded-xl p-4 sm:p-6">
-                    <h4 className="font-semibold mb-2">Need Help Implementing This Method?</h4>
+                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-xl p-4 sm:p-6">
+                    <h4 className="font-semibold mb-2">{t.methods.modalNeedHelp}</h4>
                     <p className="text-sm text-muted-foreground mb-4">
-                      We're here to help you apply this method effectively in your project. Get personalized guidance and support.
+                      {t.methods.modalNeedHelpDescription}
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3">
                       <a
@@ -233,13 +229,13 @@ export default function MethodsOverview() {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                         </svg>
-                        Get in Touch
+                        {t.methods.modalGetInTouch}
                       </a>
                       <Link
                         href="/about"
-                        className="px-4 py-2 border-2 border-white/60/30 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-center"
+                        className="px-4 py-2 border-2 border-primary/20 text-primary rounded-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300 font-semibold text-sm text-center"
                       >
-                        Learn More About Us
+                        {t.methods.modalLearnMore}
                       </Link>
                     </div>
                   </div>

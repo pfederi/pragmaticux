@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'UX Decision Helper - Find Perfect UX Methods for Your Project',
     description: 'Interactive tool to match your project needs with the most effective UX methods and principles.',
-    url: 'https://pragmaticux.design/decision-helper',
+    url: 'https://pragmaticuxdesign.com/decision-helper',
     type: 'website',
   },
   twitter: {

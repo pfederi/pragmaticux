@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/'],
     },
-    sitemap: 'https://pragmaticux.design/sitemap.xml',
+    sitemap: 'https://pragmaticuxdesign.com/sitemap.xml',
   }
 }

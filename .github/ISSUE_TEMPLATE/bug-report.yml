@@ -59,7 +59,7 @@ body:
     attributes:
       label: Reproduction URL
       description: If applicable, provide a URL where the bug can be reproduced
-      placeholder: "https://pragmaticux.design/decision-helper"
+      placeholder: "https://pragmaticuxdesign.com/decision-helper"
 
   - type: textarea
     id: bug-description
