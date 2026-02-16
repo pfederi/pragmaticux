@@ -1,6 +1,26 @@
 # Release Notes - Pragmatic UX Design Website
 
-## Version 2.2.0 (Current Release)
+## Version 2.2.1 (Current Release)
+
+**Release Date:** February 2026
+
+## Overview
+
+We’ve made the site clearer for everyone: you can see at a glance who Pragmatic UX is for and what problems it addresses. The Decision Helper uses concrete, everyday wording so it’s easy to use even if you’re not from a UX background.
+
+## What’s New
+
+### Homepage: Who It’s For & What We Address
+- **New section** right below the main intro: two cards – “Who is it for?” (e.g. UX designers, product managers, teams) and “What problems do we address?” (e.g. UX seen as a bottleneck, little time/budget, unclear which methods to use).
+- **Short line** under the main description, e.g.: “For UX designers, product managers and teams who want to increase UX impact without rigid processes.”
+
+### Decision Helper: Clearer, More Concrete Wording
+- **Challenge question**: Options now use concrete situations, e.g. “Negative feedback, bad ratings or many support requests”, “Decisions need to be made quickly (tight deadlines, pressure)”, or “Lots of changes, but no visible progress”.
+- **Time and budget**: Simple options like “Too little time, tight budget” and “Enough time and budget” so anyone can answer quickly.
+
+---
+
+## Version 2.2.0
 
 **Release Date:** January 2026
 
@@ -26,32 +46,13 @@ Version 2.2 brings multilingual support and a downloadable PDF poster, making th
 
 Version 2.1 adds a comprehensive Books Recommendations page with 33 curated UX design books, expanding the learning resources available on the Pragmatic UX Design framework website.
 
-## New Features
+## What’s New
 
-### Books Recommendations Page
-- **New Route**: `/books` - Complete overview of 33 curated UX design books
-- **Category Filtering**: Filter books by Usability, Fundamentals, Interaction Design, Process & Methods, Psychology, Research
-- **Level Filtering**: Filter by Beginner, Intermediate, Advanced, or All levels
-- **Book Details**: Each book includes description, why it's recommended, key takeaways, Amazon link, and cover image
-- **Cover Images**: 32 book cover images automatically downloaded from Goodreads API
-- **Responsive Design**: Optimized card layouts with gradient backgrounds matching the design system
-
-### Content Expansion
-- **33 UX Books** - Curated selection of essential UX design books from multiple sources
-- **Book Sources**: Books curated from Interaction Design Foundation, UXfolio, UX Planet, and internal library
-- **Automated Image Management**: Script to download book cover images from Goodreads API
-
-### Technical Improvements
-- **New Component**: BooksOverview - Complete books browsing interface with filtering and modals
-- **New Scripts**: `download-book-covers.js` - Automated script to download book cover images
-- **Image Management**: Book cover images stored locally in `public/images/books/`
-- **Type Safety**: Expanded TypeScript interfaces for books data
-
-## Documentation Updates
-
-- **README.md**: Comprehensive feature overview including Books page, setup instructions, and new scripts
-- **arc42.md**: Complete architecture documentation with new BooksOverview component
-- **public/images/books/README.md**: Documentation for book cover image management
+### Books Recommendations
+- **Books page**: Browse 33 curated UX design books with descriptions, why we recommend them, key takeaways, and links to buy.
+- **Filter by category**: Usability, Fundamentals, Interaction Design, Process & Methods, Psychology, Research.
+- **Filter by level**: Beginner, Intermediate, Advanced, or show all.
+- **Book details**: Each book has a cover image, description, and Amazon link.
 
 ---
 
@@ -63,92 +64,20 @@ Version 2.1 adds a comprehensive Books Recommendations page with 33 curated UX d
 
 Version 2.0 brings major enhancements to the Pragmatic UX Design framework website, including a comprehensive Methods Overview, enhanced Decision Helper with project phase awareness, and significant UI/UX improvements with modern glassmorphism design.
 
-## New Features
+## What’s New
 
-### Methods Overview Page
-- **New Route**: `/methods` - Complete overview of all UX methods
-- **Category Filtering**: Filter methods by Research, Design, Testing, Implementation, Strategy, Optimization
-- **Interactive Cards**: Click any method to view detailed instructions and contact options
-- **Responsive Design**: Optimized for all screen sizes
+### Methods Overview
+- **Methods page**: Browse all 51 UX methods by category (Research, Design, Testing, Implementation, Strategy, Optimization).
+- **Click any method** to see detailed instructions, steps, and tips, plus a way to get in touch for support.
 
-### Enhanced Decision Helper
-- **5 Questions Instead of 4**: Added project phase question
-- **Project Phase Awareness**: Choose from "Project start", "Middle of development", "Near release"
-- **Phase-Specific Recommendations**: Methods tailored to your project stage
-- **Prioritized Results**: Project phase methods guaranteed to appear in results
+### Decision Helper
+- **Project phase question**: You can now say whether you’re at project start, in the middle of development, or near release.
+- **Recommendations** are tailored to your phase and other answers.
 
-### Improved User Experience
-- **Glassmorphism Design**: Modern glass effects on all interactive elements
-- **Unified Card Layouts**: Consistent heights and spacing across all method cards
-- **Responsive Chips**: Category indicators with hover effects and proper truncation
-- **Mobile Optimization**: Improved touch targets and compact layouts
-
-### Content Expansion
-- **51 UX Methods** - Comprehensive collection across 6 categories
-- **New Methods Added**:
-  - Design Studio (Design & Creation)
-  - Analytics Audit (Research & Analysis)
-  - Conversion Funnel Analysis (Research & Analysis)
-  - User Segmentation Analysis (Research & Analysis)
-- **Method Renaming**: "Field Studies" → "Contextual Inquiry" for industry standards
-
-## Technical Improvements
-
-### Architecture Updates
-- **New Components**: MethodsOverview, Modal, CookieBanner
-- **Enhanced State Management**: Improved localStorage persistence
-- **Better Type Safety**: Expanded TypeScript interfaces
-- **Performance**: Optimized rendering and reduced bundle size
-
-### Design System
-- **Consistent Styling**: Unified color schemes and spacing
-- **Glassmorphism Effects**: backdrop-blur and semi-transparent backgrounds
-- **Improved Accessibility**: Better keyboard navigation and ARIA labels
-- **Cross-Device Compatibility**: Enhanced responsive breakpoints
-
-### Data Quality
-- **Duplicate Removal**: Cleaned up categorization data across all methods
-- **Consistent Naming**: Standardized terminology throughout
-- **Enhanced Rule Engine**: More sophisticated decision matching logic
-
-## Bug Fixes
-
-- **Hydration Mismatches**: Fixed Next.js SSR/client-side rendering issues
-- **Card Height Inconsistencies**: Unified card heights with flex layouts
-- **Chip Text Wrapping**: Prevented text overflow with proper truncation
-- **Navigation Ordering**: Updated menu structure for better UX flow
-- **Modal Functionality**: Restored modal opening/closing across all contexts
-
-## Documentation Updates
-
-- **README.md**: Comprehensive feature overview and setup instructions
-- **arc42.md**: Complete architecture documentation with new components
-- **decision-logic.md**: Updated rule engine documentation (19 rules total)
-
-## Migration Notes
-
-### For Existing Users
-- **Cache Clearing Required**: Clear browser cache to see new 5-question Decision Helper
-- **Navigation Changes**: Methods now appear before Decision Helper in menu
-- **Enhanced Persistence**: Decision Helper state now includes project phase
-
-### Breaking Changes
-- **API Changes**: Decision Tree now includes 5 questions (was 4)
-- **Component Interfaces**: Some internal component props updated for consistency
-- **Styling**: Updated class names for glassmorphism effects
-
-## Impact Assessment
-
-### User Benefits
-- **Better Discovery**: Methods Overview makes finding relevant methods easier
-- **Contextual Recommendations**: Project phase integration provides more relevant suggestions
-- **Improved Usability**: Glassmorphism and unified layouts enhance visual appeal
-- **Mobile Experience**: Significantly improved mobile interaction quality
-
-### Performance Metrics
-- **Page Load**: Maintained fast loading times despite content expansion
-- **Bundle Size**: Optimized to prevent significant increases
-- **Accessibility Score**: Improved with better semantic markup and ARIA labels
+### Design & Usability
+- **Updated look**: Clearer cards and layout, consistent across methods and books.
+- **Mobile**: Better use on phones and tablets.
+- **More methods**: Including Design Studio, Analytics Audit, Conversion Funnel Analysis, User Segmentation Analysis; “Field Studies” is now “Contextual Inquiry”.
 
 ## Previous Versions
 
@@ -157,11 +86,11 @@ Version 2.0 brings major enhancements to the Pragmatic UX Design framework websi
 **Release Date:** Initial Launch
 
 **Features:**
-- **Core Framework**: Eight UX Design principles with detailed explanations
-- **Basic Decision Helper**: 4-question interactive flow for principle recommendations
-- **Responsive Design**: Mobile-optimized layouts and interactions
-- **State Persistence**: localStorage-based progress saving
-- **Email Integration**: Share results via pre-filled email templates
+- **Eight UX principles** with detailed explanations
+- **Decision Helper**: Short questionnaire for personalised principle and method recommendations
+- **Responsive design**: Works on desktop and mobile
+- **Progress saved**: Your Decision Helper answers are kept so you can continue later
+- **Share results**: Send recommendations by email via a pre-filled mail link
 
 ## Acknowledgments
 
@@ -169,12 +98,11 @@ Special thanks to the UX community for feedback and inspiration. This release re
 
 ## Support
 
-- **Documentation**: Check updated README.md and arc42.md
-- **Issues**: Report bugs via GitHub Issues
-- **Contact**: Use the contact form or email for support
+- **Feedback or bugs**: GitHub Issues or the contact form on the website
+- **Questions**: Use the email link in the footer or on the Decision Helper results
 
 ---
 
-**Version**: 2.2.0
-**Release Date**: January 2026
-**Previous Version**: 2.1.0
+**Version**: 2.2.1
+**Release Date**: February 2026
+**Previous Version**: 2.2.0

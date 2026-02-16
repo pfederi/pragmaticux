@@ -1,4 +1,4 @@
-# Pragmatic UX Design v2.0
+# Pragmatic UX Design v2.2.1
 
 A practical framework for maximizing UX impact without overcomplicating design processes. This website presents eight core principles that guide pragmatic UX practice, along with an interactive decision helper to find the most relevant principles and methods for your specific situation.
 
@@ -42,7 +42,12 @@ The development server includes hot-reload, so changes will automatically refres
 
 ## 🆕 What's New
 
-### Version 2.1.0 (Latest)
+### Version 2.2.1 (Latest)
+- **Homepage: “Who it’s for & what we address”** - New section with two cards (target audience and problems) below the Hero
+- **Hero “For whom?” line** - Short sentence in DE/EN for who the framework is for
+- **Decision Helper: concrete wording** - Challenge options (e.g. negative feedback, support requests) and time/budget (e.g. “Wenig Zeit, knappes Budget”) for easier use by non-UX people
+
+### Version 2.1.0
 - **UX Book Recommendations** - New `/books` page with 33 curated UX design books, filterable by category and level
 - **Books Filtering** - Filter books by category (usability, fundamentals, interaction, process, psychology, research) and level (beginner, intermediate, advanced, all)
 - **Automated Book Cover Downloads** - Script to download book cover images from Goodreads API
@@ -201,9 +206,12 @@ pragmaticux/
 └── tsconfig.json         # TypeScript configuration
 ```
 
-## 🆕 Recent Updates (v2.0)
+## 🆕 Recent Updates (v2.2.1)
 
 ### ✨ New Features
+- **Homepage “Who & what we address”** - Section with target audience and problems (AudienceAndProblems)
+- **Hero “For whom?” line** - Short sentence in DE/EN
+- **Decision Helper** - Concrete question wording (e.g. negative feedback, “too little time, tight budget”) for non-UX users
 - **Books Recommendations Page** - Browse 33 curated UX design books with filtering by category and level
 - **Methods Overview Page** - Browse all 51 UX methods with category filtering
 - **Enhanced Decision Helper** - Added 5th question about project phase (start/middle/end)

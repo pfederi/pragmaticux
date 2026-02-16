@@ -209,7 +209,7 @@ graph TB
 
 **Responsibilities:**
 - **layout.tsx**: Root layout, metadata, global configuration
-- **page.tsx**: Homepage with Hero, Workflow, Principles Overview
+- **page.tsx**: Homepage with Hero, AudienceAndProblems, Workflow, Principles Overview
 - **about/page.tsx**: About page with framework information
 - **decision-helper/page.tsx**: Wrapper for Decision Helper component
 - **methods/page.tsx**: Methods overview page with filtering and modal details
@@ -228,6 +228,7 @@ graph TB
         Nav[Navigation.tsx<br/>Header, Mobile Menu]
         Footer[Footer.tsx<br/>Site Footer]
         Hero[Hero.tsx<br/>Hero Section]
+        Audience[AudienceAndProblems.tsx<br/>Who & Problems]
         Workflow[Workflow.tsx<br/>Workflow Section]
         Principles[PrinciplesOverview.tsx<br/>Principles Grid]
         Methods[MethodsOverview.tsx<br/>Methods Grid & Filtering]
@@ -241,6 +242,7 @@ graph TB
     Layout --> Nav
     Layout --> Footer
     Layout --> Hero
+    Layout --> Audience
     Layout --> Workflow
     Layout --> Principles
     Layout --> Methods
@@ -257,6 +259,7 @@ graph TB
     style Nav fill:#4fc3f7
     style Footer fill:#4fc3f7
     style Hero fill:#4fc3f7
+    style Audience fill:#4fc3f7
     style Workflow fill:#4fc3f7
     style Principles fill:#4fc3f7
     style Methods fill:#4fc3f7
@@ -274,7 +277,8 @@ graph TB
 | **Layout** | Wrapper for Navigation and Footer |
 | **Navigation** | Header with Desktop/Mobile navigation, Principles dropdown |
 | **Footer** | Site footer with copyright and links |
-| **Hero** | Hero section with CTA buttons |
+| **Hero** | Hero section with CTA buttons and "for whom" line |
+| **AudienceAndProblems** | Home section "Who it's for & what we address" (two cards) |
 | **Workflow** | "The Pragmatic UX Design Approach" section |
 | **PrinciplesOverview** | Grid view of all principles |
 | **MethodsOverview** | Methods grid with category filtering and search (NEW) |
@@ -398,6 +402,7 @@ sequenceDiagram
     participant Page as app/page.tsx
     participant Layout as Layout Component
     participant Hero as Hero Component
+    participant Audience as AudienceAndProblems Component
     participant Workflow as Workflow Component
     participant Principles as PrinciplesOverview Component
     
@@ -406,6 +411,7 @@ sequenceDiagram
     NextJS->>Page: Render Server Component
     Page->>Layout: Render Layout
     Layout->>Hero: Render Hero Section
+    Layout->>Audience: Render AudienceAndProblems Section
     Layout->>Workflow: Render Workflow Section
     Layout->>Principles: Render Principles Grid
     Principles->>Principles: Load principles.json (Static)
@@ -999,7 +1005,20 @@ interface DecisionTreeRule {
 
 ## 13. Recent Changes
 
-### 13.1 Version 2.0 Updates (December 2025)
+### 13.1 Version 2.2.1 Updates (February 2026)
+
+#### Content & Clarity
+- **Homepage section "Für wen & welche Probleme?"**: New block with target audience and problems (AudienceAndProblems component)
+- **Hero**: Added "for whom" sentence in DE/EN (e.g. "Für UX-Designer:innen, Product Manager und Teams, die mit wenig Prozessaufwand mehr UX-Wirkung schaffen wollen.")
+- **About**: "Who it's for" and "What problems" removed from About page (now on homepage only)
+- **Decision Helper**: Challenge and time/budget questions rephrased with concrete options (e.g. negative feedback/support requests; "Wenig Zeit, knappes Budget") for non-UX users
+
+#### Technical
+- **New component**: AudienceAndProblems.tsx; homepage order: Hero → AudienceAndProblems → Workflow → PrinciplesOverview → CTA
+- **Locales**: hero.forWho, about.sectionTitleAudience; about.forWhoTitle/problemsTitle and bullets used in AudienceAndProblems
+- **Data**: decision_tree.json and decision_tree.de.json updated with new question/option labels (values unchanged for rules)
+
+### 13.2 Version 2.0 Updates (December 2025)
 
 #### New Features Added
 - **Methods Overview Page**: New `/methods` route with comprehensive method browsing
@@ -1032,7 +1051,7 @@ interface DecisionTreeRule {
 - **Consistent Naming**: Standardized method and category terminology
 - **Rule Engine Updates**: Enhanced decision logic with project phase prioritization
 
-### 13.2 Architectural Impact
+### 13.3 Architectural Impact
 
 #### Component Architecture
 - **Increased Modularity**: New reusable components (Modal, MethodsOverview, CookieBanner)
@@ -1051,8 +1070,8 @@ interface DecisionTreeRule {
 
 ---
 
-**Documentation Version:** 2.0
-**Last Updated:** 2025-12-17
+**Documentation Version:** 2.2.1
+**Last Updated:** 2026-02
 **Author:** Patrick Federi
 
 

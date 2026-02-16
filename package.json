@@ -1,6 +1,6 @@
 {
   "name": "pragmatic-ux",
-  "version": "2.0.0",
+  "version": "2.2.1",
   "description": "Pragmatic UX Design Framework - Maximising impact without overcomplicating design",
   "scripts": {
     "dev": "next dev -p 3000",

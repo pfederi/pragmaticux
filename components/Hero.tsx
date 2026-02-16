@@ -18,9 +18,12 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent leading-relaxed sm:leading-[1.2] md:leading-[1.2] lg:leading-[1.2] xl:leading-[1.2] pb-2 sm:pb-3">
               {t.hero.title}
           </h1>
-            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 md:mb-12 leading-relaxed">
-            {t.hero.subtitle}. {t.hero.description}
-          </p>
+            <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-4 md:mb-6 leading-relaxed">
+              {t.hero.subtitle}. {t.hero.description}
+            </p>
+            <p className="text-base sm:text-lg text-muted-foreground/90 mb-8 md:mb-12 leading-relaxed">
+              {t.hero.forWho}
+            </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="#core-principles"

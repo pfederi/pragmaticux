@@ -1,4 +1,5 @@
 import Hero from '@/components/Hero'
+import AudienceAndProblems from '@/components/AudienceAndProblems'
 import PrinciplesOverview from '@/components/PrinciplesOverview'
 import Workflow from '@/components/Workflow'
 import CTA from '@/components/CTA'
@@ -36,6 +37,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <AudienceAndProblems />
       <Workflow />
       <PrinciplesOverview />
       <CTA />

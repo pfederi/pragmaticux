@@ -22,19 +22,19 @@
       "label": "Was ist deine größte aktuelle Herausforderung?",
       "type": "single",
       "options": [
-        { "value": "efficiency", "label": "Nutzereffizienz verbessern" },
-        { "value": "fast_decisions", "label": "Stakeholder brauchen schnelle Entscheidungen" },
-        { "value": "iteration_churn", "label": "Zu viel Iteration ohne Fortschritt" },
-        { "value": "ship_faster", "label": "Features schneller ausliefern" }
+        { "value": "efficiency", "label": "Negative Rückmeldungen, schlechte Bewertungen oder viele Supportanfragen" },
+        { "value": "fast_decisions", "label": "Entscheidungen müssen schnell fallen (enger Zeitplan, Druck)" },
+        { "value": "iteration_churn", "label": "Es wird viel geändert, aber ohne spürbaren Fortschritt" },
+        { "value": "ship_faster", "label": "Features sollen schneller ausgeliefert werden" }
       ]
     },
     {
       "id": "time_budget",
-      "label": "Wie sind deine Zeit- und Budgetbeschränkungen?",
+      "label": "Wie sieht es bei euch mit Zeit und Budget aus?",
       "type": "single",
       "options": [
-        { "value": "tight", "label": "Eng / begrenzt" },
-        { "value": "adequate", "label": "Angemessen / flexibel" }
+        { "value": "tight", "label": "Wenig Zeit, knappes Budget" },
+        { "value": "adequate", "label": "Ausreichend Zeit und Budget" }
       ]
     },
     {

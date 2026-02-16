@@ -481,13 +481,15 @@ graph TD
 
 ### 6.3 Question Details
 
-| Question ID | Label | Options |
-|-------------|-------|---------|
+| Question ID | Label | Options (values; display text is concrete in DE/EN) |
+|-------------|-------|------------------------------------------------------|
 | `context` | What type of project environment are you working in? | startup, eng_driven, corporate |
 | `challenge` | What is your biggest current challenge? | efficiency, fast_decisions, iteration_churn, ship_faster |
-| `time_budget` | How are your time and budget constraints? | tight, adequate |
+| `time_budget` | How are time and budget in your situation? | tight, adequate |
 | `ux_acceptance` | How high is the UX acceptance in your team? | low, high |
 | `project_phase` | What phase of the project are you currently in? | project_start, project_middle, project_end |
+
+**Concrete wording (v2.2.1):** Challenge options are phrased for non-UX readers (e.g. “Negative feedback, bad ratings or many support requests” for `efficiency`; “Decisions need to be made quickly (tight deadlines, pressure)” for `fast_decisions`). Time/budget options: “Too little time, tight budget” / “Enough time and budget”. Full labels and option text are in `data/decision_tree.json` (EN) and `data/decision_tree.de.json` (DE).
 
 ### 6.4 Progress Calculation
 
@@ -593,18 +595,18 @@ Rules that match based on project context:
 
 ### 8.2 Challenge-Based Rules
 
-Rules that match based on specific challenges:
+Rules that match based on specific challenges (option values unchanged; display labels are concrete since v2.2.1):
 
-- **Efficiency**: Improving user efficiency
-- **Fast Decisions**: Need for quick stakeholder decisions
-- **Iteration Churn**: Too much iteration without progress
-- **Ship Faster**: Need to ship features faster
+- **Efficiency** (`efficiency`): e.g. negative feedback, bad ratings, many support requests
+- **Fast Decisions** (`fast_decisions`): decisions need to be made quickly (tight deadlines, pressure)
+- **Iteration Churn** (`iteration_churn`): lots of changes but no visible progress
+- **Ship Faster** (`ship_faster`): features need to ship faster
 
 ### 8.3 Constraint-Based Rules
 
 Rules that match based on constraints:
 
-- **Time/Budget**: Tight vs. adequate resources
+- **Time/Budget** (`tight` / `adequate`): e.g. “Too little time, tight budget” vs. “Enough time and budget” (v2.2.1)
 - **UX Acceptance**: Low vs. high team acceptance
 
 ### 8.4 Rule Combinations
@@ -737,13 +739,20 @@ All method descriptions are hardcoded in `DecisionHelper.tsx` in the `getMethodD
 
 ---
 
-**Documentation Version:** 2.0
-**Last Updated:** 2025-12-17
+**Documentation Version:** 2.2.1
+**Last Updated:** 2026-02
 **Author:** Patrick Federi
 
 ---
 
 ## Changelog
+
+### Version 2.2.1 (February 2026)
+
+#### Decision Helper Wording
+- **Challenge options**: Rephrased for non-UX readers (e.g. negative feedback/bad ratings/support requests; fast decisions with tight deadlines; lots of changes without progress; ship faster).
+- **Time/budget question**: Label and options made explicit (e.g. “How are time and budget in your situation?”; “Too little time, tight budget” / “Enough time and budget”).
+- **Rule logic**: Unchanged; only display labels in `decision_tree.json` and `decision_tree.de.json` updated.
 
 ### Version 2.0 (December 2025)
 
